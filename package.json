@@ -22,7 +22,8 @@
     "next-seo": "^6.6.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.414.0",
-    "@next/font": "^14.2.5"
+    "@next/font": "^14.2.5",
+    "styled-components": "^6.1.0"
   },
   "devDependencies": {
     "@types/node": "^20",
