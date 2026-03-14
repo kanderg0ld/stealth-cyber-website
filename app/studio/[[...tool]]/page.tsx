@@ -1,17 +1,11 @@
-'use client'
+// Server component — required so generateStaticParams can coexist with client rendering
+import StudioClientPage from './StudioClientPage'
 
-import dynamic from 'next/dynamic'
-import config from '../../../sanity.config'
-
-// Dynamic import with no SSR — renders purely client-side (required for static export)
-const NextStudio = dynamic(() => import('next-sanity/studio').then(mod => mod.NextStudio), { ssr: false })
-
-// Required for `output: 'export'` — pre-generate /studio as a client-side shell
+// Pre-generate /studio as a static HTML shell; studio loads client-side
 export function generateStaticParams() {
   return [{}]
 }
 
 export default function StudioPage() {
-  return <NextStudio config={config} />
+  return <StudioClientPage />
 }
-
