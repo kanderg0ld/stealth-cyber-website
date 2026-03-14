@@ -1,0 +1,88 @@
+import Link from 'next/link'
+import { Shield, Linkedin, Phone, MapPin } from 'lucide-react'
+
+const services = [
+  { label: 'Managed Detection & Response', href: '/services#mdr' },
+  { label: 'Incident Response', href: '/services#incident-response' },
+  { label: 'GRC & Compliance', href: '/services#grc' },
+  { label: 'Managed Security Services', href: '/services#mss' },
+  { label: 'Essential Eight', href: '/services#essential-eight' },
+]
+
+export default function Footer() {
+  return (
+    <footer className="bg-stealth-navy border-t border-stealth-cyan/10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="lg:col-span-2">
+            <Link href="/" className="flex items-center gap-2 mb-4">
+              <Shield className="w-7 h-7 text-stealth-cyan" />
+              <span className="text-white font-bold text-lg">
+                Stealth<span className="text-stealth-cyan">Cyber</span>
+              </span>
+            </Link>
+            <p className="text-stealth-gray text-sm leading-relaxed max-w-sm">
+              Protecting Australian businesses with enterprise-grade cybersecurity.
+              24/7 managed detection, incident response, and compliance services
+              tailored for SMBs.
+            </p>
+            <div className="flex items-center gap-3 mt-4">
+              <a
+                href="https://linkedin.com/company/stealthcyber"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-stealth-gray hover:text-stealth-cyan transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">Services</h3>
+            <ul className="space-y-2">
+              {services.map((s) => (
+                <li key={s.href}>
+                  <Link href={s.href} className="text-stealth-gray hover:text-white text-sm transition-colors">
+                    {s.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">Contact</h3>
+            <ul className="space-y-3">
+              <li className="flex items-start gap-2 text-sm text-stealth-gray">
+                <Phone className="w-4 h-4 mt-0.5 text-stealth-cyan shrink-0" />
+                <a href="tel:+61752308381" className="hover:text-white transition-colors">+61 7 5230 8381</a>
+              </li>
+              <li className="flex items-start gap-2 text-sm text-stealth-gray">
+                <MapPin className="w-4 h-4 mt-0.5 text-stealth-cyan shrink-0" />
+                <span>Queensland, Australia</span>
+              </li>
+            </ul>
+            <div className="mt-6">
+              <Link
+                href="/contact"
+                className="inline-block px-4 py-2 bg-stealth-cyan text-stealth-dark text-sm font-semibold rounded hover:bg-white transition-colors"
+              >
+                Get Protected
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-10 pt-6 border-t border-stealth-cyan/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stealth-gray">
+          <p>© {new Date().getFullYear()} Stealth Cyber Pty Ltd. ABN 72 675 840 632. All rights reserved.</p>
+          <div className="flex gap-4">
+            <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
+          </div>
+        </div>
+      </div>
+    </footer>
+  )
+}
