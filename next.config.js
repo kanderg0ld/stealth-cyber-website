@@ -1,10 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
   images: {
     domains: ['cdn.sanity.io'],
-  },
-  experimental: {
-    taint: true,
+    unoptimized: true, // required for static export
   },
 }
 
