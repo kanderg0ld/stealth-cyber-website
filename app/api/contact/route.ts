@@ -32,8 +32,8 @@ const ALLOWED_SERVICES = [
 ] as const
 
 const contactSchema = z.object({
-  firstName:    z.string().min(1).max(100).regex(/^[\p{L}\p{M}'\-\s]+$/u, 'Invalid characters in name'),
-  lastName:     z.string().min(1).max(100).regex(/^[\p{L}\p{M}'\-\s]+$/u, 'Invalid characters in name'),
+  firstName:    z.string().min(1).max(100).regex(/^[A-Za-zÀ-ÖØ-öø-ÿ'\-\s]+$/, 'Invalid characters in name'),
+  lastName:     z.string().min(1).max(100).regex(/^[A-Za-zÀ-ÖØ-öø-ÿ'\-\s]+$/, 'Invalid characters in name'),
   email:        z.string().email().max(254),
   phone:        z.string().max(30).regex(/^[\d\s\+\-\(\)]*$/, 'Invalid phone number').optional().or(z.literal('')),
   organisation: z.string().max(200).optional().or(z.literal('')),
