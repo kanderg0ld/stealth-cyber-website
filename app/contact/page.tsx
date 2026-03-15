@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Phone, MapPin, Linkedin, Clock } from 'lucide-react'
 import BreadcrumbJsonLd from '@/components/structured-data/BreadcrumbJsonLd'
+import ContactForm from './ContactForm'
 
 export const metadata: Metadata = {
   title: 'Contact Us',
@@ -28,98 +29,7 @@ export default function ContactPage() {
       <section className="py-16 bg-stealth-dark">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact form */}
-            <div className="bg-stealth-navy rounded-xl border border-stealth-cyan/10 p-8">
-              <h2 className="text-white font-bold text-xl mb-6">Send Us a Message</h2>
-              <form className="space-y-5" action="/api/contact" method="POST">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-1.5">First Name *</label>
-                    <input
-                      type="text"
-                      name="firstName"
-                      required
-                      className="w-full px-4 py-2.5 bg-stealth-dark border border-stealth-cyan/20 rounded text-white placeholder-stealth-gray focus:outline-none focus:border-stealth-cyan text-sm"
-                      placeholder="Jane"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-1.5">Last Name *</label>
-                    <input
-                      type="text"
-                      name="lastName"
-                      required
-                      className="w-full px-4 py-2.5 bg-stealth-dark border border-stealth-cyan/20 rounded text-white placeholder-stealth-gray focus:outline-none focus:border-stealth-cyan text-sm"
-                      placeholder="Smith"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-1.5">Email Address *</label>
-                  <input
-                    type="email"
-                    name="email"
-                    required
-                    className="w-full px-4 py-2.5 bg-stealth-dark border border-stealth-cyan/20 rounded text-white placeholder-stealth-gray focus:outline-none focus:border-stealth-cyan text-sm"
-                    placeholder="jane@example.com.au"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-1.5">Phone Number</label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    className="w-full px-4 py-2.5 bg-stealth-dark border border-stealth-cyan/20 rounded text-white placeholder-stealth-gray focus:outline-none focus:border-stealth-cyan text-sm"
-                    placeholder="+61 4XX XXX XXX"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-1.5">Organisation</label>
-                  <input
-                    type="text"
-                    name="organisation"
-                    className="w-full px-4 py-2.5 bg-stealth-dark border border-stealth-cyan/20 rounded text-white placeholder-stealth-gray focus:outline-none focus:border-stealth-cyan text-sm"
-                    placeholder="Your company name"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-1.5">Service of Interest</label>
-                  <select
-                    name="service"
-                    className="w-full px-4 py-2.5 bg-stealth-dark border border-stealth-cyan/20 rounded text-white focus:outline-none focus:border-stealth-cyan text-sm"
-                  >
-                    <option value="">Select a service...</option>
-                    <option value="mdr">Managed Detection &amp; Response</option>
-                    <option value="incident-response">Incident Response</option>
-                    <option value="essential-eight">Essential Eight Compliance</option>
-                    <option value="cmmc">CMMC Assessment</option>
-                    <option value="iso27001">ISO 27001 Certification</option>
-                    <option value="ai-security">AI Security</option>
-                    <option value="ai-management">AI Management Systems</option>
-                    <option value="grc">GRC &amp; Compliance</option>
-                    <option value="mss">Managed Security Services</option>
-                    <option value="pentest">Penetration Testing</option>
-                    <option value="other">Other / Not Sure</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-1.5">Message *</label>
-                  <textarea
-                    name="message"
-                    required
-                    rows={4}
-                    className="w-full px-4 py-2.5 bg-stealth-dark border border-stealth-cyan/20 rounded text-white placeholder-stealth-gray focus:outline-none focus:border-stealth-cyan text-sm resize-none"
-                    placeholder="Tell us about your security needs or the incident you're dealing with..."
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="w-full py-3 bg-stealth-cyan text-stealth-dark font-semibold rounded hover:bg-white transition-colors text-sm"
-                >
-                  Send Message
-                </button>
-              </form>
-            </div>
+            <ContactForm />
 
             {/* Contact details */}
             <div className="space-y-6">
