@@ -7,7 +7,20 @@ import { postBySlugQuery } from '@/lib/queries'
 import ArticleJsonLd from '@/components/structured-data/ArticleJsonLd'
 import BreadcrumbJsonLd from '@/components/structured-data/BreadcrumbJsonLd'
 
-export const revalidate = 60
+// Static export: pre-generate all published slugs at build time.
+// Falls back to [] if Sanity is not yet configured.
+export async function generateStaticParams() {
+  try {
+    const slugs: Array<{ slug: { current: string } }> = await sanityClient.fetch(
+      `*[_type == "post" && defined(slug.current)]{ "slug": slug }`
+    )
+    return slugs.map((s) => ({ slug: s.slug.current }))
+  } catch {
+    return []
+  }
+}
+
+export const dynamicParams = false
 
 interface Props { params: { slug: string } }
 
