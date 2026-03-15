@@ -16,14 +16,16 @@ const services = [
 
 export default function Footer() {
   return (
-    <footer className="bg-stealth-navy border-t border-stealth-cyan/10">
+    <footer className="bg-stealth-navy">
+      {/* Gradient top border strip */}
+      <div className="h-px bg-brand-gradient" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-4">
               <Shield className="w-7 h-7 text-stealth-cyan" />
-              <span className="text-white font-bold text-lg">
-                Stealth<span className="text-stealth-cyan">Cyber</span>
+              <span className="font-bold text-lg">
+                <span className="text-white">Stealth</span><span className="bg-gradient-to-r from-stealth-sky to-stealth-indigo bg-clip-text text-transparent">Cyber</span>
               </span>
             </Link>
             <p className="text-stealth-gray text-sm leading-relaxed max-w-sm">
@@ -36,7 +38,7 @@ export default function Footer() {
                 href="https://linkedin.com/company/stealthcyber"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-stealth-gray hover:text-stealth-cyan transition-colors"
+                className="text-stealth-gray hover:text-stealth-indigo transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-5 h-5" />
@@ -49,7 +51,7 @@ export default function Footer() {
             <ul className="space-y-2">
               {services.map((s) => (
                 <li key={s.href}>
-                  <Link href={s.href} className="text-stealth-gray hover:text-white text-sm transition-colors">
+                  <Link href={s.href} className="text-stealth-gray hover:text-stealth-cyan text-sm transition-colors">
                     {s.label}
                   </Link>
                 </li>
@@ -72,7 +74,7 @@ export default function Footer() {
             <div className="mt-6">
               <Link
                 href="/contact"
-                className="inline-block px-4 py-2 bg-stealth-cyan text-stealth-dark text-sm font-semibold rounded hover:bg-white transition-colors"
+                className="inline-block px-4 py-2 bg-gradient-to-r from-stealth-blue to-stealth-indigo text-white text-sm font-semibold rounded hover:opacity-90 transition-opacity"
               >
                 Get Protected
               </Link>
@@ -80,7 +82,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 pt-6 border-t border-stealth-cyan/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stealth-gray">
+        <div className="mt-10 pt-6 border-t border-stealth-navy-light flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stealth-gray">
           <p>© {new Date().getFullYear()} Stealth Cyber Pty Ltd. ABN 72 675 840 632. All rights reserved.</p>
           <div className="flex gap-4">
             <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>

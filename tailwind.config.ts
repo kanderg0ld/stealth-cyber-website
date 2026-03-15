@@ -9,19 +9,27 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'stealth-dark': '#050d1a',
-        'stealth-navy': '#0a1628',
-        'stealth-navy-light': '#0f2040',
-        'stealth-cyan': '#00d4ff',
-        'stealth-cyan-dark': '#0099bb',
-        'stealth-gray': '#8892a4',
+        'stealth-dark':        '#04050F',
+        'stealth-navy':        '#07091A',
+        'stealth-navy-light':  '#0D1230',
+        'stealth-cyan':        '#4DCCFF',
+        'stealth-cyan-dark':   '#00A2FF',
+        'stealth-blue':        '#0038FF',
+        'stealth-sky':         '#00A2FF',
+        'stealth-teal':        '#3CE4F5',
+        'stealth-indigo':      '#6231F5',
+        'stealth-gray':        '#6B7A9A',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
       },
       backgroundImage: {
-        'grid-pattern': "linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px)",
-        'hero-gradient': 'radial-gradient(ellipse at 20% 50%, rgba(0,212,255,0.08) 0%, transparent 60%), radial-gradient(ellipse at 80% 20%, rgba(0,100,200,0.06) 0%, transparent 60%)',
+        'grid-pattern': "linear-gradient(rgba(77,204,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(77,204,255,0.04) 1px, transparent 1px)",
+        'hero-gradient': 'radial-gradient(ellipse at 15% 60%, rgba(98,49,245,0.12) 0%, transparent 60%), radial-gradient(ellipse at 85% 20%, rgba(0,56,255,0.10) 0%, transparent 60%), radial-gradient(ellipse at 50% 80%, rgba(60,228,245,0.06) 0%, transparent 60%)',
+        'brand-gradient': 'linear-gradient(135deg, #0038FF 0%, #6231F5 100%)',
+        'brand-gradient-hover': 'linear-gradient(135deg, #1a4fff 0%, #7a4aff 100%)',
+        'glow-blue': 'radial-gradient(ellipse at center, rgba(0,56,255,0.2) 0%, transparent 70%)',
+        'glow-indigo': 'radial-gradient(ellipse at center, rgba(98,49,245,0.25) 0%, transparent 70%)',
       },
       backgroundSize: {
         'grid': '40px 40px',

@@ -94,7 +94,7 @@ export default function HomePage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-stealth-cyan">{stat.value}</div>
+                <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-stealth-sky to-stealth-cyan bg-clip-text text-transparent">{stat.value}</div>
                 <div className="text-stealth-gray text-sm mt-1">{stat.label}</div>
               </div>
             ))}
@@ -125,7 +125,7 @@ export default function HomePage() {
           <div className="text-center mt-10">
             <Link
               href="/services"
-              className="inline-flex items-center gap-2 px-6 py-3 border border-stealth-cyan/40 text-white font-semibold rounded hover:border-stealth-cyan hover:bg-stealth-cyan/10 transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 border border-stealth-cyan/40 text-white font-semibold rounded hover:border-stealth-cyan/60 hover:bg-stealth-navy-light transition-colors"
             >
               View All Services <ArrowRight className="w-4 h-4" />
             </Link>
@@ -169,8 +169,8 @@ export default function HomePage() {
                 { icon: <Users className="w-6 h-6" />, title: '3 Continents', desc: 'Offices in Gold Coast, São Paulo, and Texas for global coverage.' },
                 { icon: <Award className="w-6 h-6" />, title: 'Certified Experts', desc: 'CISSP, CISM, CEH, and ISO 27001 Lead Auditor certified professionals.' },
               ].map((item) => (
-                <div key={item.title} className="p-5 bg-stealth-dark rounded-lg border border-stealth-cyan/10">
-                  <div className="text-stealth-cyan mb-3">{item.icon}</div>
+                <div key={item.title} className="p-5 bg-stealth-dark rounded-lg border border-stealth-navy-light">
+                  <div className="inline-flex p-2 rounded-lg bg-gradient-to-br from-stealth-blue/10 to-stealth-indigo/10 border border-stealth-blue/20 text-stealth-cyan mb-3">{item.icon}</div>
                   <h3 className="text-white font-semibold text-sm mb-1">{item.title}</h3>
                   <p className="text-stealth-gray text-xs leading-relaxed">{item.desc}</p>
                 </div>
@@ -184,6 +184,7 @@ export default function HomePage() {
       <section className="py-20 bg-stealth-dark relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern bg-grid opacity-50" />
         <div className="absolute inset-0 bg-hero-gradient" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full blur-3xl pointer-events-none" style={{ background: 'radial-gradient(ellipse, rgba(98,49,245,0.10) 0%, rgba(0,56,255,0.08) 50%, transparent 70%)' }} />
         <div className="relative z-10 max-w-3xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Ready to Secure Your Business?
@@ -195,13 +196,14 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-stealth-cyan text-stealth-dark font-semibold rounded hover:bg-white transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 btn-gradient text-white font-semibold rounded hover:opacity-90 transition-opacity"
+              style={{ boxShadow: '0 4px 24px rgba(0,56,255,0.35)' }}
             >
               Book Free Assessment <ArrowRight className="w-4 h-4" />
             </Link>
             <a
               href="tel:+61752308381"
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 border border-stealth-cyan/40 text-white font-semibold rounded hover:border-stealth-cyan hover:bg-stealth-cyan/10 transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 border border-stealth-cyan/40 text-white font-semibold rounded hover:border-stealth-cyan/60 hover:bg-stealth-navy-light transition-colors"
             >
               Call +61 7 5230 8381
             </a>

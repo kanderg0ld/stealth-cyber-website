@@ -20,13 +20,13 @@ export default function Navbar() {
   const pathname = usePathname()
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-stealth-dark/90 backdrop-blur-md border-b border-stealth-cyan/10">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-stealth-dark/95 backdrop-blur-md border-b border-stealth-navy-light">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-2 group">
             <Shield className="w-7 h-7 text-stealth-cyan group-hover:scale-110 transition-transform" />
-            <span className="text-white font-bold text-lg tracking-tight">
-              Stealth<span className="text-stealth-cyan">Cyber</span>
+            <span className="font-bold text-lg tracking-tight">
+              <span className="text-white">Stealth</span><span className="bg-gradient-to-r from-stealth-sky to-stealth-indigo bg-clip-text text-transparent">Cyber</span>
             </span>
           </Link>
 
@@ -47,7 +47,7 @@ export default function Navbar() {
             ))}
             <Link
               href="/contact"
-              className="ml-2 px-4 py-2 bg-stealth-cyan text-stealth-dark font-semibold text-sm rounded hover:bg-white transition-colors duration-200"
+              className="ml-2 px-4 py-2 bg-gradient-to-r from-stealth-blue to-stealth-indigo text-white font-semibold text-sm rounded hover:opacity-90 transition-opacity duration-200"
             >
               Get Protected
             </Link>
@@ -64,7 +64,7 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <div className="md:hidden bg-stealth-navy border-t border-stealth-cyan/10">
+        <div className="md:hidden bg-stealth-navy border-t border-stealth-navy-light">
           <div className="px-4 py-4 space-y-3">
             {navLinks.map((link) => (
               <Link
@@ -82,7 +82,7 @@ export default function Navbar() {
             <Link
               href="/contact"
               onClick={() => setOpen(false)}
-              className="block mt-2 px-4 py-2 bg-stealth-cyan text-stealth-dark font-semibold text-sm rounded text-center hover:bg-white transition-colors"
+              className="block mt-2 px-4 py-2 bg-gradient-to-r from-stealth-blue to-stealth-indigo text-white font-semibold text-sm rounded text-center hover:opacity-90 transition-opacity"
             >
               Get Protected
             </Link>
