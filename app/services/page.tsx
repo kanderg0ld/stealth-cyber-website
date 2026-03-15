@@ -1,12 +1,12 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { Eye, AlertTriangle, ClipboardCheck, Server, Lock, Award, CheckCircle, ArrowRight } from 'lucide-react'
+import { Eye, AlertTriangle, ClipboardCheck, Server, Lock, Award, CheckCircle, ArrowRight, FileCheck, BookOpen, Brain, Cpu } from 'lucide-react'
 import BreadcrumbJsonLd from '@/components/structured-data/BreadcrumbJsonLd'
 import ServiceJsonLd from '@/components/structured-data/ServiceJsonLd'
 
 export const metadata: Metadata = {
   title: 'Cybersecurity Services',
-  description: 'Explore Stealth Cyber\'s full suite of cybersecurity services for Australian SMBs: MDR, Incident Response, Essential Eight compliance, GRC, and more.',
+  description: 'Stealth Cyber\'s full suite of cybersecurity services: MDR, Incident Response, Essential Eight, CMMC, ISO 27001, AI Security, AI Management Systems, GRC, and Penetration Testing.',
 }
 
 const services = [
@@ -16,7 +16,7 @@ const services = [
     shortTitle: 'MDR',
     icon: <Eye className="w-8 h-8" />,
     tagline: '24/7 threat detection and rapid containment',
-    description: 'Our Managed Detection and Response service provides continuous monitoring of your entire IT environment — endpoints, network, cloud, and email. Our Australian SOC analysts investigate every alert in real time, separating genuine threats from false positives and containing incidents before they escalate.',
+    description: 'Our Managed Detection and Response service provides continuous monitoring of your entire IT environment — endpoints, network, cloud, and email. Our global SOC analysts investigate every alert in real time, separating genuine threats from false positives and containing incidents before they escalate.',
     features: [
       '24/7/365 security operations centre monitoring',
       'Endpoint Detection and Response (EDR) integration',
@@ -40,7 +40,7 @@ const services = [
     description: 'A cyberattack demands an immediate, coordinated response. Stealth Cyber\'s Digital Forensics and Incident Response (DFIR) team is on call 24/7 to help you contain the damage, eradicate the threat, and recover operations with minimal disruption. We handle ransomware, business email compromise, data breaches, and more.',
     features: [
       '24/7 emergency incident response hotline',
-      'Rapid remote or on-site deployment (QLD and nationally)',
+      'Rapid remote or on-site deployment (AU, BR, US)',
       'Malware analysis and threat attribution',
       'Evidence preservation and chain-of-custody forensics',
       'Ransomware negotiation advisory support',
@@ -75,6 +75,90 @@ const services = [
     ],
   },
   {
+    id: 'cmmc',
+    title: 'CMMC Assessment',
+    shortTitle: 'CMMC',
+    icon: <FileCheck className="w-8 h-8" />,
+    tagline: 'US Department of Defense supply chain certification',
+    description: 'The Cybersecurity Maturity Model Certification (CMMC) is a mandatory requirement for organisations operating in the US Department of Defense supply chain. Stealth Cyber\'s certified CMMC assessors guide you through gap analysis, remediation, and readiness for formal third-party assessment — whether you need CMMC Level 1, Level 2, or Level 3.',
+    features: [
+      'CMMC Level 1, 2, and 3 gap assessments',
+      'NIST SP 800-171 practice implementation support',
+      'System Security Plan (SSP) and Plan of Action & Milestones (POA&M) development',
+      'Controlled Unclassified Information (CUI) scoping',
+      'Third-party assessment organisation (C3PAO) readiness preparation',
+      'Ongoing compliance monitoring and advisory',
+    ],
+    benefits: [
+      'Satisfy DoD contract requirements and win more work',
+      'Protect Controlled Unclassified Information (CUI)',
+      'Structured path from assessment to certification',
+    ],
+  },
+  {
+    id: 'iso27001',
+    title: 'ISO 27001 Certification',
+    shortTitle: 'ISO 27001',
+    icon: <BookOpen className="w-8 h-8" />,
+    tagline: 'End-to-end ISMS certification support',
+    description: 'ISO/IEC 27001 is the international standard for information security management. Stealth Cyber provides end-to-end support for your certification journey — from initial gap assessment and Information Security Management System (ISMS) design, through risk treatment and control implementation, to Stage 1 and Stage 2 audit readiness.',
+    features: [
+      'ISO 27001 gap assessment against Annex A controls',
+      'ISMS scope definition and policy development',
+      'Risk assessment and risk treatment plan',
+      'Asset register, threat modelling, and control mapping',
+      'Internal audit programme support',
+      'Stage 1 and Stage 2 certification audit preparation',
+    ],
+    benefits: [
+      'Demonstrate security commitment to customers and partners',
+      'Win enterprise and government contracts requiring ISO 27001',
+      'Build a systematic, repeatable security management programme',
+    ],
+  },
+  {
+    id: 'ai-security',
+    title: 'AI Security',
+    shortTitle: 'AI Sec',
+    icon: <Brain className="w-8 h-8" />,
+    tagline: 'Securing AI/ML systems against emerging threats',
+    description: 'AI and machine learning introduce a new class of security risks that traditional controls don\'t cover. Stealth Cyber\'s AI Security practice assesses and hardens your AI/ML systems against adversarial attacks, data poisoning, model inversion, prompt injection, and supply chain compromise — protecting both the models and the data they handle.',
+    features: [
+      'LLM and generative AI security assessments',
+      'Adversarial robustness and prompt injection testing',
+      'Training data integrity and poisoning risk review',
+      'Model access control and API security review',
+      'AI supply chain and dependency security assessment',
+      'OWASP Top 10 for LLM Applications coverage',
+    ],
+    benefits: [
+      'Identify AI-specific attack vectors before adversaries do',
+      'Protect sensitive data processed by AI systems',
+      'Meet emerging AI security regulatory expectations',
+    ],
+  },
+  {
+    id: 'ai-management',
+    title: 'AI Management Systems',
+    shortTitle: 'AI MS',
+    icon: <Cpu className="w-8 h-8" />,
+    tagline: 'Govern AI risk, transparency, and accountability',
+    description: 'As organisations adopt AI at scale, robust governance is essential. Stealth Cyber helps you design and implement an AI Management System (AIMS) aligned with ISO/IEC 42001 — the international standard for responsible AI. We help you govern AI risk, address bias and fairness, meet transparency obligations, and build auditable AI accountability frameworks.',
+    features: [
+      'ISO/IEC 42001 AIMS gap assessment and implementation',
+      'AI risk register and impact assessment framework',
+      'AI policy, ethics, and acceptable use documentation',
+      'Bias, fairness, and explainability controls',
+      'Data governance integration for AI workloads',
+      'AI lifecycle monitoring and incident management procedures',
+    ],
+    benefits: [
+      'Demonstrate responsible AI use to regulators and customers',
+      'Reduce liability from biased or opaque AI decisions',
+      'Build a repeatable framework for future AI deployments',
+    ],
+  },
+  {
     id: 'grc',
     title: 'GRC & Compliance',
     shortTitle: 'GRC',
@@ -82,9 +166,9 @@ const services = [
     tagline: 'Governance, risk management, and compliance made practical',
     description: 'Navigating cybersecurity frameworks, regulations, and standards is complex. Stealth Cyber provides end-to-end Governance, Risk and Compliance advisory services to help you build a resilient security programme that satisfies auditors, insurers, customers, and regulators — without burying your team in paperwork.',
     features: [
-      'ISO/IEC 27001 readiness and certification support',
       'Australian Privacy Act and Notifiable Data Breaches compliance',
       'NIST Cybersecurity Framework alignment',
+      'GDPR and international data privacy advisory',
       'Cyber insurance preparation and evidence packages',
       'Information security policy and procedure development',
       'Board-level risk reporting and advisory',
@@ -101,7 +185,7 @@ const services = [
     shortTitle: 'MSS',
     icon: <Server className="w-8 h-8" />,
     tagline: 'A complete security operations capability — fully managed',
-    description: 'Our Managed Security Services package combines SIEM-as-a-service, vulnerability management, and security awareness training into a single, cost-effective subscription. Ideal for SMBs that want comprehensive visibility and proactive risk reduction without managing multiple vendors.',
+    description: 'Our Managed Security Services package combines SIEM-as-a-service, vulnerability management, and security awareness training into a single, cost-effective subscription. Ideal for organisations that want comprehensive visibility and proactive risk reduction without managing multiple vendors.',
     features: [
       'Cloud-native SIEM deployment and management',
       'Log aggregation from all key data sources',
@@ -153,12 +237,12 @@ export default function ServicesPage() {
           <div className="max-w-3xl">
             <div className="text-stealth-cyan text-xs font-medium uppercase tracking-widest mb-4">Our Services</div>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Cybersecurity Services Built for Australian Business
+              Cybersecurity Services for a Connected World
             </h1>
             <p className="text-stealth-gray text-lg leading-relaxed">
-              From round-the-clock threat monitoring to regulatory compliance, Stealth Cyber
-              delivers the full spectrum of cybersecurity services your organisation needs
-              to operate securely and confidently.
+              From round-the-clock threat monitoring to AI governance and global compliance frameworks,
+              Stealth Cyber delivers the full spectrum of cybersecurity services your organisation needs
+              to operate securely and confidently — wherever you do business.
             </p>
           </div>
         </div>

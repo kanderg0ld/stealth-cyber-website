@@ -2,9 +2,9 @@ import Link from 'next/link'
 import { ArrowRight, Shield, CheckCircle } from 'lucide-react'
 
 const trustPoints = [
-  'Australian-owned & operated',
+  'Offices in AU · BR · US',
   '24/7 SOC monitoring',
-  'ACSC Essential Eight specialists',
+  'ACSC E8 · CMMC · ISO 27001',
 ]
 
 export default function HeroSection() {
@@ -21,7 +21,7 @@ export default function HeroSection() {
         <div className="max-w-3xl">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-stealth-cyan/30 bg-stealth-cyan/10 text-stealth-cyan text-xs font-medium mb-6">
             <Shield className="w-3.5 h-3.5" />
-            <span>Trusted by Australian SMBs</span>
+            <span>Trusted Across 3 Continents</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
@@ -32,9 +32,9 @@ export default function HeroSection() {
 
           <p className="text-lg text-stealth-gray leading-relaxed mb-8 max-w-2xl">
             Stealth Cyber delivers 24/7 managed detection and response, incident response,
-            Essential Eight compliance, and GRC services built for Australian small and
-            medium businesses. Stay protected around the clock without the overhead of
-            an in-house security team.
+            AI security, CMMC assessments, ISO 27001, and Essential Eight compliance —
+            from our offices in Gold Coast, São Paulo, and Texas. Stay protected around
+            the clock without the overhead of an in-house security team.
           </p>
 
           <div className="flex flex-wrap gap-3 mb-10">

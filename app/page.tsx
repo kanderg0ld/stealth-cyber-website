@@ -1,12 +1,13 @@
 import Link from 'next/link'
-import { Shield, Eye, AlertTriangle, ClipboardCheck, Server, Lock, ArrowRight, Users, Clock, Award } from 'lucide-react'
+import { Shield, Eye, AlertTriangle, ClipboardCheck, Server, Lock, ArrowRight, Users, Clock, Award, Cpu, FileCheck, BookOpen, Brain } from 'lucide-react'
 import HeroSection from '@/components/HeroSection'
 import ServiceCard from '@/components/ServiceCard'
+import FaqJsonLd from '@/components/structured-data/FaqJsonLd'
 
 const services = [
   {
     title: 'Managed Detection & Response',
-    description: '24/7 threat monitoring and rapid response from our Australian SOC. We detect, investigate, and contain threats before they become breaches.',
+    description: '24/7 threat monitoring and rapid response from our global SOC. We detect, investigate, and contain threats before they become breaches.',
     icon: <Eye className="w-5 h-5" />,
     href: '/services#mdr',
     featured: true,
@@ -25,9 +26,33 @@ const services = [
   },
   {
     title: 'GRC & Compliance',
-    description: 'Navigate complex governance, risk, and compliance requirements. From ISO 27001 to the Australian Privacy Act, we guide you every step of the way.',
+    description: 'Navigate complex governance, risk, and compliance requirements. From the Australian Privacy Act to global frameworks, we guide you every step of the way.',
     icon: <Award className="w-5 h-5" />,
     href: '/services#grc',
+  },
+  {
+    title: 'CMMC Assessment',
+    description: 'Achieve Cybersecurity Maturity Model Certification for US DoD supply chain requirements. Gap assessments, remediation guidance, and audit readiness support.',
+    icon: <FileCheck className="w-5 h-5" />,
+    href: '/services#cmmc',
+  },
+  {
+    title: 'ISO 27001',
+    description: 'End-to-end ISO/IEC 27001 certification support — from gap assessment and ISMS design through to audit readiness and ongoing surveillance.',
+    icon: <BookOpen className="w-5 h-5" />,
+    href: '/services#iso27001',
+  },
+  {
+    title: 'AI Security',
+    description: 'Secure AI/ML systems against adversarial attacks, data poisoning, model theft, and prompt injection. Purpose-built assessments for LLM and ML workloads.',
+    icon: <Brain className="w-5 h-5" />,
+    href: '/services#ai-security',
+  },
+  {
+    title: 'AI Management Systems',
+    description: 'Implement ISO 42001-aligned AI management frameworks. Govern AI risk, bias, transparency, and accountability across your organisation.',
+    icon: <Cpu className="w-5 h-5" />,
+    href: '/services#ai-management',
   },
   {
     title: 'Managed Security Services',
@@ -46,17 +71,16 @@ const services = [
 const stats = [
   { value: '24/7', label: 'SOC Monitoring' },
   { value: '<15min', label: 'Mean Time to Detect' },
-  { value: '100%', label: 'Australian Owned' },
+  { value: '3', label: 'Continents' },
   { value: 'E8', label: 'ACSC Aligned' },
 ]
 
 const faqs = [
   { question: 'What is the Essential Eight?', answer: 'The Essential Eight is a set of baseline cybersecurity strategies recommended by the Australian Cyber Security Centre (ACSC) to protect organisations from the most common cyber threats.' },
-  { question: 'Do you only service Queensland businesses?', answer: 'No — while we are headquartered in Queensland, we serve businesses across all Australian states and territories with remote-first service delivery.' },
+  { question: 'Where are you based and do you operate internationally?', answer: 'Yes — Stealth Cyber operates globally with offices in Gold Coast (Australia), São Paulo (Brazil), and Texas (USA), serving clients across all regions with both remote and on-site delivery.' },
   { question: 'How quickly can you respond to a security incident?', answer: 'Our incident response team is available 24/7 with initial triage typically beginning within 15 minutes of alert escalation.' },
+  { question: 'What is CMMC and do I need it?', answer: 'The Cybersecurity Maturity Model Certification (CMMC) is mandatory for organisations in the US Department of Defense supply chain. If you contract with the DoD or work with a prime contractor, CMMC compliance is required.' },
 ]
-
-import FaqJsonLd from '@/components/structured-data/FaqJsonLd'
 
 export default function HomePage() {
   return (
@@ -89,7 +113,7 @@ export default function HomePage() {
               Comprehensive Cyber Protection
             </h2>
             <p className="text-stealth-gray max-w-2xl mx-auto">
-              From 24/7 monitoring to regulatory compliance, Stealth Cyber delivers the full
+              From 24/7 monitoring to AI governance, Stealth Cyber delivers the full
               spectrum of cybersecurity services your business needs to stay secure and resilient.
             </p>
           </div>
@@ -118,12 +142,13 @@ export default function HomePage() {
                 <Users className="w-3 h-3" /> Who We Are
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                Australian Cybersecurity Experts You Can Trust
+                Global Cybersecurity Expertise, Local Understanding
               </h2>
               <p className="text-stealth-gray leading-relaxed mb-4">
-                Stealth Cyber is a Queensland-based cybersecurity consultancy dedicated to protecting
-                Australian small and medium businesses from sophisticated cyber threats. We believe
-                every organisation deserves enterprise-grade security — regardless of size or budget.
+                Stealth Cyber is a cybersecurity consultancy with offices in Gold Coast (Australia),
+                São Paulo (Brazil), and Texas (USA). We protect businesses of all sizes from
+                sophisticated cyber threats — delivering enterprise-grade security without the
+                enterprise price tag.
               </p>
               <p className="text-stealth-gray leading-relaxed mb-6">
                 Our team of certified security professionals brings decades of combined experience
@@ -140,9 +165,9 @@ export default function HomePage() {
             <div className="grid grid-cols-2 gap-4">
               {[
                 { icon: <Clock className="w-6 h-6" />, title: '24/7 Protection', desc: 'Round-the-clock SOC monitoring with zero gaps in coverage.' },
-                { icon: <Shield className="w-6 h-6" />, title: 'ACSC Aligned', desc: 'Services built around ASD Essential Eight and PSPF frameworks.' },
-                { icon: <Users className="w-6 h-6" />, title: 'Australian Team', desc: '100% Australian-owned with no offshore data handling.' },
-                { icon: <Award className="w-6 h-6" />, title: 'Certified Experts', desc: 'CISSP, CISM, and CEH certified security professionals.' },
+                { icon: <Shield className="w-6 h-6" />, title: 'Multi-Framework', desc: 'Essential Eight, CMMC, ISO 27001, NIST, and AI governance.' },
+                { icon: <Users className="w-6 h-6" />, title: '3 Continents', desc: 'Offices in Gold Coast, São Paulo, and Texas for global coverage.' },
+                { icon: <Award className="w-6 h-6" />, title: 'Certified Experts', desc: 'CISSP, CISM, CEH, and ISO 27001 Lead Auditor certified professionals.' },
               ].map((item) => (
                 <div key={item.title} className="p-5 bg-stealth-dark rounded-lg border border-stealth-cyan/10">
                   <div className="text-stealth-cyan mb-3">{item.icon}</div>
@@ -165,7 +190,7 @@ export default function HomePage() {
           </h2>
           <p className="text-stealth-gray mb-8 text-lg">
             Book a free security assessment and discover where your business stands —
-            no obligation, no jargon, just clear guidance from Australian experts.
+            no obligation, no jargon, just clear guidance from our expert team.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

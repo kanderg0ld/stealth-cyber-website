@@ -4,7 +4,7 @@ import BreadcrumbJsonLd from '@/components/structured-data/BreadcrumbJsonLd'
 
 export const metadata: Metadata = {
   title: 'Contact Us',
-  description: 'Contact Stealth Cyber for a free security assessment. Reach our team in Queensland by phone or email. Available 24/7 for incident response.',
+  description: 'Contact Stealth Cyber for a free security assessment. Offices in Gold Coast (AU), São Paulo (BR), and Texas (US). Available 24/7 for incident response.',
 }
 
 export default function ContactPage() {
@@ -92,6 +92,10 @@ export default function ContactPage() {
                     <option value="mdr">Managed Detection &amp; Response</option>
                     <option value="incident-response">Incident Response</option>
                     <option value="essential-eight">Essential Eight Compliance</option>
+                    <option value="cmmc">CMMC Assessment</option>
+                    <option value="iso27001">ISO 27001 Certification</option>
+                    <option value="ai-security">AI Security</option>
+                    <option value="ai-management">AI Management Systems</option>
                     <option value="grc">GRC &amp; Compliance</option>
                     <option value="mss">Managed Security Services</option>
                     <option value="pentest">Penetration Testing</option>
@@ -136,8 +140,8 @@ export default function ContactPage() {
                       <MapPin className="w-5 h-5" />
                     </div>
                     <div>
-                      <div className="text-white font-medium">Queensland, Australia</div>
-                      <div className="text-stealth-gray text-sm">Serving all Australian states &amp; territories</div>
+                      <div className="text-white font-medium">Gold Coast, AU · São Paulo, BR · Texas, US</div>
+                      <div className="text-stealth-gray text-sm">Global offices across 3 continents</div>
                     </div>
                   </div>
                   <a href="https://linkedin.com/company/stealthcyber" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 group">

@@ -4,9 +4,14 @@ import { Shield, Linkedin, Phone, MapPin } from 'lucide-react'
 const services = [
   { label: 'Managed Detection & Response', href: '/services#mdr' },
   { label: 'Incident Response', href: '/services#incident-response' },
+  { label: 'Essential Eight', href: '/services#essential-eight' },
+  { label: 'CMMC Assessment', href: '/services#cmmc' },
+  { label: 'ISO 27001', href: '/services#iso27001' },
+  { label: 'AI Security', href: '/services#ai-security' },
+  { label: 'AI Management Systems', href: '/services#ai-management' },
   { label: 'GRC & Compliance', href: '/services#grc' },
   { label: 'Managed Security Services', href: '/services#mss' },
-  { label: 'Essential Eight', href: '/services#essential-eight' },
+  { label: 'Penetration Testing', href: '/services#pentest' },
 ]
 
 export default function Footer() {
@@ -22,9 +27,9 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-stealth-gray text-sm leading-relaxed max-w-sm">
-              Protecting Australian businesses with enterprise-grade cybersecurity.
-              24/7 managed detection, incident response, and compliance services
-              tailored for SMBs.
+              Global cybersecurity consultancy delivering 24/7 managed detection, incident
+              response, AI security, and compliance services. Offices in Gold Coast,
+              São Paulo, and Texas.
             </p>
             <div className="flex items-center gap-3 mt-4">
               <a
@@ -61,7 +66,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-2 text-sm text-stealth-gray">
                 <MapPin className="w-4 h-4 mt-0.5 text-stealth-cyan shrink-0" />
-                <span>Queensland, Australia</span>
+                <span>Gold Coast, AU · São Paulo, BR · Texas, US</span>
               </li>
             </ul>
             <div className="mt-6">
