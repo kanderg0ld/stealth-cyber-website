@@ -18,11 +18,14 @@ const values = [
 const certifications = [
   'CISSP — Certified Information Systems Security Professional',
   'CISM — Certified Information Security Manager',
-  'CEH — Certified Ethical Hacker',
   'OSCP — Offensive Security Certified Professional',
+  'OSWP — Offensive Security Wireless Professional',
+  'CEDP — Certified Exploit Development Professional',
   'ISO 27001 Lead Implementer / Lead Auditor',
+  'ISO 42001 Lead Auditor — AI Management Systems',
   'CMMC Certified Assessor (CCA)',
   'ACSC Essential Eight Specialist',
+  'Red Team & Blue Team Professionals',
 ]
 
 const offices = [

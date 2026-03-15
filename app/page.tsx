@@ -10,7 +10,6 @@ const services = [
     description: '24/7 threat monitoring and rapid response from our global SOC. We detect, investigate, and contain threats before they become breaches.',
     icon: <Eye className="w-5 h-5" />,
     href: '/services#mdr',
-    featured: true,
   },
   {
     title: 'Incident Response',
@@ -103,16 +102,16 @@ export default function HomePage() {
       </section>
 
       {/* Services section */}
-      <section className="py-20 bg-stealth-dark">
+      <section className="py-20 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-stealth-cyan/20 text-stealth-cyan text-xs font-medium mb-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-stealth-blue/30 text-stealth-blue text-xs font-medium mb-4 bg-stealth-blue/5">
               <Shield className="w-3 h-3" /> Our Services
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Comprehensive Cyber Protection
             </h2>
-            <p className="text-stealth-gray max-w-2xl mx-auto">
+            <p className="text-gray-600 max-w-2xl mx-auto">
               From 24/7 monitoring to AI governance, Stealth Cyber delivers the full
               spectrum of cybersecurity services your business needs to stay secure and resilient.
             </p>
@@ -125,7 +124,7 @@ export default function HomePage() {
           <div className="text-center mt-10">
             <Link
               href="/services"
-              className="inline-flex items-center gap-2 px-6 py-3 border border-stealth-cyan/40 text-white font-semibold rounded hover:border-stealth-cyan/60 hover:bg-stealth-navy-light transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 border border-stealth-blue/40 text-stealth-blue font-semibold rounded hover:border-stealth-blue hover:bg-stealth-blue/5 transition-colors"
             >
               View All Services <ArrowRight className="w-4 h-4" />
             </Link>
@@ -167,7 +166,7 @@ export default function HomePage() {
                 { icon: <Clock className="w-6 h-6" />, title: '24/7 Protection', desc: 'Round-the-clock SOC monitoring with zero gaps in coverage.' },
                 { icon: <Shield className="w-6 h-6" />, title: 'Multi-Framework', desc: 'Essential Eight, CMMC, ISO 27001, NIST, and AI governance.' },
                 { icon: <Users className="w-6 h-6" />, title: '3 Continents', desc: 'Offices in Gold Coast, São Paulo, and Texas for global coverage.' },
-                { icon: <Award className="w-6 h-6" />, title: 'Certified Experts', desc: 'CISSP, CISM, CEH, and ISO 27001 Lead Auditor certified professionals.' },
+                { icon: <Award className="w-6 h-6" />, title: 'Certified Experts', desc: 'CISSP, CISM, OSCP, ISO 27001, ISO 42001, and CMMC certified professionals.' },
               ].map((item) => (
                 <div key={item.title} className="p-5 bg-stealth-dark rounded-lg border border-stealth-navy-light">
                   <div className="inline-flex p-2 rounded-lg bg-gradient-to-br from-stealth-blue/10 to-stealth-indigo/10 border border-stealth-blue/20 text-stealth-cyan mb-3">{item.icon}</div>

@@ -18,7 +18,7 @@ const config: Config = {
         'stealth-sky':         '#00A2FF',
         'stealth-teal':        '#3CE4F5',
         'stealth-indigo':      '#6231F5',
-        'stealth-gray':        '#6B7A9A',
+        'stealth-gray':        '#94A3B8',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
