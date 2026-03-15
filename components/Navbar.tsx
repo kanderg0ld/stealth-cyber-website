@@ -3,8 +3,9 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Menu, X, Shield } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import clsx from 'clsx'
+import Logo from '@/components/Logo'
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -23,11 +24,8 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-stealth-dark/95 backdrop-blur-md border-b border-stealth-navy-light">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link href="/" className="flex items-center gap-2 group">
-            <Shield className="w-7 h-7 text-stealth-cyan group-hover:scale-110 transition-transform" />
-            <span className="font-bold text-lg tracking-tight">
-              <span className="text-white">Stealth</span><span className="bg-gradient-to-r from-stealth-sky to-stealth-indigo bg-clip-text text-transparent">Cyber</span>
-            </span>
+          <Link href="/" aria-label="Stealth Cyber home">
+            <Logo size="sm" variant="light" />
           </Link>
 
           <div className="hidden md:flex items-center gap-6">

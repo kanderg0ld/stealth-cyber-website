@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import { Shield, Linkedin, Phone, MapPin } from 'lucide-react'
+import { Linkedin, Phone, MapPin } from 'lucide-react'
+import Logo from '@/components/Logo'
 
 const services = [
   { label: 'Managed Detection & Response', href: '/services#mdr' },
@@ -22,11 +23,8 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center gap-2 mb-4">
-              <Shield className="w-7 h-7 text-stealth-cyan" />
-              <span className="font-bold text-lg">
-                <span className="text-white">Stealth</span><span className="bg-gradient-to-r from-stealth-sky to-stealth-indigo bg-clip-text text-transparent">Cyber</span>
-              </span>
+            <Link href="/" className="inline-block mb-4" aria-label="Stealth Cyber home">
+              <Logo size="md" variant="light" />
             </Link>
             <p className="text-stealth-gray text-sm leading-relaxed max-w-sm">
               Global cybersecurity consultancy delivering 24/7 managed detection, incident
