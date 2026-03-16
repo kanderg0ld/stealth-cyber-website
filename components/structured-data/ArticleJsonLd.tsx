@@ -29,7 +29,7 @@ export default function ArticleJsonLd({ title, description, url, publishedAt, au
           name: 'Stealth Cyber',
           logo: {
             '@type': 'ImageObject',
-            url: 'https://stealthcyber.io/logo.png',
+            url: 'https://stealthcyber.io/Primary-Reversed-Dark.png',
           },
         },
       }}
