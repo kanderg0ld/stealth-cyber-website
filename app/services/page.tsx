@@ -7,6 +7,13 @@ import ServiceJsonLd from '@/components/structured-data/ServiceJsonLd'
 export const metadata: Metadata = {
   title: 'Cybersecurity Services',
   description: 'Stealth Cyber\'s full suite of cybersecurity services: MDR, Incident Response, Essential Eight, CMMC, ISO 27001, AI Security, AI Management Systems, GRC, and Penetration Testing.',
+  alternates: { canonical: 'https://stealthcyber.io/services' },
+  openGraph: {
+    title: 'Cybersecurity Services | Stealth Cyber',
+    description: 'MDR, Incident Response, Essential Eight, CMMC, ISO 27001, AI Security, AI Management Systems, GRC, and Penetration Testing — delivered globally from AU, BR, and US.',
+    url: 'https://stealthcyber.io/services',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Stealth Cyber Cybersecurity Services' }],
+  },
 }
 
 const services = [

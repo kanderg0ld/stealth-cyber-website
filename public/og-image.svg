@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#04050F"/>
+      <stop offset="100%" style="stop-color:#07091A"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0038FF"/>
+      <stop offset="100%" style="stop-color:#6231F5"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- Gradient bar top -->
+  <rect width="1200" height="4" fill="url(#accent)"/>
+  <!-- Logo icon -->
+  <rect x="80" y="220" width="72" height="64" rx="8" fill="#00A2FF"/>
+  <rect x="120" y="180" width="120" height="88" rx="8" fill="#0099FF"/>
+  <!-- Wordmark -->
+  <text x="272" y="252" font-family="system-ui, sans-serif" font-size="64" font-weight="700" fill="white">Stealth </text>
+  <text x="272" y="252" font-family="system-ui, sans-serif" font-size="64" font-weight="700" fill="#00A2FF" dx="260">Cyber</text>
+  <!-- Tagline -->
+  <text x="80" y="310" font-family="system-ui, sans-serif" font-size="28" fill="#94A3B8">Global Managed Cybersecurity — AU · BR · US</text>
+  <!-- Services strip -->
+  <text x="80" y="390" font-family="system-ui, sans-serif" font-size="20" fill="#4DCCFF">MDR · Incident Response · CMMC · ISO 27001 · Essential Eight · AI Security · Pen Testing</text>
+  <!-- Bottom gradient bar -->
+  <rect y="626" width="1200" height="4" fill="url(#accent)"/>
+</svg>

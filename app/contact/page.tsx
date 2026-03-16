@@ -6,6 +6,13 @@ import ContactForm from './ContactForm'
 export const metadata: Metadata = {
   title: 'Contact Us',
   description: 'Contact Stealth Cyber for a free security assessment. Offices in Gold Coast (AU), São Paulo (BR), and Texas (US). Available 24/7 for incident response.',
+  alternates: { canonical: 'https://stealthcyber.io/contact' },
+  openGraph: {
+    title: 'Contact Stealth Cyber | Free Security Assessment',
+    description: 'Book a free cybersecurity assessment or reach our 24/7 incident response team. Offices in Gold Coast, São Paulo, and Texas.',
+    url: 'https://stealthcyber.io/contact',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Contact Stealth Cyber' }],
+  },
 }
 
 export default function ContactPage() {

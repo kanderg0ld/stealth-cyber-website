@@ -1,8 +1,29 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Shield, Eye, AlertTriangle, ClipboardCheck, Server, Lock, ArrowRight, Users, Clock, Award, Cpu, FileCheck, BookOpen, Brain } from 'lucide-react'
 import HeroSection from '@/components/HeroSection'
 import ServiceCard from '@/components/ServiceCard'
 import FaqJsonLd from '@/components/structured-data/FaqJsonLd'
+import HowToJsonLd from '@/components/structured-data/HowToJsonLd'
+import LocalBusinessJsonLd from '@/components/structured-data/LocalBusinessJsonLd'
+
+export const metadata: Metadata = {
+  title: 'Stealth Cyber | Global Managed Cybersecurity Services',
+  description: 'Enterprise-grade cybersecurity without the enterprise price tag. 24/7 MDR, incident response, CMMC, ISO 27001, Essential Eight, AI security, and GRC — from offices in Gold Coast, São Paulo, and Texas.',
+  keywords: [
+    'managed cybersecurity services', 'managed detection and response Australia',
+    'incident response Gold Coast', 'Essential Eight compliance', 'CMMC assessment',
+    'ISO 27001 consultant', 'AI security services', 'penetration testing Australia',
+    'cybersecurity consultancy',
+  ],
+  openGraph: {
+    title: 'Stealth Cyber | Global Managed Cybersecurity Services',
+    description: 'Enterprise-grade cybersecurity without the enterprise price tag. 24/7 MDR, incident response, CMMC, ISO 27001, Essential Eight, AI security — offices in AU, BR, US.',
+    url: 'https://stealthcyber.io',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Stealth Cyber — Global Managed Cybersecurity' }],
+  },
+  alternates: { canonical: 'https://stealthcyber.io' },
+}
 
 const services = [
   {
@@ -75,16 +96,42 @@ const stats = [
 ]
 
 const faqs = [
-  { question: 'What is the Essential Eight?', answer: 'The Essential Eight is a set of baseline cybersecurity strategies recommended by the Australian Cyber Security Centre (ACSC) to protect organisations from the most common cyber threats.' },
-  { question: 'Where are you based and do you operate internationally?', answer: 'Yes — Stealth Cyber operates globally with offices in Gold Coast (Australia), São Paulo (Brazil), and Texas (USA), serving clients across all regions with both remote and on-site delivery.' },
-  { question: 'How quickly can you respond to a security incident?', answer: 'Our incident response team is available 24/7 with initial triage typically beginning within 15 minutes of alert escalation.' },
-  { question: 'What is CMMC and do I need it?', answer: 'The Cybersecurity Maturity Model Certification (CMMC) is mandatory for organisations in the US Department of Defense supply chain. If you contract with the DoD or work with a prime contractor, CMMC compliance is required.' },
+  {
+    question: 'What is managed detection and response (MDR)?',
+    answer: 'Managed Detection and Response (MDR) is a 24/7 cybersecurity service combining advanced technology with human analysts in a Security Operations Centre (SOC). Unlike passive monitoring tools, MDR analysts actively investigate every alert, separate genuine threats from false positives, and contain incidents in real time — before they escalate into data breaches. Stealth Cyber\'s MDR covers endpoints, cloud, network, and email.',
+  },
+  {
+    question: 'What is the Essential Eight and who needs it?',
+    answer: 'The Essential Eight is a prioritised set of eight cybersecurity mitigation strategies developed by the Australian Cyber Security Centre (ACSC). Designed to protect organisations against the most common cyber threats, it covers application control, patch management, multi-factor authentication, regular backups, and more. Organisations are assessed at maturity levels 0–3. While mandatory for Australian government entities, it is strongly recommended for all Australian businesses and increasingly required by enterprise clients and insurers.',
+  },
+  {
+    question: 'What is CMMC and does my organisation need it?',
+    answer: 'The Cybersecurity Maturity Model Certification (CMMC) is a mandatory framework for organisations in the US Department of Defense (DoD) supply chain. If your organisation contracts directly with the DoD, or works as a subcontractor handling Federal Contract Information (FCI) or Controlled Unclassified Information (CUI), CMMC compliance is required to win or maintain those contracts. Stealth Cyber provides gap assessments, remediation guidance, and audit readiness support for CMMC Level 1 and Level 2.',
+  },
+  {
+    question: 'How quickly can Stealth Cyber respond to a cyber incident?',
+    answer: 'Stealth Cyber\'s incident response team is available 24/7/365. For clients on our MDR service, initial triage typically begins within 15 minutes of alert escalation. For emergency incident response engagements, our DFIR team can mobilise remotely within the hour, or deploy on-site to Gold Coast, São Paulo, or Texas locations. Call our main line and select the emergency option for immediate escalation.',
+  },
+  {
+    question: 'What is ISO 27001 and why should my organisation get certified?',
+    answer: 'ISO/IEC 27001 is the internationally recognised standard for Information Security Management Systems (ISMS). Certification demonstrates to clients, partners, regulators, and insurers that your organisation manages information security risks systematically. It is increasingly required by enterprise customers, government contracts, and cyber insurance policies. Stealth Cyber supports organisations through every stage — from gap assessment and ISMS design to internal audit readiness and the final certification audit.',
+  },
+  {
+    question: 'What is AI security and why does it matter?',
+    answer: 'AI security addresses risks unique to artificial intelligence and machine learning systems — including adversarial attacks, data poisoning, model theft, and prompt injection vulnerabilities. As organisations adopt large language models (LLMs) and ML-powered tools, these systems introduce attack surfaces not covered by traditional security frameworks. Stealth Cyber provides purpose-built AI security assessments and controls aligned to OWASP\'s LLM Top 10 and emerging AI governance standards.',
+  },
+  {
+    question: 'Where does Stealth Cyber operate?',
+    answer: 'Stealth Cyber is headquartered in Gold Coast, Queensland, Australia, with offices in São Paulo, Brazil, and Texas, USA. We serve clients across Australia, the Americas, Asia-Pacific, and globally through both remote and on-site engagements. Our 24/7 SOC operates continuously across time zones, ensuring consistent protection regardless of where your business operates.',
+  },
 ]
 
 export default function HomePage() {
   return (
     <>
       <FaqJsonLd faqs={faqs} />
+      <HowToJsonLd />
+      <LocalBusinessJsonLd />
       <HeroSection />
 
       {/* Stats bar */}

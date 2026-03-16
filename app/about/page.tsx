@@ -6,6 +6,13 @@ import BreadcrumbJsonLd from '@/components/structured-data/BreadcrumbJsonLd'
 export const metadata: Metadata = {
   title: 'About Us',
   description: 'Learn about Stealth Cyber — a global cybersecurity consultancy with offices in Gold Coast (Australia), São Paulo (Brazil), and Texas (USA), delivering enterprise-grade security expertise worldwide.',
+  alternates: { canonical: 'https://stealthcyber.io/about' },
+  openGraph: {
+    title: 'About Stealth Cyber | Global Cybersecurity Consultancy',
+    description: 'Global cybersecurity consultancy with CISSP, OSCP, ISO 27001, ISO 42001, and CMMC-certified professionals. Offices in Gold Coast, São Paulo, and Texas.',
+    url: 'https://stealthcyber.io/about',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'About Stealth Cyber' }],
+  },
 }
 
 const values = [

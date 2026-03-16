@@ -18,13 +18,11 @@ export default function ServiceJsonLd({ name, description, url }: ServiceJsonLdP
         url,
         provider: {
           '@type': 'Organization',
+          '@id': 'https://stealthcyber.io/#organisation',
           name: 'Stealth Cyber',
           url: 'https://stealthcyber.io',
         },
-        areaServed: {
-          '@type': 'Country',
-          name: 'Australia',
-        },
+        areaServed: ['AU', 'BR', 'US', 'Worldwide'],
       }}
     />
   )
