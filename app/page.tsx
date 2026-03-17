@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Shield, Eye, AlertTriangle, ClipboardCheck, Server, Lock, ArrowRight, Users, Clock, Award, Cpu, FileCheck, BookOpen, Brain } from 'lucide-react'
+import { Shield, Eye, AlertTriangle, ClipboardCheck, Server, Lock, ArrowRight, Users, Clock, Award, Cpu, FileCheck, BookOpen, Brain, Star, Quote } from 'lucide-react'
 import HeroSection from '@/components/HeroSection'
 import ServiceCard from '@/components/ServiceCard'
 import FaqJsonLd from '@/components/structured-data/FaqJsonLd'
@@ -223,6 +223,58 @@ export default function HomePage() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials section */}
+      <section className="py-20 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-stealth-blue/30 text-stealth-blue text-xs font-medium mb-4 bg-stealth-blue/5">
+              <Star className="w-3 h-3" /> Testimonials
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              What Our Clients Say
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Trusted by businesses across Australia, the Americas, and beyond.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                quote: 'Stealth Cyber transformed our security posture. Their MDR service detected a critical threat within minutes that our previous provider missed entirely.',
+                name: 'Client Name',
+                role: 'CTO, Company Name',
+              },
+              {
+                quote: 'The Essential Eight assessment was thorough, clear, and actionable. We went from maturity level 1 to level 3 in under six months with their guidance.',
+                name: 'Client Name',
+                role: 'IT Director, Company Name',
+              },
+              {
+                quote: 'Professional, responsive, and genuinely invested in our success. Their incident response team had us back online in hours, not days.',
+                name: 'Client Name',
+                role: 'CEO, Company Name',
+              },
+            ].map((testimonial, i) => (
+              <div key={i} className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex flex-col">
+                <div className="flex gap-0.5 mb-4">
+                  {[...Array(5)].map((_, j) => (
+                    <Star key={j} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+                <Quote className="w-8 h-8 text-stealth-blue/10 mb-2" />
+                <p className="text-gray-700 text-sm leading-relaxed flex-1 mb-4">
+                  {testimonial.quote}
+                </p>
+                <div className="border-t border-gray-100 pt-4">
+                  <p className="font-semibold text-gray-900 text-sm">{testimonial.name}</p>
+                  <p className="text-gray-500 text-xs">{testimonial.role}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
