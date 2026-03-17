@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Shield, Eye, AlertTriangle, ClipboardCheck, Server, Lock, ArrowRight, Users, Clock, Award, Cpu, FileCheck, BookOpen, Brain } from 'lucide-react'
 import HeroSection from '@/components/HeroSection'
 import ServiceCard from '@/components/ServiceCard'
@@ -221,6 +222,98 @@ export default function HomePage() {
                   <p className="text-stealth-gray text-xs leading-relaxed">{item.desc}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Team photo banner */}
+      <section className="relative h-[400px] md:h-[500px] bg-stealth-navy overflow-hidden">
+        {/* Replace with your team photo */}
+        <div className="absolute inset-0 flex items-center justify-center text-stealth-gray/20">
+          <Users className="w-32 h-32" />
+        </div>
+        {/* Uncomment when you have the photo:
+        <Image
+          src="/team-photo.jpg"
+          alt="The Stealth Cyber team"
+          fill
+          className="object-cover"
+          sizes="100vw"
+          priority
+        /> */}
+        <div className="absolute inset-0 bg-gradient-to-t from-stealth-dark via-stealth-dark/40 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
+          <div className="max-w-7xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Our Team</h2>
+            <p className="text-stealth-gray text-sm md:text-base max-w-xl">
+              Certified security professionals across three continents, united by a single mission — keeping your business safe.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Leadership section */}
+      <section className="py-20 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-stealth-blue/30 text-stealth-blue text-xs font-medium mb-4 bg-stealth-blue/5">
+              <Users className="w-3 h-3" /> Leadership
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Meet Our Leadership
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Experienced cybersecurity leaders driving Stealth Cyber&apos;s mission to make
+              enterprise-grade protection accessible to every organisation.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+            {/* CEO */}
+            <div className="group text-center">
+              <div className="relative w-64 h-80 mx-auto mb-6 rounded-2xl overflow-hidden bg-stealth-navy border border-stealth-navy-light shadow-lg">
+                {/* Replace src with actual headshot path, e.g. /ceo-headshot.jpg */}
+                <div className="absolute inset-0 flex items-center justify-center text-stealth-gray/40">
+                  <Users className="w-20 h-20" />
+                </div>
+                {/* Uncomment and update when you have the photo:
+                <Image
+                  src="/ceo-headshot.jpg"
+                  alt="CEO Name — Chief Executive Officer at Stealth Cyber"
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 768px) 80vw, 256px"
+                /> */}
+                <div className="absolute inset-0 bg-gradient-to-t from-stealth-dark/80 via-transparent to-transparent" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900">CEO Name</h3>
+              <p className="text-stealth-blue font-medium text-sm mb-3">Chief Executive Officer</p>
+              <p className="text-gray-600 text-sm max-w-xs mx-auto leading-relaxed">
+                Brief bio here — background, experience, and vision for Stealth Cyber.
+              </p>
+            </div>
+            {/* CTO */}
+            <div className="group text-center">
+              <div className="relative w-64 h-80 mx-auto mb-6 rounded-2xl overflow-hidden bg-stealth-navy border border-stealth-navy-light shadow-lg">
+                {/* Replace src with actual headshot path, e.g. /cto-headshot.jpg */}
+                <div className="absolute inset-0 flex items-center justify-center text-stealth-gray/40">
+                  <Users className="w-20 h-20" />
+                </div>
+                {/* Uncomment and update when you have the photo:
+                <Image
+                  src="/cto-headshot.jpg"
+                  alt="CTO Name — Chief Technology Officer at Stealth Cyber"
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 768px) 80vw, 256px"
+                /> */}
+                <div className="absolute inset-0 bg-gradient-to-t from-stealth-dark/80 via-transparent to-transparent" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900">CTO Name</h3>
+              <p className="text-stealth-blue font-medium text-sm mb-3">Chief Technology Officer</p>
+              <p className="text-gray-600 text-sm max-w-xs mx-auto leading-relaxed">
+                Brief bio here — background, experience, and technical leadership at Stealth Cyber.
+              </p>
             </div>
           </div>
         </div>
