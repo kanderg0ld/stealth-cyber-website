@@ -28,16 +28,16 @@ export default function HeroSection() {
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-            <span className="text-white">Enterprise Cyber Defence</span>{' '}
-            <span className="bg-gradient-to-br from-white via-stealth-cyan to-stealth-teal bg-clip-text text-transparent">Without the Enterprise</span>{' '}
-            <span className="text-white">Price Tag</span>
+            <span className="text-white">Enterprise-Level Cyber Defence</span>{' '}
+            <span className="bg-gradient-to-br from-white via-stealth-cyan to-stealth-teal bg-clip-text text-transparent">Because Your Business Deserves</span>{' '}
+            <span className="text-white">the Highest Protection</span>
           </h1>
 
           <p className="text-lg text-stealth-gray leading-relaxed mb-8 max-w-2xl">
-            Stealth Cyber delivers 24/7 managed detection and response, incident response,
-            AI security, CMMC assessments, ISO 27001, and Essential Eight compliance —
-            from our offices in Gold Coast, São Paulo, and Texas. Stay protected around
-            the clock without the overhead of an in-house security team.
+            Stealth Cyber delivers 24/7 protection for your data, keeping you safe from
+            cyber threats, protecting your business&apos;s reputation, and helping you stay
+            ahead of regulatory requirements — so you can focus on running your business
+            with confidence.
           </p>
 
           <div className="flex flex-wrap gap-3 mb-10">

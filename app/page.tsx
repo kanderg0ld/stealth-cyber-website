@@ -10,7 +10,7 @@ import LocalBusinessJsonLd from '@/components/structured-data/LocalBusinessJsonL
 
 export const metadata: Metadata = {
   title: 'Stealth Cyber | Global Managed Cybersecurity Services',
-  description: 'Enterprise-grade cybersecurity without the enterprise price tag. 24/7 MDR, incident response, CMMC, ISO 27001, Essential Eight, AI security, and GRC — from offices in Gold Coast, São Paulo, and Texas.',
+  description: 'Enterprise-level cyber defence — because your business deserves the highest protection. 24/7 threat monitoring, incident response, CMMC, ISO 27001, Essential Eight, AI security, and GRC from offices in Gold Coast, São Paulo, and Texas.',
   keywords: [
     'managed cybersecurity services', 'managed detection and response Australia',
     'incident response Gold Coast', 'Essential Eight compliance', 'CMMC assessment',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Stealth Cyber | Global Managed Cybersecurity Services',
-    description: 'Enterprise-grade cybersecurity without the enterprise price tag. 24/7 MDR, incident response, CMMC, ISO 27001, Essential Eight, AI security — offices in AU, BR, US.',
+    description: 'Enterprise-level cyber defence — because your business deserves the highest protection. 24/7 threat monitoring, incident response, CMMC, ISO 27001, Essential Eight, AI security — offices in AU, BR, US.',
     url: 'https://stealthcyber.io',
     images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Stealth Cyber — Global Managed Cybersecurity' }],
   },
@@ -189,18 +189,22 @@ export default function HomePage() {
                 <Users className="w-3 h-3" /> Who We Are
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                Global Cybersecurity Expertise, Local Understanding
+                Our Story
               </h2>
               <p className="text-stealth-gray leading-relaxed mb-4">
-                Stealth Cyber is a cybersecurity consultancy with offices in Gold Coast (Australia),
-                São Paulo (Brazil), and Texas (USA). We protect businesses of all sizes from
-                sophisticated cyber threats — delivering enterprise-grade security without the
-                enterprise price tag.
+                Founded by an ex-EY Director of Cyber Security, Stealth Cyber was created because
+                we believe that small businesses — run by hard-working individuals — deserve the same
+                level of protection as the largest enterprises.
+              </p>
+              <p className="text-stealth-gray leading-relaxed mb-4">
+                With over 25 years of combined experience across government, retail, aviation,
+                space technology, and financial services, we bring a wealth of knowledge to support
+                and guide you through your cybersecurity journey.
               </p>
               <p className="text-stealth-gray leading-relaxed mb-6">
-                Our team of certified security professionals brings decades of combined experience
-                across defence, government, and private sector environments. We don&apos;t just respond
-                to threats — we work proactively to eliminate risk before it becomes a crisis.
+                We have a passion for the industry and a desire to help businesses secure their
+                digital assets, providing confidence to your customers, partners, and employees
+                that their data is secure.
               </p>
               <Link
                 href="/about"
