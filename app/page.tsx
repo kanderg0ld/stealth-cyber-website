@@ -227,32 +227,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Team photo banner */}
-      <section className="relative h-[400px] md:h-[500px] bg-stealth-navy overflow-hidden">
-        {/* Replace with your team photo */}
-        <div className="absolute inset-0 flex items-center justify-center text-stealth-gray/20">
-          <Users className="w-32 h-32" />
-        </div>
-        {/* Uncomment when you have the photo:
-        <Image
-          src="/team-photo.jpg"
-          alt="The Stealth Cyber team"
-          fill
-          className="object-cover"
-          sizes="100vw"
-          priority
-        /> */}
-        <div className="absolute inset-0 bg-gradient-to-t from-stealth-dark via-stealth-dark/40 to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Our Team</h2>
-            <p className="text-stealth-gray text-sm md:text-base max-w-xl">
-              Certified security professionals across three continents, united by a single mission — keeping your business safe.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Leadership section */}
       <section className="py-20 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
