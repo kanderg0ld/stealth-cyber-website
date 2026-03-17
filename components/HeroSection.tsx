@@ -28,9 +28,9 @@ export default function HeroSection() {
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-            <span className="text-white">Don&apos;t Let a Breach</span>{' '}
-            <span className="bg-gradient-to-br from-white via-stealth-cyan to-stealth-teal bg-clip-text text-transparent">Undo Everything</span>{' '}
-            <span className="text-white">You&apos;ve Built.</span>
+            <span className="text-white">One Breach Can</span>{' '}
+            <span className="bg-gradient-to-br from-white via-stealth-cyan to-stealth-teal bg-clip-text text-transparent">Change Everything.</span>{' '}
+            <span className="text-white">Don&apos;t Let It.</span>
           </h1>
 
           <p className="text-lg text-stealth-gray leading-relaxed mb-8 max-w-2xl">
