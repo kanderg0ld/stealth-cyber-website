@@ -10,6 +10,14 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    title: 'Is Your IT Provider Really Providing Optimal Cyber Protection? 10 Things to Consider',
+    excerpt: 'IT management and cybersecurity are different disciplines. Here are 10 questions every Australian SMB should be asking their IT provider about cyber protection.',
+    slug: 'is-your-it-provider-protecting-you',
+    publishedAt: '2026-03-18',
+    author: 'Chris McDonald',
+    tags: ['SMB Security', 'IT Provider', 'Managed Security'],
+  },
+  {
     title: 'Demystifying ASD Essential Eight: It\'s Not That Hard, Is It?',
     excerpt: 'A plain-English breakdown of the ASD Essential Eight. What each control does, why most organisations are further along than they think, and where to start.',
     slug: 'essential-eight-demystified',
