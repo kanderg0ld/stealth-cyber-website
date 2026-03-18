@@ -319,22 +319,35 @@ export default function HomePage() {
               Trusted by businesses across Australia, the Americas, and beyond.
             </p>
           </div>
-          <div className="max-w-3xl mx-auto">
-            <div className="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
-              <div className="flex gap-0.5 mb-4">
-                {[...Array(5)].map((_, j) => (
-                  <Star key={j} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            {[
+              {
+                quote: 'Chris and the team at Stealth Cyber have played a critical role in improving the firm\u2019s cyber security processes and systems. I have been particularly impressed by their dedication to helping staff understand cyber security risks and teach proactive ways to both improve and measure security. The team is responsive and clearly incredibly knowledgeable. It has been a welcomed breath of fresh air to partner with Stealth Cyber to ensure better cyber and data protection for our firm and our valuable clients. It\u2019s alarming to reflect on what \u2018could have been\u2019 without the aid and assistance of Stealth Cyber.',
+                name: 'Nikolina Palasrinne',
+                role: 'Founder & Principal, Rubix Legal',
+              },
+              {
+                quote: 'When CertMate was looking for the right cyber security support to help grow in the SaaS market, we found far more than a vendor. We found a genuine partner. Getting up and running felt seamless from day one, and that\u2019s entirely down to the Stealth Cyber team. What stood out wasn\u2019t just their expertise, but how readily Chris and the team adapted to the way we work. Every question was met with a fast, practical answer, and when we needed something adjusted, they made it happen without fuss. As a SaaS business, having a cyber security partner that understands our space and grows alongside us has made all the difference. I wouldn\u2019t hesitate to recommend Stealth Cyber to any SaaS company serious about staying on top of their cyber obligations.',
+                name: 'Carina Steinbakk',
+                role: 'Founder, Aevi Tech',
+              },
+            ].map((testimonial, i) => (
+              <div key={i} className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex flex-col">
+                <div className="flex gap-0.5 mb-4">
+                  {[...Array(5)].map((_, j) => (
+                    <Star key={j} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+                <Quote className="w-8 h-8 text-stealth-blue/10 mb-2" />
+                <p className="text-gray-700 text-sm leading-relaxed flex-1 mb-4">
+                  {testimonial.quote}
+                </p>
+                <div className="border-t border-gray-100 pt-4">
+                  <p className="font-semibold text-gray-900 text-sm">{testimonial.name}</p>
+                  <p className="text-gray-500 text-xs">{testimonial.role}</p>
+                </div>
               </div>
-              <Quote className="w-10 h-10 text-stealth-blue/10 mb-3" />
-              <p className="text-gray-700 leading-relaxed mb-6">
-                Chris and the team at Stealth Cyber have played a critical role in improving the firm&apos;s cyber security processes and systems. I have been particularly impressed by their dedication to helping staff understand cyber security risks and teach proactive ways to both improve and measure security. The team is responsive and clearly incredibly knowledgeable. It has been a welcomed breath of fresh air to partner with Stealth Cyber to ensure better cyber and data protection for our firm and our valuable clients. It&apos;s alarming to reflect on what &apos;could have been&apos; without the aid and assistance of Stealth Cyber.
-              </p>
-              <div className="border-t border-gray-100 pt-4">
-                <p className="font-semibold text-gray-900">Nikolina Palasrinne</p>
-                <p className="text-gray-500 text-sm">Founder &amp; Principal, Rubix Legal</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
