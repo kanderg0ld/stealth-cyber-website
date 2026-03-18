@@ -244,20 +244,17 @@ export default function HomePage() {
           </div>
 
           {/* AI Assessment CTA card */}
-          <div className="bg-stealth-navy-light rounded-2xl border border-stealth-cyan/20 p-8 md:p-10 mb-10">
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-              <div>
-                <h3 className="text-white font-bold text-xl mb-2">Is Your Business Ready for AI?</h3>
-                <p className="text-stealth-gray text-sm leading-relaxed max-w-lg">
-                  Take our free 5-minute AI Readiness Assessment. Get a personalised score with actionable recommendations, instantly.
-                </p>
-              </div>
+          <div className="bg-stealth-navy-light rounded-xl border border-stealth-cyan/20 px-6 py-4 mb-10 max-w-2xl mx-auto">
+            <div className="flex items-center justify-between gap-4">
+              <p className="text-stealth-gray text-sm">
+                <span className="text-white font-semibold">Is your business ready for AI?</span> Take the free assessment.
+              </p>
               <Link
                 href="/ai-assessment"
-                className="shrink-0 inline-flex items-center gap-2 px-6 py-3 btn-gradient text-white font-semibold text-sm rounded hover:opacity-90 transition-opacity"
+                className="shrink-0 inline-flex items-center gap-2 px-5 py-2.5 btn-gradient text-white font-semibold text-sm rounded hover:opacity-90 transition-opacity"
                 style={{ boxShadow: '0 4px 24px rgba(0,56,255,0.35)' }}
               >
-                Take the AI Assessment <ArrowRight className="w-4 h-4" />
+                AI Assessment <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
