@@ -333,7 +333,7 @@ export default function HomePage() {
               },
               {
                 quote: 'As a law firm handling highly sensitive client data, our IT and cybersecurity requirements are non-negotiable. Stealth Cyber provides a sophisticated and proactive service that goes well beyond basic IT protection. Their layered strategy ensures our firm remains fully protected against evolving cyber risks while keeping every team member alert and informed. I have complete confidence in their ability to safeguard our systems.',
-                name: 'Margherita Walsh',
+                name: 'Margherite Walsh',
                 role: 'Managing Principal, Walsh Legal Group',
               },
             ].map((testimonial, i) => (
