@@ -10,6 +10,14 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    title: 'Why Accounting and Legal Firms Are the Perfect Target',
+    excerpt: 'High-value data, trusted relationships, and deadline pressure make professional services firms prime targets for cybercriminals. Here is why, and what to do about it.',
+    slug: 'accounting-legal-firms-target',
+    publishedAt: '2026-03-18',
+    author: 'Chris McDonald',
+    tags: ['Professional Services', 'Threat Intelligence', 'BEC'],
+  },
+  {
     title: 'AI Management Systems: Why They Matter More Than You Think',
     excerpt: 'AI deployment has outpaced governance in most businesses. What an AI management system is, what it should cover, and why Australian businesses need one now.',
     slug: 'ai-management-systems',
