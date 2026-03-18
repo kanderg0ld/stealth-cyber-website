@@ -46,9 +46,9 @@ const questions: Question[] = [
     areaGroup: 'AI Strategy & Governance',
     question: 'Does your organisation have a documented AI strategy or policy?',
     whyItMatters:
-      'Without a clear AI strategy, teams adopt tools in isolation, creating shadow AI risk and inconsistent outcomes. A documented policy sets guardrails so your organisation can move fast without breaking things — or breaking trust.',
+      'Without a clear AI strategy, teams adopt tools in isolation, creating shadow AI risk and inconsistent outcomes. A documented policy sets guardrails so your organisation can move fast without breaking things, or breaking trust.',
     options: [
-      { label: 'A', text: 'No — we have no AI strategy or policy in place', score: 0 },
+      { label: 'A', text: 'No,we have no AI strategy or policy in place', score: 0 },
       { label: 'B', text: 'We have informal guidelines but nothing documented or approved by leadership', score: 1 },
       { label: 'C', text: 'We have a documented AI policy but it hasn\'t been reviewed recently', score: 2 },
       { label: 'D', text: 'We have a leadership-approved AI strategy that is reviewed regularly and communicated to all staff', score: 3 },
@@ -62,7 +62,7 @@ const questions: Question[] = [
     whyItMatters:
       'When AI makes or influences a decision, someone needs to own the outcome. Without clear accountability, mistakes get passed around and risks go unmanaged. Regulators and clients increasingly expect a named person to be responsible for AI outputs.',
     options: [
-      { label: 'A', text: 'No — nobody is formally responsible for AI decisions or oversight', score: 0 },
+      { label: 'A', text: 'No,nobody is formally responsible for AI decisions or oversight', score: 0 },
       { label: 'B', text: 'AI falls loosely under IT but there is no formal accountability structure', score: 1 },
       { label: 'C', text: 'We have assigned ownership for some AI initiatives but it\'s not consistent across the business', score: 2 },
       { label: 'D', text: 'We have clearly defined roles, an AI governance board or sponsor, and documented accountability for all AI decisions', score: 3 },
@@ -76,7 +76,7 @@ const questions: Question[] = [
     whyItMatters:
       'New AI tools are appearing weekly and staff are adopting them without vetting. A lightweight approval process helps you catch data privacy risks, security gaps, and compliance issues before they become expensive problems.',
     options: [
-      { label: 'A', text: 'No — anyone can adopt new AI tools without approval', score: 0 },
+      { label: 'A', text: 'No,anyone can adopt new AI tools without approval', score: 0 },
       { label: 'B', text: 'We ask people to check with their manager but there\'s no formal process', score: 1 },
       { label: 'C', text: 'We have an approval process for major AI deployments but smaller tools slip through', score: 2 },
       { label: 'D', text: 'All AI tools and systems go through a formal risk and security review before deployment, with documented sign-off', score: 3 },
@@ -90,9 +90,9 @@ const questions: Question[] = [
     areaGroup: 'Data Governance & Privacy',
     question: 'Do you know what data your AI systems are trained on or have access to?',
     whyItMatters:
-      'AI is only as good — and as risky — as the data it touches. If you don\'t know what data your AI can access, you can\'t control what it might leak, misuse, or produce. This is a fundamental blind spot that regulators are now zeroing in on.',
+      'AI is only as good, and as risky, as the data it touches. If you don\'t know what data your AI can access, you can\'t control what it might leak, misuse, or produce. This is a fundamental blind spot that regulators are now zeroing in on.',
     options: [
-      { label: 'A', text: 'No — we don\'t have visibility into what data our AI tools access or use', score: 0 },
+      { label: 'A', text: 'No,we don\'t have visibility into what data our AI tools access or use', score: 0 },
       { label: 'B', text: 'We have a rough idea but haven\'t formally mapped AI data flows', score: 1 },
       { label: 'C', text: 'We\'ve documented data sources for most AI systems but some gaps remain', score: 2 },
       { label: 'D', text: 'We maintain a complete inventory of all data accessed by AI systems, with classification and access controls', score: 3 },
@@ -104,9 +104,9 @@ const questions: Question[] = [
     areaGroup: 'Data Governance & Privacy',
     question: 'Do you have controls to prevent AI systems from exposing sensitive or personal data?',
     whyItMatters:
-      'AI tools can inadvertently memorise, regurgitate, or expose sensitive information — including customer data, trade secrets, and credentials. Without controls, a single careless prompt could become your next data breach.',
+      'AI tools can inadvertently memorise, regurgitate, or expose sensitive information, including customer data, trade secrets, and credentials. Without controls, a single careless prompt could become your next data breach.',
     options: [
-      { label: 'A', text: 'No — we haven\'t considered AI-specific data leakage risks', score: 0 },
+      { label: 'A', text: 'No,we haven\'t considered AI-specific data leakage risks', score: 0 },
       { label: 'B', text: 'We\'ve told staff not to put sensitive data into AI tools but there\'s no technical enforcement', score: 1 },
       { label: 'C', text: 'We have some controls in place, like restricting certain AI tools from accessing production data', score: 2 },
       { label: 'D', text: 'We have robust data loss prevention controls for AI, including input filtering, output monitoring, and technical restrictions on sensitive data access', score: 3 },
@@ -136,7 +136,7 @@ const questions: Question[] = [
     whyItMatters:
       'Prompt injection and other adversarial attacks can trick AI systems into ignoring safety rules, leaking data, or performing unintended actions. If you haven\'t tested for these attacks, you don\'t know how your AI behaves when someone tries to break it.',
     options: [
-      { label: 'A', text: 'No — we haven\'t tested our AI systems for adversarial vulnerabilities', score: 0 },
+      { label: 'A', text: 'No,we haven\'t tested our AI systems for adversarial vulnerabilities', score: 0 },
       { label: 'B', text: 'We\'re aware of the risks but haven\'t conducted any formal testing', score: 1 },
       { label: 'C', text: 'We\'ve done some basic testing or red-teaming on our main AI systems', score: 2 },
       { label: 'D', text: 'We conduct regular adversarial testing including prompt injection, data poisoning, and model evasion across all AI systems', score: 3 },
@@ -150,7 +150,7 @@ const questions: Question[] = [
     whyItMatters:
       'If anyone can tweak your AI model settings, training data, or system prompts, a single insider or compromised account can fundamentally change how your AI behaves. Access control for AI is just as critical as access control for your databases.',
     options: [
-      { label: 'A', text: 'No — there are no specific access controls for our AI systems', score: 0 },
+      { label: 'A', text: 'No,there are no specific access controls for our AI systems', score: 0 },
       { label: 'B', text: 'A few people manage AI tools but we don\'t formally control or audit access', score: 1 },
       { label: 'C', text: 'Access to AI models is restricted to specific teams but not all configurations are locked down', score: 2 },
       { label: 'D', text: 'We enforce role-based access control for all AI systems, with audit logs and regular access reviews', score: 3 },
@@ -162,9 +162,9 @@ const questions: Question[] = [
     areaGroup: 'AI Security',
     question: 'Do you monitor your AI systems for unusual behaviour or unexpected outputs?',
     whyItMatters:
-      'AI systems can drift, degrade, or be compromised without obvious signs. Monitoring for anomalies — like sudden changes in output quality or unexpected data access — lets you catch problems before they cause real harm to your business or customers.',
+      'AI systems can drift, degrade, or be compromised without obvious signs. Monitoring for anomalies, like sudden changes in output quality or unexpected data access, lets you catch problems before they cause real harm to your business or customers.',
     options: [
-      { label: 'A', text: 'No — we don\'t monitor AI system behaviour at all', score: 0 },
+      { label: 'A', text: 'No,we don\'t monitor AI system behaviour at all', score: 0 },
       { label: 'B', text: 'We rely on users to report issues but there\'s no systematic monitoring', score: 1 },
       { label: 'C', text: 'We have basic monitoring for some AI systems but it\'s not comprehensive', score: 2 },
       { label: 'D', text: 'We have continuous monitoring across all AI systems with alerting for anomalous behaviour, output drift, and unexpected data access patterns', score: 3 },
@@ -180,7 +180,7 @@ const questions: Question[] = [
     whyItMatters:
       'AI that produces toxic, misleading, or factually wrong outputs can damage your brand, expose you to legal liability, and erode customer trust. Guardrails like content filtering and output validation are essential safety nets.',
     options: [
-      { label: 'A', text: 'No — we trust AI outputs without any safety checks', score: 0 },
+      { label: 'A', text: 'No,we trust AI outputs without any safety checks', score: 0 },
       { label: 'B', text: 'We rely on users to catch bad outputs but there are no automated safeguards', score: 1 },
       { label: 'C', text: 'We have some content filtering or output validation for our main AI systems', score: 2 },
       { label: 'D', text: 'We have comprehensive output safeguards including content filtering, factual validation, and automated quality checks across all AI systems', score: 3 },
@@ -192,9 +192,9 @@ const questions: Question[] = [
     areaGroup: 'AI Safety & Reliability',
     question: 'How do you handle AI hallucinations or incorrect outputs in business-critical processes?',
     whyItMatters:
-      'AI hallucinations — confidently wrong answers — are not edge cases; they are a known limitation. In business-critical workflows like finance, legal, or customer communications, an uncaught hallucination can lead to costly errors and reputational damage.',
+      'AI hallucinations, confidently wrong answers, are not edge cases; they are a known limitation. In business-critical workflows like finance, legal, or customer communications, an uncaught hallucination can lead to costly errors and reputational damage.',
     options: [
-      { label: 'A', text: 'We don\'t have a process — staff may not even know AI can hallucinate', score: 0 },
+      { label: 'A', text: 'We don\'t have a process. Staff may not even know AI can hallucinate', score: 0 },
       { label: 'B', text: 'We\'ve warned staff about hallucinations but there\'s no formal process to catch them', score: 1 },
       { label: 'C', text: 'We require human review of AI outputs in some critical workflows', score: 2 },
       { label: 'D', text: 'We have documented processes for verifying AI outputs in all critical workflows, with automated fact-checking where possible and mandatory human sign-off', score: 3 },
@@ -208,7 +208,7 @@ const questions: Question[] = [
     whyItMatters:
       'Fully autonomous AI decisions in high-stakes areas like hiring, credit, medical advice, or compliance can create legal exposure and ethical risks. Human-in-the-loop processes ensure accountability and catch errors before they cause real-world harm.',
     options: [
-      { label: 'A', text: 'No — AI outputs are used directly without human review', score: 0 },
+      { label: 'A', text: 'No,AI outputs are used directly without human review', score: 0 },
       { label: 'B', text: 'Some staff review AI outputs informally but there\'s no consistent process', score: 1 },
       { label: 'C', text: 'We have human review for some high-stakes decisions but not all', score: 2 },
       { label: 'D', text: 'All high-stakes AI decisions require documented human review and approval before action is taken', score: 3 },
@@ -224,7 +224,7 @@ const questions: Question[] = [
     whyItMatters:
       'Traditional risk assessments don\'t cover AI-specific threats like model manipulation, training data poisoning, or output bias. A dedicated AI risk assessment identifies exposures that would otherwise go completely unnoticed until something goes wrong.',
     options: [
-      { label: 'A', text: 'No — we haven\'t assessed AI-specific risks at all', score: 0 },
+      { label: 'A', text: 'No,we haven\'t assessed AI-specific risks at all', score: 0 },
       { label: 'B', text: 'We\'ve informally discussed AI risks but haven\'t done a structured assessment', score: 1 },
       { label: 'C', text: 'We\'ve conducted a risk assessment for some AI systems but not all', score: 2 },
       { label: 'D', text: 'We conduct comprehensive AI risk assessments for all deployments, reviewed regularly and integrated into our enterprise risk framework', score: 3 },
@@ -238,7 +238,7 @@ const questions: Question[] = [
     whyItMatters:
       'When an AI system produces harmful outputs, leaks data, or gets manipulated, your team needs to know exactly what to do. AI incidents move fast and the response playbook is different from a traditional security breach.',
     options: [
-      { label: 'A', text: 'No — our incident response plan doesn\'t mention AI at all', score: 0 },
+      { label: 'A', text: 'No,our incident response plan doesn\'t mention AI at all', score: 0 },
       { label: 'B', text: 'We\'d handle AI issues ad hoc using our general incident process', score: 1 },
       { label: 'C', text: 'Our incident response plan mentions AI but doesn\'t have detailed AI-specific procedures', score: 2 },
       { label: 'D', text: 'We have documented AI incident response procedures with clear escalation paths, containment steps, and communication protocols specific to AI failures', score: 3 },
@@ -250,9 +250,9 @@ const questions: Question[] = [
     areaGroup: 'AI Risk Management',
     question: 'Do you assess the security practices of third-party AI vendors and tools?',
     whyItMatters:
-      'Most organisations don\'t build their own AI — they use third-party tools and APIs. If your vendor has weak security, poor data practices, or trains on your data without consent, their risk becomes your risk. Due diligence is non-negotiable.',
+      'Most organisations don\'t build their own AI. They use third-party tools and APIs. If your vendor has weak security, poor data practices, or trains on your data without consent, their risk becomes your risk. Due diligence is non-negotiable.',
     options: [
-      { label: 'A', text: 'No — we don\'t assess AI vendors\' security or data practices', score: 0 },
+      { label: 'A', text: 'No,we don\'t assess AI vendors\' security or data practices', score: 0 },
       { label: 'B', text: 'We look at vendor marketing materials but don\'t do formal security assessments', score: 1 },
       { label: 'C', text: 'We assess major AI vendors but smaller tools and plugins aren\'t covered', score: 2 },
       { label: 'D', text: 'All AI vendors undergo a formal security and data privacy assessment, with contractual requirements and ongoing monitoring', score: 3 },
@@ -268,7 +268,7 @@ const questions: Question[] = [
     whyItMatters:
       'Customers, regulators, and board members increasingly want to understand how AI decisions are made. If you can\'t explain why your AI recommended, rejected, or flagged something, you have an accountability gap that erodes trust and invites scrutiny.',
     options: [
-      { label: 'A', text: 'No — we don\'t understand or document how our AI systems reach their outputs', score: 0 },
+      { label: 'A', text: 'No,we don\'t understand or document how our AI systems reach their outputs', score: 0 },
       { label: 'B', text: 'We have a general understanding but couldn\'t explain specific decisions to stakeholders', score: 1 },
       { label: 'C', text: 'We can explain how some AI systems work but not all, and documentation is limited', score: 2 },
       { label: 'D', text: 'We maintain clear documentation of how all AI systems make decisions, with the ability to explain specific outputs to stakeholders on request', score: 3 },
@@ -280,9 +280,9 @@ const questions: Question[] = [
     areaGroup: 'AI Ethics & Transparency',
     question: 'Do you test your AI systems for bias and fairness?',
     whyItMatters:
-      'AI can amplify existing biases in your data, leading to discriminatory outcomes in hiring, lending, customer service, and more. Proactive bias testing protects your organisation from legal risk and reputational damage — and it\'s the right thing to do.',
+      'AI can amplify existing biases in your data, leading to discriminatory outcomes in hiring, lending, customer service, and more. Proactive bias testing protects your organisation from legal risk and reputational damage, and it\'s the right thing to do.',
     options: [
-      { label: 'A', text: 'No — we haven\'t considered bias in our AI systems', score: 0 },
+      { label: 'A', text: 'No,we haven\'t considered bias in our AI systems', score: 0 },
       { label: 'B', text: 'We\'re aware of the issue but haven\'t done any testing', score: 1 },
       { label: 'C', text: 'We\'ve tested some AI systems for bias but it\'s not a regular process', score: 2 },
       { label: 'D', text: 'We conduct regular bias and fairness testing across all AI systems, with documented mitigation strategies and ongoing monitoring', score: 3 },
@@ -296,9 +296,9 @@ const questions: Question[] = [
     areaGroup: 'AI Skills & Training',
     question: 'Does your team have the skills to securely deploy and manage AI systems?',
     whyItMatters:
-      'AI systems have unique security and operational requirements. If your team doesn\'t understand AI-specific risks like data poisoning, model drift, or prompt injection, they can\'t protect against them — no matter how good your traditional IT security is.',
+      'AI systems have unique security and operational requirements. If your team doesn\'t understand AI-specific risks like data poisoning, model drift, or prompt injection, they can\'t protect against them, no matter how good your traditional IT security is.',
     options: [
-      { label: 'A', text: 'No — our team has limited AI knowledge and no specific AI security skills', score: 0 },
+      { label: 'A', text: 'No,our team has limited AI knowledge and no specific AI security skills', score: 0 },
       { label: 'B', text: 'A few individuals have some AI knowledge but it\'s not widespread', score: 1 },
       { label: 'C', text: 'Our technical team has reasonable AI skills but gaps remain in AI security', score: 2 },
       { label: 'D', text: 'Our team has strong AI skills including AI security, and we invest in ongoing training to keep pace with the technology', score: 3 },
@@ -310,9 +310,9 @@ const questions: Question[] = [
     areaGroup: 'AI Skills & Training',
     question: 'Do you provide AI security awareness training to staff who use AI tools?',
     whyItMatters:
-      'Your staff are already using AI — the question is whether they\'re using it safely. Training on topics like data handling in AI tools, recognising hallucinations, and avoiding prompt injection makes the difference between productive AI use and a data incident.',
+      'Your staff are already using AI. The question is whether they\'re using it safely. Training on topics like data handling in AI tools, recognising hallucinations, and avoiding prompt injection makes the difference between productive AI use and a data incident.',
     options: [
-      { label: 'A', text: 'No — we don\'t provide any AI-specific training', score: 0 },
+      { label: 'A', text: 'No,we don\'t provide any AI-specific training', score: 0 },
       { label: 'B', text: 'We\'ve sent some general guidance but there\'s no structured training programme', score: 1 },
       { label: 'C', text: 'We provide AI training to some teams but it\'s not organisation-wide', score: 2 },
       { label: 'D', text: 'We provide structured AI security awareness training to all staff who use AI tools, updated regularly as the technology evolves', score: 3 },
@@ -326,9 +326,9 @@ const questions: Question[] = [
     areaGroup: 'AI Readiness Infrastructure',
     question: 'Is your IT infrastructure ready to support AI workloads securely?',
     whyItMatters:
-      'AI workloads often need more compute, more data access, and different security controls than traditional applications. If your infrastructure can\'t support AI securely — including network segmentation, logging, and scalable compute — you\'re building on shaky foundations.',
+      'AI workloads often need more compute, more data access, and different security controls than traditional applications. If your infrastructure can\'t support AI securely, including network segmentation, logging, and scalable compute, you\'re building on shaky foundations.',
     options: [
-      { label: 'A', text: 'No — we haven\'t evaluated our infrastructure for AI readiness', score: 0 },
+      { label: 'A', text: 'No,we haven\'t evaluated our infrastructure for AI readiness', score: 0 },
       { label: 'B', text: 'We use cloud AI services but haven\'t assessed whether our infrastructure is properly configured for them', score: 1 },
       { label: 'C', text: 'We\'ve made some infrastructure changes to support AI but security controls haven\'t fully caught up', score: 2 },
       { label: 'D', text: 'Our infrastructure is designed to support AI workloads securely, with appropriate compute, network segmentation, logging, and access controls', score: 3 },
@@ -346,7 +346,7 @@ const areaGroups: { group: string; questionIds: number[]; recommendations: Recor
     questionIds: [1, 2, 3],
     recommendations: {
       1: 'Develop a documented AI strategy and acceptable use policy. Start with clear principles on when and how AI can be used, get leadership sign-off, and communicate it to all staff.',
-      2: 'Assign clear ownership for AI governance — whether that\'s a dedicated AI lead, a cross-functional committee, or an extension of your existing risk function. Document who is accountable for AI decisions.',
+      2: 'Assign clear ownership for AI governance, whether that\'s a dedicated AI lead, a cross-functional committee, or an extension of your existing risk function. Document who is accountable for AI decisions.',
       3: 'Implement a lightweight AI tool approval process. Before any new AI tool is adopted, require a basic risk and security assessment covering data access, vendor practices, and compliance implications.',
     },
   },
@@ -364,7 +364,7 @@ const areaGroups: { group: string; questionIds: number[]; recommendations: Recor
     questionIds: [7, 8, 9],
     recommendations: {
       7: 'Conduct adversarial testing of your AI systems, starting with prompt injection and jailbreak testing. Consider engaging a specialist to red-team your most critical AI deployments.',
-      8: 'Implement role-based access control for all AI models, configurations, and training data. Enable audit logging and conduct regular access reviews — treat AI system access with the same rigour as database access.',
+      8: 'Implement role-based access control for all AI models, configurations, and training data. Enable audit logging and conduct regular access reviews. Treat AI system access with the same rigour as database access.',
       9: 'Deploy monitoring for your AI systems that tracks output quality, data access patterns, and usage anomalies. Set up alerts for unexpected behaviour so you can investigate before problems escalate.',
     },
   },
@@ -372,7 +372,7 @@ const areaGroups: { group: string; questionIds: number[]; recommendations: Recor
     group: 'AI Safety & Reliability',
     questionIds: [10, 11, 12],
     recommendations: {
-      10: 'Implement output safeguards for your AI systems — content filtering, factual validation checks, and quality thresholds. Don\'t let AI outputs reach customers or inform decisions without basic safety checks.',
+      10: 'Implement output safeguards for your AI systems: content filtering, factual validation checks, and quality thresholds. Don\'t let AI outputs reach customers or inform decisions without basic safety checks.',
       11: 'Create a documented process for handling AI hallucinations in critical workflows. Require human verification for any AI output used in decisions involving money, legal matters, customer communications, or safety.',
       12: 'Establish human-in-the-loop requirements for all high-stakes AI decisions. Document which decisions require human review, define the review process, and track compliance.',
     },
@@ -383,7 +383,7 @@ const areaGroups: { group: string; questionIds: number[]; recommendations: Recor
     recommendations: {
       13: 'Conduct a structured AI risk assessment covering all your AI deployments. Evaluate risks including data exposure, output reliability, vendor dependency, regulatory compliance, and adversarial threats.',
       14: 'Update your incident response plan to include AI-specific scenarios. Define what constitutes an AI incident, who to notify, how to contain AI-related breaches, and how to communicate with affected stakeholders.',
-      15: 'Establish a formal assessment process for AI vendors. Evaluate their security practices, data handling policies, training data usage, and compliance certifications before signing up — and review annually.',
+      15: 'Establish a formal assessment process for AI vendors. Evaluate their security practices, data handling policies, training data usage, and compliance certifications before signing up, and review annually.',
     },
   },
   {
@@ -391,14 +391,14 @@ const areaGroups: { group: string; questionIds: number[]; recommendations: Recor
     questionIds: [16, 17],
     recommendations: {
       16: 'Document how each AI system makes decisions in plain language. Build the capability to explain specific AI outputs to customers, regulators, and board members when asked. Transparency builds trust.',
-      17: 'Start testing your AI systems for bias, beginning with those that affect people directly — hiring tools, customer-facing recommendations, risk scoring. Document findings and implement mitigation strategies.',
+      17: 'Start testing your AI systems for bias, beginning with those that affect people directly: hiring tools, customer-facing recommendations, risk scoring. Document findings and implement mitigation strategies.',
     },
   },
   {
     group: 'AI Skills & Training',
     questionIds: [18, 19],
     recommendations: {
-      18: 'Invest in AI skills development for your technical team, with a focus on AI security, responsible deployment, and operational management. The AI landscape moves fast — ongoing training is essential.',
+      18: 'Invest in AI skills development for your technical team, with a focus on AI security, responsible deployment, and operational management. The AI landscape moves fast, and ongoing training is essential.',
       19: 'Roll out structured AI security awareness training for all staff who use AI tools. Cover safe data handling, recognising hallucinations, prompt injection risks, and your organisation\'s AI acceptable use policy.',
     },
   },
@@ -566,7 +566,7 @@ export default function AIReadinessQuiz() {
             Is Your Business Ready for AI?
           </h1>
           <p className="text-stealth-gray text-lg leading-relaxed mb-4">
-            AI is moving fast. Is your organisation keeping up — or falling behind?
+            AI is moving fast. Is your organisation keeping up, or falling behind?
             Take our free 5-minute AI readiness assessment to find out where you stand
             across strategy, security, data governance, and more.
           </p>
@@ -940,7 +940,7 @@ export default function AIReadinessQuiz() {
           <p className="text-stealth-gray leading-relaxed mb-6 max-w-lg mx-auto">
             This self-assessment gives you a high-level view. Our team can conduct a thorough
             AI readiness review of your environment and provide a detailed roadmap tailored
-            to your business — covering governance, security, data, and skills.
+            to your business, covering governance, security, data, and skills.
           </p>
           <a
             href="/contact"

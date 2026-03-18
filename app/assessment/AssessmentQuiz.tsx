@@ -48,7 +48,7 @@ const questions: Question[] = [
     whyItMatters:
       'Uncontrolled software is one of the most common ways ransomware and malware get onto business networks. If anyone can install anything, a single rogue application can compromise your entire environment.',
     options: [
-      { label: 'A', text: 'No — staff can install whatever they want on their devices', score: 0 },
+      { label: 'A', text: 'No,staff can install whatever they want on their devices', score: 0 },
       { label: 'B', text: 'We have informal guidelines but nothing enforced technically', score: 1 },
       { label: 'C', text: 'We restrict installations on most devices but some exceptions exist', score: 2 },
       { label: 'D', text: 'We enforce an approved application list across all business devices and review it regularly', score: 3 },
@@ -76,7 +76,7 @@ const questions: Question[] = [
     whyItMatters:
       'Malicious macros hidden in email attachments remain one of the top methods attackers use to deploy ransomware. Blocking or restricting macros eliminates a huge attack vector with minimal impact on most staff.',
     options: [
-      { label: 'A', text: 'No — macros and scripts can run freely on our devices', score: 0 },
+      { label: 'A', text: 'No,macros and scripts can run freely on our devices', score: 0 },
       { label: 'B', text: 'We\'ve told staff not to enable macros from unknown sources, but it\'s not enforced', score: 1 },
       { label: 'C', text: 'Macros are blocked by default but some users have exceptions', score: 2 },
       { label: 'D', text: 'Macros are blocked across the organisation except for specifically approved and digitally signed macros', score: 3 },
@@ -150,7 +150,7 @@ const questions: Question[] = [
     whyItMatters:
       'Weak or reused passwords are trivially easy for attackers to crack or buy on the dark web. A password manager combined with strong, unique passwords for every account removes one of the simplest attack paths into your business.',
     options: [
-      { label: 'A', text: 'There are no password requirements — staff choose their own', score: 0 },
+      { label: 'A', text: 'There are no password requirements, staff choose their own', score: 0 },
       { label: 'B', text: 'We require passwords to be a minimum length but don\'t enforce complexity or uniqueness', score: 1 },
       { label: 'C', text: 'We have password policies in place and recommend a password manager', score: 2 },
       { label: 'D', text: 'We enforce strong password policies, mandate a company-wide password manager, and regularly audit for compromised credentials', score: 3 },
@@ -164,7 +164,7 @@ const questions: Question[] = [
     areaGroup: 'Backups & Recovery',
     question: 'How often do you back up critical business data?',
     whyItMatters:
-      'If ransomware encrypts your files or a disaster destroys your servers, backups are your lifeline. Without recent, reliable backups, you may face paying a ransom or losing data permanently — either of which can shut down a business.',
+      'If ransomware encrypts your files or a disaster destroys your servers, backups are your lifeline. Without recent, reliable backups, you may face paying a ransom or losing data permanently, either of which can shut down a business.',
     options: [
       { label: 'A', text: 'We don\'t have a regular backup process', score: 0 },
       { label: 'B', text: 'We back up some data occasionally but it\'s not comprehensive', score: 1 },
@@ -196,10 +196,10 @@ const questions: Question[] = [
     whyItMatters:
       'Malicious ads and outdated browser plugins like Flash and Java are common entry points for drive-by downloads. Blocking these removes easy attack paths that require no user interaction to compromise a device.',
     options: [
-      { label: 'A', text: 'No — browsers are configured with default settings', score: 0 },
+      { label: 'A', text: 'No,browsers are configured with default settings', score: 0 },
       { label: 'B', text: 'We\'ve uninstalled Flash but haven\'t applied other browser restrictions', score: 1 },
       { label: 'C', text: 'We block some plugins and use ad-blocking on most devices', score: 2 },
-      { label: 'D', text: 'Browsers are fully hardened — unnecessary plugins are blocked, ads are filtered, and settings are centrally managed', score: 3 },
+      { label: 'D', text: 'Browsers are fully hardened: unnecessary plugins are blocked, ads are filtered, and settings are centrally managed', score: 3 },
     ],
   },
   {
@@ -224,9 +224,9 @@ const questions: Question[] = [
     areaGroup: 'Incident Response',
     question: 'Do you have a documented plan for responding to a cyber incident?',
     whyItMatters:
-      'When a breach happens, every minute counts. Organisations without a documented plan waste critical time deciding what to do, who to call, and how to contain the damage — often making the situation much worse.',
+      'When a breach happens, every minute counts. Organisations without a documented plan waste critical time deciding what to do, who to call, and how to contain the damage, often making the situation much worse.',
     options: [
-      { label: 'A', text: 'No — we\'d figure it out if something happened', score: 0 },
+      { label: 'A', text: 'No,we\'d figure it out if something happened', score: 0 },
       { label: 'B', text: 'We have a rough idea of what to do but nothing written down', score: 1 },
       { label: 'C', text: 'We have a documented plan with assigned roles but it hasn\'t been updated recently', score: 2 },
       { label: 'D', text: 'We have a comprehensive, up-to-date incident response plan with clear roles, escalation paths, and communication templates', score: 3 },
@@ -240,7 +240,7 @@ const questions: Question[] = [
     whyItMatters:
       'A plan that has never been tested is just a document. Tabletop exercises and simulations reveal gaps, build muscle memory, and ensure your team can execute under pressure when a real incident occurs.',
     options: [
-      { label: 'A', text: 'No — we\'ve never rehearsed or simulated an incident', score: 0 },
+      { label: 'A', text: 'No,we\'ve never rehearsed or simulated an incident', score: 0 },
       { label: 'B', text: 'We discussed what we\'d do once in a meeting but never ran a proper exercise', score: 1 },
       { label: 'C', text: 'We\'ve run one tabletop exercise or walkthrough in the past', score: 2 },
       { label: 'D', text: 'We run regular tabletop exercises or simulations at least annually, with lessons learned feeding back into the plan', score: 3 },
@@ -298,7 +298,7 @@ const questions: Question[] = [
     areaGroup: 'Data Protection',
     question: 'Do you know exactly where all your sensitive data is stored?',
     whyItMatters:
-      'You cannot protect what you cannot find. Many breaches involve data the organisation didn\'t even know was exposed — sitting in old file shares, personal drives, or unsanctioned cloud services.',
+      'You cannot protect what you cannot find. Many breaches involve data the organisation didn\'t even know was exposed, sitting in old file shares, personal drives, or unsanctioned cloud services.',
     options: [
       { label: 'A', text: 'We don\'t have a clear picture of where sensitive data lives', score: 0 },
       { label: 'B', text: 'We have a general idea but haven\'t mapped it formally', score: 1 },

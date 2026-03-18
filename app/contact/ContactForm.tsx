@@ -48,7 +48,7 @@ export default function ContactForm() {
         setStatus('error')
         setErrorMsg(
           res.status === 429
-            ? 'Too many submissions — please try again in an hour.'
+            ? 'Too many submissions. Please try again in an hour.'
             : json.error || 'Something went wrong. Please try again or call us directly.'
         )
       }

@@ -27,7 +27,7 @@ export default function ContactPage() {
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Let&apos;s Find Out Where You&apos;re Exposed</h1>
             <p className="text-stealth-gray text-lg">
               Get in touch with our team and get a clear picture of your current risk.
-              No obligation, no jargon — just honest guidance from our expert team.
+              No obligation, no jargon. Just honest guidance from our expert team.
             </p>
           </div>
         </div>

@@ -5,7 +5,7 @@ import BreadcrumbJsonLd from '@/components/structured-data/BreadcrumbJsonLd'
 
 export const metadata: Metadata = {
   title: 'About Us',
-  description: 'Learn about Stealth Cyber — a global cybersecurity consultancy led by award-winning leadership with 25+ years experience across government, retail, aviation, space tech, and financial services.',
+  description: 'Learn about Stealth Cyber, a global cybersecurity consultancy led by award-winning leadership with 25+ years experience across government, retail, aviation, space tech, and financial services.',
   alternates: { canonical: 'https://stealthcyber.io/about' },
   openGraph: {
     title: 'About Stealth Cyber | Global Cybersecurity Consultancy',
@@ -17,19 +17,19 @@ export const metadata: Metadata = {
 
 const values = [
   { title: 'Integrity First', description: 'We provide honest, unbiased advice. Our recommendations are based on your best interests, not upselling opportunities.' },
-  { title: 'Global Reach, Local Expertise', description: 'With offices in Australia, Brazil, and the USA, we bring local knowledge and regulatory expertise to every engagement — wherever you operate.' },
+  { title: 'Global Reach, Local Expertise', description: 'With offices in Australia, Brazil, and the USA, we bring local knowledge and regulatory expertise to every engagement, wherever you operate.' },
   { title: 'Practical Security', description: 'We translate complex cybersecurity concepts into practical, achievable actions that make a measurable difference.' },
   { title: 'Always Available', description: 'Threats don\'t keep business hours. Neither do we. Our team is available 24/7/365 for monitoring and incident response.' },
 ]
 
 const certifications = [
-  'CISSP — Certified Information Systems Security Professional',
-  'CISM — Certified Information Security Manager',
-  'OSCP — Offensive Security Certified Professional',
-  'OSWP — Offensive Security Wireless Professional',
-  'CEDP — Certified Exploit Development Professional',
+  'CISSP: Certified Information Systems Security Professional',
+  'CISM: Certified Information Security Manager',
+  'OSCP: Offensive Security Certified Professional',
+  'OSWP: Offensive Security Wireless Professional',
+  'CEDP: Certified Exploit Development Professional',
   'ISO 27001 Lead Implementer / Lead Auditor',
-  'ISO 42001 Lead Auditor — AI Management Systems',
+  'ISO 42001 Lead Auditor: AI Management Systems',
   'CMMC Certified Assessor (CCA)',
   'ACSC Essential Eight Specialist',
   'Red Team & Blue Team Professionals',
@@ -73,20 +73,20 @@ export default function AboutPage() {
               <p className="text-stealth-gray leading-relaxed mb-4">
                 Cyber threats are no longer confined to large corporations. Ransomware, business email
                 compromise, supply chain attacks, and AI-driven threats are increasingly targeting
-                organisations of all sizes — often with devastating consequences. A single incident
+                organisations of all sizes, often with devastating consequences. A single incident
                 can cost hundreds of thousands of dollars in recovery, lost productivity, and
                 reputational damage.
               </p>
               <p className="text-stealth-gray leading-relaxed mb-4">
                 Stealth Cyber exists to change this. We believe every business deserves the
                 highest level of cyber protection, and we bring the tools, processes, and expertise
-                to make that a reality — from Australian SMBs to US defence contractors and Brazilian enterprises.
+                to make that a reality, from Australian SMBs to US defence contractors and Brazilian enterprises.
               </p>
               <p className="text-stealth-gray leading-relaxed">
                 Headquartered in Gold Coast, Australia, with offices in São Paulo and Texas, we serve
                 clients globally through both remote and on-site engagements. Our team of certified
                 security professionals brings decades of experience across government, defence,
-                financial services, and critical infrastructure — on every continent we operate in.
+                financial services, and critical infrastructure, on every continent we operate in.
               </p>
             </div>
             <div className="space-y-4">

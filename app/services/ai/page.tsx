@@ -29,8 +29,8 @@ const services = [
     title: 'AI Red Teaming',
     shortTitle: 'AI Red Team',
     icon: <Shield className="w-8 h-8" />,
-    tagline: 'Adversarial testing purpose-built for AI systems — aligned to AIUC-1',
-    description: 'Traditional penetration testing doesn\'t cover AI. Our AI Red Team conducts purpose-built adversarial assessments against your AI and LLM systems — simulating the techniques real-world attackers use to manipulate, extract from, and compromise AI. Our testing methodology aligns to the AIUC-1 standard — the world\'s first AI agent security framework — covering security, safety, reliability, accountability, and data privacy across your AI estate.',
+    tagline: 'Adversarial testing purpose-built for AI systems, aligned to AIUC-1',
+    description: 'Traditional penetration testing doesn\'t cover AI. Our AI Red Team conducts purpose-built adversarial assessments against your AI and LLM systems, simulating the techniques real-world attackers use to manipulate, extract from, and compromise AI. Our testing methodology aligns to the AIUC-1 standard, the world\'s first AI agent security framework, covering security, safety, reliability, accountability, and data privacy across your AI estate.',
     features: [
       'Prompt injection & jailbreak testing',
       'Data extraction and privacy leakage assessment',
@@ -44,7 +44,7 @@ const services = [
     benefits: [
       'Discover AI vulnerabilities before attackers do',
       'Protect sensitive data processed by AI systems',
-      'Testing aligned to AIUC-1 — the global AI agent security standard',
+      'Testing aligned to AIUC-1, the global AI agent security standard',
     ],
   },
   {
@@ -53,7 +53,7 @@ const services = [
     shortTitle: 'AI MS',
     icon: <Cpu className="w-8 h-8" />,
     tagline: 'ISO 42001-aligned AI governance frameworks',
-    description: 'As AI regulation accelerates globally, organisations need structured governance. Stealth Cyber helps you design and implement an AI Management System (AIMS) aligned to ISO/IEC 42001 — the international standard for responsible AI. We build the policies, processes, and controls needed to govern AI risk, address bias, ensure transparency, and demonstrate accountability.',
+    description: 'As AI regulation accelerates globally, organisations need structured governance. Stealth Cyber helps you design and implement an AI Management System (AIMS) aligned to ISO/IEC 42001, the international standard for responsible AI. We build the policies, processes, and controls needed to govern AI risk, address bias, ensure transparency, and demonstrate accountability.',
     features: [
       'ISO/IEC 42001 AIMS gap assessment and implementation',
       'AI risk register and impact assessment framework',
@@ -74,8 +74,8 @@ const services = [
     title: 'AI Readiness Assessments',
     shortTitle: 'AI Readiness',
     icon: <ClipboardCheck className="w-8 h-8" />,
-    tagline: 'Adopt AI with confidence — not risk',
-    description: 'Before you deploy AI, you need to know if your organisation is ready. Our AI Readiness Assessment evaluates your data governance maturity, security controls, regulatory obligations, risk appetite, and organisational capability — giving you a clear roadmap to adopt AI safely and strategically.',
+    tagline: 'Adopt AI with confidence, not risk',
+    description: 'Before you deploy AI, you need to know if your organisation is ready. Our AI Readiness Assessment evaluates your data governance maturity, security controls, regulatory obligations, risk appetite, and organisational capability, giving you a clear roadmap to adopt AI safely and strategically.',
     features: [
       'Data governance and quality assessment',
       'Security control evaluation for AI workloads',
@@ -129,7 +129,7 @@ export default function AIServicesPage() {
               AI Security, Red Teaming &amp; Governance
             </h1>
             <p className="text-stealth-gray text-lg leading-relaxed">
-              AI is transforming business — but it&apos;s also creating an entirely new attack surface.
+              AI is transforming business, but it&apos;s also creating an entirely new attack surface.
               Stealth Cyber&apos;s specialist AI security practice helps you adopt AI safely, govern it
               responsibly, and test it relentlessly.
             </p>
@@ -215,7 +215,7 @@ export default function AIServicesPage() {
             </h2>
             <p className="text-stealth-gray max-w-2xl mx-auto mb-8 leading-relaxed">
               Take our free 5-minute AI Readiness Assessment and find out where your organisation
-              stands. Get a personalised score with actionable recommendations — instantly.
+              stands. Get a personalised score with actionable recommendations, instantly.
             </p>
             <Link
               href="/ai-assessment"

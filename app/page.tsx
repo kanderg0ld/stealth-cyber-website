@@ -9,7 +9,7 @@ import LocalBusinessJsonLd from '@/components/structured-data/LocalBusinessJsonL
 
 export const metadata: Metadata = {
   title: 'Stealth Cyber | Global Managed Cybersecurity Services',
-  description: 'Enterprise-level cyber defence — because your business deserves the highest protection. 24/7 threat monitoring, incident response, CMMC, ISO 27001, Essential Eight, AI security, and GRC from offices in Gold Coast, São Paulo, and Texas.',
+  description: 'Enterprise-level cyber defence for businesses that demand the highest protection. 24/7 threat monitoring, incident response, CMMC, ISO 27001, Essential Eight, AI security, and GRC from offices in Gold Coast, São Paulo, and Texas.',
   keywords: [
     'managed cybersecurity services', 'managed detection and response Australia',
     'incident response Gold Coast', 'Essential Eight compliance', 'CMMC assessment',
@@ -18,9 +18,9 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Stealth Cyber | Global Managed Cybersecurity Services',
-    description: 'Enterprise-level cyber defence — because your business deserves the highest protection. 24/7 threat monitoring, incident response, CMMC, ISO 27001, Essential Eight, AI security — offices in AU, BR, US.',
+    description: 'Enterprise-level cyber defence for businesses that demand the highest protection. 24/7 threat monitoring, incident response, CMMC, ISO 27001, Essential Eight, AI security. Offices in AU, BR, US.',
     url: 'https://stealthcyber.io',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Stealth Cyber — Global Managed Cybersecurity' }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Stealth Cyber Global Managed Cybersecurity' }],
   },
   alternates: { canonical: 'https://stealthcyber.io' },
 }
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 const services = [
   {
     title: 'Managed Detection & Response',
-    description: 'Sleep easier knowing your business is monitored 24/7. We detect and shut down threats before they become breaches — so you never have to.',
+    description: 'Sleep easier knowing your business is monitored 24/7. We detect and shut down threats before they become breaches, so you never have to.',
     icon: <Eye className="w-5 h-5" />,
     href: '/services#mdr',
   },
@@ -46,13 +46,13 @@ const services = [
   },
   {
     title: 'GRC & Compliance',
-    description: 'Cut through the complexity of cyber regulations. We make compliance straightforward — from the Privacy Act to global frameworks.',
+    description: 'Cut through the complexity of cyber regulations. We make compliance straightforward, from the Privacy Act to global frameworks.',
     icon: <Award className="w-5 h-5" />,
     href: '/services#grc',
   },
   {
     title: 'CMMC Assessment',
-    description: 'Need CMMC certification for US defence contracts? We guide you from gap assessment to audit-ready — so you can win and keep those contracts.',
+    description: 'Need CMMC certification for US defence contracts? We guide you from gap assessment to audit-ready, so you can win and keep those contracts.',
     icon: <FileCheck className="w-5 h-5" />,
     href: '/services#cmmc',
   },
@@ -64,7 +64,7 @@ const services = [
   },
   {
     title: 'AI Security',
-    description: 'Using AI in your business? We make sure it doesn\'t become your biggest vulnerability — from LLMs to ML pipelines.',
+    description: 'Using AI in your business? We make sure it doesn\'t become your biggest vulnerability, from LLMs to ML pipelines.',
     icon: <Brain className="w-5 h-5" />,
     href: '/services#ai-security',
   },
@@ -76,7 +76,7 @@ const services = [
   },
   {
     title: 'Managed Security Services',
-    description: 'Get a full security operations capability without building one yourself. Monitoring, vulnerability management, and training — all managed.',
+    description: 'Get a full security operations capability without building one yourself. Monitoring, vulnerability management, and training, all managed.',
     icon: <Server className="w-5 h-5" />,
     href: '/services#mss',
   },
@@ -100,7 +100,7 @@ const stats = [
 const faqs = [
   {
     question: 'What is managed detection and response (MDR)?',
-    answer: 'Managed Detection and Response (MDR) is a 24/7 cybersecurity service combining advanced technology with human analysts in a Security Operations Centre (SOC). Unlike passive monitoring tools, MDR analysts actively investigate every alert, separate genuine threats from false positives, and contain incidents in real time — before they escalate into data breaches. Stealth Cyber\'s MDR covers endpoints, cloud, network, and email.',
+    answer: 'Managed Detection and Response (MDR) is a 24/7 cybersecurity service combining advanced technology with human analysts in a Security Operations Centre (SOC). Unlike passive monitoring tools, MDR analysts actively investigate every alert, separate genuine threats from false positives, and contain incidents in real time, before they escalate into data breaches. Stealth Cyber\'s MDR covers endpoints, cloud, network, and email.',
   },
   {
     question: 'What is the Essential Eight and who needs it?',
@@ -116,11 +116,11 @@ const faqs = [
   },
   {
     question: 'What is ISO 27001 and why should my organisation get certified?',
-    answer: 'ISO/IEC 27001 is the internationally recognised standard for Information Security Management Systems (ISMS). Certification demonstrates to clients, partners, regulators, and insurers that your organisation manages information security risks systematically. It is increasingly required by enterprise customers, government contracts, and cyber insurance policies. Stealth Cyber supports organisations through every stage — from gap assessment and ISMS design to internal audit readiness and the final certification audit.',
+    answer: 'ISO/IEC 27001 is the internationally recognised standard for Information Security Management Systems (ISMS). Certification demonstrates to clients, partners, regulators, and insurers that your organisation manages information security risks systematically. It is increasingly required by enterprise customers, government contracts, and cyber insurance policies. Stealth Cyber supports organisations through every stage, from gap assessment and ISMS design to internal audit readiness and the final certification audit.',
   },
   {
     question: 'What is AI security and why does it matter?',
-    answer: 'AI security addresses risks unique to artificial intelligence and machine learning systems — including adversarial attacks, data poisoning, model theft, and prompt injection vulnerabilities. As organisations adopt large language models (LLMs) and ML-powered tools, these systems introduce attack surfaces not covered by traditional security frameworks. Stealth Cyber provides purpose-built AI security assessments and controls aligned to OWASP\'s LLM Top 10 and emerging AI governance standards.',
+    answer: 'AI security addresses risks unique to artificial intelligence and machine learning systems, including adversarial attacks, data poisoning, model theft, and prompt injection vulnerabilities. As organisations adopt large language models (LLMs) and ML-powered tools, these systems introduce attack surfaces not covered by traditional security frameworks. Stealth Cyber provides purpose-built AI security assessments and controls aligned to OWASP\'s LLM Top 10 and emerging AI governance standards.',
   },
   {
     question: 'Where does Stealth Cyber operate?',
@@ -161,7 +161,7 @@ export default function HomePage() {
               How We Protect Your Business
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Every service is designed around one goal — keeping your business safe, compliant, and confident.
+              Every service is designed around one goal: keeping your business safe, compliant, and confident.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -191,7 +191,7 @@ export default function HomePage() {
               Leading the Way in AI Security
             </h2>
             <p className="text-stealth-gray max-w-3xl mx-auto">
-              As businesses race to adopt AI, the attack surface is expanding faster than most security teams can keep up. Stealth Cyber is at the forefront — protecting, governing, and red teaming AI systems for organisations worldwide.
+              As businesses race to adopt AI, the attack surface is expanding faster than most security teams can keep up. Stealth Cyber is at the forefront, protecting, governing, and red teaming AI systems for organisations worldwide.
             </p>
           </div>
 
@@ -200,7 +200,7 @@ export default function HomePage() {
               {
                 icon: <Shield className="w-6 h-6" />,
                 title: 'AI Red Teaming',
-                description: 'We simulate real-world adversarial attacks against your AI systems — aligned to the AIUC-1 standard. From prompt injection and jailbreaks to data poisoning and model manipulation. Find out how your AI holds up before an attacker does.',
+                description: 'We simulate real-world adversarial attacks against your AI systems, aligned to the AIUC-1 standard. From prompt injection and jailbreaks to data poisoning and model manipulation. Find out how your AI holds up before an attacker does.',
               },
               {
                 icon: <Cpu className="w-6 h-6" />,
@@ -210,7 +210,7 @@ export default function HomePage() {
               {
                 icon: <ClipboardCheck className="w-6 h-6" />,
                 title: 'AI Readiness Assessments',
-                description: 'Planning to adopt AI? We assess your organisation\u2019s readiness — covering data governance, security controls, risk appetite, and regulatory obligations — so you can move forward with confidence.',
+                description: 'Planning to adopt AI? We assess your organisation\u2019s readiness, covering data governance, security controls, risk appetite, and regulatory obligations, so you can move forward with confidence.',
               },
               {
                 icon: <Brain className="w-6 h-6" />,
@@ -267,7 +267,7 @@ export default function HomePage() {
               </h2>
               <p className="text-stealth-gray leading-relaxed mb-4">
                 Led by experienced, global, and industry award-winning leadership, Stealth Cyber
-                was created because we believe every business — regardless of size — deserves
+                was created because we believe every business, regardless of size, deserves
                 the highest level of cyber protection.
               </p>
               <p className="text-stealth-gray leading-relaxed mb-4">
@@ -367,7 +367,7 @@ export default function HomePage() {
             Find Out Where You&apos;re Exposed
           </h2>
           <p className="text-stealth-gray mb-8 text-lg">
-            Take our free 5-minute security assessment and get a clear picture of your risk — no obligation, no jargon.
+            Take our free 5-minute security assessment and get a clear picture of your risk. No obligation, no jargon.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

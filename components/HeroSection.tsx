@@ -36,7 +36,7 @@ export default function HeroSection() {
           <p className="text-lg text-stealth-gray leading-relaxed mb-8 max-w-2xl">
             Stealth Cyber delivers 24/7 protection for your data, keeping you safe from
             cyber threats, protecting your business&apos;s reputation, and helping you stay
-            ahead of regulatory requirements — so you can focus on running your business
+            ahead of regulatory requirements, so you can focus on running your business
             with confidence.
           </p>
 

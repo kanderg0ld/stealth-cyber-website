@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://stealthcyber.io/services' },
   openGraph: {
     title: 'Cybersecurity Services | Stealth Cyber',
-    description: 'MDR, Incident Response, Essential Eight, CMMC, ISO 27001, AI Security, AI Management Systems, GRC, and Penetration Testing — delivered globally from AU, BR, and US.',
+    description: 'MDR, Incident Response, Essential Eight, CMMC, ISO 27001, AI Security, AI Management Systems, GRC, and Penetration Testing, delivered globally from AU, BR, and US.',
     url: 'https://stealthcyber.io/services',
     images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Stealth Cyber Cybersecurity Services' }],
   },
@@ -23,7 +23,7 @@ const services = [
     shortTitle: 'MDR',
     icon: <Eye className="w-8 h-8" />,
     tagline: '24/7 threat detection and rapid containment',
-    description: 'Our Managed Detection and Response service provides continuous monitoring of your entire IT environment — endpoints, network, cloud, and email. Our global SOC analysts investigate every alert in real time, separating genuine threats from false positives and containing incidents before they escalate.',
+    description: 'Our Managed Detection and Response service provides continuous monitoring of your entire IT environment, including endpoints, network, cloud, and email. Our global SOC analysts investigate every alert in real time, separating genuine threats from false positives and containing incidents before they escalate.',
     features: [
       '24/7/365 security operations centre monitoring',
       'Endpoint Detection and Response (EDR) integration',
@@ -65,7 +65,7 @@ const services = [
     shortTitle: 'E8',
     icon: <ClipboardCheck className="w-8 h-8" />,
     tagline: 'ACSC Essential Eight maturity uplift for Australian businesses',
-    description: 'The Australian Cyber Security Centre\'s Essential Eight framework defines eight core mitigation strategies that significantly reduce cyber risk. Stealth Cyber assesses your current maturity level against the Essential Eight, identifies gaps, and implements the controls needed to achieve your target maturity level — from Level 0 to Level 3.',
+    description: 'The Australian Cyber Security Centre\'s Essential Eight framework defines eight core mitigation strategies that significantly reduce cyber risk. Stealth Cyber assesses your current maturity level against the Essential Eight, identifies gaps, and implements the controls needed to achieve your target maturity level, from Level 0 to Level 3.',
     features: [
       'Essential Eight gap assessment and maturity scoring',
       'Application control implementation',
@@ -87,7 +87,7 @@ const services = [
     shortTitle: 'CMMC',
     icon: <FileCheck className="w-8 h-8" />,
     tagline: 'US Department of Defense supply chain certification',
-    description: 'The Cybersecurity Maturity Model Certification (CMMC) is a mandatory requirement for organisations operating in the US Department of Defense supply chain. Stealth Cyber\'s certified CMMC assessors guide you through gap analysis, remediation, and readiness for formal third-party assessment — whether you need CMMC Level 1, Level 2, or Level 3.',
+    description: 'The Cybersecurity Maturity Model Certification (CMMC) is a mandatory requirement for organisations operating in the US Department of Defense supply chain. Stealth Cyber\'s certified CMMC assessors guide you through gap analysis, remediation, and readiness for formal third-party assessment, whether you need CMMC Level 1, Level 2, or Level 3.',
     features: [
       'CMMC Level 1, 2, and 3 gap assessments',
       'NIST SP 800-171 practice implementation support',
@@ -108,7 +108,7 @@ const services = [
     shortTitle: 'ISO 27001',
     icon: <BookOpen className="w-8 h-8" />,
     tagline: 'End-to-end ISMS certification support',
-    description: 'ISO/IEC 27001 is the international standard for information security management. Stealth Cyber provides end-to-end support for your certification journey — from initial gap assessment and Information Security Management System (ISMS) design, through risk treatment and control implementation, to Stage 1 and Stage 2 audit readiness.',
+    description: 'ISO/IEC 27001 is the international standard for information security management. Stealth Cyber provides end-to-end support for your certification journey, from initial gap assessment and Information Security Management System (ISMS) design, through risk treatment and control implementation, to Stage 1 and Stage 2 audit readiness.',
     features: [
       'ISO 27001 gap assessment against Annex A controls',
       'ISMS scope definition and policy development',
@@ -154,7 +154,7 @@ const services = [
     shortTitle: 'AI MS',
     icon: <Cpu className="w-8 h-8" />,
     tagline: 'ISO 42001-aligned AI governance for the regulated era',
-    description: 'As AI regulation accelerates globally, robust governance is no longer optional. Stealth Cyber helps you design and implement an AI Management System (AIMS) aligned with ISO/IEC 42001. We build the policies, risk frameworks, and accountability structures needed to govern AI responsibly — and prove it to regulators, clients, and stakeholders.',
+    description: 'As AI regulation accelerates globally, robust governance is no longer optional. Stealth Cyber helps you design and implement an AI Management System (AIMS) aligned with ISO/IEC 42001. We build the policies, risk frameworks, and accountability structures needed to govern AI responsibly, and prove it to regulators, clients, and stakeholders.',
     features: [
       'ISO/IEC 42001 AIMS gap assessment and implementation',
       'AI risk register and impact assessment framework',
@@ -178,7 +178,7 @@ const services = [
     shortTitle: 'GRC',
     icon: <Award className="w-8 h-8" />,
     tagline: 'Governance, risk management, and compliance made practical',
-    description: 'Navigating cybersecurity frameworks, regulations, and standards is complex. Stealth Cyber provides end-to-end Governance, Risk and Compliance advisory services to help you build a resilient security programme that satisfies auditors, insurers, customers, and regulators — without burying your team in paperwork.',
+    description: 'Navigating cybersecurity frameworks, regulations, and standards is complex. Stealth Cyber provides end-to-end Governance, Risk and Compliance advisory services to help you build a resilient security programme that satisfies auditors, insurers, customers, and regulators, without burying your team in paperwork.',
     features: [
       'Australian Privacy Act and Notifiable Data Breaches compliance',
       'NIST Cybersecurity Framework alignment',
@@ -198,7 +198,7 @@ const services = [
     title: 'Managed Security Services',
     shortTitle: 'MSS',
     icon: <Server className="w-8 h-8" />,
-    tagline: 'A complete security operations capability — fully managed',
+    tagline: 'A complete security operations capability, fully managed',
     description: 'Our Managed Security Services package combines SIEM-as-a-service, vulnerability management, and security awareness training into a single, cost-effective subscription. Ideal for organisations that want comprehensive visibility and proactive risk reduction without managing multiple vendors.',
     features: [
       'Cloud-native SIEM deployment and management',
@@ -220,7 +220,7 @@ const services = [
     shortTitle: 'Pentest',
     icon: <Lock className="w-8 h-8" />,
     tagline: 'Find weaknesses before attackers do',
-    description: 'Our certified penetration testers conduct authorised, controlled attacks on your systems to uncover exploitable vulnerabilities. Every engagement delivers a detailed report with risk-rated findings and practical remediation guidance — so you can prioritise fixes that matter most.',
+    description: 'Our certified penetration testers conduct authorised, controlled attacks on your systems to uncover exploitable vulnerabilities. Every engagement delivers a detailed report with risk-rated findings and practical remediation guidance, so you can prioritise fixes that matter most.',
     features: [
       'Network infrastructure penetration testing',
       'Web application and API security testing',
@@ -256,7 +256,7 @@ export default function ServicesPage() {
             <p className="text-stealth-gray text-lg leading-relaxed">
               From round-the-clock threat monitoring to AI governance and global compliance frameworks,
               Stealth Cyber delivers the full spectrum of cybersecurity services your organisation needs
-              to operate securely and confidently — wherever you do business.
+              to operate securely and confidently, wherever you do business.
             </p>
           </div>
         </div>

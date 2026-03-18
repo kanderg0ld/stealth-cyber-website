@@ -3,7 +3,7 @@
 import { useEffect } from 'react'
 import { Shield } from 'lucide-react'
 
-// Allowed hostnames for studio redirect — prevents open redirect abuse.
+// Allowed hostnames for studio redirect. Prevents open redirect abuse.
 const ALLOWED_STUDIO_HOSTS = ['sanity.io', 'sanity.studio']
 
 function getSafeStudioUrl(): string {
@@ -15,7 +15,7 @@ function getSafeStudioUrl(): string {
       return url.href
     }
   } catch {
-    // invalid URL — fall through to default
+    // invalid URL, fall through to default
   }
   return 'https://sanity.io/manage'
 }

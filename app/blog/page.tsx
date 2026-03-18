@@ -31,7 +31,7 @@ export default async function BlogPage() {
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Cybersecurity Blog</h1>
             <p className="text-stealth-gray text-lg">
               Threat intelligence, compliance guidance, and practical security advice
-              for Australian businesses — straight from our SOC and advisory team.
+              for Australian businesses, straight from our SOC and advisory team.
             </p>
           </div>
         </div>
@@ -57,7 +57,7 @@ export default async function BlogPage() {
           ) : (
             <div className="text-center py-20">
               <div className="text-stealth-gray text-lg mb-2">No posts yet.</div>
-              <p className="text-stealth-gray text-sm">Check back soon — our team publishes new insights regularly.</p>
+              <p className="text-stealth-gray text-sm">Check back soon. Our team publishes new insights regularly.</p>
             </div>
           )}
         </div>
