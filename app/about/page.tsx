@@ -5,11 +5,11 @@ import BreadcrumbJsonLd from '@/components/structured-data/BreadcrumbJsonLd'
 
 export const metadata: Metadata = {
   title: 'About Us',
-  description: 'Learn about Stealth Cyber — a global cybersecurity consultancy with offices in Gold Coast (Australia), São Paulo (Brazil), and Texas (USA), delivering enterprise-grade security expertise worldwide.',
+  description: 'Learn about Stealth Cyber — a global cybersecurity consultancy led by award-winning leadership with 25+ years experience across government, retail, aviation, space tech, and financial services.',
   alternates: { canonical: 'https://stealthcyber.io/about' },
   openGraph: {
     title: 'About Stealth Cyber | Global Cybersecurity Consultancy',
-    description: 'Global cybersecurity consultancy with CISSP, OSCP, ISO 27001, ISO 42001, and CMMC-certified professionals. Offices in Gold Coast, São Paulo, and Texas.',
+    description: 'Award-winning cybersecurity leadership with 25+ years experience. CISSP, OSCP, ISO 27001, ISO 42001, and CMMC-certified professionals across Gold Coast, São Paulo, and Texas.',
     url: 'https://stealthcyber.io/about',
     images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'About Stealth Cyber' }],
   },
@@ -52,12 +52,13 @@ export default function AboutPage() {
           <div className="max-w-3xl">
             <div className="text-stealth-cyan text-xs font-medium uppercase tracking-widest mb-4">About Us</div>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Global Cybersecurity Expertise, Without the Enterprise Price Tag
+              Global Cybersecurity Expertise. Built to Protect Your Business.
             </h1>
             <p className="text-stealth-gray text-lg leading-relaxed">
-              Stealth Cyber was founded on a simple belief: organisations of every size
-              deserve enterprise-grade cybersecurity protection — without the complexity
-              or the price tag. With offices across three continents, we deliver it everywhere.
+              Stealth Cyber was founded by award-winning cybersecurity leadership with
+              over 25 years of experience spanning government, retail, aviation, space tech,
+              and financial services. With offices across three continents, we bring that
+              depth of expertise to every business we protect.
             </p>
           </div>
         </div>
@@ -77,9 +78,9 @@ export default function AboutPage() {
                 reputational damage.
               </p>
               <p className="text-stealth-gray leading-relaxed mb-4">
-                Stealth Cyber exists to change this. We bring the tools, processes, and expertise
-                previously available only to large enterprises and put them within reach of businesses
-                of all sizes — from Australian SMBs to US defence contractors and Brazilian enterprises.
+                Stealth Cyber exists to change this. We believe every business deserves the
+                highest level of cyber protection, and we bring the tools, processes, and expertise
+                to make that a reality — from Australian SMBs to US defence contractors and Brazilian enterprises.
               </p>
               <p className="text-stealth-gray leading-relaxed">
                 Headquartered in Gold Coast, Australia, with offices in São Paulo and Texas, we serve

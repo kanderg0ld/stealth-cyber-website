@@ -24,10 +24,10 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
             <div className="text-stealth-cyan text-xs font-medium uppercase tracking-widest mb-4">Contact Us</div>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Get in Touch</h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Let&apos;s Find Out Where You&apos;re Exposed</h1>
             <p className="text-stealth-gray text-lg">
-              Ready to protect your business? Book a free security assessment or speak with
-              our team about how Stealth Cyber can help your organisation.
+              Book a free security assessment and get a clear picture of your current risk.
+              No obligation, no jargon — just honest guidance from our expert team.
             </p>
           </div>
         </div>
@@ -94,9 +94,9 @@ export default function ContactPage() {
               <div className="bg-stealth-navy rounded-xl border border-stealth-cyan/10 p-6">
                 <h3 className="text-white font-semibold mb-2">Free Security Assessment</h3>
                 <p className="text-stealth-gray text-sm leading-relaxed">
-                  Not sure where to start? Our free security assessment gives you a clear picture
-                  of your current security posture, risks, and recommended next steps — with no
-                  obligation to engage.
+                  Not sure where to start? Our free assessment gives you a clear picture of your
+                  security gaps, your biggest risks, and exactly what to do next — delivered
+                  within 48 hours.
                 </p>
               </div>
             </div>

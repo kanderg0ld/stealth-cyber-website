@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import Image from 'next/image'
 import { Shield, Eye, AlertTriangle, ClipboardCheck, Server, Lock, ArrowRight, Users, Clock, Award, Cpu, FileCheck, BookOpen, Brain, Star, Quote } from 'lucide-react'
 import HeroSection from '@/components/HeroSection'
 import ServiceCard from '@/components/ServiceCard'
@@ -29,71 +28,71 @@ export const metadata: Metadata = {
 const services = [
   {
     title: 'Managed Detection & Response',
-    description: '24/7 threat monitoring and rapid response from our global SOC. We detect, investigate, and contain threats before they become breaches.',
+    description: 'Sleep easier knowing your business is monitored 24/7. We detect and shut down threats before they become breaches — so you never have to.',
     icon: <Eye className="w-5 h-5" />,
     href: '/services#mdr',
   },
   {
     title: 'Incident Response',
-    description: 'When seconds count, our DFIR team mobilises fast. Contain, eradicate, and recover from security incidents with minimal business disruption.',
+    description: 'Already under attack? Our team mobilises fast to contain the damage, get you back online, and make sure it doesn\'t happen again.',
     icon: <AlertTriangle className="w-5 h-5" />,
     href: '/services#incident-response',
   },
   {
     title: 'Essential Eight Compliance',
-    description: 'Align with the ACSC Essential Eight mitigation strategies. We assess your current maturity level and build a roadmap to full compliance.',
+    description: 'Meet the ACSC Essential Eight requirements your insurers and clients are asking for. We assess where you are and get you where you need to be.',
     icon: <ClipboardCheck className="w-5 h-5" />,
     href: '/services#essential-eight',
   },
   {
     title: 'GRC & Compliance',
-    description: 'Navigate complex governance, risk, and compliance requirements. From the Australian Privacy Act to global frameworks, we guide you every step of the way.',
+    description: 'Cut through the complexity of cyber regulations. We make compliance straightforward — from the Privacy Act to global frameworks.',
     icon: <Award className="w-5 h-5" />,
     href: '/services#grc',
   },
   {
     title: 'CMMC Assessment',
-    description: 'Achieve Cybersecurity Maturity Model Certification for US DoD supply chain requirements. Gap assessments, remediation guidance, and audit readiness support.',
+    description: 'Need CMMC certification for US defence contracts? We guide you from gap assessment to audit-ready — so you can win and keep those contracts.',
     icon: <FileCheck className="w-5 h-5" />,
     href: '/services#cmmc',
   },
   {
     title: 'ISO 27001',
-    description: 'End-to-end ISO/IEC 27001 certification support — from gap assessment and ISMS design through to audit readiness and ongoing surveillance.',
+    description: 'Show your clients and partners you take security seriously. We handle your ISO 27001 journey from start to certification.',
     icon: <BookOpen className="w-5 h-5" />,
     href: '/services#iso27001',
   },
   {
     title: 'AI Security',
-    description: 'Secure AI/ML systems against adversarial attacks, data poisoning, model theft, and prompt injection. Purpose-built assessments for LLM and ML workloads.',
+    description: 'Using AI in your business? We make sure it doesn\'t become your biggest vulnerability — from LLMs to ML pipelines.',
     icon: <Brain className="w-5 h-5" />,
     href: '/services#ai-security',
   },
   {
     title: 'AI Management Systems',
-    description: 'Implement ISO 42001-aligned AI management frameworks. Govern AI risk, bias, transparency, and accountability across your organisation.',
+    description: 'Govern your AI responsibly. We help you build frameworks for AI risk, transparency, and accountability that regulators expect.',
     icon: <Cpu className="w-5 h-5" />,
     href: '/services#ai-management',
   },
   {
     title: 'Managed Security Services',
-    description: 'A fully managed security operations capability — SIEM, vulnerability management, and security awareness training in one comprehensive package.',
+    description: 'Get a full security operations capability without building one yourself. Monitoring, vulnerability management, and training — all managed.',
     icon: <Server className="w-5 h-5" />,
     href: '/services#mss',
   },
   {
     title: 'Penetration Testing',
-    description: 'Authorised ethical hacking to identify weaknesses before attackers do. Network, web application, and social engineering assessments available.',
+    description: 'Find out where your weaknesses are before attackers do. Real-world testing with clear, actionable results.',
     icon: <Lock className="w-5 h-5" />,
     href: '/services#pentest',
   },
 ]
 
 const stats = [
-  { value: '24/7', label: 'SOC Monitoring' },
-  { value: '<15min', label: 'Mean Time to Detect' },
-  { value: '3', label: 'Continents' },
-  { value: 'E8', label: 'ACSC Aligned' },
+  { value: '43%', label: 'of attacks target SMBs' },
+  { value: '$4.45M', label: 'average cost of a breach' },
+  { value: '<15min', label: 'our mean time to detect' },
+  { value: '24/7', label: 'around-the-clock protection' },
 ]
 
 const faqs = [
@@ -157,11 +156,10 @@ export default function HomePage() {
               <Shield className="w-3 h-3" /> Our Services
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Comprehensive Cyber Protection
+              How We Protect Your Business
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              From 24/7 monitoring to AI governance, Stealth Cyber delivers the full
-              spectrum of cybersecurity services your business needs to stay secure and resilient.
+              Every service is designed around one goal — keeping your business safe, compliant, and confident.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -283,72 +281,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Leadership section */}
-      <section className="py-20 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-stealth-blue/30 text-stealth-blue text-xs font-medium mb-4 bg-stealth-blue/5">
-              <Users className="w-3 h-3" /> Leadership
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Meet Our Leadership
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Experienced cybersecurity leaders driving Stealth Cyber&apos;s mission to make
-              enterprise-grade protection accessible to every organisation.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
-            {/* CEO */}
-            <div className="group text-center">
-              <div className="relative w-64 h-80 mx-auto mb-6 rounded-2xl overflow-hidden bg-stealth-navy border border-stealth-navy-light shadow-lg">
-                {/* Replace src with actual headshot path, e.g. /ceo-headshot.jpg */}
-                <div className="absolute inset-0 flex items-center justify-center text-stealth-gray/40">
-                  <Users className="w-20 h-20" />
-                </div>
-                {/* Uncomment and update when you have the photo:
-                <Image
-                  src="/ceo-headshot.jpg"
-                  alt="CEO Name — Chief Executive Officer at Stealth Cyber"
-                  fill
-                  className="object-cover object-top"
-                  sizes="(max-width: 768px) 80vw, 256px"
-                /> */}
-                <div className="absolute inset-0 bg-gradient-to-t from-stealth-dark/80 via-transparent to-transparent" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900">CEO Name</h3>
-              <p className="text-stealth-blue font-medium text-sm mb-3">Chief Executive Officer</p>
-              <p className="text-gray-600 text-sm max-w-xs mx-auto leading-relaxed">
-                Brief bio here — background, experience, and vision for Stealth Cyber.
-              </p>
-            </div>
-            {/* CTO */}
-            <div className="group text-center">
-              <div className="relative w-64 h-80 mx-auto mb-6 rounded-2xl overflow-hidden bg-stealth-navy border border-stealth-navy-light shadow-lg">
-                {/* Replace src with actual headshot path, e.g. /cto-headshot.jpg */}
-                <div className="absolute inset-0 flex items-center justify-center text-stealth-gray/40">
-                  <Users className="w-20 h-20" />
-                </div>
-                {/* Uncomment and update when you have the photo:
-                <Image
-                  src="/cto-headshot.jpg"
-                  alt="CTO Name — Chief Technology Officer at Stealth Cyber"
-                  fill
-                  className="object-cover object-top"
-                  sizes="(max-width: 768px) 80vw, 256px"
-                /> */}
-                <div className="absolute inset-0 bg-gradient-to-t from-stealth-dark/80 via-transparent to-transparent" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900">CTO Name</h3>
-              <p className="text-stealth-blue font-medium text-sm mb-3">Chief Technology Officer</p>
-              <p className="text-gray-600 text-sm max-w-xs mx-auto leading-relaxed">
-                Brief bio here — background, experience, and technical leadership at Stealth Cyber.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA section */}
       <section className="py-20 bg-stealth-dark relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern bg-grid opacity-50" />
@@ -356,19 +288,18 @@ export default function HomePage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full blur-3xl pointer-events-none" style={{ background: 'radial-gradient(ellipse, rgba(98,49,245,0.10) 0%, rgba(0,56,255,0.08) 50%, transparent 70%)' }} />
         <div className="relative z-10 max-w-3xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Ready to Secure Your Business?
+            Find Out Where You&apos;re Exposed
           </h2>
           <p className="text-stealth-gray mb-8 text-lg">
-            Book a free security assessment and discover where your business stands —
-            no obligation, no jargon, just clear guidance from our expert team.
+            Take our free 5-minute security assessment and get a clear picture of your risk — no obligation, no jargon.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/contact"
+              href="/assessment"
               className="inline-flex items-center justify-center gap-2 px-8 py-3.5 btn-gradient text-white font-semibold rounded hover:opacity-90 transition-opacity"
               style={{ boxShadow: '0 4px 24px rgba(0,56,255,0.35)' }}
             >
-              Book Free Assessment <ArrowRight className="w-4 h-4" />
+              Take the Free Assessment <ArrowRight className="w-4 h-4" />
             </Link>
             <a
               href="tel:+61752308381"
@@ -377,6 +308,9 @@ export default function HomePage() {
               Call +61 7 5230 8381
             </a>
           </div>
+          <p className="text-stealth-gray text-sm mt-6">
+            Or book a call with our team for a personalised review.
+          </p>
         </div>
       </section>
     </>
