@@ -49,9 +49,9 @@ export default function Footer() {
             <ul className="space-y-2">
               {services.map((s) => (
                 <li key={s.href}>
-                  <Link href={s.href} className="text-stealth-gray hover:text-stealth-cyan text-sm transition-colors">
+                  <a href={s.href} className="text-stealth-gray hover:text-stealth-cyan text-sm transition-colors">
                     {s.label}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
