@@ -17,8 +17,8 @@ export const metadata: Metadata = {
 
 const stats = [
   { value: '50+', label: 'AI Systems Assessed' },
-  { value: '20', label: 'AI Red Team Engagements' },
-  { value: '10', label: 'Organisations AI-Ready Certified' },
+  { value: '20+', label: 'AI Red Team Engagements' },
+  { value: '10+', label: 'Organisations AI-Ready Certified' },
   { value: '30+', label: 'AI Red Team Engineers Trained' },
   { value: 'ISO 42001', label: 'Lead Auditors on Staff' },
 ]

@@ -91,7 +91,7 @@ const services = [
 const stats = [
   { value: '10,000+', label: 'Threats Blocked' },
   { value: '30+', label: 'Businesses Protected' },
-  { value: '20', label: 'Businesses Uplifted to E8 ML3' },
+  { value: '20+', label: 'Businesses Uplifted to E8 ML3' },
   { value: '100%', label: 'Client Retention' },
   { value: '<15min', label: 'Mean Time to Detect' },
   { value: '24/7', label: 'Around-the-Clock Protection' },
@@ -232,8 +232,8 @@ export default function HomePage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
             {[
               { value: '50+', label: 'AI Systems Assessed' },
-              { value: '20', label: 'AI Red Team Engagements' },
-              { value: '10', label: 'Organisations AI-Ready Certified' },
+              { value: '20+', label: 'AI Red Team Engagements' },
+              { value: '10+', label: 'Organisations AI-Ready Certified' },
               { value: '30+', label: 'AI Red Team Engineers Trained' },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
