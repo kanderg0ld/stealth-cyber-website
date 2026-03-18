@@ -254,7 +254,8 @@ export default function HomePage() {
               </div>
               <Link
                 href="/ai-assessment"
-                className="shrink-0 inline-flex items-center gap-2 px-6 py-3 bg-stealth-cyan text-stealth-dark font-semibold text-sm rounded-lg hover:bg-white transition-colors"
+                className="shrink-0 inline-flex items-center gap-2 px-6 py-3 btn-gradient text-white font-semibold text-sm rounded hover:opacity-90 transition-opacity"
+                style={{ boxShadow: '0 4px 24px rgba(0,56,255,0.35)' }}
               >
                 Take the AI Assessment <ArrowRight className="w-4 h-4" />
               </Link>
