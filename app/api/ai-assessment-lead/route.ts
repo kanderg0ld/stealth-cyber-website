@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import sgMail from '@sendgrid/mail'
+import { z } from 'zod'
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY || '')
 
@@ -172,17 +173,34 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Too many requests.' }, { status: 429, headers: { 'Retry-After': '3600' } })
   }
 
-  let body: { name: string; email: string; company: string; score: number; readinessLevel: string; answers: Record<string, number>; completedAt: string }
-  try { body = await request.json() }
-  catch { return NextResponse.json({ error: 'Invalid JSON' }, { status: 400 }) }
+  const aiAssessmentLeadSchema = z.object({
+    name: z.string().min(1).max(200),
+    email: z.string().email().max(254),
+    company: z.string().min(1).max(200),
+    score: z.number().min(0).max(100),
+    readinessLevel: z.string().max(50),
+    answers: z.record(z.string(), z.number().min(0).max(3)),
+    completedAt: z.string(),
+  })
 
-  if (!body.name || !body.email || !body.company || body.score === undefined) {
-    return NextResponse.json({ error: 'Missing required fields' }, { status: 422 })
+  let raw: unknown
+  try {
+    raw = await request.json()
+  } catch {
+    return NextResponse.json({ error: 'Invalid JSON' }, { status: 400 })
   }
 
-  const name = body.name.trim().replace(/<[^>]*>/g, '').slice(0, 200)
-  const email = body.email.trim().toLowerCase().slice(0, 254)
-  const company = body.company.trim().replace(/<[^>]*>/g, '').slice(0, 200)
+  const parsed = aiAssessmentLeadSchema.safeParse(raw)
+  if (!parsed.success) {
+    return NextResponse.json({ error: 'Validation failed', details: parsed.error.flatten() }, { status: 422 })
+  }
+
+  const body = parsed.data
+
+  // Sanitise inputs
+  const name = body.name.trim().replace(/<[^>]*>/g, '')
+  const email = body.email.trim().toLowerCase()
+  const company = body.company.trim().replace(/<[^>]*>/g, '')
   const score = Math.max(0, Math.min(100, Math.round(body.score)))
   const readinessLevel = body.readinessLevel || getReadinessLevel(score).level
 

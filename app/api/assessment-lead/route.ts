@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import sgMail from '@sendgrid/mail'
+import { z } from 'zod'
 
 // ---------------------------------------------------------------------------
 // SendGrid setup
@@ -271,30 +272,34 @@ export async function POST(request: NextRequest) {
     )
   }
 
-  let body: {
-    name: string
-    email: string
-    company: string
-    score: number
-    riskLevel: string
-    answers: Record<string, number>
-    completedAt: string
-  }
+  const assessmentLeadSchema = z.object({
+    name: z.string().min(1).max(200),
+    email: z.string().email().max(254),
+    company: z.string().min(1).max(200),
+    score: z.number().min(0).max(100),
+    riskLevel: z.string().max(50),
+    answers: z.record(z.string(), z.number().min(0).max(3)),
+    completedAt: z.string(),
+  })
 
+  let raw: unknown
   try {
-    body = await request.json()
+    raw = await request.json()
   } catch {
     return NextResponse.json({ error: 'Invalid JSON' }, { status: 400 })
   }
 
-  if (!body.name || !body.email || !body.company || body.score === undefined) {
-    return NextResponse.json({ error: 'Missing required fields' }, { status: 422 })
+  const parsed = assessmentLeadSchema.safeParse(raw)
+  if (!parsed.success) {
+    return NextResponse.json({ error: 'Validation failed', details: parsed.error.flatten() }, { status: 422 })
   }
 
+  const body = parsed.data
+
   // Sanitise inputs
-  const name = body.name.trim().replace(/<[^>]*>/g, '').slice(0, 200)
-  const email = body.email.trim().toLowerCase().slice(0, 254)
-  const company = body.company.trim().replace(/<[^>]*>/g, '').slice(0, 200)
+  const name = body.name.trim().replace(/<[^>]*>/g, '')
+  const email = body.email.trim().toLowerCase()
+  const company = body.company.trim().replace(/<[^>]*>/g, '')
   const score = Math.max(0, Math.min(100, Math.round(body.score)))
   const riskLevel = body.riskLevel || getRiskLevel(score).level
 

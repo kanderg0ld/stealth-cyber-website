@@ -23,7 +23,7 @@
     "Permissions-Policy": "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()",
     "Cross-Origin-Resource-Policy": "same-origin",
     "Cross-Origin-Opener-Policy": "same-origin",
-    "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.sanity.io; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://cdn.sanity.io; connect-src 'self' https://*.sanity.io wss://*.sanity.io; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; object-src 'none';"
+    "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.sanity.io; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://cdn.sanity.io; connect-src 'self' https://api.sanity.io https://cdn.sanity.io wss://api.sanity.io; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; object-src 'none';"
   },
   "mimeTypes": {
     ".json": "text/json"
