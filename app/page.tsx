@@ -89,10 +89,10 @@ const services = [
 ]
 
 const stats = [
-  { value: '43%', label: 'of attacks target SMBs' },
-  { value: '$4.45M', label: 'average cost of a breach' },
-  { value: '<15min', label: 'our mean time to detect' },
-  { value: '24/7', label: 'around-the-clock protection' },
+  { value: '10,000+', label: 'Threats Blocked' },
+  { value: '30+', label: 'Businesses Protected' },
+  { value: '8', label: 'Incidents Responded To in 2026' },
+  { value: '24/7', label: 'Around-the-Clock Protection' },
 ]
 
 const faqs = [
