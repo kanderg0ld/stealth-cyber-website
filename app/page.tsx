@@ -319,17 +319,22 @@ export default function HomePage() {
               Trusted by businesses across Australia, the Americas, and beyond.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                quote: 'Chris and the team at Stealth Cyber have played a critical role in improving the firm\u2019s cyber security processes and systems. I have been particularly impressed by their dedication to helping staff understand cyber security risks and teach proactive ways to both improve and measure security. The team is responsive and clearly incredibly knowledgeable. It has been a welcomed breath of fresh air to partner with Stealth Cyber to ensure better cyber and data protection for our firm and our valuable clients. It\u2019s alarming to reflect on what \u2018could have been\u2019 without the aid and assistance of Stealth Cyber.',
+                quote: 'Chris and the team at Stealth Cyber have played a critical role in improving the firm\u2019s cyber security processes and systems. I have been particularly impressed by their dedication to helping staff understand cyber security risks and teach proactive ways to both improve and measure security. The team is responsive and clearly incredibly knowledgeable. It has been a welcomed breath of fresh air to partner with Stealth Cyber to ensure better cyber and data protection for our firm and our valuable clients.',
                 name: 'Nikolina Palasrinne',
                 role: 'Founder & Principal, Rubix Legal',
               },
               {
-                quote: 'When CertMate was looking for the right cyber security support to help grow in the SaaS market, we found far more than a vendor. We found a genuine partner. Getting up and running felt seamless from day one, and that\u2019s entirely down to the Stealth Cyber team. What stood out wasn\u2019t just their expertise, but how readily Chris and the team adapted to the way we work. Every question was met with a fast, practical answer, and when we needed something adjusted, they made it happen without fuss. As a SaaS business, having a cyber security partner that understands our space and grows alongside us has made all the difference. I wouldn\u2019t hesitate to recommend Stealth Cyber to any SaaS company serious about staying on top of their cyber obligations.',
+                quote: 'When CertMate was looking for the right cyber security support to help grow in the SaaS market, we found far more than a vendor. We found a genuine partner. What stood out wasn\u2019t just their expertise, but how readily Chris and the team adapted to the way we work. Every question was met with a fast, practical answer. As a SaaS business, having a cyber security partner that understands our space and grows alongside us has made all the difference.',
                 name: 'Carina Steinbakk',
                 role: 'Founder, Aevi Tech',
+              },
+              {
+                quote: 'As a law firm handling highly sensitive client data, our IT and cybersecurity requirements are non-negotiable. Stealth Cyber provides a sophisticated and proactive service that goes well beyond basic IT protection. Their layered strategy ensures our firm remains fully protected against evolving cyber risks while keeping every team member alert and informed. I have complete confidence in their ability to safeguard our systems.',
+                name: 'Margherita Walsh',
+                role: 'Managing Principal, Walsh Legal Group',
               },
             ].map((testimonial, i) => (
               <div key={i} className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex flex-col">
