@@ -192,9 +192,9 @@ export default function HomePage() {
                 Our Story
               </h2>
               <p className="text-stealth-gray leading-relaxed mb-4">
-                Founded by an ex-EY Director of Cyber Security, Stealth Cyber was created because
-                we believe that small businesses — run by hard-working individuals — deserve the same
-                level of protection as the largest enterprises.
+                Led by experienced, global, and industry award-winning leadership, Stealth Cyber
+                was created because we believe every business — regardless of size — deserves
+                the highest level of cyber protection.
               </p>
               <p className="text-stealth-gray leading-relaxed mb-4">
                 With over 25 years of combined experience across government, retail, aviation,
