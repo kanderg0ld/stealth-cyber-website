@@ -10,6 +10,14 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    title: 'Demystifying ASD Essential Eight: It\'s Not That Hard, Is It?',
+    excerpt: 'A plain-English breakdown of the ASD Essential Eight. What each control does, why most organisations are further along than they think, and where to start.',
+    slug: 'essential-eight-demystified',
+    publishedAt: '2026-03-18',
+    author: 'Chris McDonald',
+    tags: ['Essential Eight', 'Compliance', 'ASD'],
+  },
+  {
     title: 'Prompt Injection: How Attackers Manipulate AI Systems',
     excerpt: 'Prompt injection is one of the biggest security risks facing AI systems today. Learn how it works, common manipulation techniques, and how to secure your LLMs.',
     slug: 'prompt-injection',
