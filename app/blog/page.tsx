@@ -10,6 +10,14 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    title: 'AI Management Systems: Why They Matter More Than You Think',
+    excerpt: 'AI deployment has outpaced governance in most businesses. What an AI management system is, what it should cover, and why Australian businesses need one now.',
+    slug: 'ai-management-systems',
+    publishedAt: '2026-03-18',
+    author: 'Chris McDonald',
+    tags: ['AI Governance', 'ISO 42001', 'AI Management'],
+  },
+  {
     title: 'Is Your IT Provider Really Providing Optimal Cyber Protection? 10 Things to Consider',
     excerpt: 'IT management and cybersecurity are different disciplines. Here are 10 questions every Australian SMB should be asking their IT provider about cyber protection.',
     slug: 'is-your-it-provider-protecting-you',
