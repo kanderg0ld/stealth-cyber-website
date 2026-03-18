@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { z } from 'zod'
+import sgMail from '@sendgrid/mail'
+
+sgMail.setApiKey(process.env.SENDGRID_API_KEY || '')
 
 // ---------------------------------------------------------------------------
 // Rate limiter — in-memory, per IP. Resets on cold-start.
@@ -141,17 +144,86 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Invalid email address' }, { status: 422 })
   }
 
-  // TODO: Send email via configured transactional email provider (e.g., SendGrid, Resend, Azure Communication Services).
-  // Example:
-  //   await sendEmail({ to: process.env.CONTACT_EMAIL, subject: `New enquiry from ${data.firstName}`, body: ... })
-  //
-  // For now, log to server (never exposes data to client) and return success.
-  console.info('[contact] Submission received', {
-    service: data.service,
-    hasPhone: !!data.phone,
-    timestamp: new Date().toISOString(),
-    // Do NOT log email, name, or message in production — consider a proper logging service.
-  })
+  const serviceLabels: Record<string, string> = {
+    mdr: 'Managed Detection & Response',
+    'incident-response': 'Incident Response',
+    'essential-eight': 'Essential Eight',
+    cmmc: 'CMMC Assessment',
+    iso27001: 'ISO 27001',
+    'ai-security': 'AI Security',
+    'ai-management': 'AI Management Systems',
+    grc: 'GRC & Compliance',
+    mss: 'Managed Security Services',
+    pentest: 'Penetration Testing',
+    other: 'Other',
+  }
+
+  const serviceDisplay = data.service ? (serviceLabels[data.service] || data.service) : 'Not specified'
+
+  try {
+    // Send notification to sales
+    await sgMail.send({
+      to: 'sales@stealthcyber.io',
+      from: { email: 'noreply@stealthcyber.io', name: 'Stealth Cyber Website' },
+      replyTo: { email: data.email, name: `${data.firstName} ${data.lastName}` },
+      subject: `New Enquiry: ${data.firstName} ${data.lastName}${data.organisation ? ` (${data.organisation})` : ''}`,
+      html: `<!DOCTYPE html><html><head><meta charset="utf-8"></head>
+<body style="margin:0;padding:0;background:#04050F;font-family:Arial,sans-serif;">
+<table width="100%" cellpadding="0" cellspacing="0" style="background:#04050F;">
+<tr><td align="center" style="padding:40px 16px;">
+<table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;">
+  <tr><td style="padding:24px 32px;background:#07091A;border-radius:12px 12px 0 0;border-bottom:1px solid rgba(77,204,255,0.1);">
+    <h1 style="color:#fff;font-size:20px;margin:0;">New Contact Enquiry</h1>
+  </td></tr>
+  <tr><td style="padding:32px;background:#07091A;">
+    <table width="100%" cellpadding="0" cellspacing="0">
+      <tr><td style="padding:8px 0;color:#94A3B8;font-size:14px;width:120px;">Name</td><td style="padding:8px 0;color:#fff;font-size:14px;font-weight:600;">${data.firstName} ${data.lastName}</td></tr>
+      <tr><td style="padding:8px 0;color:#94A3B8;font-size:14px;">Email</td><td style="padding:8px 0;"><a href="mailto:${data.email}" style="color:#4DCCFF;text-decoration:none;">${data.email}</a></td></tr>
+      ${data.phone ? `<tr><td style="padding:8px 0;color:#94A3B8;font-size:14px;">Phone</td><td style="padding:8px 0;color:#fff;font-size:14px;">${data.phone}</td></tr>` : ''}
+      ${data.organisation ? `<tr><td style="padding:8px 0;color:#94A3B8;font-size:14px;">Organisation</td><td style="padding:8px 0;color:#fff;font-size:14px;font-weight:600;">${data.organisation}</td></tr>` : ''}
+      <tr><td style="padding:8px 0;color:#94A3B8;font-size:14px;">Service</td><td style="padding:8px 0;color:#4DCCFF;font-size:14px;">${serviceDisplay}</td></tr>
+    </table>
+    <div style="margin-top:24px;padding-top:24px;border-top:1px solid rgba(77,204,255,0.1);">
+      <p style="color:#94A3B8;font-size:12px;text-transform:uppercase;letter-spacing:1px;margin:0 0 8px;">Message</p>
+      <p style="color:#fff;font-size:14px;line-height:1.6;margin:0;white-space:pre-wrap;">${data.message}</p>
+    </div>
+  </td></tr>
+  <tr><td style="padding:24px 32px;background:#04050F;text-align:center;border-radius:0 0 12px 12px;">
+    <p style="color:#94A3B8;font-size:12px;margin:0;">Stealth Cyber Website Contact Form</p>
+  </td></tr>
+</table></td></tr></table></body></html>`,
+    })
+
+    // Send confirmation to the enquirer
+    await sgMail.send({
+      to: data.email,
+      from: { email: 'noreply@stealthcyber.io', name: 'Stealth Cyber' },
+      subject: 'We received your enquiry',
+      html: `<!DOCTYPE html><html><head><meta charset="utf-8"></head>
+<body style="margin:0;padding:0;background:#04050F;font-family:Arial,sans-serif;">
+<table width="100%" cellpadding="0" cellspacing="0" style="background:#04050F;">
+<tr><td align="center" style="padding:40px 16px;">
+<table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;">
+  <tr><td style="padding:24px 32px;background:#07091A;border-bottom:1px solid rgba(77,204,255,0.1);border-radius:12px 12px 0 0;">
+    <img src="https://stealthcyber.io/Primary-Reversed-Dark.png" alt="Stealth Cyber" height="32" style="height:32px;" />
+  </td></tr>
+  <tr><td style="padding:40px 32px;background:#07091A;">
+    <h1 style="color:#fff;font-size:24px;margin:0 0 16px;">Thanks for reaching out, ${data.firstName}.</h1>
+    <p style="color:#94A3B8;font-size:14px;line-height:1.6;margin:0 0 16px;">We've received your enquiry and a member of our team will be in touch shortly.</p>
+    <p style="color:#94A3B8;font-size:14px;line-height:1.6;margin:0 0 24px;">In the meantime, you can take our free cybersecurity self-assessment to get an instant view of your security posture:</p>
+    <a href="https://stealthcyber.io/assessment" style="display:inline-block;padding:14px 32px;background:linear-gradient(135deg,#0038FF,#6231F5);color:#fff;font-size:14px;font-weight:600;text-decoration:none;border-radius:8px;">Take the Free Self-Assessment</a>
+  </td></tr>
+  <tr><td style="padding:24px 32px;background:#07091A;border-top:1px solid rgba(77,204,255,0.1);">
+    <p style="color:#94A3B8;font-size:13px;margin:0;">Need to speak with us urgently? Call us on <a href="tel:+61752308381" style="color:#4DCCFF;text-decoration:none;">+61 7 5230 8381</a> (AU) or <a href="tel:+18557742595" style="color:#4DCCFF;text-decoration:none;">+1 (855) 774-2595</a> (US).</p>
+  </td></tr>
+  <tr><td style="padding:24px 32px;background:#04050F;text-align:center;border-radius:0 0 12px 12px;">
+    <p style="color:#94A3B8;font-size:12px;margin:0;">&copy; ${new Date().getFullYear()} Stealth Cyber Pty Ltd</p>
+  </td></tr>
+</table></td></tr></table></body></html>`,
+    })
+  } catch (err) {
+    console.error('[contact] SendGrid error:', err)
+  }
 
   return NextResponse.json({ success: true }, { status: 200 })
 }
