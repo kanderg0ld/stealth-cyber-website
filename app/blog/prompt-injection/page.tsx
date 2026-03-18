@@ -14,7 +14,6 @@ export const metadata: Metadata = {
     url: 'https://stealthcyber.io/blog/prompt-injection',
     type: 'article',
     publishedTime: '2026-03-18',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Prompt Injection: How Attackers Manipulate AI Systems' }],
   },
 }
 

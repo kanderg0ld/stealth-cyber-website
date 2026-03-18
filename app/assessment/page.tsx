@@ -10,7 +10,6 @@ export const metadata: Metadata = {
     title: 'Free Cybersecurity Self-Assessment | Stealth Cyber',
     description: 'How secure is your business? Take our 5-minute self-assessment to find out your cyber risk level and get personalised recommendations.',
     url: 'https://stealthcyber.io/assessment',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Stealth Cyber Cybersecurity Self-Assessment' }],
   },
 }
 

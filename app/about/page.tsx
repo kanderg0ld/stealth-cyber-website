@@ -11,7 +11,6 @@ export const metadata: Metadata = {
     title: 'About Stealth Cyber | Global Cybersecurity Consultancy',
     description: 'Award-winning cybersecurity leadership with 25+ years experience. CISSP, OSCP, ISO 27001, ISO 42001, and CMMC-certified professionals across Gold Coast, São Paulo, and Texas.',
     url: 'https://stealthcyber.io/about',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'About Stealth Cyber' }],
   },
 }
 

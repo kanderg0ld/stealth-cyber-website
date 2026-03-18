@@ -11,7 +11,6 @@ export const metadata: Metadata = {
     title: 'Contact Stealth Cyber | Get Started',
     description: 'Discuss your cybersecurity needs with our team or reach our 24/7 incident response team. Offices in Gold Coast, São Paulo, and Texas.',
     url: 'https://stealthcyber.io/contact',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Contact Stealth Cyber' }],
   },
 }
 

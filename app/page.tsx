@@ -20,7 +20,6 @@ export const metadata: Metadata = {
     title: 'Stealth Cyber | Global Managed Cybersecurity Services',
     description: 'Enterprise-level cyber defence for businesses that demand the highest protection. 24/7 threat monitoring, incident response, CMMC, ISO 27001, Essential Eight, AI security. Offices in AU, BR, US.',
     url: 'https://stealthcyber.io',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Stealth Cyber Global Managed Cybersecurity' }],
   },
   alternates: { canonical: 'https://stealthcyber.io' },
 }

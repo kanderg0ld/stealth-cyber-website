@@ -11,7 +11,6 @@ export const metadata: Metadata = {
     title: 'AI Security Services | AI Red Teaming, Governance & Training',
     description: 'Stealth Cyber\'s AI security practice: AI Red Teaming, AI Management Systems (ISO 42001), AI Readiness Assessments, and AI Red Team Training. Protect, govern, and test your AI systems.',
     url: 'https://stealthcyber.io/services/ai',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Stealth Cyber AI Security Services' }],
   },
 }
 

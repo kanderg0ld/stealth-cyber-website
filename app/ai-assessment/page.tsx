@@ -10,7 +10,6 @@ export const metadata: Metadata = {
     title: 'Free AI Readiness Assessment | Stealth Cyber',
     description: 'Is your business ready for AI? Take our 5-minute self-assessment to find out your AI readiness level and get personalised recommendations.',
     url: 'https://stealthcyber.io/ai-assessment',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Stealth Cyber AI Readiness Assessment' }],
   },
 }
 

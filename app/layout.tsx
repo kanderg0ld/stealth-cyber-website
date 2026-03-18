@@ -25,7 +25,6 @@ export const metadata: Metadata = {
     alternateLocale: ['en_US', 'pt_BR'],
     url: 'https://stealthcyber.io',
     siteName: 'Stealth Cyber',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Stealth Cyber Global Managed Cybersecurity' }],
   },
   twitter: {
     card: 'summary_large_image',
