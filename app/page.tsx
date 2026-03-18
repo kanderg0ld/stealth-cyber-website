@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { Shield, Eye, AlertTriangle, ClipboardCheck, Server, Lock, ArrowRight, Users, Clock, Award, Cpu, FileCheck, BookOpen, Brain, Star, Quote } from 'lucide-react'
+import { Shield, Eye, AlertTriangle, ClipboardCheck, Server, Lock, ArrowRight, Users, Clock, Award, Cpu, FileCheck, BookOpen, Brain, Star, Quote, ChevronDown } from 'lucide-react'
+import FaqAccordion from '@/components/FaqAccordion'
 import HeroSection from '@/components/HeroSection'
 import ServiceCard from '@/components/ServiceCard'
 import FaqJsonLd from '@/components/structured-data/FaqJsonLd'
@@ -98,32 +99,44 @@ const stats = [
 
 const faqs = [
   {
-    question: 'What is managed detection and response (MDR)?',
-    answer: 'Managed Detection and Response (MDR) is a 24/7 cybersecurity service combining advanced technology with human analysts in a Security Operations Centre (SOC). Unlike passive monitoring tools, MDR analysts actively investigate every alert, separate genuine threats from false positives, and contain incidents in real time, before they escalate into data breaches. Stealth Cyber\'s MDR covers endpoints, cloud, network, and email.',
+    question: 'What is proactive cybersecurity and how is it different from reactive?',
+    answer: 'Proactive cybersecurity focuses on preventing attacks before they happen, using continuous monitoring, vulnerability management, threat hunting, and security awareness training. Reactive cybersecurity responds after a breach has occurred, focusing on containment and recovery. Proactive security reduces the likelihood and impact of attacks, while reactive security manages the fallout. Most modern businesses need both, but investing in proactive measures significantly reduces overall risk and cost. Stealth Cyber delivers proactive 24/7 managed detection and response alongside reactive incident response services.',
   },
   {
-    question: 'What is the Essential Eight and who needs it?',
-    answer: 'The Essential Eight is a prioritised set of eight cybersecurity mitigation strategies developed by the Australian Cyber Security Centre (ACSC). Designed to protect organisations against the most common cyber threats, it covers application control, patch management, multi-factor authentication, regular backups, and more. Organisations are assessed at maturity levels 0–3. While mandatory for Australian government entities, it is strongly recommended for all Australian businesses and increasingly required by enterprise clients and insurers.',
+    question: 'How do I know if my business has been compromised?',
+    answer: 'Common signs of a business compromise include unusual network traffic, unexpected system slowdowns, unexplained account lockouts, employees receiving phishing emails from internal accounts, unfamiliar software or processes running on devices, and unexpected data transfers. Many breaches go undetected for months because businesses lack continuous monitoring. The average dwell time for an undetected breach is over 200 days. A managed detection and response (MDR) service monitors your environment 24/7 and detects threats in minutes, not months.',
   },
   {
-    question: 'What is CMMC and does my organisation need it?',
-    answer: 'The Cybersecurity Maturity Model Certification (CMMC) is a mandatory framework for organisations in the US Department of Defense (DoD) supply chain. If your organisation contracts directly with the DoD, or works as a subcontractor handling Federal Contract Information (FCI) or Controlled Unclassified Information (CUI), CMMC compliance is required to win or maintain those contracts. Stealth Cyber provides gap assessments, remediation guidance, and audit readiness support for CMMC Level 1 and Level 2.',
+    question: 'What does a managed detection and response service actually include?',
+    answer: 'A managed detection and response (MDR) service includes 24/7 monitoring of your endpoints, network, cloud, and email by trained security analysts in a Security Operations Centre (SOC). It covers real-time threat detection, alert investigation and triage, threat intelligence enrichment, automated and manual containment of active threats, incident escalation, and regular reporting. Unlike basic antivirus or SIEM tools, MDR analysts actively investigate every alert and take action on your behalf. Stealth Cyber\'s MDR service also includes monthly threat briefings and risk reports.',
   },
   {
-    question: 'How quickly can Stealth Cyber respond to a cyber incident?',
-    answer: 'Stealth Cyber\'s incident response team is available 24/7/365. For clients on our MDR service, initial triage typically begins within 15 minutes of alert escalation. For emergency incident response engagements, our DFIR team can mobilise remotely within the hour, or deploy on-site to Gold Coast, São Paulo, or Texas locations. Call our main line and select the emergency option for immediate escalation.',
+    question: 'How much does managed cybersecurity cost for a small business in Australia?',
+    answer: 'Managed cybersecurity for a small business in Australia typically ranges from $1,500 to $10,000 per month depending on the number of users, devices, and services included. Basic managed security (endpoint protection, monitoring, and patching) sits at the lower end, while comprehensive MDR with 24/7 SOC monitoring, vulnerability management, and compliance support is at the higher end. For context, the average cost of a data breach for an Australian SMB exceeds $200,000. Stealth Cyber offers tailored packages based on your business size and risk profile.',
   },
   {
-    question: 'What is ISO 27001 and why should my organisation get certified?',
-    answer: 'ISO/IEC 27001 is the internationally recognised standard for Information Security Management Systems (ISMS). Certification demonstrates to clients, partners, regulators, and insurers that your organisation manages information security risks systematically. It is increasingly required by enterprise customers, government contracts, and cyber insurance policies. Stealth Cyber supports organisations through every stage, from gap assessment and ISMS design to internal audit readiness and the final certification audit.',
+    question: 'What is the Essential Eight and does my business need to comply?',
+    answer: 'The Essential Eight is a set of eight cybersecurity mitigation strategies developed by the Australian Cyber Security Centre (ACSC) to protect organisations against the most common cyber threats. It covers application control, patching applications, patching operating systems, multi-factor authentication, restricting admin privileges, restricting Office macros, user application hardening, and regular backups. Compliance is mandatory for Australian government entities and increasingly required by enterprise clients, insurers, and government contractors. Organisations are assessed at maturity levels 0 to 3. Even if not legally required, the Essential Eight is the most practical cybersecurity baseline for any Australian business.',
   },
   {
-    question: 'What is AI security and why does it matter?',
-    answer: 'AI security addresses risks unique to artificial intelligence and machine learning systems, including adversarial attacks, data poisoning, model theft, and prompt injection vulnerabilities. As organisations adopt large language models (LLMs) and ML-powered tools, these systems introduce attack surfaces not covered by traditional security frameworks. Stealth Cyber provides purpose-built AI security assessments and controls aligned to OWASP\'s LLM Top 10 and emerging AI governance standards.',
+    question: 'How long does it take to set up managed cyber protection?',
+    answer: 'Most businesses can be fully onboarded to a managed cybersecurity service within 2 to 4 weeks. The first week typically covers scoping, agent deployment on endpoints, and integration with your existing tools (email, cloud, network). Week two focuses on baseline tuning to reduce false positives and align alerting to your environment. By week three or four, 24/7 monitoring is fully operational. Stealth Cyber assigns a dedicated onboarding team to ensure a smooth transition with minimal disruption to your day-to-day operations.',
   },
   {
-    question: 'Where does Stealth Cyber operate?',
-    answer: 'Stealth Cyber is headquartered in Gold Coast, Queensland, Australia, with offices in São Paulo, Brazil, and Texas, USA. We serve clients across Australia, the Americas, Asia-Pacific, and globally through both remote and on-site engagements. Our 24/7 SOC operates continuously across time zones, ensuring consistent protection regardless of where your business operates.',
+    question: 'What happens when a threat is detected?',
+    answer: 'When a threat is detected, our SOC analysts immediately investigate to confirm whether it is a genuine threat or a false positive. If confirmed, the threat is contained automatically or manually depending on severity. This may include isolating an affected device, blocking a malicious IP, disabling a compromised account, or killing a malicious process. You are notified with a clear, jargon-free summary of what happened, what was done, and what you need to know. For critical incidents, our team escalates directly to your nominated contact by phone. Post-incident, we provide a full report with root cause analysis and hardening recommendations.',
+  },
+  {
+    question: 'Is cyber insurance enough without a managed security service?',
+    answer: 'No. Cyber insurance covers financial losses after a breach, but it does not prevent breaches or reduce their severity. Most cyber insurance policies also require businesses to meet minimum security standards before a claim will be paid. Common requirements include multi-factor authentication, regular patching, endpoint protection, and backup testing. If these controls are not in place, insurers can deny claims. A managed security service ensures you meet these requirements and actively prevents incidents, reducing both the likelihood of a claim and your insurance premiums.',
+  },
+  {
+    question: 'What cybersecurity does a 50-person accounting firm actually need?',
+    answer: 'A 50-person accounting firm handling sensitive financial data needs, at minimum: multi-factor authentication on all accounts, endpoint protection on every device, email security to block phishing, regular patching of operating systems and applications, encrypted and tested backups, security awareness training for all staff, and a documented incident response plan. Recommended additions include 24/7 managed detection and response (MDR), vulnerability scanning, dark web monitoring for leaked credentials, and Essential Eight compliance if operating in Australia. Stealth Cyber provides tailored packages for professional services firms that cover all of these requirements.',
+  },
+  {
+    question: 'How do I assess my current cyber risk?',
+    answer: 'The best way to assess your current cyber risk is to start with a structured self-assessment that evaluates your security controls across key areas like access management, patching, backups, incident response, and data protection. Stealth Cyber offers a free online cybersecurity self-assessment at stealthcyber.io/assessment that scores your organisation out of 100 and provides personalised recommendations. For a deeper review, a professional security assessment from a qualified cybersecurity provider will identify specific vulnerabilities, compliance gaps, and prioritised remediation steps tailored to your business.',
   },
 ]
 
@@ -373,6 +386,24 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* FAQ section */}
+      <section className="py-20 bg-stealth-dark">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-stealth-cyan/20 text-stealth-cyan text-xs font-medium mb-4 bg-stealth-cyan/5">
+              <Shield className="w-3 h-3" /> FAQ
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Common Questions
+            </h2>
+            <p className="text-stealth-gray max-w-2xl mx-auto">
+              Answers to the questions business owners ask most about cybersecurity.
+            </p>
+          </div>
+          <FaqAccordion faqs={faqs} />
         </div>
       </section>
 

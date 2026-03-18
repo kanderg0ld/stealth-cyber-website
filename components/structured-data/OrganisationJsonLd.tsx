@@ -16,10 +16,26 @@ export default function OrganisationJsonLd() {
           width: 501,
           height: 106,
         },
-        image: 'https://stealthcyber.io/og-image.svg',
-        description: 'Stealth Cyber delivers expert cybersecurity services including 24/7 managed detection and response, incident response, CMMC assessments, ISO 27001, AI security, AI management systems, Essential Eight compliance, and GRC — with offices in Gold Coast (Australia), São Paulo (Brazil), and Texas (USA).',
+        image: 'https://stealthcyber.io/Primary-Reversed-Dark.png',
+        description: 'Stealth Cyber delivers expert cybersecurity services including 24/7 managed detection and response, incident response, CMMC assessments, ISO 27001, AI security, AI management systems, Essential Eight compliance, and GRC, with offices in Gold Coast (Australia), São Paulo (Brazil), and Texas (USA).',
         telephone: '+61752308381',
-        foundingDate: '2020',
+        foundingDate: '2024',
+        contactPoint: [
+          {
+            '@type': 'ContactPoint',
+            telephone: '+61752308381',
+            contactType: 'sales',
+            areaServed: ['AU', 'NZ', 'SG', 'JP'],
+            availableLanguage: 'English',
+          },
+          {
+            '@type': 'ContactPoint',
+            telephone: '+18557742595',
+            contactType: 'sales',
+            areaServed: ['US', 'CA', 'BR', 'MX'],
+            availableLanguage: ['English', 'Portuguese', 'Spanish'],
+          },
+        ],
         numberOfEmployees: { '@type': 'QuantitativeValue', minValue: 10, maxValue: 50 },
         address: [
           {
