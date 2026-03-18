@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import CookieBanner from '@/components/CookieBanner'
 import OrganisationJsonLd from '@/components/structured-data/OrganisationJsonLd'
 import WebsiteJsonLd from '@/components/structured-data/WebsiteJsonLd'
 
@@ -54,6 +55,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Navbar />
         <main className="flex-1 pt-16">{children}</main>
         <Footer />
+        <CookieBanner />
       </body>
     </html>
   )
