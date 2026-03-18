@@ -13,6 +13,7 @@ const navLinks = [
   { href: '/about', label: 'About' },
   { href: '/blog', label: 'Blog' },
   { href: '/resources', label: 'Resources' },
+  { href: 'https://ai.stealthcyber.io', label: 'AI Training', external: true },
   { href: '/contact', label: 'Contact' },
 ]
 
@@ -29,20 +30,32 @@ export default function Navbar() {
           </Link>
 
           <div className="hidden md:flex items-center gap-6">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={clsx(
-                  'text-sm font-medium transition-colors duration-200',
-                  pathname === link.href
-                    ? 'text-stealth-cyan'
-                    : 'text-gray-300 hover:text-white'
-                )}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) =>
+              link.external ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200"
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={clsx(
+                    'text-sm font-medium transition-colors duration-200',
+                    pathname === link.href
+                      ? 'text-stealth-cyan'
+                      : 'text-gray-300 hover:text-white'
+                  )}
+                >
+                  {link.label}
+                </Link>
+              )
+            )}
             <Link
               href="/contact"
               className="ml-2 px-4 py-2 bg-gradient-to-r from-stealth-blue to-stealth-indigo text-white font-semibold text-sm rounded hover:opacity-90 transition-opacity duration-200"
@@ -64,19 +77,32 @@ export default function Navbar() {
       {open && (
         <div className="md:hidden bg-stealth-navy border-t border-stealth-navy-light">
           <div className="px-4 py-4 space-y-3">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setOpen(false)}
-                className={clsx(
-                  'block text-sm font-medium py-2 transition-colors',
-                  pathname === link.href ? 'text-stealth-cyan' : 'text-gray-300 hover:text-white'
-                )}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) =>
+              link.external ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setOpen(false)}
+                  className="block text-sm font-medium py-2 text-gray-300 hover:text-white transition-colors"
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setOpen(false)}
+                  className={clsx(
+                    'block text-sm font-medium py-2 transition-colors',
+                    pathname === link.href ? 'text-stealth-cyan' : 'text-gray-300 hover:text-white'
+                  )}
+                >
+                  {link.label}
+                </Link>
+              )
+            )}
             <Link
               href="/contact"
               onClick={() => setOpen(false)}
