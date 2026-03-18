@@ -91,7 +91,9 @@ const services = [
 const stats = [
   { value: '10,000+', label: 'Threats Blocked' },
   { value: '30+', label: 'Businesses Protected' },
-  { value: '8', label: 'Incidents Responded To in 2026' },
+  { value: '20', label: 'Businesses Uplifted to E8 ML3' },
+  { value: '100%', label: 'Client Retention' },
+  { value: '<15min', label: 'Mean Time to Detect' },
   { value: '24/7', label: 'Around-the-Clock Protection' },
 ]
 
@@ -137,7 +139,7 @@ export default function HomePage() {
       {/* Stats bar */}
       <section className="bg-stealth-navy border-y border-stealth-cyan/10 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
                 <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-stealth-sky to-stealth-cyan bg-clip-text text-transparent">{stat.value}</div>
