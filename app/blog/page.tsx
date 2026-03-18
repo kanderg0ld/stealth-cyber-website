@@ -1,25 +1,25 @@
 import type { Metadata } from 'next'
-import { sanityClient } from '@/lib/sanity'
-import { postsQuery } from '@/lib/queries'
-import { urlFor } from '@/lib/sanity'
-import BlogCard from '@/components/BlogCard'
+import Link from 'next/link'
+import { ArrowRight } from 'lucide-react'
 import BreadcrumbJsonLd from '@/components/structured-data/BreadcrumbJsonLd'
 
 export const metadata: Metadata = {
   title: 'Cybersecurity Blog',
-  description: 'Cybersecurity insights, threat intelligence, and compliance guidance for Australian businesses from the Stealth Cyber team.',
+  description: 'Cybersecurity insights, threat intelligence, and compliance guidance from the Stealth Cyber team.',
 }
 
-export const revalidate = 60
+const posts = [
+  {
+    title: 'Prompt Injection: How Attackers Manipulate AI Systems',
+    excerpt: 'Prompt injection is one of the biggest security risks facing AI systems today. Learn how it works, common manipulation techniques, and how to secure your LLMs.',
+    slug: 'prompt-injection',
+    publishedAt: '2026-03-18',
+    author: 'Stealth Cyber',
+    tags: ['AI Security', 'LLM', 'Prompt Injection'],
+  },
+]
 
-export default async function BlogPage() {
-  let posts: any[] = []
-  try {
-    posts = await sanityClient.fetch(postsQuery)
-  } catch {
-    // Sanity not yet configured
-  }
-
+export default function BlogPage() {
   return (
     <>
       <BreadcrumbJsonLd items={[{ name: 'Home', url: 'https://stealthcyber.io' }, { name: 'Blog', url: 'https://stealthcyber.io/blog' }]} />
@@ -31,7 +31,7 @@ export default async function BlogPage() {
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Cybersecurity Blog</h1>
             <p className="text-stealth-gray text-lg">
               Threat intelligence, compliance guidance, and practical security advice
-              for Australian businesses, straight from our SOC and advisory team.
+              straight from our SOC and advisory team.
             </p>
           </div>
         </div>
@@ -39,27 +39,27 @@ export default async function BlogPage() {
 
       <section className="py-16 bg-stealth-dark">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {posts.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {posts.map((post) => (
-                <BlogCard
-                  key={post._id}
-                  title={post.title}
-                  excerpt={post.excerpt || ''}
-                  slug={post.slug.current}
-                  publishedAt={post.publishedAt}
-                  authorName={post.author?.name}
-                  imageUrl={post.mainImage ? urlFor(post.mainImage).width(600).height(400).url() : undefined}
-                  tags={post.tags}
-                />
-              ))}
-            </div>
-          ) : (
-            <div className="text-center py-20">
-              <div className="text-stealth-gray text-lg mb-2">No posts yet.</div>
-              <p className="text-stealth-gray text-sm">Check back soon. Our team publishes new insights regularly.</p>
-            </div>
-          )}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {posts.map((post) => (
+              <Link key={post.slug} href={`/blog/${post.slug}`} className="group bg-stealth-navy rounded-xl border border-stealth-cyan/10 overflow-hidden hover:border-stealth-cyan/30 transition-colors">
+                <div className="p-6">
+                  <div className="flex flex-wrap gap-2 mb-3">
+                    {post.tags.map((tag) => (
+                      <span key={tag} className="px-2 py-0.5 text-xs font-medium bg-stealth-cyan/10 text-stealth-cyan rounded-full border border-stealth-cyan/20">{tag}</span>
+                    ))}
+                  </div>
+                  <h2 className="text-white font-bold text-lg mb-2 group-hover:text-stealth-cyan transition-colors">{post.title}</h2>
+                  <p className="text-stealth-gray text-sm leading-relaxed mb-4">{post.excerpt}</p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-stealth-gray text-xs">{new Date(post.publishedAt).toLocaleDateString('en-AU', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+                    <span className="inline-flex items-center gap-1 text-stealth-cyan text-xs font-medium group-hover:gap-2 transition-all">
+                      Read <ArrowRight className="w-3 h-3" />
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
     </>
