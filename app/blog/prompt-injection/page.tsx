@@ -26,7 +26,7 @@ export default function PromptInjectionPost() {
         description="Prompt injection is one of the biggest security risks facing AI systems today. Learn how it works, common manipulation techniques, and how to secure your LLMs."
         url="https://stealthcyber.io/blog/prompt-injection"
         publishedAt="2026-03-18"
-        authorName="Stealth Cyber"
+        authorName="Kat Ho"
         imageUrl={undefined}
       />
       <BreadcrumbJsonLd items={[
@@ -37,24 +37,36 @@ export default function PromptInjectionPost() {
 
       <article className="bg-stealth-dark py-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Back link */}
+          <div className="mb-8">
+            <Link href="/blog" className="inline-flex items-center gap-2 text-stealth-gray text-sm hover:text-stealth-cyan transition-colors">
+              <ArrowLeft className="w-4 h-4" /> Back to Blog
+            </Link>
+          </div>
+
           {/* Tags */}
-          <div className="flex gap-2 mb-4">
+          <div className="flex flex-wrap gap-2 mb-6">
             {['AI Security', 'LLM', 'Prompt Injection', 'Red Teaming'].map((tag) => (
               <span key={tag} className="px-2.5 py-1 text-xs font-medium bg-stealth-cyan/10 text-stealth-cyan rounded-full border border-stealth-cyan/20">{tag}</span>
             ))}
           </div>
 
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+          {/* Title */}
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
             Prompt Injection: How Attackers Manipulate AI Systems
           </h1>
 
-          <div className="flex items-center gap-4 text-stealth-gray text-sm mb-10">
-            <span>By Stealth Cyber</span>
-            <span>18 March 2026</span>
+          {/* Author and date */}
+          <div className="flex items-center gap-3 text-sm mb-10 pb-8 border-b border-stealth-cyan/10">
+            <div className="w-10 h-10 rounded-full bg-stealth-cyan/10 flex items-center justify-center text-stealth-cyan font-bold text-sm">KH</div>
+            <div>
+              <p className="text-white font-medium">Kat Ho</p>
+              <p className="text-stealth-gray text-xs">Offensive Security Analyst &middot; 18 March 2026</p>
+            </div>
           </div>
 
           {/* Article body */}
-          <div className="prose prose-invert prose-cyan max-w-none">
+          <div className="prose prose-lg prose-invert prose-cyan max-w-none prose-headings:text-white prose-headings:font-bold prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-6 prose-p:text-stealth-gray prose-p:leading-relaxed prose-p:mb-6 prose-li:text-stealth-gray prose-strong:text-white prose-ul:my-6 prose-li:my-2">
             <p>
               Prompt injection is similar to SQL injection in the sense that both rely on crafted text input to manipulate a system. It occurs when an individual crafts prompts designed to manipulate a model into exposing data, conducting malicious actions, or producing unethical outputs.
             </p>
@@ -118,32 +130,25 @@ export default function PromptInjectionPost() {
           </div>
 
           {/* CTA */}
-          <div className="mt-12 bg-stealth-navy rounded-xl border border-stealth-cyan/10 p-8">
-            <h3 className="text-white font-bold text-lg mb-2">Is Your AI Secure?</h3>
-            <p className="text-stealth-gray text-sm leading-relaxed mb-4">
+          <div className="mt-12 bg-stealth-navy rounded-2xl border border-stealth-cyan/10 p-8 md:p-10">
+            <h3 className="text-white font-bold text-xl mb-3">Is Your AI Secure?</h3>
+            <p className="text-stealth-gray leading-relaxed mb-6">
               Stealth Cyber&apos;s AI Red Team tests your LLMs and AI systems against real-world prompt injection, jailbreaks, data extraction, and more. Find out how your AI holds up before an attacker does.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/services/ai#ai-red-teaming"
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-stealth-cyan text-stealth-dark font-semibold text-sm rounded hover:bg-white transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-stealth-cyan text-stealth-dark font-semibold text-sm rounded-lg hover:bg-white transition-colors"
               >
                 Learn About AI Red Teaming <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
                 href="/ai-assessment"
-                className="inline-flex items-center gap-2 px-5 py-2.5 border border-stealth-cyan/40 text-white font-semibold text-sm rounded hover:border-stealth-cyan/60 transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 border border-stealth-cyan/40 text-white font-semibold text-sm rounded-lg hover:border-stealth-cyan/60 transition-colors"
               >
                 Take the AI Readiness Assessment
               </Link>
             </div>
-          </div>
-
-          {/* Back to blog */}
-          <div className="mt-8">
-            <Link href="/blog" className="inline-flex items-center gap-2 text-stealth-gray text-sm hover:text-stealth-cyan transition-colors">
-              <ArrowLeft className="w-4 h-4" /> Back to Blog
-            </Link>
           </div>
         </div>
       </article>

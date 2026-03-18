@@ -14,7 +14,7 @@ const posts = [
     excerpt: 'Prompt injection is one of the biggest security risks facing AI systems today. Learn how it works, common manipulation techniques, and how to secure your LLMs.',
     slug: 'prompt-injection',
     publishedAt: '2026-03-18',
-    author: 'Stealth Cyber',
+    author: 'Kat Ho, Offensive Security Analyst',
     tags: ['AI Security', 'LLM', 'Prompt Injection'],
   },
 ]
@@ -50,7 +50,8 @@ export default function BlogPage() {
                   </div>
                   <h2 className="text-white font-bold text-lg mb-2 group-hover:text-stealth-cyan transition-colors">{post.title}</h2>
                   <p className="text-stealth-gray text-sm leading-relaxed mb-4">{post.excerpt}</p>
-                  <div className="flex items-center justify-between">
+                  <p className="text-stealth-gray text-xs mb-4">{post.author}</p>
+                  <div className="flex items-center justify-between border-t border-stealth-cyan/10 pt-4">
                     <span className="text-stealth-gray text-xs">{new Date(post.publishedAt).toLocaleDateString('en-AU', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
                     <span className="inline-flex items-center gap-1 text-stealth-cyan text-xs font-medium group-hover:gap-2 transition-all">
                       Read <ArrowRight className="w-3 h-3" />
