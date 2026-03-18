@@ -369,23 +369,23 @@ export default function HomePage() {
           <p className="text-stealth-gray mb-8 text-lg">
             Take our free 5-minute security assessment and get a clear picture of your risk. No obligation, no jargon.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row flex-wrap gap-3 justify-center">
             <Link
               href="/assessment"
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 btn-gradient text-white font-semibold rounded hover:opacity-90 transition-opacity"
+              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 btn-gradient text-white font-semibold text-sm rounded hover:opacity-90 transition-opacity"
               style={{ boxShadow: '0 4px 24px rgba(0,56,255,0.35)' }}
             >
-              Take the Free Self-Assessment <ArrowRight className="w-4 h-4" />
+              Free Self-Assessment <ArrowRight className="w-4 h-4" />
             </Link>
             <a
               href="tel:+61752308381"
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 border border-stealth-cyan/40 text-white font-semibold rounded hover:border-stealth-cyan/60 hover:bg-stealth-navy-light transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 border border-stealth-cyan/40 text-white font-medium text-sm rounded hover:border-stealth-cyan/60 hover:bg-stealth-navy-light transition-colors"
             >
               AU: +61 7 5230 8381
             </a>
             <a
               href="tel:+18557742595"
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 border border-stealth-cyan/40 text-white font-semibold rounded hover:border-stealth-cyan/60 hover:bg-stealth-navy-light transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 border border-stealth-cyan/40 text-white font-medium text-sm rounded hover:border-stealth-cyan/60 hover:bg-stealth-navy-light transition-colors"
             >
               US: +1 (855) 774-2595
             </a>
