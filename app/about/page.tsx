@@ -169,9 +169,9 @@ export default function AboutPage() {
       <section className="py-16 bg-stealth-navy border-t border-stealth-cyan/10">
         <div className="max-w-3xl mx-auto text-center px-4">
           <h2 className="text-3xl font-bold text-white mb-4">Work With the Stealth Cyber Team</h2>
-          <p className="text-stealth-gray mb-8">Ready to strengthen your security posture? Book a free assessment with our team today.</p>
+          <p className="text-stealth-gray mb-8">Ready to strengthen your security posture? Talk to our team today.</p>
           <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-3.5 bg-stealth-cyan text-stealth-dark font-semibold rounded hover:bg-white transition-colors">
-            Book a Free Assessment <ArrowRight className="w-4 h-4" />
+            Get in Touch <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </section>

@@ -129,10 +129,10 @@ function buildLeadEmail(data: {
   <tr><td style="padding:32px;background:#07091A;text-align:center;border-top:1px solid rgba(77,204,255,0.1);">
     <h2 style="color:#ffffff;font-size:20px;margin:0 0 8px;">Want to Close the Gaps?</h2>
     <p style="color:#94A3B8;font-size:14px;margin:0 0 24px;line-height:1.6;">
-      This self-assessment gives you a high-level view. Our team can conduct a thorough security review and provide a detailed remediation roadmap — completely free.
+      This self-assessment gives you a high-level view. Our team can conduct a thorough security review and provide a detailed remediation roadmap tailored to your business.
     </p>
     <a href="https://stealthcyber.io/contact" style="display:inline-block;padding:14px 32px;background:linear-gradient(135deg,#0038FF,#6231F5);color:#ffffff;font-size:14px;font-weight:600;text-decoration:none;border-radius:8px;">
-      Book a Free Security Assessment
+      Speak With Our Team
     </a>
     <p style="color:#94A3B8;font-size:13px;margin:16px 0 0;">
       Or reach out directly at <a href="mailto:${CONTACT_EMAIL}" style="color:#4DCCFF;text-decoration:none;">${CONTACT_EMAIL}</a>

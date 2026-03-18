@@ -5,11 +5,11 @@ import ContactForm from './ContactForm'
 
 export const metadata: Metadata = {
   title: 'Contact Us',
-  description: 'Contact Stealth Cyber for a free security assessment. Offices in Gold Coast (AU), São Paulo (BR), and Texas (US). Available 24/7 for incident response.',
+  description: 'Contact Stealth Cyber to discuss your cybersecurity needs. Offices in Gold Coast (AU), São Paulo (BR), and Texas (US). Available 24/7 for incident response.',
   alternates: { canonical: 'https://stealthcyber.io/contact' },
   openGraph: {
-    title: 'Contact Stealth Cyber | Free Security Assessment',
-    description: 'Book a free cybersecurity assessment or reach our 24/7 incident response team. Offices in Gold Coast, São Paulo, and Texas.',
+    title: 'Contact Stealth Cyber | Get Started',
+    description: 'Discuss your cybersecurity needs with our team or reach our 24/7 incident response team. Offices in Gold Coast, São Paulo, and Texas.',
     url: 'https://stealthcyber.io/contact',
     images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Contact Stealth Cyber' }],
   },
@@ -26,7 +26,7 @@ export default function ContactPage() {
             <div className="text-stealth-cyan text-xs font-medium uppercase tracking-widest mb-4">Contact Us</div>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Let&apos;s Find Out Where You&apos;re Exposed</h1>
             <p className="text-stealth-gray text-lg">
-              Book a free security assessment and get a clear picture of your current risk.
+              Get in touch with our team and get a clear picture of your current risk.
               No obligation, no jargon — just honest guidance from our expert team.
             </p>
           </div>
@@ -92,11 +92,10 @@ export default function ContactPage() {
               </div>
 
               <div className="bg-stealth-navy rounded-xl border border-stealth-cyan/10 p-6">
-                <h3 className="text-white font-semibold mb-2">Free Security Assessment</h3>
+                <h3 className="text-white font-semibold mb-2">Not Sure Where to Start?</h3>
                 <p className="text-stealth-gray text-sm leading-relaxed">
-                  Not sure where to start? Our free assessment gives you a clear picture of your
-                  security gaps, your biggest risks, and exactly what to do next — delivered
-                  within 48 hours.
+                  Take our free online self-assessment for an instant score, or speak with our
+                  team for a deeper review of your security posture.
                 </p>
               </div>
             </div>

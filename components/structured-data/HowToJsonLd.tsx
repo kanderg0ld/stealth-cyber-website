@@ -6,8 +6,8 @@ export default function HowToJsonLd() {
       data={{
         '@context': 'https://schema.org',
         '@type': 'HowTo',
-        name: 'How to Get a Free Cybersecurity Assessment with Stealth Cyber',
-        description: 'A free, no-obligation cybersecurity assessment from Stealth Cyber gives your organisation a clear picture of current security risks, compliance gaps, and actionable next steps.',
+        name: 'How to Get Started with Stealth Cyber',
+        description: 'A cybersecurity consultation with Stealth Cyber gives your organisation a clear picture of current security risks, compliance gaps, and actionable next steps.',
         estimatedCost: { '@type': 'MonetaryAmount', currency: 'AUD', value: '0' },
         totalTime: 'P3D',
         step: [

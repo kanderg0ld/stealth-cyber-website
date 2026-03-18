@@ -955,14 +955,14 @@ export default function AssessmentQuiz() {
           </h3>
           <p className="text-stealth-gray leading-relaxed mb-6 max-w-lg mx-auto">
             This self-assessment gives you a high-level view. Our team can conduct a thorough
-            security review of your environment and provide a detailed remediation roadmap —
-            completely free of charge.
+            security review of your environment and provide a detailed remediation roadmap
+            tailored to your business.
           </p>
           <a
             href="/contact"
             className="inline-flex items-center gap-2 px-8 py-3.5 bg-stealth-cyan text-stealth-dark font-semibold rounded-lg hover:bg-white transition-colors"
           >
-            Book a Free Security Assessment <ArrowRight className="w-4 h-4" />
+            Talk to Our Team <ArrowRight className="w-4 h-4" />
           </a>
         </div>
       </div>

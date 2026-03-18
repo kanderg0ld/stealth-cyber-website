@@ -58,7 +58,7 @@ export default function HeroSection() {
               className="inline-flex items-center justify-center gap-2 px-6 py-3 btn-gradient text-white font-semibold rounded shadow-lg group"
               style={{ boxShadow: '0 4px 24px rgba(0,56,255,0.35)' }}
             >
-              Get a Free Security Assessment
+              Speak With Our Team
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link

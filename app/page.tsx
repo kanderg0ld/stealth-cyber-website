@@ -299,7 +299,7 @@ export default function HomePage() {
               className="inline-flex items-center justify-center gap-2 px-8 py-3.5 btn-gradient text-white font-semibold rounded hover:opacity-90 transition-opacity"
               style={{ boxShadow: '0 4px 24px rgba(0,56,255,0.35)' }}
             >
-              Take the Free Assessment <ArrowRight className="w-4 h-4" />
+              Take the Free Self-Assessment <ArrowRight className="w-4 h-4" />
             </Link>
             <a
               href="tel:+61752308381"
