@@ -49,7 +49,16 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <div className="text-white font-medium group-hover:text-stealth-cyan transition-colors">+61 7 5230 8381</div>
-                      <div className="text-stealth-gray text-sm">General enquiries and sales</div>
+                      <div className="text-stealth-gray text-sm">Australia &amp; Asia-Pacific</div>
+                    </div>
+                  </a>
+                  <a href="tel:+18557742595" className="flex items-start gap-3 group">
+                    <div className="p-2.5 rounded-lg bg-stealth-cyan/10 text-stealth-cyan shrink-0">
+                      <Phone className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <div className="text-white font-medium group-hover:text-stealth-cyan transition-colors">+1 (855) 774-2595</div>
+                      <div className="text-stealth-gray text-sm">Americas</div>
                     </div>
                   </a>
                   <div className="flex items-start gap-3">

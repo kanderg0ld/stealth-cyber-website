@@ -376,7 +376,13 @@ export default function HomePage() {
               href="tel:+61752308381"
               className="inline-flex items-center justify-center gap-2 px-8 py-3.5 border border-stealth-cyan/40 text-white font-semibold rounded hover:border-stealth-cyan/60 hover:bg-stealth-navy-light transition-colors"
             >
-              Call +61 7 5230 8381
+              AU: +61 7 5230 8381
+            </a>
+            <a
+              href="tel:+18557742595"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 border border-stealth-cyan/40 text-white font-semibold rounded hover:border-stealth-cyan/60 hover:bg-stealth-navy-light transition-colors"
+            >
+              US: +1 (855) 774-2595
             </a>
           </div>
           <p className="text-stealth-gray text-sm mt-6">

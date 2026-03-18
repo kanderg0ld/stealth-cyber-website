@@ -62,7 +62,11 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-2 text-sm text-stealth-gray">
                 <Phone className="w-4 h-4 mt-0.5 text-stealth-cyan shrink-0" />
-                <a href="tel:+61752308381" className="hover:text-white transition-colors">+61 7 5230 8381</a>
+                <span>
+                  <a href="tel:+61752308381" className="hover:text-white transition-colors">AU: +61 7 5230 8381</a>
+                  <br />
+                  <a href="tel:+18557742595" className="hover:text-white transition-colors">US: +1 (855) 774-2595</a>
+                </span>
               </li>
               <li className="flex items-start gap-2 text-sm text-stealth-gray">
                 <MapPin className="w-4 h-4 mt-0.5 text-stealth-cyan shrink-0" />
