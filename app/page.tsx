@@ -180,6 +180,80 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* AI Security section */}
+      <section className="py-20 bg-stealth-dark">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-stealth-cyan/20 text-stealth-cyan text-xs font-medium mb-4 bg-stealth-cyan/5">
+              <Brain className="w-3 h-3" /> AI Security Specialists
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Leading the Way in AI Security
+            </h2>
+            <p className="text-stealth-gray max-w-3xl mx-auto">
+              As businesses race to adopt AI, the attack surface is expanding faster than most security teams can keep up. Stealth Cyber is at the forefront — protecting, governing, and red teaming AI systems for organisations worldwide.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-14">
+            {[
+              {
+                icon: <Shield className="w-6 h-6" />,
+                title: 'AI Red Teaming',
+                description: 'We simulate real-world adversarial attacks against your AI systems — aligned to the AIUC-1 standard. From prompt injection and jailbreaks to data poisoning and model manipulation. Find out how your AI holds up before an attacker does.',
+              },
+              {
+                icon: <Cpu className="w-6 h-6" />,
+                title: 'AI Management Systems',
+                description: 'Build robust AI governance aligned to ISO 42001. We help you manage AI risk, bias, transparency, and accountability with frameworks that satisfy regulators and build stakeholder trust.',
+              },
+              {
+                icon: <ClipboardCheck className="w-6 h-6" />,
+                title: 'AI Readiness Assessments',
+                description: 'Planning to adopt AI? We assess your organisation\u2019s readiness — covering data governance, security controls, risk appetite, and regulatory obligations — so you can move forward with confidence.',
+              },
+              {
+                icon: <Brain className="w-6 h-6" />,
+                title: 'AI Red Team Training',
+                description: 'We train the next generation of AI Red Team Engineers. Our hands-on programmes cover adversarial testing techniques for LLMs, ML pipelines, and generative AI systems.',
+              },
+            ].map((card) => (
+              <div key={card.title} className="p-6 bg-stealth-navy rounded-lg border border-stealth-cyan/10">
+                <div className="inline-flex p-2 rounded-lg bg-gradient-to-br from-stealth-blue/10 to-stealth-indigo/10 border border-stealth-blue/20 text-stealth-cyan mb-4">
+                  {card.icon}
+                </div>
+                <h3 className="text-white font-semibold text-lg mb-2">{card.title}</h3>
+                <p className="text-stealth-gray text-sm leading-relaxed">{card.description}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+            {[
+              { value: '50+', label: 'AI Systems Assessed' },
+              { value: '20', label: 'AI Red Team Engagements' },
+              { value: '10', label: 'Organisations AI-Ready Certified' },
+              { value: '30+', label: 'AI Red Team Engineers Trained' },
+            ].map((stat) => (
+              <div key={stat.label} className="text-center">
+                <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-stealth-sky to-stealth-cyan bg-clip-text text-transparent">{stat.value}</div>
+                <div className="text-stealth-gray text-sm mt-1">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Link
+              href="/services/ai"
+              className="inline-flex items-center gap-2 px-8 py-3.5 btn-gradient text-white font-semibold rounded hover:opacity-90 transition-opacity"
+              style={{ boxShadow: '0 4px 24px rgba(0,56,255,0.35)' }}
+            >
+              Explore AI Security Services <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* About preview */}
       <section className="py-20 bg-stealth-navy">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

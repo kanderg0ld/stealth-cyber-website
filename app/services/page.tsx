@@ -128,8 +128,8 @@ const services = [
     title: 'AI Security',
     shortTitle: 'AI Sec',
     icon: <Brain className="w-8 h-8" />,
-    tagline: 'Securing AI/ML systems against emerging threats',
-    description: 'AI and machine learning introduce a new class of security risks that traditional controls don\'t cover. Stealth Cyber\'s AI Security practice assesses and hardens your AI/ML systems against adversarial attacks, data poisoning, model inversion, prompt injection, and supply chain compromise — protecting both the models and the data they handle.',
+    tagline: 'Adversarial AI testing and security assessments',
+    description: 'AI introduces attack surfaces that traditional security doesn\'t cover. Our specialist AI security practice assesses and hardens your AI/ML systems against adversarial attacks, data poisoning, prompt injection, model theft, and more. From LLMs to ML pipelines, we find the vulnerabilities before attackers do.',
     features: [
       'LLM and generative AI security assessments',
       'Adversarial robustness and prompt injection testing',
@@ -137,20 +137,24 @@ const services = [
       'Model access control and API security review',
       'AI supply chain and dependency security assessment',
       'OWASP Top 10 for LLM Applications coverage',
+      'AI Red Team engagements with real-world attack simulation',
+      'AI Readiness Assessments for organisations adopting AI',
     ],
     benefits: [
       'Identify AI-specific attack vectors before adversaries do',
       'Protect sensitive data processed by AI systems',
       'Meet emerging AI security regulatory expectations',
+      'Build on our experience across 50+ AI systems assessed',
     ],
+    extraLink: { label: 'See all AI Security Services →', href: '/services/ai' },
   },
   {
     id: 'ai-management',
     title: 'AI Management Systems',
     shortTitle: 'AI MS',
     icon: <Cpu className="w-8 h-8" />,
-    tagline: 'Govern AI risk, transparency, and accountability',
-    description: 'As organisations adopt AI at scale, robust governance is essential. Stealth Cyber helps you design and implement an AI Management System (AIMS) aligned with ISO/IEC 42001 — the international standard for responsible AI. We help you govern AI risk, address bias and fairness, meet transparency obligations, and build auditable AI accountability frameworks.',
+    tagline: 'ISO 42001-aligned AI governance for the regulated era',
+    description: 'As AI regulation accelerates globally, robust governance is no longer optional. Stealth Cyber helps you design and implement an AI Management System (AIMS) aligned with ISO/IEC 42001. We build the policies, risk frameworks, and accountability structures needed to govern AI responsibly — and prove it to regulators, clients, and stakeholders.',
     features: [
       'ISO/IEC 42001 AIMS gap assessment and implementation',
       'AI risk register and impact assessment framework',
@@ -158,11 +162,14 @@ const services = [
       'Bias, fairness, and explainability controls',
       'Data governance integration for AI workloads',
       'AI lifecycle monitoring and incident management procedures',
+      'Board-level AI risk reporting and dashboards',
+      'AI Red Team Training to build internal capability',
     ],
     benefits: [
       'Demonstrate responsible AI use to regulators and customers',
       'Reduce liability from biased or opaque AI decisions',
       'Build a repeatable framework for future AI deployments',
+      'Proven across 10 organisations achieving AI-ready certification',
     ],
   },
   {
@@ -293,13 +300,23 @@ export default function ServicesPage() {
                     </li>
                   ))}
                 </ul>
-                <div className="mt-8">
+                <div className="mt-8 space-y-3">
                   <Link
                     href="/contact"
                     className="inline-flex items-center gap-2 px-5 py-2.5 bg-stealth-cyan text-stealth-dark font-semibold text-sm rounded hover:bg-white transition-colors"
                   >
                     Enquire About This Service <ArrowRight className="w-4 h-4" />
                   </Link>
+                  {(service as any).extraLink && (
+                    <div>
+                      <Link
+                        href={(service as any).extraLink.href}
+                        className="text-stealth-cyan text-sm font-medium hover:text-white transition-colors"
+                      >
+                        {(service as any).extraLink.label}
+                      </Link>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
