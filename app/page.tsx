@@ -181,8 +181,9 @@ export default function HomePage() {
       </section>
 
       {/* AI Security section */}
-      <section className="py-20 bg-stealth-dark">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-stealth-dark relative overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] rounded-full blur-3xl pointer-events-none" style={{ background: 'radial-gradient(ellipse, rgba(60,228,245,0.06) 0%, rgba(98,49,245,0.04) 40%, transparent 70%)' }} />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-stealth-cyan/20 text-stealth-cyan text-xs font-medium mb-4 bg-stealth-cyan/5">
               <Brain className="w-3 h-3" /> AI Security Specialists
@@ -240,6 +241,24 @@ export default function HomePage() {
                 <div className="text-stealth-gray text-sm mt-1">{stat.label}</div>
               </div>
             ))}
+          </div>
+
+          {/* AI Assessment CTA card */}
+          <div className="bg-stealth-navy-light rounded-2xl border border-stealth-cyan/20 p-8 md:p-10 mb-10">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+              <div>
+                <h3 className="text-white font-bold text-xl mb-2">Is Your Business Ready for AI?</h3>
+                <p className="text-stealth-gray text-sm leading-relaxed max-w-lg">
+                  Take our free 5-minute AI Readiness Assessment. Get a personalised score with actionable recommendations, instantly.
+                </p>
+              </div>
+              <Link
+                href="/ai-assessment"
+                className="shrink-0 inline-flex items-center gap-2 px-6 py-3 bg-stealth-cyan text-stealth-dark font-semibold text-sm rounded-lg hover:bg-white transition-colors"
+              >
+                Take the AI Assessment <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
           </div>
 
           <div className="text-center">
