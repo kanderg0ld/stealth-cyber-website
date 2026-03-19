@@ -13,7 +13,7 @@ export default function AISecurityCheatSheet() {
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-white mb-4">AI Security Cheat Sheet</h1>
           <p className="text-stealth-gray mb-6">What every Australian business needs to know about securing AI tools in the workplace.</p>
-          <PDFDownloadButton />
+          <PDFDownloadButton href="/downloads/ai-security-cheat-sheet.pdf" />
         </div>
 
         {/* PDF Content - hidden on screen, visible in print */}
