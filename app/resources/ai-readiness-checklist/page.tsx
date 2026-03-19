@@ -34,7 +34,7 @@ export default function AIReadinessChecklist() {
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-white mb-4">AI Readiness Checklist</h1>
           <p className="text-stealth-gray mb-6">Before your organisation deploys AI tools at scale, work through this checklist. Each item represents a gap that creates real risk if left unaddressed.</p>
-          <PDFDownloadButton />
+          <PDFDownloadButton href="/downloads/ai-readiness-checklist.pdf" />
         </div>
 
         <div id="pdf-content" className="bg-white border border-gray-200">

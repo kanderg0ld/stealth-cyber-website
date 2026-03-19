@@ -22,7 +22,7 @@ export default function EOFYCyberThreatGuide() {
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-white mb-4">End of Financial Year Cyber Threat Guide</h1>
           <p className="text-stealth-gray mb-6">EOFY is the highest-risk period of the year for Australian professional services firms. What attackers do differently and what to do about it.</p>
-          <PDFDownloadButton />
+          <PDFDownloadButton href="/downloads/eofy-cyber-threat-guide.pdf" />
         </div>
 
         <div id="pdf-content" className="bg-white border border-gray-200">

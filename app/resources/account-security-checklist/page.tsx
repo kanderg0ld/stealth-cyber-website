@@ -34,7 +34,7 @@ export default function AccountSecurityChecklist() {
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-white mb-4">Account Security Checklist</h1>
           <p className="text-stealth-gray mb-6">Most breaches start with a compromised account. This checklist covers the controls that matter most for protecting the accounts your business depends on.</p>
-          <PDFDownloadButton />
+          <PDFDownloadButton href="/downloads/account-security-checklist.pdf" />
         </div>
 
         <div id="pdf-content" className="bg-white border border-gray-200">

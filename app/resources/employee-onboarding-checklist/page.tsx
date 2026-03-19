@@ -38,7 +38,7 @@ export default function EmployeeOnboardingChecklist() {
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-white mb-4">New Employee Cyber Security Onboarding Checklist</h1>
           <p className="text-stealth-gray mb-6">Every new employee is a potential entry point until they are properly briefed and set up correctly. For IT providers, practice managers, and the employee themselves.</p>
-          <PDFDownloadButton />
+          <PDFDownloadButton href="/downloads/employee-onboarding-checklist.pdf" />
         </div>
 
         <div id="pdf-content" className="bg-white border border-gray-200">

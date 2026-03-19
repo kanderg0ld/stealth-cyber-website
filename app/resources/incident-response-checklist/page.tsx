@@ -40,7 +40,7 @@ export default function IncidentResponseChecklist() {
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-white mb-4">Incident Response Checklist: The First 24 Hours</h1>
           <p className="text-stealth-gray mb-6">What you do in the first 24 hours of a suspected cyber incident determines how bad the outcome is. Print this. Save it somewhere you can access if your systems are down.</p>
-          <PDFDownloadButton />
+          <PDFDownloadButton href="/downloads/incident-response-checklist.pdf" />
         </div>
 
         <div id="pdf-content" className="bg-white border border-gray-200">

@@ -34,7 +34,7 @@ export default function M365SecurityChecklist() {
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-white mb-4">Microsoft 365 Security Hardening Checklist</h1>
           <p className="text-stealth-gray mb-6">Default Microsoft 365 settings are not secure settings. Work through this checklist with your IT or security provider and confirm each item is verified, not just assumed.</p>
-          <PDFDownloadButton />
+          <PDFDownloadButton href="/downloads/m365-security-checklist.pdf" />
         </div>
 
         <div id="pdf-content" className="bg-white border border-gray-200">
