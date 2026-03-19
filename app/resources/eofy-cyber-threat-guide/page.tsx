@@ -25,7 +25,7 @@ export default function EOFYCyberThreatGuide() {
           <PDFDownloadButton />
         </div>
 
-        <div id="pdf-content" className="bg-white rounded-xl overflow-hidden shadow-lg">
+        <div id="pdf-content" className="bg-white border border-gray-200">
           <style dangerouslySetInnerHTML={{ __html: `
             @media print {
               body { margin: 0; padding: 0; }
