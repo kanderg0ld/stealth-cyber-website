@@ -20,20 +20,44 @@ export default function AISecurityCheatSheet() {
         <div id="pdf-content" className="bg-white rounded-xl overflow-hidden shadow-lg">
           <style dangerouslySetInnerHTML={{ __html: `
             @media print {
+              body { margin: 0; padding: 0; }
               body * { visibility: hidden; }
               #pdf-content, #pdf-content * { visibility: visible; }
-              #pdf-content { position: absolute; left: 0; top: 0; width: 100%; }
+              #pdf-content {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+              }
               .no-print { display: none !important; }
               .page-break { page-break-before: always; }
-              .print-full-page { min-height: 297mm; }
-              @page { margin: 0; size: A4; }
+              .print-full-page {
+                height: 296.5mm;
+                max-height: 296.5mm;
+                overflow: hidden;
+                box-sizing: border-box;
+              }
+              .print-content-page {
+                page-break-inside: avoid;
+              }
+              @page {
+                margin: 0;
+                size: A4;
+              }
+              * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+              }
             }
           `}} />
 
           {/* Page 1 - Cover */}
           <div className="px-12 py-16 bg-[#04050F] text-white print-full-page flex flex-col justify-between" style={{ background: 'linear-gradient(135deg, #04050F 0%, #07091A 100%)' }}>
             <div>
-              <div className="h-1 w-full mb-12" style={{ background: 'linear-gradient(90deg, #0038FF, #6231F5)' }} />
+              <div className="h-1 w-full mb-8" style={{ background: 'linear-gradient(90deg, #0038FF, #6231F5)' }} />
               <img src="/Primary-Reversed-Dark.png" alt="Stealth Cyber" className="h-10 mb-16" />
               <h1 className="text-5xl font-bold mb-6 leading-tight">AI Security<br />Cheat Sheet</h1>
               <div className="h-1 w-24 mb-8" style={{ background: 'linear-gradient(90deg, #0038FF, #6231F5)' }} />
@@ -46,12 +70,12 @@ export default function AISecurityCheatSheet() {
           </div>
 
           {/* Page 2 - The Core Problem + What to Lock Down */}
-          <div className="page-break px-12 py-12">
-            <div className="flex items-center gap-3 mb-10">
+          <div className="page-break px-12 py-10 print-content-page">
+            <div className="flex items-center gap-3 mb-6">
               <div className="h-6 w-1 rounded-full" style={{ background: 'linear-gradient(180deg, #0038FF, #6231F5)' }} />
               <h2 className="text-2xl font-bold text-gray-900">The Core Problem</h2>
             </div>
-            <p className="text-gray-700 leading-relaxed mb-10 text-base">
+            <p className="text-gray-700 leading-relaxed mb-6 text-base">
               AI tools move faster than security policies. Most organisations are using AI in some capacity before anyone has defined the rules around it. This cheat sheet covers the essentials so your team is not making security decisions by default.
             </p>
 
@@ -76,7 +100,7 @@ export default function AISecurityCheatSheet() {
                 </li>
               ))}
             </ul>
-            <div className="bg-gray-50 border-l-4 border-[#0038FF] p-4 rounded-r-lg mb-10">
+            <div className="bg-gray-50 border-l-4 border-[#0038FF] p-4 rounded-r-lg mb-6">
               <p className="text-gray-700 text-sm leading-relaxed">
                 If it would cause a problem under the Privacy Act or your professional obligations if it leaked, it does not go into a public AI tool.
               </p>
@@ -112,12 +136,12 @@ export default function AISecurityCheatSheet() {
           </div>
 
           {/* Page 3 - Five Rules + M365 */}
-          <div className="page-break px-12 py-12">
+          <div className="page-break px-12 py-10 print-content-page">
             <div className="flex items-center gap-3 mb-8">
               <div className="h-6 w-1 rounded-full" style={{ background: 'linear-gradient(180deg, #0038FF, #6231F5)' }} />
               <h2 className="text-2xl font-bold text-gray-900">Five Rules for Staff Using AI Tools</h2>
             </div>
-            <div className="space-y-4 mb-12">
+            <div className="space-y-4 mb-8">
               {[
                 { num: '01', title: 'Only use tools the business has approved.', desc: 'If it is not on the approved list, raise it before using it for work tasks.' },
                 { num: '02', title: 'Never paste client data into a public AI tool.', desc: 'Not even to "just check something quickly."' },
@@ -164,7 +188,7 @@ export default function AISecurityCheatSheet() {
           </div>
 
           {/* Page 4 - Shadow AI + Incidents + Actions */}
-          <div className="page-break px-12 py-12">
+          <div className="page-break px-12 py-10 print-content-page">
             <div className="flex items-center gap-3 mb-8">
               <div className="h-6 w-1 rounded-full" style={{ background: 'linear-gradient(180deg, #0038FF, #6231F5)' }} />
               <h2 className="text-2xl font-bold text-gray-900">Shadow AI</h2>
@@ -175,7 +199,7 @@ export default function AISecurityCheatSheet() {
             <p className="text-gray-700 text-sm leading-relaxed mb-6">
               Most organisations have more shadow AI use than they realise. Staff find tools useful and start using them. Nobody asked for permission because nobody thought to ask. The data leaves the environment and nobody knows.
             </p>
-            <div className="bg-gray-50 border-l-4 border-[#0038FF] p-4 rounded-r-lg mb-12">
+            <div className="bg-gray-50 border-l-4 border-[#0038FF] p-4 rounded-r-lg mb-8">
               <p className="font-bold text-gray-900 text-sm mb-1">How to find it:</p>
               <p className="text-gray-700 text-sm leading-relaxed">
                 Ask your IT or security provider to audit browser extensions, SaaS application usage, and network traffic for known AI service domains. What you find will likely be more than you expected.
@@ -186,7 +210,7 @@ export default function AISecurityCheatSheet() {
               <div className="h-6 w-1 rounded-full" style={{ background: 'linear-gradient(180deg, #0038FF, #6231F5)' }} />
               <h2 className="text-2xl font-bold text-gray-900">AI Incident Types to Report</h2>
             </div>
-            <ul className="space-y-2 mb-12">
+            <ul className="space-y-2 mb-8">
               {[
                 'Accidental submission of confidential data to a public AI tool',
                 'AI output that references client or business information it should not have access to',
@@ -225,9 +249,9 @@ export default function AISecurityCheatSheet() {
           <div className="page-break px-12 py-16 print-full-page flex flex-col justify-between" style={{ background: 'linear-gradient(135deg, #04050F 0%, #07091A 100%)' }}>
             <div>
               <div className="h-1 w-full mb-16" style={{ background: 'linear-gradient(90deg, #0038FF, #6231F5)' }} />
-              <img src="/Primary-Reversed-Dark.png" alt="Stealth Cyber" className="h-10 mb-12" />
+              <img src="/Primary-Reversed-Dark.png" alt="Stealth Cyber" className="h-10 mb-8" />
               <h2 className="text-3xl font-bold text-white mb-6">Need help securing your AI tools?</h2>
-              <p className="text-[#94A3B8] text-lg leading-relaxed max-w-md mb-12">
+              <p className="text-[#94A3B8] text-lg leading-relaxed max-w-md mb-8">
                 Stealth Cyber provides managed cybersecurity and AI governance support for Australian professional services firms. Get in touch for a straight conversation about your AI security posture.
               </p>
 
