@@ -12,6 +12,7 @@ const navLinks = [
   { href: '/services', label: 'Services' },
   { href: '/about', label: 'About' },
   { href: '/blog', label: 'Blog' },
+  { href: '/resources', label: 'Resources' },
   { href: 'https://ai.stealthcyber.io', label: 'AI Training', external: true },
   { href: '/contact', label: 'Contact' },
 ]
