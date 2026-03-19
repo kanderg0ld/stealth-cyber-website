@@ -8,6 +8,10 @@
       "route": "/api/*",
       "methods": ["GET", "POST"],
       "allowedRoles": ["anonymous"]
+    },
+    {
+      "route": "/downloads/*",
+      "allowedRoles": ["anonymous"]
     }
   ],
   "responseOverrides": {
