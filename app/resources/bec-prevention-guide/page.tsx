@@ -42,7 +42,7 @@ export default function BECPreventionGuide() {
               }
               .no-print { display: none !important; }
               .page-break { page-break-before: always; }
-              .print-full-page {
+              .print-full-page, .page-break {
                 height: 296.5mm;
                 max-height: 296.5mm;
                 overflow: hidden;

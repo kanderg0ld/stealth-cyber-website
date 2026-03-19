@@ -34,19 +34,13 @@ export default function AISecurityCheatSheet() {
               }
               .no-print { display: none !important; }
               .page-break { page-break-before: always; }
-              .print-full-page {
+              .print-full-page, .page-break {
                 height: 296.5mm;
                 max-height: 296.5mm;
                 overflow: hidden;
                 box-sizing: border-box;
               }
-              .print-content-page {
-                page-break-inside: avoid;
-              }
-              @page {
-                margin: 0;
-                size: A4;
-              }
+              @page { margin: 0; size: A4; }
               * {
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
