@@ -35,7 +35,7 @@ export default function CyberInsuranceChecklist() {
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-white mb-4">Cyber Insurance Checklist</h1>
           <p className="text-stealth-gray mb-6">Understand what your cyber insurance actually covers, what controls you need in place, and what gaps to close before your next renewal.</p>
-          <PDFDownloadButton href="/downloads/cyber-insurance-checklist.pdf" />
+          <PDFDownloadButton href="cyber-insurance-checklist.pdf" />
         </div>
 
         <div id="pdf-content" className="bg-white border border-gray-200">

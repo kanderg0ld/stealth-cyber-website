@@ -206,7 +206,7 @@ async function createPDF(config) {
   addBackPage()
 
   const bytes = await doc.save()
-  const outPath = path.join('public', 'downloads', `${config.filename}.pdf`)
+  const outPath = path.join('public', `${config.filename}.pdf`)
   fs.mkdirSync(path.dirname(outPath), { recursive: true })
   fs.writeFileSync(outPath, bytes)
   console.log(`Generated: ${outPath}`)

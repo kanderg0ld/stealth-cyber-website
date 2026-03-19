@@ -22,7 +22,7 @@ export default function BECPreventionGuide() {
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-white mb-4">Business Email Compromise Prevention Guide</h1>
           <p className="text-stealth-gray mb-6">BEC is the highest-return, lowest-effort attack targeting Australian professional services firms. How it works, how to recognise it, and the controls that stop it.</p>
-          <PDFDownloadButton href="/downloads/bec-prevention-guide.pdf" />
+          <PDFDownloadButton href="bec-prevention-guide.pdf" />
         </div>
 
         <div id="pdf-content" className="bg-white border border-gray-200">

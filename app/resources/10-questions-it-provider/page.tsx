@@ -30,7 +30,7 @@ export default function TenQuestionsITProvider() {
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-white mb-4">10 Questions to Ask Your IT Provider About Cybersecurity</h1>
           <p className="text-stealth-gray mb-6">A capable IT provider should be able to answer every one of these clearly and specifically. Vague answers are data.</p>
-          <PDFDownloadButton href="/downloads/10-questions-it-provider.pdf" />
+          <PDFDownloadButton href="10-questions-it-provider.pdf" />
         </div>
 
         <div id="pdf-content" className="bg-white border border-gray-200">
