@@ -25,12 +25,13 @@ export default function AISecurityCheatSheet() {
               #pdf-content { position: absolute; left: 0; top: 0; width: 100%; }
               .no-print { display: none !important; }
               .page-break { page-break-before: always; }
+              .print-full-page { min-height: 297mm; }
               @page { margin: 0; size: A4; }
             }
           `}} />
 
           {/* Page 1 - Cover */}
-          <div className="px-12 py-16 bg-[#04050F] text-white min-h-[297mm] flex flex-col justify-between" style={{ background: 'linear-gradient(135deg, #04050F 0%, #07091A 100%)' }}>
+          <div className="px-12 py-16 bg-[#04050F] text-white print-full-page flex flex-col justify-between" style={{ background: 'linear-gradient(135deg, #04050F 0%, #07091A 100%)' }}>
             <div>
               <div className="h-1 w-full mb-12" style={{ background: 'linear-gradient(90deg, #0038FF, #6231F5)' }} />
               <img src="/Primary-Reversed-Dark.png" alt="Stealth Cyber" className="h-10 mb-16" />
@@ -45,7 +46,7 @@ export default function AISecurityCheatSheet() {
           </div>
 
           {/* Page 2 - The Core Problem + What to Lock Down */}
-          <div className="page-break px-12 py-12 min-h-[297mm]">
+          <div className="page-break px-12 py-12">
             <div className="flex items-center gap-3 mb-10">
               <div className="h-6 w-1 rounded-full" style={{ background: 'linear-gradient(180deg, #0038FF, #6231F5)' }} />
               <h2 className="text-2xl font-bold text-gray-900">The Core Problem</h2>
@@ -111,7 +112,7 @@ export default function AISecurityCheatSheet() {
           </div>
 
           {/* Page 3 - Five Rules + M365 */}
-          <div className="page-break px-12 py-12 min-h-[297mm]">
+          <div className="page-break px-12 py-12">
             <div className="flex items-center gap-3 mb-8">
               <div className="h-6 w-1 rounded-full" style={{ background: 'linear-gradient(180deg, #0038FF, #6231F5)' }} />
               <h2 className="text-2xl font-bold text-gray-900">Five Rules for Staff Using AI Tools</h2>
@@ -163,7 +164,7 @@ export default function AISecurityCheatSheet() {
           </div>
 
           {/* Page 4 - Shadow AI + Incidents + Actions */}
-          <div className="page-break px-12 py-12 min-h-[297mm]">
+          <div className="page-break px-12 py-12">
             <div className="flex items-center gap-3 mb-8">
               <div className="h-6 w-1 rounded-full" style={{ background: 'linear-gradient(180deg, #0038FF, #6231F5)' }} />
               <h2 className="text-2xl font-bold text-gray-900">Shadow AI</h2>
@@ -221,7 +222,7 @@ export default function AISecurityCheatSheet() {
           </div>
 
           {/* Page 5 - Back Page / Contact */}
-          <div className="page-break px-12 py-16 min-h-[297mm] flex flex-col justify-between" style={{ background: 'linear-gradient(135deg, #04050F 0%, #07091A 100%)' }}>
+          <div className="page-break px-12 py-16 print-full-page flex flex-col justify-between" style={{ background: 'linear-gradient(135deg, #04050F 0%, #07091A 100%)' }}>
             <div>
               <div className="h-1 w-full mb-16" style={{ background: 'linear-gradient(90deg, #0038FF, #6231F5)' }} />
               <img src="/Primary-Reversed-Dark.png" alt="Stealth Cyber" className="h-10 mb-12" />
