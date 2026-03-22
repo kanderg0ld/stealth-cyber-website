@@ -6,7 +6,6 @@ import HeroSection from '@/components/HeroSection'
 import ServiceCard from '@/components/ServiceCard'
 import FaqJsonLd from '@/components/structured-data/FaqJsonLd'
 import HowToJsonLd from '@/components/structured-data/HowToJsonLd'
-import LocalBusinessJsonLd from '@/components/structured-data/LocalBusinessJsonLd'
 
 export const metadata: Metadata = {
   title: 'Stealth Cyber | Global Managed Cybersecurity Services',
@@ -145,7 +144,6 @@ export default function HomePage() {
     <>
       <FaqJsonLd faqs={faqs} />
       <HowToJsonLd />
-      <LocalBusinessJsonLd />
       <HeroSection />
 
       {/* Stats bar */}
