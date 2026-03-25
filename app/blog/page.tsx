@@ -10,6 +10,14 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    title: 'Microsoft Secure Score: Security Metric or False Sense of Confidence?',
+    excerpt: 'Microsoft Secure Score matters, but only if you look at it the right way. What it actually measures, where businesses get it wrong, and how to use it to reduce real risk.',
+    slug: 'microsoft-secure-score',
+    publishedAt: '2026-03-26',
+    author: 'Mariane Ribeiro, Cybersecurity Engineer',
+    tags: ['Microsoft 365', 'Secure Score', 'M365 Security'],
+  },
+  {
     title: 'Why Accounting and Legal Firms Are the Perfect Target',
     excerpt: 'High-value data, trusted relationships, and deadline pressure make professional services firms prime targets for cybercriminals. Here is why, and what to do about it.',
     slug: 'accounting-legal-firms-target',
