@@ -10,6 +10,14 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    title: 'The AI "Gold Rush" is a Supply Chain Nightmare',
+    excerpt: 'The rapid adoption of AI has introduced a new middle layer in the application stack, turning trusted dependencies into Trojan horses. How supply chain attacks are reshaping the threat landscape.',
+    slug: 'ai-gold-rush-supply-chain',
+    publishedAt: '2026-04-03',
+    author: 'Alessandra Melo, Global Senior Cybersecurity Engineer',
+    tags: ['Supply Chain Security', 'AI Security', 'Threat Intelligence'],
+  },
+  {
     title: 'Microsoft Secure Score: Security Metric or False Sense of Confidence?',
     excerpt: 'Microsoft Secure Score matters, but only if you look at it the right way. What it actually measures, where businesses get it wrong, and how to use it to reduce real risk.',
     slug: 'microsoft-secure-score',
