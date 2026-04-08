@@ -10,6 +10,14 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    title: 'ClickFix: The Attack That Asks You to Compromise Yourself',
+    excerpt: 'We responded to a macOS compromise where the victim executed the malicious command themselves. No exploit, no zero-day — just a fake CAPTCHA and social engineering. This is ClickFix.',
+    slug: 'clickfix-attack',
+    publishedAt: '2026-04-08',
+    author: 'Bailey Marshall, Chief Technology Officer',
+    tags: ['Threat Intelligence', 'Incident Response', 'Social Engineering'],
+  },
+  {
     title: 'The AI "Gold Rush" is a Supply Chain Nightmare',
     excerpt: 'The rapid adoption of AI has introduced a new middle layer in the application stack, turning trusted dependencies into Trojan horses. How supply chain attacks are reshaping the threat landscape.',
     slug: 'ai-gold-rush-supply-chain',
