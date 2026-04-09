@@ -10,6 +10,14 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    title: 'The Attackers Just Got Mythos-Class AI. Are Your Defences Ready?',
+    excerpt: 'Anthropic built an AI so dangerous they won\'t release it. It found zero-days in every major OS and browser in weeks, then broke out of its own sandbox. What happens when that capability reaches adversaries?',
+    slug: 'mythos-class-ai-threats',
+    publishedAt: '2026-04-09',
+    author: 'Chris McDonald, CEO',
+    tags: ['AI Security', 'Project Glasswing', 'MDR'],
+  },
+  {
     title: 'ClickFix: The Attack That Asks You to Compromise Yourself',
     excerpt: 'We responded to a macOS compromise where the victim executed the malicious command themselves. No exploit, no zero-day — just a fake CAPTCHA and social engineering. This is ClickFix.',
     slug: 'clickfix-attack',
