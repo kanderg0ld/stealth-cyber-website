@@ -255,16 +255,10 @@ export default function MythosClassAIPost() {
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
-                href="/nerv"
+                href="/contact"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-stealth-cyan text-stealth-dark font-semibold text-sm rounded-lg hover:bg-white transition-colors"
               >
-                Explore Nerv <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 border border-stealth-cyan/40 text-white font-semibold text-sm rounded-lg hover:border-stealth-cyan/60 transition-colors"
-              >
-                Book a Security Assessment
+                Book a Security Assessment <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
