@@ -10,6 +10,14 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    title: 'The "False Lawyer" Scam Is Exploding Across Brazil. Here\'s What Law Firms Should Actually Be Doing About It.',
+    excerpt: 'Over 2,600 cases by August 2025. A 408% increase in cybercrimes since 2018. The golpe do falso advogado is a cybersecurity problem, not just a fraud problem. Here\'s what law firms should implement.',
+    slug: 'false-lawyer-scam-brazil',
+    publishedAt: '2026-04-23',
+    author: 'Chris McDonald, CEO',
+    tags: ['Legal Sector Security', 'Brazil', 'Fraud Prevention'],
+  },
+  {
     title: 'The Attackers Just Got Mythos-Class AI. Are Your Defences Ready?',
     excerpt: 'Anthropic built an AI so dangerous they won\'t release it. It found zero-days in every major OS and browser in weeks, then broke out of its own sandbox. What happens when that capability reaches adversaries?',
     slug: 'mythos-class-ai-threats',
