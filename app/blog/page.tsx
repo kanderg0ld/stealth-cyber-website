@@ -10,6 +10,14 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    title: 'ShinyHunters vs Instructure: 3.65 TB, 275 Million Users, and the Five Questions Every School Should Be Asking',
+    excerpt: 'ShinyHunters claims 3.65 TB exfiltrated and 275 million users exposed across 9,000 schools. They defaced 330 Canvas login portals during finals week. Here\'s what happened, and the five questions every school should put to its security provider this week.',
+    slug: 'instructure-canvas-shinyhunters',
+    publishedAt: '2026-05-09',
+    author: 'Alessandra Melo, Global Senior Cybersecurity Engineer',
+    tags: ['Threat Intelligence', 'ShinyHunters', 'Education Sector'],
+  },
+  {
     title: 'The "False Lawyer" Scam Is Exploding Across Brazil. Here\'s What Law Firms Should Actually Be Doing About It.',
     excerpt: 'Over 2,600 cases by August 2025. A 408% increase in cybercrimes since 2018. The golpe do falso advogado is a cybersecurity problem, not just a fraud problem. Here\'s what law firms should implement.',
     slug: 'false-lawyer-scam-brazil',
