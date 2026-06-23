@@ -349,7 +349,7 @@ export default function HomePage() {
               Trusted by businesses across Australia, the Americas, and beyond.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
                 quote: 'Chris and the team at Stealth Cyber have played a critical role in improving the firm\u2019s cyber security processes and systems. I have been particularly impressed by their dedication to helping staff understand cyber security risks and teach proactive ways to both improve and measure security. The team is responsive and clearly incredibly knowledgeable. It has been a welcomed breath of fresh air to partner with Stealth Cyber to ensure better cyber and data protection for our firm and our valuable clients.',
@@ -365,6 +365,11 @@ export default function HomePage() {
                 quote: 'As a law firm handling highly sensitive client data, our IT and cybersecurity requirements are non-negotiable. Stealth Cyber provides a sophisticated and proactive service that goes well beyond basic IT protection. Their layered strategy ensures our firm remains fully protected against evolving cyber risks while keeping every team member alert and informed. I have complete confidence in their ability to safeguard our systems.',
                 name: 'Margherite Walsh',
                 role: 'Managing Principal, Walsh Legal Group',
+              },
+              {
+                quote: 'Working with Stealth Cyber has been an absolute blessing for the company. I genuinely didn’t know a single thing about cybersecurity but given my online presence (3m+ followers across socials), I know that I was at a pretty big risk. Chris and the team told me in simple terms that I could understand what my business needed and why. Onboarding was super simple, and since then their products haven’t had any impact to my workflow at all. I appreciate how quick their team responds to everything – my questions and threats. Would recommend SC to ANY small business who wants to protect their livelihood, and the business that they’ve put their blood, sweat and tears into.',
+                name: 'Sarah Rav',
+                role: 'Founder, Sarah Rav Strategy',
               },
             ].map((testimonial, i) => (
               <div key={i} className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex flex-col">
