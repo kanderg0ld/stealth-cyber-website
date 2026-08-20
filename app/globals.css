@@ -20,6 +20,11 @@
   --sc-vivid-sky: #4dccff;
   --sc-electric-blue: #3ce4f5;
 
+  /* Product tier, admitted as Bridge highlights. Dark grounds only:
+   * 5.13:1 on Near Black, 3.85:1 on white (large text only). */
+  --nv-magenta: #f303b0;
+  --nv-magenta-mist: #ffc9fe;
+
   /* Neutrals */
   --sc-void: #000000;
   --sc-near-black: #0a0a0f;
@@ -43,6 +48,8 @@
 
   /* Gradients. Section dividers and cover surfaces only. */
   --sc-grad-corporate: linear-gradient(135deg, #0038ff 0%, #00a2ff 60%, #3ce4f5 100%);
+  /* Kit Bridge gradient, verbatim. Never behind body copy. */
+  --sc-grad-bridge: linear-gradient(135deg, #0038ff 0%, #6231f5 45%, #f303b0 100%);
 
   /* Motion */
   --sc-ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
@@ -166,11 +173,80 @@
     background-color: rgba(77, 204, 255, 0.06);
   }
 
-  /* Kit corporate gradient as a section divider. Its only sanctioned use here. */
+  /*
+   * Kit corporate gradient as a section divider. Currently unused on this site
+   * now that the dividers carry the Bridge arc — retained deliberately for any
+   * corporate-only surface (a tender or report template) that must not show
+   * product-tier colour.
+   */
   .rule-corp {
     height: 1px;
     background: var(--sc-grad-corporate);
     opacity: 0.75;
+  }
+
+  /*
+   * Neon pink gradient on display type.
+   *
+   * The kit permits its gradients on type at 24px and above (it forbids them on
+   * body copy and anything smaller), so this is for hero/section headings only —
+   * never for the 20px icons or any label.
+   *
+   * Built fallback-first on purpose: `-webkit-text-fill-color: transparent`
+   * makes the text invisible if the background image never paints, so a solid
+   * magenta `color` is declared first and restored wherever clipping can't be
+   * trusted. Darkest stop #F303B0 is 5.13:1 on Near Black, so even the solid
+   * fallback clears AA.
+   */
+  .text-gradient-neon {
+    color: var(--nv-magenta);
+    background-image: linear-gradient(
+      100deg,
+      #f303b0 0%,
+      #ff4fd8 46%,
+      var(--nv-magenta-mist) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* Stops the final glyph's overhang being clipped by the text box. */
+    padding-right: 0.06em;
+    margin-right: -0.06em;
+  }
+
+  @supports not ((-webkit-background-clip: text) or (background-clip: text)) {
+    .text-gradient-neon {
+      background-image: none;
+      -webkit-text-fill-color: currentColor;
+    }
+  }
+
+  /* Windows high-contrast: never leave the fill transparent. */
+  @media (forced-colors: active) {
+    .text-gradient-neon {
+      background-image: none;
+      -webkit-text-fill-color: currentColor;
+      color: CanvasText;
+    }
+  }
+
+  /*
+   * Bridge gradient as a section divider — cobalt into indigo into magenta.
+   * A 1px full-width section rule, not a per-card edge: a coloured stripe
+   * repeated on every card is the tell this pass removed, and this is not that.
+   */
+  .rule-bridge {
+    height: 1px;
+    background: var(--sc-grad-bridge);
+  }
+
+  /*
+   * Heavier Bridge rule for the top of a major dark section. Still decoration
+   * on an edge, never behind type.
+   */
+  .rule-bridge-strong {
+    height: 2px;
+    background: var(--sc-grad-bridge);
   }
 
   /*

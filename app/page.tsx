@@ -220,7 +220,9 @@ export default function HomePage() {
         cards, each with the same tinted gradient icon tile \u2014 the same shape as
         the About grid below it and the service grid above it.
       */}
-      <section className="bg-stealth-dark py-[clamp(4rem,8vw,6rem)]">
+      <section className="relative bg-stealth-dark py-[clamp(4rem,8vw,6rem)]">
+        {/* Bridge arc as this section's top edge — full width, no type over it. */}
+        <div className="rule-bridge-strong absolute inset-x-0 top-0" />
         <div className="mx-auto grid max-w-7xl gap-x-16 gap-y-12 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
           <div className="lg:col-span-5">
             <div className="lg:sticky lg:top-28">
@@ -273,29 +275,39 @@ export default function HomePage() {
             </div>
           </div>
 
+          {/*
+            `tone` follows the kit's semantics rather than being decorative:
+            magenta for the offensive/adversarial work, cyan for governance and
+            assurance. That splits 2/2 here, so the colour reads as a
+            classification instead of as random highlighting.
+          */}
           <dl className="lg:col-span-7">
             {[
               {
                 icon: <Shield className="h-5 w-5" aria-hidden="true" />,
                 title: 'AI Red Teaming',
+                tone: 'offensive',
                 description:
                   'We simulate real-world adversarial attacks against your AI systems, aligned to the AIUC-1 standard. From prompt injection and jailbreaks to data poisoning and model manipulation. Find out how your AI holds up before an attacker does.',
               },
               {
                 icon: <Cpu className="h-5 w-5" aria-hidden="true" />,
                 title: 'AI Management Systems',
+                tone: 'governance',
                 description:
                   'Build robust AI governance aligned to ISO 42001. We help you manage AI risk, bias, transparency, and accountability with frameworks that satisfy regulators and build stakeholder trust.',
               },
               {
                 icon: <ClipboardCheck className="h-5 w-5" aria-hidden="true" />,
                 title: 'AI Readiness Assessments',
+                tone: 'governance',
                 description:
                   'Planning to adopt AI? We assess your organisation\u2019s readiness, covering data governance, security controls, risk appetite, and regulatory obligations, so you can move forward with confidence.',
               },
               {
                 icon: <Brain className="h-5 w-5" aria-hidden="true" />,
                 title: 'AI Red Team Training',
+                tone: 'offensive',
                 description:
                   'We train the next generation of AI Red Team Engineers. Our hands-on programmes cover adversarial testing techniques for LLMs, ML pipelines, and generative AI systems.',
               },
@@ -305,7 +317,15 @@ export default function HomePage() {
                 className="border-t border-stealth-navy-light py-7 last:border-b"
               >
                 <dt className="mb-2.5 flex items-center gap-3">
-                  <span className="text-stealth-cyan">{item.icon}</span>
+                  <span
+                    className={
+                      item.tone === 'offensive'
+                        ? 'text-stealth-magenta'
+                        : 'text-stealth-cyan'
+                    }
+                  >
+                    {item.icon}
+                  </span>
                   <span className="text-lg font-semibold text-white">{item.title}</span>
                 </dt>
                 <dd className="max-w-[64ch] text-sm leading-relaxed text-stealth-gray">
@@ -463,8 +483,13 @@ export default function HomePage() {
         atmosphere, which had made the page's last fold look like its first.
 
         White on #0038FF is 6.98:1 per the kit's own contrast table.
+
+        The Bridge wash pushes indigo and magenta into the bottom-right corner
+        while the text column stays over cobalt. White on magenta would be
+        3.85:1, so the copy must never reach that end — the contrast behind the
+        text is pixel-sampled from the rendered page, not assumed.
       */}
-      <section className="bg-stealth-blue py-[clamp(4rem,8vw,6rem)]">
+      <section className="bg-cta-bridge bg-stealth-blue py-[clamp(4rem,8vw,6rem)]">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
           <h2 className="mb-4 text-[clamp(1.875rem,3.4vw,2.5rem)] font-bold text-white">
             Find Out Where You&apos;re Exposed

@@ -39,8 +39,17 @@ export default function HeroSection() {
               style={{ animationDelay: '60ms' }}
             >
               One Breach Can{' '}
-              <span className="text-stealth-cyan">Change Everything.</span> Don&apos;t
-              Let It.
+              {/*
+                Neon pink gradient, Chris's call (2026-08-20). The kit assigns
+                magenta to threat and cyan to defence, and this clause is the
+                threat, so the loudest moment on the page also carries meaning.
+
+                Only legitimate at this size: the kit forbids its gradients on
+                body copy and anything under 24px, and this clamps 40px–72px.
+                Solid-magenta fallback is in `.text-gradient-neon`.
+              */}
+              <span className="text-gradient-neon">Change Everything.</span>{' '}
+              Don&apos;t Let It.
             </h1>
 
             <p
@@ -76,8 +85,12 @@ export default function HeroSection() {
         The trust facts used to be three bordered pills floating mid-column.
         As a ruled band pinned to the base of the hero they anchor the
         composition, use the full width, and read as a record rather than chrome.
+
+        The Bridge gradient rule replaces a flat hairline as the hero's closing
+        edge — the arc reads full-width here without sitting behind any copy.
       */}
-      <div className="relative z-10 border-t border-stealth-navy-light bg-stealth-dark/60 backdrop-blur-sm">
+      <div className="relative z-10 bg-stealth-dark/60 backdrop-blur-sm">
+        <div className="rule-bridge" />
         <dl className="mx-auto grid max-w-7xl grid-cols-1 divide-y divide-stealth-navy-light px-4 sm:px-6 md:grid-cols-3 md:divide-x md:divide-y-0 lg:px-8">
           {trustPoints.map((point) => (
             <div key={point.label} className="py-5 md:px-6 md:first:pl-0 md:last:pr-0">
