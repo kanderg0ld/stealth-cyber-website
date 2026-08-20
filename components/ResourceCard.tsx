@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { FileText, Download, Tag } from 'lucide-react'
+import { FileText, Download } from 'lucide-react'
 
 interface ResourceCardProps {
   title: string
@@ -20,34 +20,41 @@ const categoryLabels: Record<string, string> = {
 
 export default function ResourceCard({ title, description, slug, category, imageUrl }: ResourceCardProps) {
   return (
-    <article className="group bg-stealth-navy border border-stealth-navy-light rounded-lg overflow-hidden hover:border-stealth-cyan/30 transition-all duration-300">
+    <article className="group relative flex flex-col overflow-hidden rounded-lg border border-stealth-navy-light bg-stealth-navy transition-[border-color] duration-200 ease-out-quart hover:border-stealth-cyan/30 focus-within:border-stealth-cyan/50">
       {imageUrl ? (
         <div className="relative h-40 overflow-hidden">
-          <Image src={imageUrl} alt={title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+          <Image
+            src={imageUrl}
+            alt={title}
+            fill
+            sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+            className="object-cover transition-transform duration-500 ease-out-quart group-hover:scale-[1.03]"
+          />
         </div>
       ) : (
-        <div className="h-40 flex items-center justify-center bg-stealth-navy-light">
-          <FileText className="w-12 h-12 text-stealth-cyan/30" />
+        <div className="flex h-40 items-center justify-center bg-stealth-navy-light">
+          <FileText className="h-10 w-10 text-stealth-dim" aria-hidden="true" />
         </div>
       )}
-      <div className="p-5">
+      <div className="flex flex-1 flex-col p-5">
         {category && (
-          <div className="flex items-center gap-1 mb-3">
-            <Tag className="w-3 h-3 text-stealth-cyan" />
-            <span className="text-stealth-cyan text-xs font-medium bg-stealth-indigo/10 border border-stealth-indigo/30 rounded px-1.5 py-0.5">{categoryLabels[category] || category}</span>
-          </div>
+          <p className="mb-3 text-[0.6875rem] font-medium tracking-[0.14em] text-stealth-cyan uppercase">
+            {categoryLabels[category] || category}
+          </p>
         )}
-        <h2 className="text-white font-semibold text-base mb-2 leading-snug group-hover:text-stealth-cyan transition-colors line-clamp-2">
-          {title}
+        <h2 className="mb-2 line-clamp-2 text-base leading-snug font-semibold text-white transition-colors group-hover:text-stealth-cyan">
+          {/* Stretched link — whole card is the target, one focus stop. */}
+          <Link href={`/resources/${slug}`} className="after:absolute after:inset-0">
+            {title}
+          </Link>
         </h2>
-        <p className="text-stealth-gray text-sm leading-relaxed mb-4 line-clamp-2">{description}</p>
-        <Link
-          href={`/resources/${slug}`}
-          className="inline-flex items-center gap-2 text-stealth-cyan text-sm font-medium hover:text-stealth-teal transition-colors"
-        >
-          <Download className="w-4 h-4" />
+        <p className="mb-5 line-clamp-2 flex-1 text-sm leading-relaxed text-stealth-gray">
+          {description}
+        </p>
+        <p className="inline-flex items-center gap-2 text-sm font-medium text-stealth-cyan">
+          <Download className="h-4 w-4" aria-hidden="true" />
           Download Resource
-        </Link>
+        </p>
       </div>
     </article>
   )

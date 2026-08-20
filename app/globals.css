@@ -2,78 +2,214 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+/*
+ * Stealth Cyber design tokens — Brand Identity Kit supplement 01, v2.0.
+ * Corporate tier. Cobalt Blue is the company primary.
+ *
+ * The Nerv product tier is intentionally not defined here: product-tier colour
+ * must not appear on corporate surfaces, and this is a corporate surface.
+ *
+ * Inter is loaded via next/font in app/layout.tsx — no @import, so the font is
+ * self-hosted and does not block first render.
+ */
+:root {
+  /* Corporate tier */
+  --sc-cobalt: #0038ff;
+  --sc-indigo: #6231f5;
+  --sc-celestial: #00a2ff;
+  --sc-vivid-sky: #4dccff;
+  --sc-electric-blue: #3ce4f5;
+
+  /* Neutrals */
+  --sc-void: #000000;
+  --sc-near-black: #0a0a0f;
+  --sc-surface-grey: #f2f4f8;
+  --sc-body-grey: #6b7280; /* kit reference value */
+  /* Body Grey on Surface Grey is 4.39:1 — under AA. Same hue and saturation,
+   * 4% darker, 5.08:1. Use this for body copy on light surfaces. */
+  --sc-body-grey-aa: #626875;
+  --sc-white: #ffffff;
+
+  /* Ink ramp on dark grounds */
+  --sc-ink: #e8e9f0;
+  --sc-ink-body: #b4b7c6;
+  --sc-ink-dim: #8a8da0;
+  --sc-hairline: rgba(232, 233, 240, 0.1);
+
+  /* Severity — separate scale from brand colour, by design */
+  --sc-critical: #ef4444;
+  --sc-warning: #f59e0b;
+  --sc-success: #10b981;
+
+  /* Gradients. Section dividers and cover surfaces only. */
+  --sc-grad-corporate: linear-gradient(135deg, #0038ff 0%, #00a2ff 60%, #3ce4f5 100%);
+
+  /* Motion */
+  --sc-ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --sc-ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /*
+   * Focus ring, per surface. Vivid Sky clears 3:1 on Near Black but not on
+   * white, so light surfaces override this to Cobalt via `.surface-light`.
+   */
+  --sc-focus: var(--sc-vivid-sky);
+
+  /* z-index scale */
+  --z-sticky: 40;
+  --z-nav: 50;
+  --z-banner: 60;
+}
 
 @layer base {
   html {
     scroll-behavior: smooth;
   }
+
   body {
-    @apply bg-stealth-dark text-white font-sans antialiased;
+    @apply bg-stealth-dark text-stealth-ink font-sans antialiased;
   }
+
+  /* Even line lengths on display type; fewer orphans in prose. */
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+  p,
+  li {
+    text-wrap: pretty;
+  }
+
+  /* Light type on a dark ground reads lighter than it is, so it needs air. */
+  h1 {
+    letter-spacing: -0.03em;
+    line-height: 1.06;
+  }
+  h2 {
+    letter-spacing: -0.022em;
+    line-height: 1.12;
+  }
+  h3 {
+    letter-spacing: -0.014em;
+  }
+
+  /*
+   * Keyboard focus was previously invisible sitewide. Never remove this
+   * without a replacement.
+   */
+  :focus-visible {
+    outline: 2px solid var(--sc-focus);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
   ::selection {
-    @apply bg-stealth-indigo/30 text-white;
+    background: rgba(0, 56, 255, 0.32);
+    color: var(--sc-white);
   }
+
   ::-webkit-scrollbar {
-    width: 6px;
+    width: 10px;
   }
   ::-webkit-scrollbar-track {
-    @apply bg-stealth-dark;
+    background: var(--sc-near-black);
   }
   ::-webkit-scrollbar-thumb {
-    @apply bg-stealth-indigo/40 rounded-full;
+    background: #262b40;
+    border: 3px solid var(--sc-near-black);
+    border-radius: 999px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-stealth-indigo/60;
+    background: #343b57;
+  }
+}
+
+@layer components {
+  /*
+   * Primary action. Flat Cobalt, not a gradient: the kit reserves gradients for
+   * dividers and cover surfaces, and a flat corporate primary reads as more
+   * certain than a two-stop fill.
+   */
+  /* `.btn-gradient` is a legacy alias kept so pages outside this pass inherit
+   * the corrected flat primary without needing an edit. */
+  .btn-primary,
+  .btn-gradient {
+    @apply inline-flex items-center justify-center gap-2 rounded-md bg-stealth-blue px-6 py-3 font-semibold text-white;
+    transition:
+      background-color 180ms var(--sc-ease-out-quart),
+      box-shadow 180ms var(--sc-ease-out-quart),
+      transform 180ms var(--sc-ease-out-quart);
+  }
+  .btn-primary:hover,
+  .btn-gradient:hover {
+    background-color: #1a4bff;
+    box-shadow: 0 6px 22px -6px rgba(0, 56, 255, 0.7);
+  }
+  .btn-primary:active,
+  .btn-gradient:active {
+    transform: translateY(1px);
+    background-color: #002fd6;
+  }
+
+  /* Secondary action on dark grounds. */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-md border border-stealth-navy-light bg-transparent px-6 py-3 font-semibold text-stealth-ink;
+    transition:
+      border-color 180ms var(--sc-ease-out-quart),
+      background-color 180ms var(--sc-ease-out-quart);
+  }
+  .btn-secondary:hover {
+    border-color: rgba(77, 204, 255, 0.5);
+    background-color: rgba(77, 204, 255, 0.06);
+  }
+
+  /* Kit corporate gradient as a section divider. Its only sanctioned use here. */
+  .rule-corp {
+    height: 1px;
+    background: var(--sc-grad-corporate);
+    opacity: 0.75;
+  }
+
+  /*
+   * Light sections. Sets the ink defaults and swaps the focus ring to Cobalt,
+   * which clears 3:1 on Surface Grey and white where Vivid Sky does not.
+   */
+  .surface-light {
+    --sc-focus: var(--sc-cobalt);
+    @apply bg-stealth-surface text-stealth-body;
   }
 }
 
 @layer utilities {
-  .line-clamp-2 {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
+  /*
+   * Masked hairline grid. The mask stops the grid reaching a page edge, which
+   * is what made the previous full-bleed treatment read as a cyber backdrop.
+   */
+  .grid-veil {
+    @apply bg-grid-pattern bg-grid;
+    -webkit-mask-image: radial-gradient(115% 85% at 50% 0%, #000 0%, transparent 72%);
+    mask-image: radial-gradient(115% 85% at 50% 0%, #000 0%, transparent 72%);
   }
-  .line-clamp-3 {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
+}
+
+/*
+ * Reduced motion is not optional. Entrance animations use `backwards` fill
+ * only, so cancelling them here leaves every element in its visible resting
+ * state rather than hiding content.
+ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
-  .gradient-text {
-    background: linear-gradient(135deg, #4DCCFF, #3CE4F5);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  .gradient-text-hero {
-    background: linear-gradient(135deg, #ffffff 0%, #4DCCFF 60%, #3CE4F5 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  .btn-gradient {
-    background: linear-gradient(135deg, #0038FF 0%, #6231F5 100%);
-    transition: all 0.3s;
-  }
-  .btn-gradient:hover {
-    background: linear-gradient(135deg, #1a4fff 0%, #7a4aff 100%);
-    box-shadow: 0 0 20px rgba(0, 56, 255, 0.4);
-  }
-  .card-border-gradient {
-    position: relative;
-  }
-  .card-border-gradient::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    padding: 1px;
-    background: linear-gradient(135deg, #0038FF 0%, #6231F5 100%);
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    pointer-events: none;
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

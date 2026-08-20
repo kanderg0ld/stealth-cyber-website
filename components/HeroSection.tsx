@@ -1,78 +1,94 @@
 import Link from 'next/link'
-import { ArrowRight, Shield, CheckCircle } from 'lucide-react'
+import { ArrowRight, Shield } from 'lucide-react'
 
 const trustPoints = [
-  'Offices in AU · BR · US',
-  '24/7 SOC monitoring',
-  'ACSC E8 · CMMC · ISO 27001',
+  { label: 'Offices', value: 'Gold Coast · São Paulo · Texas' },
+  { label: 'Coverage', value: '24/7 SOC monitoring' },
+  { label: 'Frameworks', value: 'ACSC Essential Eight · CMMC · ISO 27001' },
 ]
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center bg-stealth-dark overflow-hidden">
-      {/* Grid background */}
-      <div className="absolute inset-0 bg-grid-pattern bg-grid opacity-100" />
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-hero-gradient" />
+    // The 4rem offset is the fixed navbar (main has pt-16). Without it the
+    // section is a full viewport tall *below* the nav, which pushed the trust
+    // band just off screen.
+    <section className="relative flex min-h-[min(100svh_-_4rem,50rem)] flex-col justify-center overflow-hidden bg-stealth-dark">
+      {/*
+        One atmosphere, not three. The previous hero stacked a full-bleed grid,
+        a gradient wash and three independently pulsing blur orbs; the grid is
+        now masked so it never reaches an edge and nothing animates on a loop.
+      */}
+      <div className="grid-veil pointer-events-none absolute inset-0" aria-hidden="true" />
+      <div className="bg-hero-atmosphere pointer-events-none absolute inset-0" aria-hidden="true" />
 
-      {/* Glow orbs */}
-      <div className="absolute top-1/4 -left-24 w-96 h-96 rounded-full blur-3xl animate-pulse-slow" style={{ background: 'radial-gradient(circle, rgba(98,49,245,0.18) 0%, transparent 70%)' }} />
-      <div className="absolute bottom-1/4 -right-24 w-96 h-96 rounded-full blur-3xl animate-pulse-slow" style={{ background: 'radial-gradient(circle, rgba(0,56,255,0.18) 0%, transparent 70%)' }} />
-      <div className="absolute top-1/2 right-1/4 w-72 h-72 rounded-full blur-3xl animate-pulse-slow" style={{ background: 'radial-gradient(circle, rgba(60,228,245,0.12) 0%, transparent 70%)' }} />
+      <div className="relative z-10 mx-auto w-full max-w-7xl flex-1 content-center px-4 py-[clamp(4rem,12vh,9rem)] sm:px-6 lg:px-8">
+        {/*
+          Weighted left at 5/8 of the grid. The empty right is deliberate
+          negative space against the atmosphere, not a column that ran out of
+          content the way `max-w-3xl` inside `max-w-7xl` used to read.
+        */}
+        <div className="lg:grid lg:grid-cols-8">
+          <div className="lg:col-span-5">
+            <p className="animate-rise mb-7 inline-flex items-center gap-2 text-xs font-medium tracking-[0.14em] text-stealth-cyan uppercase">
+              <Shield className="h-3.5 w-3.5" aria-hidden="true" />
+              Trusted Across Three Continents
+            </p>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
-        <div className="max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-stealth-indigo/40 bg-stealth-indigo/10 text-stealth-cyan text-xs font-medium mb-6">
-            <Shield className="w-3.5 h-3.5" />
-            <span>Trusted Across 3 Continents</span>
-          </div>
-
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-            <span className="text-white">One Breach Can</span>{' '}
-            <span className="bg-gradient-to-br from-white via-stealth-cyan to-stealth-teal bg-clip-text text-transparent">Change Everything.</span>{' '}
-            <span className="text-white">Don&apos;t Let It.</span>
-          </h1>
-
-          <p className="text-lg text-stealth-gray leading-relaxed mb-8 max-w-2xl">
-            Stealth Cyber delivers 24/7 protection for your data, keeping you safe from
-            cyber threats, protecting your business&apos;s reputation, and helping you stay
-            ahead of regulatory requirements, so you can focus on running your business
-            with confidence.
-          </p>
-
-          <div className="flex flex-wrap gap-3 mb-10">
-            {trustPoints.map((point) => (
-              <div
-                key={point}
-                className="flex items-center gap-1.5 text-sm text-gray-300 bg-stealth-navy border border-stealth-cyan/20 rounded-full px-3 py-1"
-              >
-                <CheckCircle className="w-4 h-4 text-stealth-cyan shrink-0" />
-                <span>{point}</span>
-              </div>
-            ))}
-          </div>
-
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 btn-gradient text-white font-semibold rounded shadow-lg group"
-              style={{ boxShadow: '0 4px 24px rgba(0,56,255,0.35)' }}
+            <h1
+              className="animate-rise mb-7 text-[clamp(2.5rem,6vw,4.5rem)] font-bold text-white"
+              style={{ animationDelay: '60ms' }}
             >
-              Speak With Our Team
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
-            <Link
-              href="/services"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-stealth-cyan/40 text-white font-semibold rounded hover:border-stealth-cyan/60 hover:bg-stealth-navy-light transition-colors"
+              One Breach Can{' '}
+              <span className="text-stealth-cyan">Change Everything.</span> Don&apos;t
+              Let It.
+            </h1>
+
+            <p
+              className="animate-rise mb-9 max-w-[62ch] text-lg leading-relaxed text-stealth-gray"
+              style={{ animationDelay: '120ms' }}
             >
-              Explore Services
-            </Link>
+              Stealth Cyber delivers 24/7 protection for your data, keeping you safe from
+              cyber threats, protecting your business&apos;s reputation, and helping you
+              stay ahead of regulatory requirements, so you can focus on running your
+              business with confidence.
+            </p>
+
+            <div
+              className="animate-rise flex flex-col gap-3 sm:flex-row"
+              style={{ animationDelay: '180ms' }}
+            >
+              <Link href="/contact" className="btn-primary group">
+                Speak With Our Team
+                <ArrowRight
+                  className="h-4 w-4 transition-transform duration-200 ease-out-quart group-hover:translate-x-1"
+                  aria-hidden="true"
+                />
+              </Link>
+              <Link href="/services" className="btn-secondary">
+                Explore Services
+              </Link>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-stealth-dark to-transparent" />
+      {/*
+        The trust facts used to be three bordered pills floating mid-column.
+        As a ruled band pinned to the base of the hero they anchor the
+        composition, use the full width, and read as a record rather than chrome.
+      */}
+      <div className="relative z-10 border-t border-stealth-navy-light bg-stealth-dark/60 backdrop-blur-sm">
+        <dl className="mx-auto grid max-w-7xl grid-cols-1 divide-y divide-stealth-navy-light px-4 sm:px-6 md:grid-cols-3 md:divide-x md:divide-y-0 lg:px-8">
+          {trustPoints.map((point) => (
+            <div key={point.label} className="py-5 md:px-6 md:first:pl-0 md:last:pr-0">
+              <dt className="mb-1 text-[0.6875rem] font-medium tracking-[0.16em] text-stealth-dim uppercase">
+                {point.label}
+              </dt>
+              <dd className="text-sm text-stealth-ink">{point.value}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
     </section>
   )
 }

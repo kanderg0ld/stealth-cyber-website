@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { Shield, Eye, AlertTriangle, ClipboardCheck, Server, Lock, ArrowRight, Users, Clock, Award, Cpu, FileCheck, BookOpen, Brain, Star, Quote, ChevronDown } from 'lucide-react'
+import { Shield, Eye, AlertTriangle, ClipboardCheck, Server, Lock, ArrowRight, Users, Clock, Award, Cpu, FileCheck, BookOpen, Brain } from 'lucide-react'
 import FaqAccordion from '@/components/FaqAccordion'
 import HeroSection from '@/components/HeroSection'
 import ServiceCard from '@/components/ServiceCard'
@@ -146,210 +146,255 @@ export default function HomePage() {
       <HowToJsonLd />
       <HeroSection />
 
-      {/* Stats bar */}
-      <section className="bg-stealth-navy border-y border-stealth-cyan/10 py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-            {stats.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-stealth-sky to-stealth-cyan bg-clip-text text-transparent">{stat.value}</div>
-                <div className="text-stealth-gray text-sm mt-1">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
+      {/*
+        Stats band. Was six centred tiles with gradient-clipped numerals — the
+        SaaS hero-metric template. Now a quiet ruled record: solid ink, moderate
+        scale, label first, so it reads as reference rather than as a boast.
+      */}
+      <section
+        aria-label="Stealth Cyber by the numbers"
+        className="border-b border-stealth-navy-light bg-stealth-navy"
+      >
+        <dl className="mx-auto grid max-w-7xl grid-cols-2 gap-x-6 px-4 sm:px-6 md:grid-cols-3 lg:grid-cols-6 lg:px-8">
+          {stats.map((stat) => (
+            // A top rule on every cell stays correct at 2, 3 and 6 columns
+            // without per-breakpoint divider rules.
+            <div key={stat.label} className="border-t border-stealth-navy-light py-6">
+              <dt className="mb-1.5 text-[0.6875rem] leading-snug font-medium tracking-[0.14em] text-stealth-dim uppercase">
+                {stat.label}
+              </dt>
+              <dd className="text-2xl font-semibold tracking-tight text-white">
+                {stat.value}
+              </dd>
+            </div>
+          ))}
+        </dl>
       </section>
 
-      {/* Services section */}
-      <section className="py-20 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-stealth-blue/30 text-stealth-blue text-xs font-medium mb-4 bg-stealth-blue/5">
-              <Shield className="w-3 h-3" /> Our Services
+      {/*
+        Services. Header is left-aligned and shares a row with the overflow
+        link, so this section's cadence differs from the centred sections
+        further down instead of every heading block being the same shape.
+      */}
+      <section className="surface-light py-[clamp(4rem,8vw,6rem)]">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <div>
+              <h2 className="mb-4 max-w-[24ch] text-[clamp(1.875rem,3.4vw,2.5rem)] font-bold text-gray-900">
+                How We Protect Your Business
+              </h2>
+              <p className="max-w-[58ch] text-stealth-body">
+                Every service is designed around one goal: keeping your business safe,
+                compliant, and confident.
+              </p>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              How We Protect Your Business
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Every service is designed around one goal: keeping your business safe, compliant, and confident.
-            </p>
+            <Link
+              href="/services"
+              className="group inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-stealth-blue"
+            >
+              View All Services
+              <ArrowRight
+                className="h-4 w-4 transition-transform duration-200 ease-out-quart group-hover:translate-x-1"
+                aria-hidden="true"
+              />
+            </Link>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {/*
+            Breakpoint-free: cards reflow on their own content width. 20rem, not
+            17.5rem — the narrower floor produced four columns at desktop, which
+            squeezed the measure to ~200px and broke most titles onto two lines.
+            This lands on 3 / 2 / 1 columns with a ~410px measure at desktop.
+          */}
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(20rem,1fr))] gap-5">
             {services.map((service) => (
               <ServiceCard key={service.title} {...service} />
             ))}
           </div>
-          <div className="text-center mt-10">
-            <Link
-              href="/services"
-              className="inline-flex items-center gap-2 px-6 py-3 border border-stealth-blue/40 text-stealth-blue font-semibold rounded hover:border-stealth-blue hover:bg-stealth-blue/5 transition-colors"
-            >
-              View All Services <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
         </div>
       </section>
 
-      {/* AI Security section */}
-      <section className="py-20 bg-stealth-dark relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] rounded-full blur-3xl pointer-events-none" style={{ background: 'radial-gradient(ellipse, rgba(60,228,245,0.06) 0%, rgba(98,49,245,0.04) 40%, transparent 70%)' }} />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-stealth-cyan/20 text-stealth-cyan text-xs font-medium mb-4 bg-stealth-cyan/5">
-              <Brain className="w-3 h-3" /> AI Security Specialists
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Leading the Way in AI Security
-            </h2>
-            <p className="text-stealth-gray max-w-3xl mx-auto">
-              As businesses race to adopt AI, the attack surface is expanding faster than most security teams can keep up. Stealth Cyber is at the forefront, protecting, governing, and red teaming AI systems for organisations worldwide.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-14">
-            {[
-              {
-                icon: <Shield className="w-6 h-6" />,
-                title: 'AI Red Teaming',
-                description: 'We simulate real-world adversarial attacks against your AI systems, aligned to the AIUC-1 standard. From prompt injection and jailbreaks to data poisoning and model manipulation. Find out how your AI holds up before an attacker does.',
-              },
-              {
-                icon: <Cpu className="w-6 h-6" />,
-                title: 'AI Management Systems',
-                description: 'Build robust AI governance aligned to ISO 42001. We help you manage AI risk, bias, transparency, and accountability with frameworks that satisfy regulators and build stakeholder trust.',
-              },
-              {
-                icon: <ClipboardCheck className="w-6 h-6" />,
-                title: 'AI Readiness Assessments',
-                description: 'Planning to adopt AI? We assess your organisation\u2019s readiness, covering data governance, security controls, risk appetite, and regulatory obligations, so you can move forward with confidence.',
-              },
-              {
-                icon: <Brain className="w-6 h-6" />,
-                title: 'AI Red Team Training',
-                description: 'We train the next generation of AI Red Team Engineers. Our hands-on programmes cover adversarial testing techniques for LLMs, ML pipelines, and generative AI systems.',
-              },
-            ].map((card) => (
-              <div key={card.title} className="p-6 bg-stealth-navy rounded-lg border border-stealth-cyan/10">
-                <div className="inline-flex p-2 rounded-lg bg-gradient-to-br from-stealth-blue/10 to-stealth-indigo/10 border border-stealth-blue/20 text-stealth-cyan mb-4">
-                  {card.icon}
-                </div>
-                <h3 className="text-white font-semibold text-lg mb-2">{card.title}</h3>
-                <p className="text-stealth-gray text-sm leading-relaxed">{card.description}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-            {[
-              { value: '50+', label: 'AI Systems Assessed' },
-              { value: '20+', label: 'AI Red Team Engagements' },
-              { value: '10+', label: 'Organisations AI-Ready Certified' },
-              { value: '30+', label: 'AI Red Team Engineers Trained' },
-            ].map((stat) => (
-              <div key={stat.label} className="text-center">
-                <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-stealth-sky to-stealth-cyan bg-clip-text text-transparent">{stat.value}</div>
-                <div className="text-stealth-gray text-sm mt-1">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-
-          {/* AI Assessment CTA card */}
-          <div className="bg-stealth-navy-light rounded-xl border border-stealth-cyan/20 px-6 py-4 mb-10 max-w-2xl mx-auto">
-            <div className="flex items-center justify-between gap-4">
-              <p className="text-stealth-gray text-sm">
-                <span className="text-white font-semibold">Is your business ready for AI?</span> Take the free assessment.
+      {/*
+        AI Security. Asymmetric: the argument and both calls to action stay in a
+        sticky left rail while the four capabilities run down the right as ruled
+        rows. Previously this was a centred header over a 2x2 of identical
+        cards, each with the same tinted gradient icon tile \u2014 the same shape as
+        the About grid below it and the service grid above it.
+      */}
+      <section className="bg-stealth-dark py-[clamp(4rem,8vw,6rem)]">
+        <div className="mx-auto grid max-w-7xl gap-x-16 gap-y-12 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
+          <div className="lg:col-span-5">
+            <div className="lg:sticky lg:top-28">
+              <h2 className="mb-5 text-[clamp(1.875rem,3.4vw,2.5rem)] font-bold text-white">
+                Leading the Way in AI Security
+              </h2>
+              <p className="mb-8 max-w-[56ch] leading-relaxed text-stealth-gray">
+                As businesses race to adopt AI, the attack surface is expanding faster
+                than most security teams can keep up. Stealth Cyber is at the forefront,
+                protecting, governing, and red teaming AI systems for organisations
+                worldwide.
               </p>
-              <Link
-                href="/ai-assessment"
-                className="shrink-0 inline-flex items-center gap-2 px-5 py-2.5 btn-gradient text-white font-semibold text-sm rounded hover:opacity-90 transition-opacity"
-                style={{ boxShadow: '0 4px 24px rgba(0,56,255,0.35)' }}
-              >
-                AI Assessment <ArrowRight className="w-4 h-4" />
-              </Link>
+
+              {/*
+                Four AI figures. Deliberately smaller and quieter than the band
+                at the top of the page, so the page has one stat treatment with
+                a clear hierarchy rather than two competing metric rows.
+              */}
+              <dl className="mb-8 grid grid-cols-2 gap-x-6">
+                {[
+                  { value: '50+', label: 'AI systems assessed' },
+                  { value: '20+', label: 'AI red team engagements' },
+                  { value: '10+', label: 'Organisations AI-ready certified' },
+                  { value: '30+', label: 'AI red team engineers trained' },
+                ].map((stat) => (
+                  // `dt` must precede `dd` in the markup; flex-col-reverse puts
+                  // the figure above its label visually without breaking that.
+                  <div
+                    key={stat.label}
+                    className="flex flex-col-reverse border-t border-stealth-navy-light py-4"
+                  >
+                    <dt className="text-xs leading-snug text-stealth-dim">{stat.label}</dt>
+                    <dd className="text-xl font-semibold text-white">{stat.value}</dd>
+                  </div>
+                ))}
+              </dl>
+
+              <div className="flex flex-col gap-3 sm:flex-row">
+                <Link href="/services/ai" className="btn-primary group px-5 py-2.5 text-sm">
+                  Explore AI Security
+                  <ArrowRight
+                    className="h-4 w-4 transition-transform duration-200 ease-out-quart group-hover:translate-x-1"
+                    aria-hidden="true"
+                  />
+                </Link>
+                <Link href="/ai-assessment" className="btn-secondary px-5 py-2.5 text-sm">
+                  Free AI Assessment
+                </Link>
+              </div>
             </div>
           </div>
 
-          <div className="text-center">
-            <Link
-              href="/services/ai"
-              className="inline-flex items-center gap-2 px-8 py-3.5 btn-gradient text-white font-semibold rounded hover:opacity-90 transition-opacity"
-              style={{ boxShadow: '0 4px 24px rgba(0,56,255,0.35)' }}
-            >
-              Explore AI Security Services <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
+          <dl className="lg:col-span-7">
+            {[
+              {
+                icon: <Shield className="h-5 w-5" aria-hidden="true" />,
+                title: 'AI Red Teaming',
+                description:
+                  'We simulate real-world adversarial attacks against your AI systems, aligned to the AIUC-1 standard. From prompt injection and jailbreaks to data poisoning and model manipulation. Find out how your AI holds up before an attacker does.',
+              },
+              {
+                icon: <Cpu className="h-5 w-5" aria-hidden="true" />,
+                title: 'AI Management Systems',
+                description:
+                  'Build robust AI governance aligned to ISO 42001. We help you manage AI risk, bias, transparency, and accountability with frameworks that satisfy regulators and build stakeholder trust.',
+              },
+              {
+                icon: <ClipboardCheck className="h-5 w-5" aria-hidden="true" />,
+                title: 'AI Readiness Assessments',
+                description:
+                  'Planning to adopt AI? We assess your organisation\u2019s readiness, covering data governance, security controls, risk appetite, and regulatory obligations, so you can move forward with confidence.',
+              },
+              {
+                icon: <Brain className="h-5 w-5" aria-hidden="true" />,
+                title: 'AI Red Team Training',
+                description:
+                  'We train the next generation of AI Red Team Engineers. Our hands-on programmes cover adversarial testing techniques for LLMs, ML pipelines, and generative AI systems.',
+              },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="border-t border-stealth-navy-light py-7 last:border-b"
+              >
+                <dt className="mb-2.5 flex items-center gap-3">
+                  <span className="text-stealth-cyan">{item.icon}</span>
+                  <span className="text-lg font-semibold text-white">{item.title}</span>
+                </dt>
+                <dd className="max-w-[64ch] text-sm leading-relaxed text-stealth-gray">
+                  {item.description}
+                </dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </section>
 
-      {/* About preview */}
-      <section className="py-20 bg-stealth-dark relative overflow-hidden">
-        <div className="absolute inset-0 bg-grid-pattern bg-grid opacity-50" />
-        <div className="absolute inset-0 bg-hero-gradient" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full blur-3xl pointer-events-none" style={{ background: 'radial-gradient(ellipse, rgba(98,49,245,0.10) 0%, rgba(0,56,255,0.08) 50%, transparent 70%)' }} />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      {/*
+        Our Story. The grid + gradient + blur-orb atmosphere that used to sit
+        here was a verbatim repeat of the hero's, and it appeared a third time in
+        the closing CTA. Kept on a plain Near Black ground so the hero stays the
+        only place on the page carrying that treatment.
+      */}
+      <section className="border-t border-stealth-navy-light bg-stealth-dark py-[clamp(4rem,8vw,6rem)]">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 items-start gap-x-16 gap-y-12 lg:grid-cols-2">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-stealth-cyan/20 text-stealth-cyan text-xs font-medium mb-4">
-                <Users className="w-3 h-3" /> Who We Are
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              <h2 className="mb-6 text-[clamp(1.875rem,3.4vw,2.5rem)] font-bold text-white">
                 Our Story
               </h2>
-              <p className="text-stealth-gray leading-relaxed mb-4">
-                Led by experienced, global, and industry award-winning leadership, Stealth Cyber
-                was created because we believe every business, regardless of size, deserves
-                the highest level of cyber protection.
-              </p>
-              <p className="text-stealth-gray leading-relaxed mb-4">
-                With over 25 years of combined experience across government, retail, aviation,
-                space technology, and financial services, we bring a wealth of knowledge to support
-                and guide you through your cybersecurity journey.
-              </p>
-              <p className="text-stealth-gray leading-relaxed mb-6">
-                We have a passion for the industry and a desire to help businesses secure their
-                digital assets, providing confidence to your customers, partners, and employees
-                that their data is secure.
-              </p>
+              <div className="max-w-[64ch] space-y-4 leading-relaxed text-stealth-gray">
+                <p>
+                  Led by experienced, global, and industry award-winning leadership,
+                  Stealth Cyber was created because we believe every business, regardless
+                  of size, deserves the highest level of cyber protection.
+                </p>
+                <p>
+                  With over 25 years of combined experience across government, retail,
+                  aviation, space technology, and financial services, we bring a wealth of
+                  knowledge to support and guide you through your cybersecurity journey.
+                </p>
+                <p>
+                  We have a passion for the industry and a desire to help businesses secure
+                  their digital assets, providing confidence to your customers, partners,
+                  and employees that their data is secure.
+                </p>
+              </div>
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2 text-stealth-cyan font-medium hover:text-white transition-colors"
+                className="group mt-7 inline-flex items-center gap-2 font-medium text-stealth-cyan transition-colors hover:text-white"
               >
-                Learn more about us <ArrowRight className="w-4 h-4" />
+                Learn more about us
+                <ArrowRight
+                  className="h-4 w-4 transition-transform duration-200 ease-out-quart group-hover:translate-x-1"
+                  aria-hidden="true"
+                />
               </Link>
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            {/*
+              Unboxed quadrant. These were four bordered cards with tinted
+              gradient icon tiles, structurally identical to the AI grid above.
+              Hairlines carry the grouping instead of card chrome.
+            */}
+            <dl className="grid grid-cols-1 gap-x-10 sm:grid-cols-2">
               {[
-                { icon: <Clock className="w-6 h-6" />, title: '24/7 Protection', desc: 'Round-the-clock SOC monitoring with zero gaps in coverage.' },
-                { icon: <Shield className="w-6 h-6" />, title: 'Multi-Framework', desc: 'Essential Eight, CMMC, ISO 27001, NIST, and AI governance.' },
-                { icon: <Users className="w-6 h-6" />, title: '3 Continents', desc: 'Offices in Gold Coast, São Paulo, and Texas for global coverage.' },
-                { icon: <Award className="w-6 h-6" />, title: 'Certified Experts', desc: 'CISSP, CISM, OSCP, ISO 27001, ISO 42001, and CMMC certified professionals.' },
+                { icon: <Clock className="h-5 w-5" aria-hidden="true" />, title: '24/7 Protection', desc: 'Round-the-clock SOC monitoring with zero gaps in coverage.' },
+                { icon: <Shield className="h-5 w-5" aria-hidden="true" />, title: 'Multi-Framework', desc: 'Essential Eight, CMMC, ISO 27001, NIST, and AI governance.' },
+                { icon: <Users className="h-5 w-5" aria-hidden="true" />, title: '3 Continents', desc: 'Offices in Gold Coast, São Paulo, and Texas for global coverage.' },
+                { icon: <Award className="h-5 w-5" aria-hidden="true" />, title: 'Certified Experts', desc: 'CISSP, CISM, OSCP, ISO 27001, ISO 42001, and CMMC certified professionals.' },
               ].map((item) => (
-                <div key={item.title} className="p-5 bg-stealth-dark rounded-lg border border-stealth-navy-light">
-                  <div className="inline-flex p-2 rounded-lg bg-gradient-to-br from-stealth-blue/10 to-stealth-indigo/10 border border-stealth-blue/20 text-stealth-cyan mb-3">{item.icon}</div>
-                  <h3 className="text-white font-semibold text-sm mb-1">{item.title}</h3>
-                  <p className="text-stealth-gray text-xs leading-relaxed">{item.desc}</p>
+                <div key={item.title} className="border-t border-stealth-navy-light py-6">
+                  <dt className="mb-1.5 flex items-center gap-2.5 text-sm font-semibold text-white">
+                    <span className="text-stealth-cyan">{item.icon}</span>
+                    {item.title}
+                  </dt>
+                  <dd className="text-sm leading-relaxed text-stealth-gray">{item.desc}</dd>
                 </div>
               ))}
-            </div>
+            </dl>
           </div>
         </div>
       </section>
 
-      {/* Testimonials section */}
-      <section className="py-20 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-stealth-blue/30 text-stealth-blue text-xs font-medium mb-4 bg-stealth-blue/5">
-              <Star className="w-3 h-3" /> Testimonials
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+      {/* Testimonials */}
+      <section className="surface-light py-[clamp(4rem,8vw,6rem)]">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-12 max-w-[52ch]">
+            <h2 className="mb-4 text-[clamp(1.875rem,3.4vw,2.5rem)] font-bold text-gray-900">
               What Our Clients Say
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-stealth-body">
               Trusted by businesses across Australia, the Americas, and beyond.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-4">
             {[
               {
                 quote: 'Chris and the team at Stealth Cyber have played a critical role in improving the firm\u2019s cyber security processes and systems. I have been particularly impressed by their dedication to helping staff understand cyber security risks and teach proactive ways to both improve and measure security. The team is responsive and clearly incredibly knowledgeable. It has been a welcomed breath of fresh air to partner with Stealth Cyber to ensure better cyber and data protection for our firm and our valuable clients.',
@@ -367,42 +412,43 @@ export default function HomePage() {
                 role: 'Managing Principal, Walsh Legal Group',
               },
               {
-                quote: 'Working with Stealth Cyber has been an absolute blessing for the company. I genuinely didn’t know a single thing about cybersecurity but given my online presence (3m+ followers across socials), I know that I was at a pretty big risk. Chris and the team told me in simple terms that I could understand what my business needed and why. Onboarding was super simple, and since then their products haven’t had any impact to my workflow at all. I appreciate how quick their team responds to everything – my questions and threats. Would recommend SC to ANY small business who wants to protect their livelihood, and the business that they’ve put their blood, sweat and tears into.',
+                // Trimmed with an ellipsis to roughly match the length of the
+                // other three, so the single-row layout reads. Wording is
+                // verbatim; nothing has been reworded. Full quote is in git
+                // history if you'd rather run it complete.
+                quote: 'Working with Stealth Cyber has been an absolute blessing for the company. I genuinely didn’t know a single thing about cybersecurity but given my online presence (3m+ followers across socials), I know that I was at a pretty big risk. Chris and the team told me in simple terms that I could understand what my business needed and why. … Would recommend SC to ANY small business who wants to protect their livelihood.',
                 name: 'Sarah Rav',
                 role: 'Founder, Sarah Rav Strategy',
               },
             ].map((testimonial, i) => (
-              <div key={i} className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex flex-col">
-                <div className="flex gap-0.5 mb-4">
-                  {[...Array(5)].map((_, j) => (
-                    <Star key={j} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
-                <Quote className="w-8 h-8 text-stealth-blue/10 mb-2" />
-                <p className="text-gray-700 text-sm leading-relaxed flex-1 mb-4">
+              // Five identical gold stars on every card carried no information,
+              // and the watermark quote glyph was pure decoration. The quote
+              // itself is the evidence.
+              <figure
+                key={i}
+                className="flex flex-col border-t border-gray-300 pt-6"
+              >
+                <blockquote className="mb-5 flex-1 text-sm leading-relaxed text-gray-700">
                   {testimonial.quote}
-                </p>
-                <div className="border-t border-gray-100 pt-4">
-                  <p className="font-semibold text-gray-900 text-sm">{testimonial.name}</p>
-                  <p className="text-gray-500 text-xs">{testimonial.role}</p>
-                </div>
-              </div>
+                </blockquote>
+                <figcaption>
+                  <p className="text-sm font-semibold text-gray-900">{testimonial.name}</p>
+                  <p className="text-xs text-stealth-body">{testimonial.role}</p>
+                </figcaption>
+              </figure>
             ))}
           </div>
         </div>
       </section>
 
-      {/* FAQ section */}
-      <section className="py-20 bg-stealth-dark">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-stealth-cyan/20 text-stealth-cyan text-xs font-medium mb-4 bg-stealth-cyan/5">
-              <Shield className="w-3 h-3" /> FAQ
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+      {/* FAQ */}
+      <section className="bg-stealth-dark py-[clamp(4rem,8vw,6rem)]">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-10">
+            <h2 className="mb-4 text-[clamp(1.875rem,3.4vw,2.5rem)] font-bold text-white">
               Common Questions
             </h2>
-            <p className="text-stealth-gray max-w-2xl mx-auto">
+            <p className="max-w-[58ch] text-stealth-gray">
               Answers to the questions business owners ask most about cybersecurity.
             </p>
           </div>
@@ -410,41 +456,52 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CTA section */}
-      <section className="py-20 bg-stealth-dark relative overflow-hidden">
-        <div className="absolute inset-0 bg-grid-pattern bg-grid opacity-50" />
-        <div className="absolute inset-0 bg-hero-gradient" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full blur-3xl pointer-events-none" style={{ background: 'radial-gradient(ellipse, rgba(98,49,245,0.10) 0%, rgba(0,56,255,0.08) 50%, transparent 70%)' }} />
-        <div className="relative z-10 max-w-3xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+      {/*
+        Closing CTA, drenched in the corporate primary. The kit permits a
+        committed use of cobalt, and this is the one place on the page that
+        should be unmissable — it replaces a third repeat of the hero
+        atmosphere, which had made the page's last fold look like its first.
+
+        White on #0038FF is 6.98:1 per the kit's own contrast table.
+      */}
+      <section className="bg-stealth-blue py-[clamp(4rem,8vw,6rem)]">
+        <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+          <h2 className="mb-4 text-[clamp(1.875rem,3.4vw,2.5rem)] font-bold text-white">
             Find Out Where You&apos;re Exposed
           </h2>
-          <p className="text-stealth-gray mb-8 text-lg">
-            Take our free 5-minute security assessment and get a clear picture of your risk. No obligation, no jargon.
+          <p className="mx-auto mb-8 max-w-[54ch] text-lg leading-relaxed text-white/85">
+            Take our free 5-minute security assessment and get a clear picture of your
+            risk. No obligation, no jargon.
           </p>
-          <div className="flex flex-col sm:flex-row flex-wrap gap-3 justify-center">
-            <Link
-              href="/assessment"
-              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 btn-gradient text-white font-semibold text-sm rounded hover:opacity-90 transition-opacity"
-              style={{ boxShadow: '0 4px 24px rgba(0,56,255,0.35)' }}
-            >
-              Free Self-Assessment <ArrowRight className="w-4 h-4" />
-            </Link>
+          {/*
+            One primary action. The two phone numbers used to sit here as
+            equal-weight buttons, giving the fold three competing actions.
+          */}
+          <Link
+            href="/assessment"
+            className="group inline-flex items-center justify-center gap-2 rounded-md bg-white px-6 py-3 font-semibold text-stealth-blue transition-colors duration-200 ease-out-quart hover:bg-stealth-surface"
+          >
+            Free Self-Assessment
+            <ArrowRight
+              className="h-4 w-4 transition-transform duration-200 ease-out-quart group-hover:translate-x-1"
+              aria-hidden="true"
+            />
+          </Link>
+          <p className="mt-8 text-sm text-white/80">
+            Or speak to our team directly —{' '}
             <a
               href="tel:+61752308381"
-              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 border border-stealth-cyan/40 text-white font-medium text-sm rounded hover:border-stealth-cyan/60 hover:bg-stealth-navy-light transition-colors"
+              className="font-medium text-white underline decoration-white/40 underline-offset-4 transition-colors hover:decoration-white"
             >
-              AU: +61 7 5230 8381
-            </a>
+              AU +61 7 5230 8381
+            </a>{' '}
+            ·{' '}
             <a
               href="tel:+18557742595"
-              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 border border-stealth-cyan/40 text-white font-medium text-sm rounded hover:border-stealth-cyan/60 hover:bg-stealth-navy-light transition-colors"
+              className="font-medium text-white underline decoration-white/40 underline-offset-4 transition-colors hover:decoration-white"
             >
-              US: +1 (855) 774-2595
+              US +1 (855) 774-2595
             </a>
-          </div>
-          <p className="text-stealth-gray text-sm mt-6">
-            Or book a call with our team for a personalised review.
           </p>
         </div>
       </section>

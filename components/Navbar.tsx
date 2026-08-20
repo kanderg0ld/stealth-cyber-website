@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
@@ -22,15 +22,36 @@ export default function Navbar() {
   const [open, setOpen] = useState(false)
   const pathname = usePathname()
 
+  // Close the mobile menu on route change so it never survives a navigation.
+  useEffect(() => setOpen(false), [pathname])
+
+  // Escape closes the menu — expected of any disclosure, and it was missing.
+  useEffect(() => {
+    if (!open) return
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setOpen(false)
+    }
+    document.addEventListener('keydown', onKeyDown)
+    return () => document.removeEventListener('keydown', onKeyDown)
+  }, [open])
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-stealth-dark/95 backdrop-blur-md border-b border-stealth-navy-light">
+    <nav
+      className="fixed top-0 right-0 left-0 border-b border-stealth-navy-light bg-stealth-dark/90 backdrop-blur-md"
+      style={{ zIndex: 'var(--z-nav)' }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link href="/" aria-label="Stealth Cyber home">
             <Logo size="sm" />
           </Link>
 
-          <div className="hidden md:flex items-center gap-6">
+          {/*
+            `lg`, not `md`. Eight links plus the CTA do not fit beside the logo
+            until ~1024px; at 768–1023px the logo collided with "Home" and the
+            row wrapped onto two lines.
+          */}
+          <div className="hidden items-center gap-6 lg:flex">
             {navLinks.map((link) =>
               link.external ? (
                 <a
@@ -38,7 +59,7 @@ export default function Navbar() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200"
+                  className="text-sm font-medium text-stealth-gray transition-colors duration-200 ease-out-quart hover:text-white"
                 >
                   {link.label}
                 </a>
@@ -46,11 +67,14 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
+                  aria-current={pathname === link.href ? 'page' : undefined}
                   className={clsx(
-                    'text-sm font-medium transition-colors duration-200',
+                    // The active state carries an underline as well as colour,
+                    // so it does not rely on hue alone to signal position.
+                    'relative py-1 text-sm font-medium transition-colors duration-200 ease-out-quart after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:transition-colors',
                     pathname === link.href
-                      ? 'text-stealth-cyan'
-                      : 'text-gray-300 hover:text-white'
+                      ? 'text-white after:bg-stealth-cyan'
+                      : 'text-stealth-gray after:bg-transparent hover:text-white'
                   )}
                 >
                   {link.label}
@@ -59,25 +83,35 @@ export default function Navbar() {
             )}
             <Link
               href="/contact"
-              className="ml-2 px-4 py-2 bg-gradient-to-r from-stealth-blue to-stealth-indigo text-white font-semibold text-sm rounded hover:opacity-90 transition-opacity duration-200"
+              className="btn-primary ml-2 px-4 py-2 text-sm"
             >
               Get Protected
             </Link>
           </div>
 
           <button
+            type="button"
             onClick={() => setOpen(!open)}
-            className="md:hidden text-gray-300 hover:text-white"
-            aria-label="Toggle menu"
+            className="-mr-2 inline-flex h-11 w-11 items-center justify-center rounded-md text-stealth-gray transition-colors hover:text-white lg:hidden"
+            aria-label={open ? 'Close menu' : 'Open menu'}
+            aria-expanded={open}
+            aria-controls="mobile-nav"
           >
-            {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {open ? (
+              <X className="h-6 w-6" aria-hidden="true" />
+            ) : (
+              <Menu className="h-6 w-6" aria-hidden="true" />
+            )}
           </button>
         </div>
       </div>
 
       {open && (
-        <div className="md:hidden bg-stealth-navy border-t border-stealth-navy-light">
-          <div className="px-4 py-4 space-y-3">
+        <div
+          id="mobile-nav"
+          className="border-t border-stealth-navy-light bg-stealth-navy lg:hidden"
+        >
+          <div className="space-y-1 px-4 py-4">
             {navLinks.map((link) =>
               link.external ? (
                 <a
@@ -86,7 +120,8 @@ export default function Navbar() {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setOpen(false)}
-                  className="block text-sm font-medium py-2 text-gray-300 hover:text-white transition-colors"
+                  // 44px minimum touch target.
+                  className="flex min-h-11 items-center rounded-md text-sm font-medium text-stealth-gray transition-colors hover:text-white"
                 >
                   {link.label}
                 </a>
@@ -95,9 +130,13 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setOpen(false)}
+                  aria-current={pathname === link.href ? 'page' : undefined}
                   className={clsx(
-                    'block text-sm font-medium py-2 transition-colors',
-                    pathname === link.href ? 'text-stealth-cyan' : 'text-gray-300 hover:text-white'
+                    'flex min-h-11 items-center rounded-md text-sm font-medium transition-colors',
+                    // Colour and weight, so position is not signalled by hue alone.
+                    pathname === link.href
+                      ? 'font-semibold text-stealth-cyan'
+                      : 'text-stealth-gray hover:text-white'
                   )}
                 >
                   {link.label}
@@ -107,7 +146,7 @@ export default function Navbar() {
             <Link
               href="/contact"
               onClick={() => setOpen(false)}
-              className="block mt-2 px-4 py-2 bg-gradient-to-r from-stealth-blue to-stealth-indigo text-white font-semibold text-sm rounded text-center hover:opacity-90 transition-opacity"
+              className="btn-primary mt-3 w-full px-4 py-2.5 text-sm"
             >
               Get Protected
             </Link>

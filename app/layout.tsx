@@ -1,10 +1,23 @@
 import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import CookieBanner from '@/components/CookieBanner'
 import OrganisationJsonLd from '@/components/structured-data/OrganisationJsonLd'
 import WebsiteJsonLd from '@/components/structured-data/WebsiteJsonLd'
+
+/**
+ * Inter is specified by the brand kit (`--sans`), so identity wins over the
+ * "look further than Inter" default. Self-hosted via next/font instead of the
+ * previous render-blocking Google Fonts @import, with `display: swap` so text
+ * paints immediately.
+ */
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://stealthcyber.io'),
@@ -45,11 +58,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-AU">
+    <html lang="en-AU" className={inter.variable}>
       <head>
         <OrganisationJsonLd />
         <WebsiteJsonLd />
-        <meta name="theme-color" content="#04050F" />
+        {/* Near Black — kit neutral */}
+        <meta name="theme-color" content="#0A0A0F" />
       </head>
       <body className="min-h-screen flex flex-col">
         <Navbar />

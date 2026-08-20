@@ -26,25 +26,43 @@ export default function CookieBanner() {
   if (!visible) return null
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 bg-stealth-navy border-t border-stealth-cyan/20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-          <p className="text-stealth-gray text-sm leading-relaxed">
+    <div
+      role="region"
+      aria-label="Cookie consent"
+      // Was a hard-coded z-50, the same layer as the navbar. Now on the
+      // semantic scale, above the nav where a consent prompt belongs.
+      className="fixed right-0 bottom-0 left-0 border-t border-stealth-navy-light bg-stealth-navy"
+      style={{ zIndex: 'var(--z-banner)' }}
+    >
+      <div className="mx-auto max-w-7xl px-4 py-3 sm:px-6 lg:px-8">
+        <div className="flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-center">
+          <p className="text-sm leading-relaxed text-stealth-gray">
             We use cookies for analytics and site functionality.{' '}
-            <Link href="/privacy" className="text-stealth-cyan hover:text-white transition-colors underline">
+            <Link
+              href="/privacy"
+              className="text-stealth-cyan underline decoration-stealth-cyan/40 underline-offset-4 transition-colors hover:decoration-stealth-cyan"
+            >
               Learn more
             </Link>
           </p>
-          <div className="flex items-center gap-3 shrink-0">
+          {/*
+            Equal visual weight for both choices. Accept was previously a filled
+            cyan button against an outlined Reject — a second competing primary
+            next to the cobalt CTAs, and a nudge that consent prompts should
+            avoid.
+          */}
+          <div className="flex shrink-0 items-center gap-3">
             <button
+              type="button"
               onClick={handleReject}
-              className="px-4 py-2 text-sm font-medium text-white border border-stealth-cyan/40 rounded hover:border-stealth-cyan/60 hover:bg-stealth-navy-light transition-colors"
+              className="btn-secondary min-h-11 px-4 py-2 text-sm"
             >
               Reject Non-Essential
             </button>
             <button
+              type="button"
               onClick={handleAccept}
-              className="px-4 py-2 text-sm font-semibold text-stealth-dark bg-stealth-cyan rounded hover:bg-white transition-colors"
+              className="btn-secondary min-h-11 px-4 py-2 text-sm"
             >
               Accept All
             </button>

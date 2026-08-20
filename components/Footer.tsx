@@ -18,8 +18,8 @@ const services = [
 export default function Footer() {
   return (
     <footer className="bg-stealth-navy">
-      {/* Gradient top border strip */}
-      <div className="h-px bg-brand-gradient" />
+      {/* Kit corporate gradient as a section divider — its sanctioned use. */}
+      <div className="rule-corp" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="lg:col-span-2">
@@ -36,16 +36,16 @@ export default function Footer() {
                 href="https://linkedin.com/company/stealthcyber"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-stealth-gray hover:text-stealth-indigo transition-colors"
-                aria-label="LinkedIn"
+                className="inline-flex h-11 w-11 -ml-2.5 items-center justify-center rounded-md text-stealth-gray transition-colors hover:text-stealth-cyan"
+                aria-label="Stealth Cyber on LinkedIn"
               >
-                <Linkedin className="w-5 h-5" />
+                <Linkedin className="h-5 w-5" aria-hidden="true" />
               </a>
             </div>
           </div>
 
           <div>
-            <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">Services</h3>
+            <h3 className="mb-4 text-[0.6875rem] font-medium tracking-[0.16em] text-stealth-dim uppercase">Services</h3>
             <ul className="space-y-2">
               {services.map((s) => (
                 <li key={s.href}>
@@ -58,7 +58,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">Contact</h3>
+            <h3 className="mb-4 text-[0.6875rem] font-medium tracking-[0.16em] text-stealth-dim uppercase">Contact</h3>
             <ul className="space-y-3">
               <li className="flex items-start gap-2 text-sm text-stealth-gray">
                 <Phone className="w-4 h-4 mt-0.5 text-stealth-cyan shrink-0" />
@@ -74,10 +74,7 @@ export default function Footer() {
               </li>
             </ul>
             <div className="mt-6">
-              <Link
-                href="/contact"
-                className="inline-block px-4 py-2 bg-gradient-to-r from-stealth-blue to-stealth-indigo text-white text-sm font-semibold rounded hover:opacity-90 transition-opacity"
-              >
+              <Link href="/contact" className="btn-primary px-4 py-2.5 text-sm">
                 Get Protected
               </Link>
             </div>
