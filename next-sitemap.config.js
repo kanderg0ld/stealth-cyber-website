@@ -25,11 +25,23 @@ module.exports = {
   transform: async (config, path) => {
     const priorities = {
       '/': 1.0,
+      // Flagship product page — ranks alongside /services, not with the
+      // long-tail content at the 0.7 default.
+      '/nerv': 0.9,
       '/services': 0.9,
       '/contact': 0.9,
       '/about': 0.8,
       '/blog': 0.8,
       '/resources': 0.8,
+    }
+    // Nerv module pages sit just under the platform overview.
+    if (path.startsWith('/nerv/')) {
+      return {
+        loc: path,
+        changefreq: 'weekly',
+        priority: 0.8,
+        lastmod: new Date().toISOString(),
+      }
     }
     return {
       loc: path,
@@ -40,6 +52,7 @@ module.exports = {
   },
   additionalPaths: async (config) => [
     await config.transform(config, '/'),
+    await config.transform(config, '/nerv'),
     await config.transform(config, '/services'),
     await config.transform(config, '/about'),
     await config.transform(config, '/contact'),

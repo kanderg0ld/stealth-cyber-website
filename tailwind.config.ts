@@ -50,6 +50,31 @@ const config: Config = {
         'stealth-magenta':      '#F303B0', // Nerv Magenta — threat / offensive
         'stealth-magenta-mist': '#FFC9FE', // Magenta Mist — glow cores, hover
 
+        /* ── Nerv product tier ──────────────────────────────────────────────
+         * The kit puts Nerv product surfaces in the Product tier, so these are
+         * for /nerv only — not for corporate pages. Ratios vs Void Black:
+         *   nerv-cyan   10.6:1  body text ok
+         *   nerv-violet  3.7:1  LARGE TEXT / icons only
+         *   nerv-purple  3.5:1  gradient mid, rarely flat — never body copy
+         *   nerv-signal  4.7:1  body text ok
+         * Nerv Purple and Violet must never carry small text.
+         */
+        'nerv-cyan':       '#00D2DD', // defence, healthy, resolved
+        'nerv-cyan-mist':  '#C4FDFE', // glow cores, small text on dark
+        'nerv-purple':     '#873EDC', // core-gradient midpoint
+        'nerv-violet':     '#6953E0', // identity — decorative / icons only
+        /*
+         * Kit Nerv Violet is 3.91:1 on Void Black, so it cannot carry body or
+         * label text. This is the same hue (249°) and saturation, lightened to
+         * 5.24:1 on Void Black and 4.93:1 on Near Black. Use it wherever violet
+         * appears as TEXT; keep #6953E0 for icons and decoration.
+         */
+        'nerv-violet-text': '#806DE5',
+        'nerv-signal':     '#3C79E2', // informational
+        // Kit --hair / --panel, so surfaces on Void Black stay neutral.
+        'nerv-hair':       'rgba(255,255,255,0.10)',
+        'nerv-panel':      'rgba(255,255,255,0.028)',
+
         // ── Ink ramp ────────────────────────────────────────────────────────
         // Ratios measured against Near Black #0A0A0F.
         'stealth-ink':         '#E8E9F0', // headings on dark — 16.4:1
@@ -104,6 +129,19 @@ const config: Config = {
          */
         'bridge-gradient':
           'linear-gradient(135deg, #0038FF 0%, #6231F5 45%, #F303B0 100%)',
+        /*
+         * Kit Nerv Core gradient, verbatim — the platform signature. Product
+         * surfaces only. Same rule as the others: edges, atmosphere and display
+         * type at 24px+, never behind body copy.
+         */
+        'nerv-core':
+          'linear-gradient(135deg, #F303B0 0%, #873EDC 50%, #00D2DD 100%)',
+        /*
+         * Kit Void Bloom. Magenta and cyan blooms on Void Black, kept under the
+         * kit's 60% ceiling so type stays legible over it.
+         */
+        'void-bloom':
+          'radial-gradient(120% 140% at 22% 12%, rgba(243,3,176,0.34) 0%, rgba(0,0,0,0) 56%), radial-gradient(110% 130% at 82% 82%, rgba(0,210,221,0.28) 0%, rgba(0,0,0,0) 56%), radial-gradient(90% 90% at 60% 45%, rgba(135,62,220,0.20) 0%, rgba(0,0,0,0) 60%)',
         /*
          * Closing-CTA wash: cobalt base with the indigo/magenta end pushed into
          * the bottom-right corner, away from the centred text column. Contrast

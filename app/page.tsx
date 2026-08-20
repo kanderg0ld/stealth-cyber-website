@@ -6,6 +6,12 @@ import HeroSection from '@/components/HeroSection'
 import ServiceCard from '@/components/ServiceCard'
 import FaqJsonLd from '@/components/structured-data/FaqJsonLd'
 import HowToJsonLd from '@/components/structured-data/HowToJsonLd'
+import { modules as nervModules, toneText } from '@/app/nerv/nerv-data'
+
+// Single source of truth for the module list — the homepage teaser and /nerv
+// read the same data, so they cannot drift apart.
+const nervCore = nervModules.filter((m) => m.group === 'core')
+const nervAi = nervModules.filter((m) => m.group === 'ai')
 
 export const metadata: Metadata = {
   title: 'Stealth Cyber | Global Managed Cybersecurity Services',
@@ -153,13 +159,13 @@ export default function HomePage() {
       */}
       <section
         aria-label="Stealth Cyber by the numbers"
-        className="border-b border-stealth-navy-light bg-stealth-navy"
+        className="bg-stealth-navy"
       >
         <dl className="mx-auto grid max-w-7xl grid-cols-2 gap-x-6 px-4 sm:px-6 md:grid-cols-3 lg:grid-cols-6 lg:px-8">
           {stats.map((stat) => (
             // A top rule on every cell stays correct at 2, 3 and 6 columns
-            // without per-breakpoint divider rules.
-            <div key={stat.label} className="border-t border-stealth-navy-light py-6">
+            // without per-breakpoint divider rules. Bridge-tinted to match.
+            <div key={stat.label} className="hair-bridge-t py-6">
               <dt className="mb-1.5 text-[0.6875rem] leading-snug font-medium tracking-[0.14em] text-stealth-dim uppercase">
                 {stat.label}
               </dt>
@@ -169,6 +175,80 @@ export default function HomePage() {
             </div>
           ))}
         </dl>
+      </section>
+
+      {/*
+        Nerv. The only place on the homepage carrying product-tier colour, and
+        the entry point to /nerv. Void Black rather than Near Black, so the
+        platform reads as its own thing before you even click through.
+      */}
+      <section className="surface-void relative overflow-hidden">
+        <div className="rule-nerv" />
+        <div className="bg-void-bloom pointer-events-none absolute inset-0" aria-hidden="true" />
+        <div className="relative z-10 mx-auto max-w-7xl px-4 py-[clamp(4rem,8vw,6rem)] sm:px-6 lg:px-8">
+          <div className="grid gap-x-16 gap-y-10 lg:grid-cols-12">
+            <div className="lg:col-span-5">
+              <p className="mb-4 text-[0.6875rem] font-medium tracking-[0.22em] text-nerv-cyan uppercase">
+                The Nerv platform
+              </p>
+              <h2 className="mb-5 text-[clamp(1.875rem,3.4vw,2.5rem)] font-bold text-white">
+                Seven modules. One platform.{' '}
+                <span className="text-gradient-nerv">Zero blind spots.</span>
+              </h2>
+              <p className="mb-8 max-w-[56ch] leading-relaxed text-stealth-gray">
+                Endpoint, browser, identity, machine identity, coding agents and your own
+                AI systems, correlated into one incident timeline by an AI security
+                operations centre. Ten seats is the floor, not two hundred.
+              </p>
+              <div className="flex flex-col gap-3 sm:flex-row">
+                <Link href="/nerv" className="btn-primary group">
+                  Explore Nerv
+                  <ArrowRight
+                    className="h-4 w-4 transition-transform duration-200 ease-out-quart group-hover:translate-x-1"
+                    aria-hidden="true"
+                  />
+                </Link>
+                <Link href="/nerv#pricing" className="btn-secondary">
+                  See Pricing
+                </Link>
+              </div>
+            </div>
+
+            {/* The seven modules, in the kit's two groups. */}
+            <div className="lg:col-span-7">
+              {[
+                { label: 'Core coverage', list: nervCore },
+                { label: 'The AI layer', list: nervAi },
+              ].map((group) => (
+                <div key={group.label} className="mb-8 last:mb-0">
+                  <p className="mb-4 text-[0.6875rem] font-medium tracking-[0.16em] text-stealth-dim uppercase">
+                    {group.label}
+                  </p>
+                  <dl className="grid gap-x-10 sm:grid-cols-2">
+                    {group.list.map((m) => (
+                      <div key={m.id} className="hair-nerv-t py-4">
+                        <dt className="mb-1 flex flex-wrap items-baseline gap-x-2.5">
+                          <Link
+                            href={`/nerv/${m.slug}`}
+                            className={`text-sm font-semibold transition-opacity hover:opacity-70 ${toneText[m.tone]}`}
+                          >
+                            {m.code}
+                          </Link>
+                          <span className="text-xs text-stealth-dim">{m.surface}</span>
+                        </dt>
+                        <dd className="max-w-[42ch] text-xs leading-relaxed text-stealth-gray">
+                          {m.tagline}
+                        </dd>
+                      </div>
+                    ))}
+                  </dl>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+        {/* Closing edge of the dark run, before the light Services section. */}
+        <div className="rule-nerv" />
       </section>
 
       {/*

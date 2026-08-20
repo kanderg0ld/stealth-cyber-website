@@ -20,10 +20,20 @@
   --sc-vivid-sky: #4dccff;
   --sc-electric-blue: #3ce4f5;
 
-  /* Product tier, admitted as Bridge highlights. Dark grounds only:
-   * 5.13:1 on Near Black, 3.85:1 on white (large text only). */
+  /* Product tier. Magenta doubles as a Bridge highlight on corporate pages
+   * (dark grounds only: 5.13:1 on Near Black, 3.85:1 on white). The rest are
+   * for Nerv product surfaces only — see /nerv. */
   --nv-magenta: #f303b0;
   --nv-magenta-mist: #ffc9fe;
+  --nv-cyan: #00d2dd;
+  --nv-cyan-mist: #c4fdfe;
+  --nv-purple: #873edc; /* gradient mid — 3.5:1, never body copy */
+  --nv-violet: #6953e0; /* identity — 3.7:1, large text / icons only */
+  --nv-signal-blue: #3c79e2;
+
+  /* Kit --hair / --panel, for surfaces on Void Black. */
+  --nv-hair: rgba(255, 255, 255, 0.1);
+  --nv-panel: rgba(255, 255, 255, 0.028);
 
   /* Neutrals */
   --sc-void: #000000;
@@ -50,6 +60,8 @@
   --sc-grad-corporate: linear-gradient(135deg, #0038ff 0%, #00a2ff 60%, #3ce4f5 100%);
   /* Kit Bridge gradient, verbatim. Never behind body copy. */
   --sc-grad-bridge: linear-gradient(135deg, #0038ff 0%, #6231f5 45%, #f303b0 100%);
+  /* Kit Nerv Core gradient, verbatim. The platform signature. */
+  --sc-grad-nerv: linear-gradient(135deg, #f303b0 0%, #873edc 50%, #00d2dd 100%);
 
   /* Motion */
   --sc-ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
@@ -231,6 +243,109 @@
   }
 
   /*
+   * ── Nerv product tier ─────────────────────────────────────────────────────
+   * Void Black ground for Nerv product surfaces. Focus ring goes to Nerv Cyan,
+   * which is 10.6:1 here. Electric Blue #3CE4F5 is deliberately absent from
+   * this whole tier: the kit bans placing it next to Nerv Cyan.
+   */
+  .surface-void {
+    --sc-focus: var(--nv-cyan);
+    background-color: var(--sc-void);
+  }
+
+  /*
+   * The secondary button's default border is Near-Black-tuned and effectively
+   * invisible on Void Black. Retune it here rather than weakening the
+   * corporate default, and take the hover to Nerv Cyan.
+   */
+  .surface-void .btn-secondary {
+    border-color: rgba(255, 255, 255, 0.18);
+  }
+  .surface-void .btn-secondary:hover {
+    border-color: rgba(0, 210, 221, 0.55);
+    background-color: rgba(0, 210, 221, 0.07);
+  }
+
+  /* Nerv Core gradient on display type. Same 24px floor as the others. */
+  .text-gradient-nerv {
+    color: var(--nv-magenta-mist);
+    background-image: linear-gradient(
+      100deg,
+      #f303b0 0%,
+      #b34ae0 46%,
+      var(--nv-cyan) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-right: 0.06em;
+    margin-right: -0.06em;
+  }
+
+  @supports not ((-webkit-background-clip: text) or (background-clip: text)) {
+    .text-gradient-nerv {
+      background-image: none;
+      -webkit-text-fill-color: currentColor;
+    }
+  }
+
+  @media (forced-colors: active) {
+    .text-gradient-nerv {
+      background-image: none;
+      -webkit-text-fill-color: currentColor;
+      color: CanvasText;
+    }
+  }
+
+  /* Nerv Core arc as a section edge. */
+  .rule-nerv {
+    height: 1px;
+    background: var(--sc-grad-nerv);
+  }
+  .rule-nerv-strong {
+    height: 2px;
+    background: var(--sc-grad-nerv);
+  }
+
+  /* Nerv-tinted hairlines, matching the Bridge pair on corporate pages. */
+  .hair-nerv-t {
+    border-width: 1px 0 0 0;
+    border-style: solid;
+    border-image: linear-gradient(
+        90deg,
+        rgba(243, 3, 176, 0.55) 0%,
+        rgba(135, 62, 220, 0.55) 50%,
+        rgba(0, 210, 221, 0.55) 100%
+      )
+      1;
+  }
+
+  .band-nerv > * + * {
+    border-width: 1px 0 0 0;
+    border-style: solid;
+    border-image: linear-gradient(
+        90deg,
+        rgba(243, 3, 176, 0.5) 0%,
+        rgba(135, 62, 220, 0.5) 50%,
+        rgba(0, 210, 221, 0.5) 100%
+      )
+      1;
+  }
+
+  @media (min-width: 768px) {
+    .band-nerv > * + * {
+      border-width: 0 0 0 1px;
+      border-image: linear-gradient(
+          180deg,
+          rgba(243, 3, 176, 0.5) 0%,
+          rgba(135, 62, 220, 0.5) 50%,
+          rgba(0, 210, 221, 0.5) 100%
+        )
+        1;
+    }
+  }
+
+  /*
    * Bridge gradient as a section divider — cobalt into indigo into magenta.
    * A 1px full-width section rule, not a per-card edge: a coloured stripe
    * repeated on every card is the tell this pass removed, and this is not that.
@@ -247,6 +362,56 @@
   .rule-bridge-strong {
     height: 2px;
     background: var(--sc-grad-bridge);
+  }
+
+  /*
+   * Bridge-tinted hairlines, via border-image so a 1px border can carry a
+   * gradient. Held at ~55–60% alpha on purpose: the cell dividers should share
+   * the section rules' hue without matching their strength, or the hierarchy
+   * between "section edge" and "cell divider" collapses.
+   *
+   * Horizontal lines run the arc left-to-right, matching the section rules
+   * above them; vertical dividers run it top-to-bottom.
+   */
+  .hair-bridge-t {
+    border-width: 1px 0 0 0;
+    border-style: solid;
+    border-image: linear-gradient(
+        90deg,
+        rgba(0, 56, 255, 0.6) 0%,
+        rgba(98, 49, 245, 0.6) 45%,
+        rgba(243, 3, 176, 0.6) 100%
+      )
+      1;
+  }
+
+  /*
+   * Dividers *between* items, mirroring what `divide-x`/`divide-y` do, so the
+   * leading edge stays clean. Stacked below md, side-by-side above it.
+   */
+  .band-bridge > * + * {
+    border-width: 1px 0 0 0;
+    border-style: solid;
+    border-image: linear-gradient(
+        90deg,
+        rgba(0, 56, 255, 0.55) 0%,
+        rgba(98, 49, 245, 0.55) 45%,
+        rgba(243, 3, 176, 0.55) 100%
+      )
+      1;
+  }
+
+  @media (min-width: 768px) {
+    .band-bridge > * + * {
+      border-width: 0 0 0 1px;
+      border-image: linear-gradient(
+          180deg,
+          rgba(0, 56, 255, 0.55) 0%,
+          rgba(98, 49, 245, 0.55) 50%,
+          rgba(243, 3, 176, 0.55) 100%
+        )
+        1;
+    }
   }
 
   /*

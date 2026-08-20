@@ -9,6 +9,7 @@ import Logo from '@/components/Logo'
 
 const navLinks = [
   { href: '/', label: 'Home' },
+  { href: '/nerv', label: 'Nerv' },
   { href: '/services', label: 'Services' },
   { href: '/case-studies', label: 'Case Studies' },
   { href: '/about', label: 'About' },
@@ -51,7 +52,11 @@ export default function Navbar() {
             until ~1024px; at 768–1023px the logo collided with "Home" and the
             row wrapped onto two lines.
           */}
-          <div className="hidden items-center gap-6 lg:flex">
+          {/*
+            Nine links plus the CTA. The gap tightens at lg so the row clears
+            the logo at 1024px, and relaxes again at xl where there is room.
+          */}
+          <div className="hidden items-center gap-4 lg:flex xl:gap-6">
             {navLinks.map((link) =>
               link.external ? (
                 <a

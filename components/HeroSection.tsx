@@ -91,7 +91,9 @@ export default function HeroSection() {
       */}
       <div className="relative z-10 bg-stealth-dark/60 backdrop-blur-sm">
         <div className="rule-bridge" />
-        <dl className="mx-auto grid max-w-7xl grid-cols-1 divide-y divide-stealth-navy-light px-4 sm:px-6 md:grid-cols-3 md:divide-x md:divide-y-0 lg:px-8">
+        {/* `band-bridge` carries the arc on the dividers between items, so the
+            hairlines match the rule above instead of staying flat grey. */}
+        <dl className="band-bridge mx-auto grid max-w-7xl grid-cols-1 px-4 sm:px-6 md:grid-cols-3 lg:px-8">
           {trustPoints.map((point) => (
             <div key={point.label} className="py-5 md:px-6 md:first:pl-0 md:last:pr-0">
               <dt className="mb-1 text-[0.6875rem] font-medium tracking-[0.16em] text-stealth-dim uppercase">
