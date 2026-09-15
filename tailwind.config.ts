@@ -75,11 +75,14 @@ const config: Config = {
         'nerv-hair':       'rgba(255,255,255,0.10)',
         'nerv-panel':      'rgba(255,255,255,0.028)',
 
-        // ── Ink ramp ────────────────────────────────────────────────────────
-        // Ratios measured against Near Black #0A0A0F.
-        'stealth-ink':         '#E8E9F0', // headings on dark — 16.4:1
-        'stealth-gray':        '#B4B7C6', // body copy on dark  —  9.9:1
-        'stealth-dim':         '#8A8DA0', // labels, meta on dark — 6.0:1
+        /* ── Ink ramp ────────────────────────────────────────────────────────
+         * Shifted up a step so copy on dark surfaces reads as white rather
+         * than grey. Three distinct steps are kept so hierarchy survives.
+         * Ratios vs Near Black #0A0A0F (higher again on Void Black):
+         */
+        'stealth-ink':         '#FFFFFF', // headings, emphasis — 19.6:1
+        'stealth-gray':        '#E8E9F0', // body copy on dark  — 16.4:1
+        'stealth-dim':         '#B4B7C6', // labels, meta       —  9.9:1
         /*
          * Body Grey from the kit is #6B7280, but on the kit's own Surface Grey
          * #F2F4F8 that pairing measures 4.39:1 — just under AA for body text.

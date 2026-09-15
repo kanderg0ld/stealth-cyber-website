@@ -5,9 +5,10 @@
   --attack-cyan: #00d2dd;
   --attack-pink: #f303b0;
   --attack-warn: #f59e0b; /* kit severity scale, separate from brand */
-  --attack-ink: #e8e9f0;
-  --attack-body: #b4b7c6;
-  --attack-dim: #8a8da0;
+  /* Matches the site ink ramp: copy on this dark ground reads as white. */
+  --attack-ink: #fff;
+  --attack-body: #e8e9f0;
+  --attack-dim: #b4b7c6;
   --attack-hair: rgba(255, 255, 255, .1);
   position: relative;
   padding-block: 52px 35px;

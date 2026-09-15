@@ -45,10 +45,11 @@
   --sc-body-grey-aa: #626875;
   --sc-white: #ffffff;
 
-  /* Ink ramp on dark grounds */
-  --sc-ink: #e8e9f0;
-  --sc-ink-body: #b4b7c6;
-  --sc-ink-dim: #8a8da0;
+  /* Ink ramp on dark grounds. Shifted up a step so copy reads as white
+   * rather than grey; three steps kept so hierarchy survives. */
+  --sc-ink: #ffffff;
+  --sc-ink-body: #e8e9f0;
+  --sc-ink-dim: #b4b7c6;
   --sc-hairline: rgba(232, 233, 240, 0.1);
 
   /* Severity — separate scale from brand colour, by design */
