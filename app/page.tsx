@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Shield, Eye, AlertTriangle, ClipboardCheck, Server, Lock, ArrowRight, Users, Clock, Award, Cpu, FileCheck, BookOpen, Brain } from 'lucide-react'
+import AttackExplorer from '@/components/AttackExplorer'
 import FaqAccordion from '@/components/FaqAccordion'
 import HeroSection from '@/components/HeroSection'
 import ServiceCard from '@/components/ServiceCard'
@@ -178,6 +179,14 @@ export default function HomePage() {
       </section>
 
       {/*
+        Attack explorer. Sits immediately before the Nerv section so the
+        narrative runs attack → detection → response, then the platform that
+        does it. Self-contained: its own scoped stylesheet and its own
+        prefers-reduced-motion listener, so it needs nothing from this page.
+      */}
+      <AttackExplorer />
+
+      {/*
         Nerv. The only place on the homepage carrying product-tier colour, and
         the entry point to /nerv. Void Black rather than Near Black, so the
         platform reads as its own thing before you even click through.
@@ -285,7 +294,10 @@ export default function HomePage() {
             squeezed the measure to ~200px and broke most titles onto two lines.
             This lands on 3 / 2 / 1 columns with a ~410px measure at desktop.
           */}
-          <div className="grid grid-cols-[repeat(auto-fit,minmax(20rem,1fr))] gap-5">
+          {/* `min(20rem,100%)`, not a bare 20rem: on a 320px viewport the
+              container is narrower than 20rem, and a bare floor would push the
+              card past the viewport edge. */}
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(min(20rem,100%),1fr))] gap-5">
             {services.map((service) => (
               <ServiceCard key={service.title} {...service} />
             ))}

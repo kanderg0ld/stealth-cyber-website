@@ -1,0 +1,972 @@
+/* All styles are scoped to this section. */
+.sc-attack-explorer {
+  /* Kit product tier. Nerv Cyan and Nerv Magenta, not the
+     supplied #38d6ff / #ff3d9a. */
+  --attack-cyan: #00d2dd;
+  --attack-pink: #f303b0;
+  --attack-warn: #f59e0b; /* kit severity scale, separate from brand */
+  --attack-ink: #e8e9f0;
+  --attack-body: #b4b7c6;
+  --attack-dim: #8a8da0;
+  --attack-hair: rgba(255, 255, 255, .1);
+  position: relative;
+  padding-block: 52px 35px;
+  background: #000;
+  color: var(--attack-ink);
+  color-scheme: dark;
+  line-height: 1.5;
+  scroll-margin-top: 120px;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.sc-attack-explorer *,
+.sc-attack-explorer *::before,
+.sc-attack-explorer *::after {
+  box-sizing: border-box;
+}
+
+.sc-attack-explorer h2,
+.sc-attack-explorer p,
+.sc-attack-explorer figure {
+  margin: 0;
+}
+
+.sc-attack-explorer a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.sc-attack-explorer button {
+  font: inherit;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.sc-attack-explorer button:disabled {
+  cursor: default;
+}
+
+.sc-attack-explorer a:focus-visible,
+.sc-attack-explorer button:focus-visible,
+.sc-attack-explorer [role="tabpanel"]:focus-visible {
+  outline: 2px solid var(--attack-cyan);
+  outline-offset: 5px;
+}
+
+.sc-attack-explorer .attack-wrap {
+  width: min(1240px, calc(100% - 112px));
+  margin-inline: auto;
+}
+
+/* Section header */
+.sc-attack-explorer .story-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.sc-attack-explorer .story-eyebrow {
+  color: var(--attack-cyan);
+  font-size: .875rem;
+  font-weight: 600;
+  letter-spacing: .035em;
+}
+
+.sc-attack-explorer .story-skip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--attack-body);
+  font-size: .875rem;
+}
+
+.sc-attack-explorer .story-skip:hover {
+  color: #fff;
+}
+
+/* Attack selector */
+.sc-attack-explorer .attack-scenario-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.sc-attack-explorer .attack-scenario-selector > span {
+  color: var(--attack-dim);
+  font-size: .8125rem;
+}
+
+.sc-attack-explorer .attack-scenario-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: 100%;
+  gap: 0;
+  padding: 0;
+  border: 1px solid var(--attack-hair);
+  border-radius: 4px;
+  background: transparent;
+  overflow: hidden;
+}
+
+.sc-attack-explorer .attack-scenario-tab {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 14px;
+  min-width: 0;
+  min-height: 66px;
+  padding: 17px 22px;
+  border: 0;
+  border-right: 1px solid var(--attack-hair);
+  border-radius: 0;
+  background: transparent;
+  color: var(--attack-body);
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: left;
+  white-space: normal;
+  transition: background-color .18s, color .18s;
+}
+
+.sc-attack-explorer .attack-scenario-tab:last-child {
+  border-right: 0;
+}
+
+.sc-attack-explorer .attack-scenario-tab > span {
+  color: var(--attack-dim);
+  font: .75rem/1 ui-monospace, monospace;
+}
+
+.sc-attack-explorer .attack-scenario-tab > svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  margin-left: auto;
+  color: var(--attack-dim);
+}
+
+.sc-attack-explorer .attack-scenario-tab:hover {
+  background: rgba(255,255,255,.045);
+  color: #fff;
+}
+
+/* Dark-on-magenta, not white: white on #F303B0 is 3.85:1 and would fail.
+   #240b18 is 4.80:1 for the label, #2c0b1d is 4.65:1 for the number. */
+.sc-attack-explorer .attack-scenario-tab[data-state="active"] {
+  background: var(--attack-pink);
+  color: #240b18;
+}
+
+.sc-attack-explorer .attack-scenario-tab[data-state="active"] > span,
+.sc-attack-explorer .attack-scenario-tab[data-state="active"] > svg {
+  color: #2c0b1d;
+}
+
+.sc-attack-explorer .attack-scenario-tab[data-state="active"]:hover {
+  background: #f93fc0;
+  color: #240b18;
+}
+
+.sc-attack-explorer .attack-scenario-content {
+  min-width: 0;
+  margin: 0;
+}
+
+/* Stage controls */
+.sc-attack-explorer .defence-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.sc-attack-explorer .story-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--attack-hair);
+}
+
+.sc-attack-explorer .story-controls > p {
+  color: var(--attack-body);
+  font-size: .875rem;
+  line-height: 1.75;
+}
+
+.sc-attack-explorer .story-chapter-nav {
+  display: flex;
+  flex-shrink: 0;
+  gap: 6px;
+  padding: 0;
+  background: transparent;
+}
+
+.sc-attack-explorer .story-tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  gap: 10px;
+  min-height: 44px;
+  padding: 11px 17px;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 3px;
+  background: transparent;
+  color: var(--attack-body);
+  font-size: .875rem;
+  font-weight: 400;
+  white-space: nowrap;
+  transition: background-color .18s, color .18s, border-color .18s;
+}
+
+.sc-attack-explorer .story-tab > span {
+  color: var(--attack-dim);
+  font: .75rem/1.5 ui-monospace, monospace;
+}
+
+.sc-attack-explorer .story-tab[data-state="active"] {
+  border-color: #f93fc0;
+  background: var(--attack-pink);
+  color: #240b18;
+  box-shadow: 0 0 25px rgba(243,3,176,.11);
+}
+
+.sc-attack-explorer .story-tab[data-state="active"] > span {
+  color: #2c0b1d;
+}
+
+.sc-attack-explorer .story-tab:hover {
+  border-color: var(--attack-cyan);
+}
+
+/* Story layout */
+.sc-attack-explorer .story-layout {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  align-items: center;
+  gap: 55px;
+  padding-block: 28px;
+}
+
+.sc-attack-explorer .story-copy,
+.sc-attack-explorer .chapter-stack {
+  min-width: 0;
+}
+
+.sc-attack-explorer .chapter-stack {
+  display: grid;
+}
+
+/* Keep all three panels in the grid to prevent height jumps.
+   Visibility also removes inactive links from keyboard navigation. */
+.sc-attack-explorer .story-chapter {
+  grid-area: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  margin: 0;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(-18px);
+  transition:
+    opacity .32s ease,
+    transform .45s cubic-bezier(.16, 1, .3, 1);
+}
+
+.sc-attack-explorer .story-chapter[data-state="active"] {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: none;
+}
+
+.sc-attack-explorer .orbit-chapter-label {
+  margin-bottom: 20px;
+  color: #ffc9fe;
+  font: .75rem/1.5 ui-monospace, monospace;
+  letter-spacing: .025em;
+}
+
+.sc-attack-explorer .story-chapter h2 {
+  margin-bottom: 24px;
+  color: var(--attack-ink);
+  font-size: clamp(2.25rem, 3.6vw, 3.25rem);
+  font-weight: 500;
+  line-height: 1.13;
+  letter-spacing: -.03em;
+}
+
+.sc-attack-explorer .story-chapter p {
+  max-width: 400px;
+  margin-bottom: 28px;
+  color: var(--attack-body);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.sc-attack-explorer .story-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: auto;
+  color: var(--attack-ink);
+  font-size: .875rem;
+  font-weight: 500;
+}
+
+.sc-attack-explorer .story-text-link svg {
+  width: 17px;
+  height: 17px;
+}
+
+.sc-attack-explorer .story-text-link:hover {
+  color: var(--attack-cyan);
+}
+
+.sc-attack-explorer .story-step-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.sc-attack-explorer .story-step-controls > span {
+  flex-shrink: 0;
+  color: var(--attack-dim);
+  font: .75rem/1.5 ui-monospace, monospace;
+}
+
+.sc-attack-explorer .story-step {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  min-width: 44px;
+  height: 44px;
+  padding: 10px;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 3px;
+  background: transparent;
+  color: var(--attack-ink);
+  transition: background-color .18s, border-color .18s;
+}
+
+.sc-attack-explorer .story-step svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.sc-attack-explorer .story-step.next-step {
+  gap: 20px;
+  padding: 10px 16px;
+  font-size: .875rem;
+  font-weight: 400;
+}
+
+.sc-attack-explorer .story-step:hover {
+  border-color: rgba(0,210,221,.55);
+  background: rgba(0,210,221,.07);
+}
+
+.sc-attack-explorer .story-step:disabled {
+  opacity: .3;
+}
+
+.sc-attack-explorer .story-bottom {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding-top: 16px;
+  color: var(--attack-dim);
+  font-size: .75rem;
+  line-height: 1.6;
+}
+
+.sc-attack-explorer .story-bottom > span {
+  min-width: 255px;
+}
+
+.sc-attack-explorer .story-progress {
+  flex: 1;
+  height: 1px;
+  background: var(--attack-hair);
+  overflow: hidden;
+}
+
+.sc-attack-explorer .story-progress > div {
+  width: 100%;
+  height: 100%;
+  background: var(--attack-pink);
+  transform-origin: left;
+  transition: transform .35s ease;
+}
+
+/* Orbital graphic */
+.sc-attack-explorer .orbit-figure {
+  width: 100%;
+  min-width: 0;
+  max-width: 660px;
+  justify-self: center;
+}
+
+.sc-attack-explorer .orbit-legend {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  row-gap: 10px;
+  color: var(--attack-body);
+  font-size: .75rem;
+  line-height: 1.5;
+}
+
+.sc-attack-explorer .orbit-legend > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.sc-attack-explorer .orbit-legend > span::before {
+  content: '';
+  width: 17px;
+  height: 1px;
+  background: var(--legend-color);
+}
+
+.sc-attack-explorer .legend-attack { --legend-color: var(--attack-warn); }
+.sc-attack-explorer .legend-signal { --legend-color: var(--attack-cyan); }
+.sc-attack-explorer .legend-response { --legend-color: var(--attack-pink); }
+
+.sc-attack-explorer .attack-orbit {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  isolation: isolate;
+}
+
+.sc-attack-explorer .attack-orbit > canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.sc-attack-explorer .orbit-nucleus {
+  position: absolute;
+  left: 50%;
+  top: 49%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 88px;
+  height: 88px;
+  border: 1px solid rgba(0,210,221,.5);
+  border-radius: 50%;
+  background: #0a0a0f;
+  transform: translate(-50%, -50%);
+  transition: border-color .3s, background-color .3s;
+}
+
+.sc-attack-explorer .orbit-nucleus > strong {
+  color: #fff;
+  font-size: 1.65rem;
+  font-weight: 650;
+  line-height: 1.05;
+  letter-spacing: -.055em;
+}
+
+.sc-attack-explorer .orbit-nucleus > strong > span {
+  color: var(--attack-pink);
+}
+
+.sc-attack-explorer .orbit-nucleus > span {
+  margin-top: 7px;
+  color: var(--attack-cyan);
+  font: .625rem/1.5 ui-monospace, monospace;
+  text-transform: uppercase;
+}
+
+.sc-attack-explorer .orbit-nucleus:hover {
+  border-color: var(--attack-pink);
+  background: rgba(243,3,176,.1);
+}
+
+.sc-attack-explorer .orbit-figure[data-stage="2"] .orbit-nucleus {
+  border-color: var(--attack-pink);
+  background: rgba(243,3,176,.1);
+}
+
+.sc-attack-explorer .orbit-figure[data-stage="2"] .orbit-nucleus > span {
+  color: #ffc9fe;
+}
+
+.sc-attack-explorer .orbit-node {
+  position: absolute;
+  left: 50%;
+  top: 49%;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  width: 118px;
+  min-height: 85px;
+  padding: 10px 6px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 6px;
+  background: rgba(0,0,0,.92);
+  transform: translate(-50%, -50%);
+  transition: border-color .2s, background-color .2s;
+  will-change: transform;
+}
+
+/* Fallback positions before the Canvas is measured. */
+.sc-attack-explorer .orbit-node-0 {
+  transform: translate(-175%, -145%);
+}
+.sc-attack-explorer .orbit-node-1 {
+  transform: translate(75%, -145%);
+}
+.sc-attack-explorer .orbit-node-2 {
+  transform: translate(-50%, 125%);
+}
+
+.sc-attack-explorer .orbit-node > svg {
+  width: 21px;
+  height: 21px;
+  margin-bottom: 2px;
+  color: var(--attack-cyan);
+  stroke-width: 1.5;
+}
+
+.sc-attack-explorer .orbit-node > strong {
+  color: var(--attack-ink);
+  font-size: .875rem;
+  font-weight: 500;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.sc-attack-explorer .orbit-node > span {
+  color: var(--attack-dim);
+  font-size: .6875rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.sc-attack-explorer .orbit-node:hover {
+  border-color: var(--attack-cyan);
+  background: rgba(0,210,221,.07);
+}
+
+.sc-attack-explorer .orbit-node[aria-pressed="true"] {
+  border-color: var(--attack-pink);
+  background: rgba(243,3,176,.1);
+}
+
+.sc-attack-explorer .orbit-node[aria-pressed="true"] > svg {
+  color: #ffc9fe;
+}
+
+.sc-attack-explorer .orbit-gate {
+  position: absolute;
+  left: 50%;
+  top: 49%;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--attack-cyan);
+  border-radius: 50%;
+  background: #0a0a0f;
+  color: var(--attack-cyan);
+  transform: translate(0, -165px);
+  pointer-events: none;
+}
+
+.sc-attack-explorer .orbit-gate > span {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.sc-attack-explorer .orbit-gate > strong {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  color: #c4fdfe;
+  font-size: .6875rem;
+  font-weight: 400;
+  white-space: nowrap;
+  transform: translateX(-50%);
+}
+
+.sc-attack-explorer .orbit-figure[data-stage="2"] .orbit-gate {
+  border-color: var(--attack-pink);
+  background: rgba(243,3,176,.1);
+  color: #ffc9fe;
+}
+
+.sc-attack-explorer .orbit-figure[data-stage="2"] .orbit-gate > strong {
+  color: #ffc9fe;
+}
+
+.sc-attack-explorer .orbit-click-hint {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: var(--attack-dim);
+  font-size: .75rem;
+  text-align: center;
+}
+
+.sc-attack-explorer .orbit-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 52px;
+  padding: 12px 8px;
+  color: var(--attack-cyan);
+  font-size: .875rem;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.sc-attack-explorer .orbit-status > span {
+  flex-shrink: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--attack-cyan);
+}
+
+.sc-attack-explorer .orbit-figure[data-stage="2"] .orbit-status {
+  color: #ffc9fe;
+}
+
+.sc-attack-explorer .orbit-figure[data-stage="2"] .orbit-status > span {
+  background: var(--attack-pink);
+}
+
+.sc-attack-explorer .orbit-detail {
+  min-height: 112px;
+  padding-top: 17px;
+  border-top: 1px solid var(--attack-hair);
+}
+
+.sc-attack-explorer .orbit-detail > strong {
+  color: var(--attack-ink);
+  font-size: .875rem;
+  font-weight: 500;
+}
+
+.sc-attack-explorer .orbit-detail > p {
+  margin-top: 6px;
+  color: var(--attack-body);
+  font-size: .875rem;
+  line-height: 1.6;
+}
+
+.sc-attack-explorer .orbit-figure figcaption {
+  margin-top: 12px;
+  color: var(--attack-dim);
+  font-size: .75rem;
+  line-height: 1.6;
+}
+
+.sc-attack-explorer .orbit-figure figcaption > span {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--attack-body);
+}
+
+/* Responsive layout */
+@media (max-width: 1100px) {
+  .sc-attack-explorer .attack-wrap {
+    width: calc(100% - 64px);
+  }
+
+  .sc-attack-explorer .story-controls {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .sc-attack-explorer .story-chapter-nav {
+    width: 100%;
+    max-width: 550px;
+  }
+
+  .sc-attack-explorer .story-layout {
+    grid-template-columns: .85fr 1.15fr;
+    gap: 24px;
+  }
+}
+
+@media (min-width: 851px) and (max-width: 1100px) {
+  .sc-attack-explorer .attack-orbit {
+    height: 430px;
+  }
+
+  .sc-attack-explorer .orbit-node {
+    width: 105px;
+    min-height: 82px;
+  }
+
+  .sc-attack-explorer .story-chapter h2 {
+    font-size: 2.4rem;
+  }
+
+  .sc-attack-explorer .story-step-controls {
+    gap: 11px;
+  }
+
+  .sc-attack-explorer .story-step.next-step {
+    gap: 12px;
+    padding-inline: 12px;
+  }
+}
+
+@media (max-width: 850px) {
+  .sc-attack-explorer {
+    padding-top: 36px;
+  }
+
+  .sc-attack-explorer .story-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .sc-attack-explorer .orbit-figure {
+    grid-row: 1;
+    max-width: 640px;
+  }
+
+  .sc-attack-explorer .story-copy {
+    grid-row: 2;
+  }
+
+  .sc-attack-explorer .story-chapter h2 {
+    font-size: 2.25rem;
+  }
+
+  .sc-attack-explorer .story-chapter p {
+    max-width: 640px;
+  }
+
+  .sc-attack-explorer .orbit-detail {
+    min-height: 95px;
+  }
+
+  .sc-attack-explorer .attack-scenario-tab {
+    gap: 10px;
+    padding: 16px;
+    font-size: .9375rem;
+  }
+
+  .sc-attack-explorer .attack-scenario-tab > svg {
+    display: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .sc-attack-explorer .story-layout {
+    gap: 15px;
+    padding-top: 34px;
+    padding-bottom: 15px;
+  }
+
+  .sc-attack-explorer .story-chapter h2 {
+    font-size: clamp(2.125rem, 6vw, 2.75rem);
+  }
+
+  .sc-attack-explorer .story-chapter p {
+    max-width: 510px;
+    margin-bottom: 22px;
+  }
+
+  .sc-attack-explorer .story-step-controls {
+    margin-top: 26px;
+  }
+
+  .sc-attack-explorer .story-bottom {
+    gap: 14px;
+  }
+
+  .sc-attack-explorer .story-bottom > span {
+    min-width: 0;
+    max-width: 240px;
+  }
+
+  .sc-attack-explorer .story-top {
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .sc-attack-explorer .story-controls {
+    gap: 16px;
+    padding-bottom: 23px;
+  }
+
+  .sc-attack-explorer .story-chapter-nav {
+    max-width: none;
+  }
+
+  .sc-attack-explorer .story-tab {
+    gap: 7px;
+    padding: 11px 8px;
+  }
+
+  .sc-attack-explorer .story-tab > span {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .sc-attack-explorer .attack-scenario-tabs {
+    gap: 5px;
+    border: 0;
+    overflow: visible;
+  }
+
+  .sc-attack-explorer .attack-scenario-tab,
+  .sc-attack-explorer .attack-scenario-tab:last-child {
+    justify-content: center;
+    min-height: 62px;
+    padding: 10px 7px;
+    border: 1px solid var(--attack-hair);
+    border-radius: 3px;
+    font-size: .8125rem;
+    line-height: 1.35;
+    text-align: center;
+  }
+
+  .sc-attack-explorer .attack-scenario-tab > span {
+    display: none;
+  }
+
+  .sc-attack-explorer .attack-orbit {
+    height: 370px;
+  }
+
+  .sc-attack-explorer .orbit-node {
+    width: 92px;
+    min-height: 79px;
+    gap: 4px;
+    padding: 8px 5px;
+  }
+
+  .sc-attack-explorer .orbit-node > strong {
+    font-size: .8125rem;
+  }
+
+  .sc-attack-explorer .orbit-node > span {
+    font-size: .625rem;
+  }
+
+  .sc-attack-explorer .orbit-nucleus {
+    width: 70px;
+    height: 70px;
+  }
+
+  .sc-attack-explorer .orbit-nucleus > strong {
+    font-size: 1.4rem;
+  }
+
+  .sc-attack-explorer .orbit-nucleus > span {
+    margin-top: 5px;
+    font-size: .5625rem;
+  }
+
+  .sc-attack-explorer .orbit-legend {
+    column-gap: 13px;
+    font-size: .6875rem;
+  }
+
+  .sc-attack-explorer .orbit-legend > span {
+    gap: 5px;
+  }
+
+  .sc-attack-explorer .orbit-legend > span::before {
+    width: 12px;
+  }
+
+  .sc-attack-explorer .orbit-status {
+    min-height: 57px;
+    padding-inline: 0;
+    font-size: .8125rem;
+  }
+
+  .sc-attack-explorer .orbit-detail {
+    min-height: 127px;
+  }
+
+  .sc-attack-explorer .orbit-detail > p {
+    font-size: .8125rem;
+  }
+
+  .sc-attack-explorer .orbit-figure figcaption {
+    font-size: .6875rem;
+  }
+
+  .sc-attack-explorer .orbit-chapter-label {
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 450px) {
+  .sc-attack-explorer .attack-wrap {
+    width: calc(100% - 40px);
+  }
+}
+
+@media (max-width: 370px) {
+  .sc-attack-explorer .story-tab {
+    gap: 4px;
+    padding-inline: 6px;
+  }
+
+  .sc-attack-explorer .story-step-controls {
+    gap: 10px;
+  }
+
+  .sc-attack-explorer .story-step.next-step {
+    gap: 10px;
+    padding-inline: 10px;
+  }
+}
+
+/* The graphic still works with animation disabled. */
+.sc-attack-explorer[data-motion="off"] .story-chapter {
+  transition: none;
+  transform: none;
+}
+
+.sc-attack-explorer[data-motion="off"] .story-progress > div,
+.sc-attack-explorer[data-motion="off"] .orbit-node,
+.sc-attack-explorer[data-motion="off"] .orbit-nucleus {
+  transition: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sc-attack-explorer *,
+  .sc-attack-explorer *::before,
+  .sc-attack-explorer *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
