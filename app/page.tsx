@@ -179,14 +179,6 @@ export default function HomePage() {
       </section>
 
       {/*
-        Attack explorer. Sits immediately before the Nerv section so the
-        narrative runs attack → detection → response, then the platform that
-        does it. Self-contained: its own scoped stylesheet and its own
-        prefers-reduced-motion listener, so it needs nothing from this page.
-      */}
-      <AttackExplorer />
-
-      {/*
         Nerv. The only place on the homepage carrying product-tier colour, and
         the entry point to /nerv. Void Black rather than Near Black, so the
         platform reads as its own thing before you even click through.
@@ -256,9 +248,21 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-        {/* Closing edge of the dark run, before the light Services section. */}
+        {/* Divides the platform from the walkthrough that demonstrates it. */}
         <div className="rule-nerv" />
       </section>
+
+      {/*
+        Attack explorer. Sits after the Nerv section on purpose: it names
+        Nerv-ID, Nerv-EDR and Nerv-AI and links to their module pages, so the
+        reader needs to know what Nerv is first. The order is platform, then
+        proof. Self-contained — its own scoped stylesheet and its own
+        prefers-reduced-motion listener, so it needs nothing from this page.
+      */}
+      <AttackExplorer />
+
+      {/* Closing edge of the dark run, before the light Services section. */}
+      <div className="rule-nerv" />
 
       {/*
         Services. Header is left-aligned and shares a row with the overflow
