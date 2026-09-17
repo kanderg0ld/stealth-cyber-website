@@ -269,21 +269,28 @@ export default function HomePage() {
         link, so this section's cadence differs from the centred sections
         further down instead of every heading block being the same shape.
       */}
-      <section className="surface-light py-[clamp(4rem,8vw,6rem)]">
+      {/*
+        Elevated surface, not Surface Grey. The page is a dark brand end to end
+        now; two light bands read as legacy and the drop from 1,800px of Void
+        Black straight into #F2F4F8 was the harshest transition on the page.
+        #101320 is the same elevated surface the stats band and footer use, so
+        this separates from the Near Black around it without inventing a tone.
+      */}
+      <section className="bg-stealth-navy py-[clamp(4rem,8vw,6rem)]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div>
-              <h2 className="mb-4 max-w-[24ch] text-[clamp(1.875rem,3.4vw,2.5rem)] font-bold text-gray-900">
+              <h2 className="mb-4 max-w-[24ch] text-[clamp(1.875rem,3.4vw,2.5rem)] font-bold text-white">
                 How We Protect Your Business
               </h2>
-              <p className="max-w-[58ch] text-stealth-body">
+              <p className="max-w-[58ch] text-stealth-gray">
                 Every service is designed around one goal: keeping your business safe,
                 compliant, and confident.
               </p>
             </div>
             <Link
               href="/services"
-              className="group inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-stealth-blue"
+              className="group inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-stealth-cyan"
             >
               View All Services
               <ArrowRight
@@ -499,14 +506,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="surface-light py-[clamp(4rem,8vw,6rem)]">
+      {/* Testimonials. Second elevated band, breaking up the Near Black run. */}
+      <section className="bg-stealth-navy py-[clamp(4rem,8vw,6rem)]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-12 max-w-[52ch]">
-            <h2 className="mb-4 text-[clamp(1.875rem,3.4vw,2.5rem)] font-bold text-gray-900">
+            <h2 className="mb-4 text-[clamp(1.875rem,3.4vw,2.5rem)] font-bold text-white">
               What Our Clients Say
             </h2>
-            <p className="text-stealth-body">
+            <p className="text-stealth-gray">
               Trusted by businesses across Australia, the Americas, and beyond.
             </p>
           </div>
@@ -542,14 +549,14 @@ export default function HomePage() {
               // itself is the evidence.
               <figure
                 key={i}
-                className="flex flex-col border-t border-gray-300 pt-6"
+                className="flex flex-col border-t border-stealth-navy-light pt-6"
               >
-                <blockquote className="mb-5 flex-1 text-sm leading-relaxed text-gray-700">
+                <blockquote className="mb-5 flex-1 text-sm leading-relaxed text-stealth-gray">
                   {testimonial.quote}
                 </blockquote>
                 <figcaption>
-                  <p className="text-sm font-semibold text-gray-900">{testimonial.name}</p>
-                  <p className="text-xs text-stealth-body">{testimonial.role}</p>
+                  <p className="text-sm font-semibold text-white">{testimonial.name}</p>
+                  <p className="text-xs text-stealth-dim">{testimonial.role}</p>
                 </figcaption>
               </figure>
             ))}

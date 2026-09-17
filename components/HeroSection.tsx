@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArrowRight, Shield } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 
 const trustPoints = [
   { label: 'Offices', value: 'Gold Coast · São Paulo · Texas' },
@@ -29,15 +29,13 @@ export default function HeroSection() {
         */}
         <div className="lg:grid lg:grid-cols-8">
           <div className="lg:col-span-5">
-            <p className="animate-rise mb-7 inline-flex items-center gap-2 text-xs font-medium tracking-[0.14em] text-stealth-cyan uppercase">
-              <Shield className="h-3.5 w-3.5" aria-hidden="true" />
-              Trusted Across Three Continents
-            </p>
-
-            <h1
-              className="animate-rise mb-7 text-[clamp(2.5rem,6vw,4.5rem)] font-bold text-white"
-              style={{ animationDelay: '60ms' }}
-            >
+            {/*
+              No kicker above the H1. A trust badge over the headline is the
+              saturated landing-page tell, and the same three facts are stated
+              plainly in the ruled band at the base of this hero — as record
+              rather than boast. The headline opens the page.
+            */}
+            <h1 className="animate-rise mb-7 text-[clamp(2.5rem,6vw,4.5rem)] font-bold text-white">
               One Breach Can{' '}
               {/*
                 Neon pink gradient, Chris's call (2026-08-20). The kit assigns

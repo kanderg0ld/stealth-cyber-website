@@ -418,6 +418,10 @@
   /*
    * Light sections. Sets the ink defaults and swaps the focus ring to Cobalt,
    * which clears 3:1 on Surface Grey and white where Vivid Sky does not.
+   *
+   * Unused on the homepage since it went dark end to end — retained
+   * deliberately for the light inner pages (blog, resources, case studies),
+   * which still need the Cobalt focus ring and the AA-corrected body grey.
    */
   .surface-light {
     --sc-focus: var(--sc-cobalt);
