@@ -4,10 +4,12 @@
 
 /*
  * Stealth Cyber design tokens — Brand Identity Kit supplement 01, v2.0.
- * Corporate tier. Cobalt Blue is the company primary.
+ * Bridge tier. Cobalt Blue is the company primary.
  *
- * The Nerv product tier is intentionally not defined here: product-tier colour
- * must not appear on corporate surfaces, and this is a corporate surface.
+ * Product-tier (Nerv) colour stays inside `.surface-void`: on the homepage that
+ * is one fenced zone (the Nerv section and the attack explorer), edged by
+ * `.rule-nerv`. Corporate sections use Near Black, flat hairlines, Vivid Sky for
+ * links and icons, and magenta only to mark offensive/threat content.
  *
  * Inter is loaded via next/font in app/layout.tsx — no @import, so the font is
  * self-hosted and does not block first render.

@@ -116,10 +116,11 @@ const config: Config = {
         /*
          * Reads left-to-right as the Bridge arc: cobalt through indigo into
          * magenta. The magenta bloom is pinned to the far right, well clear of
-         * the text column on the left 5/8 of the grid.
+         * the text column on the left 5/8 of the grid. Held quieter than the
+         * closing CTA, so the cobalt ending stays the loudest colour on the page.
          */
         'hero-atmosphere':
-          'radial-gradient(58% 52% at 97% 72%, rgba(243,3,176,0.30) 0%, transparent 64%), radial-gradient(62% 56% at 84% 40%, rgba(98,49,245,0.30) 0%, transparent 66%), radial-gradient(70% 58% at 66% 26%, rgba(0,56,255,0.28) 0%, transparent 68%), radial-gradient(90% 70% at 6% 14%, rgba(0,56,255,0.12) 0%, transparent 60%)',
+          'radial-gradient(58% 52% at 97% 72%, rgba(243,3,176,0.16) 0%, transparent 64%), radial-gradient(62% 56% at 84% 40%, rgba(98,49,245,0.20) 0%, transparent 66%), radial-gradient(70% 58% at 66% 26%, rgba(0,56,255,0.24) 0%, transparent 68%), radial-gradient(90% 70% at 6% 14%, rgba(0,56,255,0.12) 0%, transparent 60%)',
         // Kit corporate gradient. Section dividers and cover surfaces only —
         // never behind body text, never as a button fill.
         'corp-gradient':

@@ -10,9 +10,9 @@ interface ServiceCardProps {
 }
 
 /**
- * Dark variant. The services band sits on the elevated surface #101320, so the
- * cards recess to Near Black rather than sitting proud in white — the page is
- * a dark brand throughout and a white card grid read as legacy.
+ * Dark variant. The services band sits on the Near Black page ground, so the
+ * cards lift to the elevated surface #101320. Elevation is for things you can
+ * click, not for whole sections.
  *
  * Cobalt is deliberately not used for the glyph or the link here: it is
  * 2.6:1 on this ground. Vivid Sky carries them at 10.7:1.
@@ -21,7 +21,7 @@ export default function ServiceCard({ title, description, icon, href }: ServiceC
   return (
     <Link
       href={href}
-      className="group relative flex rounded-lg border border-stealth-navy-light bg-stealth-dark p-6 transition-[border-color,background-color] duration-200 ease-out-quart hover:border-stealth-cyan/40 hover:bg-black/40"
+      className="group relative flex rounded-lg border border-stealth-navy-light bg-stealth-navy p-6 transition-[border-color,background-color] duration-200 ease-out-quart hover:border-stealth-cyan/40 hover:bg-stealth-navy-light/60"
     >
       {/*
         No `items-start`: it would stop the text column stretching to the card's

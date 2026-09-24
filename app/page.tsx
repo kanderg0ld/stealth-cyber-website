@@ -157,16 +157,21 @@ export default function HomePage() {
         Stats band. Was six centred tiles with gradient-clipped numerals — the
         SaaS hero-metric template. Now a quiet ruled record: solid ink, moderate
         scale, label first, so it reads as reference rather than as a boast.
+
+        Near Black like the rest of the corporate page. The homepage has three
+        grounds and each one means something: Near Black for Stealth Cyber, Void
+        Black for the Nerv zone, and cobalt for the closing CTA. Alternating
+        navy bands for variety was what made the page read as patchwork.
       */}
       <section
         aria-label="Stealth Cyber by the numbers"
-        className="bg-stealth-navy"
+        className="bg-stealth-dark"
       >
         <dl className="mx-auto grid max-w-7xl grid-cols-2 gap-x-6 px-4 sm:px-6 md:grid-cols-3 lg:grid-cols-6 lg:px-8">
           {stats.map((stat) => (
             // A top rule on every cell stays correct at 2, 3 and 6 columns
-            // without per-breakpoint divider rules. Bridge-tinted to match.
-            <div key={stat.label} className="hair-bridge-t py-6">
+            // without per-breakpoint divider rules.
+            <div key={stat.label} className="border-t border-stealth-navy-light py-6">
               <dt className="mb-1.5 text-[0.6875rem] leading-snug font-medium tracking-[0.14em] text-stealth-dim uppercase">
                 {stat.label}
               </dt>
@@ -179,9 +184,11 @@ export default function HomePage() {
       </section>
 
       {/*
-        Nerv. The only place on the homepage carrying product-tier colour, and
-        the entry point to /nerv. Void Black rather than Near Black, so the
-        platform reads as its own thing before you even click through.
+        Nerv zone: this section plus the attack explorer. The only place on
+        the homepage carrying product-tier colour, fenced by a Nerv Core rule at
+        its top and bottom edges and nowhere in between. Void Black rather than
+        Near Black, so the platform reads as its own thing before you even click
+        through. Inside the zone the dividers are flat kit hairlines.
       */}
       <section className="surface-void relative overflow-hidden">
         <div className="rule-nerv" />
@@ -194,7 +201,7 @@ export default function HomePage() {
               </p>
               <h2 className="mb-5 text-[clamp(1.875rem,3.4vw,2.5rem)] font-bold text-white">
                 Seven modules. One platform.{' '}
-                <span className="text-gradient-nerv">Zero blind spots.</span>
+                <span className="text-nerv-cyan">Zero blind spots.</span>
               </h2>
               <p className="mb-8 max-w-[56ch] leading-relaxed text-stealth-gray">
                 Endpoint, browser, identity, machine identity, coding agents and your own
@@ -227,7 +234,7 @@ export default function HomePage() {
                   </p>
                   <dl className="grid gap-x-10 sm:grid-cols-2">
                     {group.list.map((m) => (
-                      <div key={m.id} className="hair-nerv-t py-4">
+                      <div key={m.id} className="border-t border-nerv-hair py-4">
                         <dt className="mb-1 flex flex-wrap items-baseline gap-x-2.5">
                           <Link
                             href={`/nerv/${m.slug}`}
@@ -248,8 +255,6 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-        {/* Divides the platform from the walkthrough that demonstrates it. */}
-        <div className="rule-nerv" />
       </section>
 
       {/*
@@ -261,7 +266,7 @@ export default function HomePage() {
       */}
       <AttackExplorer />
 
-      {/* Closing edge of the dark run, before the light Services section. */}
+      {/* Closing edge of the Nerv zone. */}
       <div className="rule-nerv" />
 
       {/*
@@ -269,14 +274,7 @@ export default function HomePage() {
         link, so this section's cadence differs from the centred sections
         further down instead of every heading block being the same shape.
       */}
-      {/*
-        Elevated surface, not Surface Grey. The page is a dark brand end to end
-        now; two light bands read as legacy and the drop from 1,800px of Void
-        Black straight into #F2F4F8 was the harshest transition on the page.
-        #101320 is the same elevated surface the stats band and footer use, so
-        this separates from the Near Black around it without inventing a tone.
-      */}
-      <section className="bg-stealth-navy py-[clamp(4rem,8vw,6rem)]">
+      <section className="bg-stealth-dark py-[clamp(4rem,8vw,6rem)]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div>
@@ -323,9 +321,7 @@ export default function HomePage() {
         cards, each with the same tinted gradient icon tile \u2014 the same shape as
         the About grid below it and the service grid above it.
       */}
-      <section className="relative bg-stealth-dark py-[clamp(4rem,8vw,6rem)]">
-        {/* Bridge arc as this section's top edge — full width, no type over it. */}
-        <div className="rule-bridge-strong absolute inset-x-0 top-0" />
+      <section className="border-t border-stealth-navy-light bg-stealth-dark py-[clamp(4rem,8vw,6rem)]">
         <div className="mx-auto grid max-w-7xl gap-x-16 gap-y-12 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
           <div className="lg:col-span-5">
             <div className="lg:sticky lg:top-28">
@@ -506,8 +502,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Testimonials. Second elevated band, breaking up the Near Black run. */}
-      <section className="bg-stealth-navy py-[clamp(4rem,8vw,6rem)]">
+      {/* Testimonials */}
+      <section className="border-t border-stealth-navy-light bg-stealth-dark py-[clamp(4rem,8vw,6rem)]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-12 max-w-[52ch]">
             <h2 className="mb-4 text-[clamp(1.875rem,3.4vw,2.5rem)] font-bold text-white">
@@ -565,7 +561,7 @@ export default function HomePage() {
       </section>
 
       {/* FAQ */}
-      <section className="bg-stealth-dark py-[clamp(4rem,8vw,6rem)]">
+      <section className="border-t border-stealth-navy-light bg-stealth-dark py-[clamp(4rem,8vw,6rem)]">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <div className="mb-10">
             <h2 className="mb-4 text-[clamp(1.875rem,3.4vw,2.5rem)] font-bold text-white">

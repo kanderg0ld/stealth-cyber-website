@@ -84,14 +84,12 @@ export default function HeroSection() {
         As a ruled band pinned to the base of the hero they anchor the
         composition, use the full width, and read as a record rather than chrome.
 
-        The Bridge gradient rule replaces a flat hairline as the hero's closing
-        edge — the arc reads full-width here without sitting behind any copy.
+        Flat hairlines, like every other divider on the corporate page. Gradient
+        rules are reserved for the edges of the Nerv zone.
       */}
       <div className="relative z-10 bg-stealth-dark/60 backdrop-blur-sm">
-        <div className="rule-bridge" />
-        {/* `band-bridge` carries the arc on the dividers between items, so the
-            hairlines match the rule above instead of staying flat grey. */}
-        <dl className="band-bridge mx-auto grid max-w-7xl grid-cols-1 px-4 sm:px-6 md:grid-cols-3 lg:px-8">
+        <div className="h-px bg-stealth-navy-light" />
+        <dl className="mx-auto grid max-w-7xl grid-cols-1 divide-y divide-stealth-navy-light px-4 sm:px-6 md:grid-cols-3 md:divide-x md:divide-y-0 lg:px-8">
           {trustPoints.map((point) => (
             <div key={point.label} className="py-5 md:px-6 md:first:pl-0 md:last:pr-0">
               <dt className="mb-1 text-[0.6875rem] font-medium tracking-[0.16em] text-stealth-dim uppercase">
