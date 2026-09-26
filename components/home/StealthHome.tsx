@@ -752,6 +752,7 @@ export default function StealthHome({ faqs }: { faqs: { question: string; answer
       </section>
 
       <section className="closing-section">
+        <div className="closing-bloom" aria-hidden="true" />
         <div className="wrap">
           <div className="closing-top">
             <p className="eyebrow">THE NEXT MOVE IS YOURS.</p>
@@ -763,7 +764,9 @@ export default function StealthHome({ faqs }: { faqs: { question: string; answer
           <h2>
             YOUR BUSINESS.
             <br />
-            <span>WORTH DEFENDING.</span>
+            <span>
+              WORTH DEFENDING<span className="pink">.</span>
+            </span>
           </h2>
           <div className="closing-bottom">
             <p>

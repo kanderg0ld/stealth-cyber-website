@@ -11,9 +11,9 @@
  * Ratios vs Void Black: ink 21, body 17.3, dim 10.4, magenta 5.45, cyan 11.3.
  *
  * Primary buttons are magenta with Void Black labels: white on #F303B0 is
- * only 3.85:1, near-black on it is 5.45:1. The closing section drenches in
- * Nerv Cyan with Void Black type (11.3:1); the pack's white on #00B9E8 was
- * about 2.4:1.
+ * only 3.85:1, near-black on it is 5.45:1. The pack's cyan closing section
+ * (white on #00B9E8, about 2.4:1) is replaced by a Void Bloom close, like the
+ * end of the Nerv module pages.
  */
 
 .sc-home {
@@ -288,20 +288,22 @@
 .sc-home .faq-content > div { overflow: hidden; }
 .sc-home .faq-content p { font-size: 1rem; color: var(--dim); line-height: 1.75; padding: 0 30px 25px 0; }
 
-/* ── Closing: drenched in Nerv Cyan, Void Black type ─────────────────── */
-.sc-home .closing-section { background: var(--cyan); color: #000; padding: 46px 0 58px; position: relative; overflow: hidden; }
+/* ── Closing: back on the Void Bloom, as the Nerv module pages end ─────
+   Mirrored from the hero (cyan left, magenta right) so the page opens and
+   closes in the same light without repeating it exactly, with a Nerv Core
+   rule as the top edge. */
+.sc-home .closing-section { position: relative; isolation: isolate; overflow: hidden; background: #000; color: var(--ink); padding: 46px 0 58px; }
+.sc-home .closing-section::before { content: ''; position: absolute; inset: 0 0 auto; height: 1px; background: var(--nerv-core); }
+.sc-home .closing-bloom { position: absolute; inset: 0; z-index: -1; background: radial-gradient(80% 120% at 0% 100%, rgba(0, 210, 221, 0.2) 0%, transparent 60%), radial-gradient(70% 110% at 100% 0%, rgba(243, 3, 176, 0.24) 0%, transparent 60%), radial-gradient(60% 80% at 55% 50%, rgba(135, 62, 220, 0.12) 0%, transparent 65%); }
 .sc-home .closing-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 55px; gap: 20px; }
-.sc-home .closing-top > .eyebrow { font-size: 0.75rem; font-weight: 600; }
-.sc-home .closing-top > span { display: flex; gap: 25px; align-items: center; font-size: 0.75rem; letter-spacing: 0.06em; }
+.sc-home .closing-top > .eyebrow { font-size: 0.75rem; font-weight: 600; color: var(--cyan); }
+.sc-home .closing-top > span { display: flex; gap: 25px; align-items: center; font-size: 0.75rem; letter-spacing: 0.06em; color: var(--dim); }
+.sc-home .closing-top > span > svg { color: var(--mag); }
 .sc-home .closing-section h2 { font-size: clamp(2.8rem, 7.1vw, 6.8rem); font-weight: 600; line-height: 1; letter-spacing: -0.05em; }
+.sc-home .closing-section h2 > span { color: var(--dim); }
 .sc-home .closing-bottom { margin-top: 49px; display: flex; gap: 30px; justify-content: space-between; align-items: center; }
-.sc-home .closing-bottom p { font-size: 1rem; font-weight: 450; line-height: 1.6; }
+.sc-home .closing-bottom p { font-size: 1rem; font-weight: 450; line-height: 1.6; color: var(--body); }
 .sc-home .closing-bottom > div { display: flex; gap: 12px; }
-.sc-home .closing-bottom .cta-primary { background: #000; color: #fff; }
-.sc-home .closing-bottom .cta-primary:hover { background: #1a1d24; }
-.sc-home .closing-bottom .cta-secondary { border-color: rgba(0, 0, 0, 0.55); color: #000; }
-.sc-home .closing-bottom .cta-secondary:hover { background: rgba(0, 0, 0, 0.08); border-color: #000; }
-.sc-home .closing-section :focus-visible { outline-color: #000; }
 
 @keyframes sc-portrait-drift { from { transform: scale(1); } to { transform: scale(1.035); } }
 @keyframes sc-signal-flow { to { stroke-dashoffset: -48; } }
