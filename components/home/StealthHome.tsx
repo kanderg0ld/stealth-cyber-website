@@ -623,6 +623,10 @@ export default function StealthHome({ faqs }: { faqs: { question: string; answer
                 AI governance & ISO 42001
                 <ArrowUpRight size={18} aria-hidden="true" />
               </Link>
+              <Link href="/ai-assessment">
+                Free AI readiness assessment
+                <ArrowUpRight size={18} aria-hidden="true" />
+              </Link>
               <a href="https://ai.stealthcyber.io">
                 AI training
                 <ArrowUpRight size={18} aria-hidden="true" />

@@ -15,6 +15,19 @@ const services = [
   { label: 'Penetration Testing', href: '/services#pentest' },
 ]
 
+// Every top-level page, so each one is reachable from the footer of every
+// page, not only from the header menu.
+const explore = [
+  { label: 'Nerv Platform', href: '/nerv' },
+  { label: 'Case Studies', href: '/case-studies' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Resources', href: '/resources' },
+  { label: 'About', href: '/about' },
+  { label: 'Free Security Assessment', href: '/assessment' },
+  { label: 'Free AI Readiness Assessment', href: '/ai-assessment' },
+  { label: 'AI Training', href: 'https://ai.stealthcyber.io' },
+]
+
 export default function Footer() {
   return (
     // Nerv palette, matching the homepage and /nerv: Void Black, a Nerv Core
@@ -22,7 +35,7 @@ export default function Footer() {
     <footer className="surface-void">
       <div className="rule-nerv" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           <div className="lg:col-span-2">
             <Link href="/" className="inline-block mb-4" aria-label="Stealth Cyber home">
               <Logo size="md" />
@@ -52,6 +65,19 @@ export default function Footer() {
                 <li key={s.href}>
                   <a href={s.href} className="text-stealth-gray hover:text-nerv-cyan text-sm transition-colors">
                     {s.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="mb-4 text-[0.6875rem] font-medium tracking-[0.16em] text-stealth-dim uppercase">Explore</h3>
+            <ul className="space-y-2">
+              {explore.map((e) => (
+                <li key={e.href}>
+                  <a href={e.href} className="text-stealth-gray hover:text-nerv-cyan text-sm transition-colors">
+                    {e.label}
                   </a>
                 </li>
               ))}
