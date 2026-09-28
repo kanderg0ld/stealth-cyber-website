@@ -394,14 +394,17 @@ function AttackExplorer() {
         </div>
 
         <div className="module-grid">
-          {modules.map((m) => (
+          {modules.map((m, i) => (
             <Sheet
               key={m.id}
               eyebrow="THE NERV PLATFORM"
               title={'Nerv-' + m.name}
               description={m.label}
               trigger={(open) => (
-                <button className="module-button" onClick={open}>
+                <button
+                  className={'module-button' + (i === modules.length - 1 ? ' is-last' : '')}
+                  onClick={open}
+                >
                   <m.icon size={23} strokeWidth={1.4} />
                   <span>Nerv-{m.name}</span>
                   <small>{m.label}</small>

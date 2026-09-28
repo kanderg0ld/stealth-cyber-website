@@ -203,10 +203,17 @@
 .sc-home .nerv-wordmark > span { color: var(--mag); }
 .sc-home .platform-line p { font-size: 0.875rem; line-height: 1.5; color: var(--dim); border-left: 1px solid var(--hair-strong); padding-left: 30px; }
 .sc-home .platform-line p strong { font-weight: 400; color: var(--ink); }
-.sc-home .module-grid { display: grid; grid-template-columns: repeat(7, 1fr); margin-top: 32px; border: 1px solid var(--hair-strong); }
-.sc-home .module-button { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; padding: 24px 20px; background: none; border: 0; border-right: 1px solid var(--hair-strong); text-align: left; transition: background 0.2s; }
-.sc-home .module-button:last-child { border-right: 0; }
-.sc-home .module-button:hover { background: var(--panel); }
+/*
+ * Cell lines come from a 1px grid gap over a hairline-coloured background,
+ * not per-cell borders. Each button is followed by its closed <dialog> in the
+ * DOM, so :nth-child/:last-child counted the dialogs too and put borders in
+ * the wrong cells at every breakpoint. The gap draws every internal line
+ * correctly whatever the column count. The last module is marked .is-last so
+ * it can span the leftover cells when 7 doesn't divide the columns.
+ */
+.sc-home .module-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 1px; margin-top: 32px; border: 1px solid var(--hair-strong); background: var(--hair-strong); }
+.sc-home .module-button { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; min-width: 0; padding: 24px 20px; background: #000; border: 0; text-align: left; transition: background 0.2s; }
+.sc-home .module-button:hover { background: #0b0b0f; }
 .sc-home .module-button > svg { color: var(--cyan); }
 .sc-home .module-button > span { font-size: 0.875rem; font-weight: 500; }
 .sc-home .module-button > small { font-size: 0.75rem; color: var(--dim); margin-top: -8px; }
@@ -372,9 +379,8 @@
   .sc-home .nerv-core small { font-size: 0.5rem; }
   .sc-home .node-insight { margin: 15px 20px 0; }
   .sc-home .module-grid { grid-template-columns: repeat(4, 1fr); }
-  .sc-home .module-button { border-bottom: 1px solid var(--hair-strong); padding: 24px; }
-  .sc-home .module-button:nth-child(4) { border-right: 0; }
-  .sc-home .module-button:nth-child(n + 5) { border-bottom: 0; }
+  .sc-home .module-button { padding: 24px; }
+  .sc-home .module-button.is-last { grid-column: span 2; }
   .sc-home .services-grid { grid-template-columns: repeat(2, 1fr); }
   .sc-home .ai-layout { grid-template-columns: 1fr; gap: 45px; }
   .sc-home .ai-layout > div:first-child { max-width: 650px; }
@@ -452,11 +458,8 @@
   .sc-home .platform-line p { padding-left: 17px; }
   .sc-home .platform-line > .text-link { gap: 10px; }
   .sc-home .module-grid { grid-template-columns: repeat(2, 1fr); margin-top: 25px; }
-  .sc-home .module-button { padding: 23px; border-bottom: 1px solid var(--hair-strong) !important; }
-  .sc-home .module-button:nth-child(even) { border-right: 0; }
-  .sc-home .module-button:nth-child(4) { border-right: 0; }
-  .sc-home .module-button:nth-child(odd) { border-right: 1px solid var(--hair-strong); }
-  .sc-home .module-button:nth-child(7) { grid-column: 1 / -1; border: 0 !important; }
+  .sc-home .module-button { padding: 22px 20px; }
+  .sc-home .module-button.is-last { grid-column: 1 / -1; }
   .sc-home .ai-section { padding: 74px 0; }
   .sc-home .ai-layout { gap: 39px; }
   .sc-home .ai-layout h2 { font-size: 2.8rem; }
