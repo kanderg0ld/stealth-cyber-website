@@ -73,13 +73,11 @@
 
 /* ── Hero ─────────────────────────────────────────────────────────────── */
 .sc-home .hero { position: relative; isolation: isolate; background: #000; overflow: hidden; min-height: 765px; }
-.sc-home .hero-portrait { position: absolute; inset: 0; z-index: -4; width: 100%; height: 100%; max-width: none; object-fit: cover; object-position: 76% 42%; opacity: 0.8; animation: sc-portrait-drift 26s ease-in-out infinite alternate; }
-/* The kit's Void Bloom, weighted left so magenta sits behind the headline and
-   the illustration's own cyan/magenta rim light carries the right. */
-.sc-home .hero-bloom { position: absolute; inset: 0; z-index: -3; background: radial-gradient(70% 90% at 8% 20%, rgba(243, 3, 176, 0.22) 0%, transparent 60%), radial-gradient(60% 80% at 40% 110%, rgba(0, 210, 221, 0.12) 0%, transparent 60%); }
-.sc-home .hero-shade { position: absolute; inset: 0; z-index: -2; background: linear-gradient(90deg, #000000f0 0%, #000000c8 24%, #00000080 44%, #00000020 65%, transparent 86%), linear-gradient(0deg, #000 0%, #0000007a 12%, transparent 38%); }
-.sc-home .hero-grain { position: absolute; inset: 0; z-index: -1; background: repeating-linear-gradient(0deg, transparent 0, transparent 4px, #ffffff03 5px); opacity: 0.15; pointer-events: none; }
-.sc-home .hero-inner { padding-top: 72px; padding-bottom: 96px; position: relative; }
+/* The image, its crops, shade and grain now live in hero-signal.css (the
+   animated HeroSignal effect). The Void Bloom sits above that effect's shade,
+   weighted left so magenta stays behind the headline. */
+.sc-home .hero-bloom { position: absolute; inset: 0; z-index: 0; pointer-events: none; background: radial-gradient(70% 90% at 8% 20%, rgba(243, 3, 176, 0.22) 0%, transparent 60%), radial-gradient(60% 80% at 40% 110%, rgba(0, 210, 221, 0.12) 0%, transparent 60%); }
+.sc-home .hero-inner { padding-top: 72px; padding-bottom: 96px; position: relative; z-index: 1; }
 .sc-home .hero-eyebrow { color: var(--dim); display: flex; align-items: center; gap: 12px; margin-bottom: 31px; }
 .sc-home .hero-eyebrow > span { color: var(--mag); font-size: 1.1rem; font-weight: 300; }
 .sc-home .hero h1 { font-size: clamp(4.1rem, 7.4vw, 7.1rem); font-weight: 620; line-height: 0.98; letter-spacing: -0.04em; max-width: 900px; }
@@ -312,7 +310,6 @@
 .sc-home .closing-bottom p { font-size: 1rem; font-weight: 450; line-height: 1.6; color: var(--body); }
 .sc-home .closing-bottom > div { display: flex; gap: 12px; }
 
-@keyframes sc-portrait-drift { from { transform: scale(1); } to { transform: scale(1.035); } }
 @keyframes sc-signal-flow { to { stroke-dashoffset: -48; } }
 @keyframes sc-sheet-in { from { transform: translateX(40px); opacity: 0; } }
 .sc-home.motion-paused * { animation-play-state: paused !important; }
@@ -321,15 +318,12 @@
 @media (min-width: 1700px) {
   .sc-home .hero { min-height: 850px; }
   .sc-home .hero-inner { padding-top: 102px; }
-  .sc-home .hero-portrait { object-position: 76% 40%; }
 }
 
 @media (max-width: 1150px) {
   .sc-home .wrap { width: calc(100% - 72px); }
   .sc-home .hero { min-height: 745px; }
   .sc-home .hero h1 { font-size: clamp(4.1rem, 8.1vw, 6.2rem); }
-  .sc-home .hero-portrait { object-position: 74% 40%; opacity: 0.69; }
-  .sc-home .hero-shade { background: linear-gradient(90deg, #000000ee 0%, #000000c4 29%, #00000069 52%, #0000000d 82%), linear-gradient(0deg, #000 0%, transparent 35%); }
   .sc-home .credentials-grid > div { padding: 0 20px; }
   .sc-home .credentials-grid strong { font-size: 1.6rem; }
   .sc-home .credentials-grid strong > span { font-size: 0.75rem; }
@@ -356,7 +350,6 @@
 }
 
 @media (max-width: 900px) {
-  .sc-home .hero-portrait { object-position: 73% 40%; opacity: 0.62; }
   .sc-home .hero-description { max-width: 460px; }
   .sc-home .hero-inner { padding-top: 64px; }
   .sc-home .credentials-grid { grid-template-columns: 1fr 1fr 1fr; }
@@ -405,8 +398,6 @@
   .sc-home .hero-eyebrow { font-size: 0.75rem; letter-spacing: 0.02em; gap: 8px; margin-bottom: 33px; flex-wrap: wrap; }
   .sc-home .hero h1 { font-size: clamp(3.1rem, 10.9vw, 4.8rem); line-height: 1.02; max-width: 100%; }
   .sc-home .hero-punch { font-size: 2rem; margin-top: 17px; }
-  .sc-home .hero-portrait { object-position: 76% 36%; opacity: 0.54; }
-  .sc-home .hero-shade { background: linear-gradient(90deg, #000000d9 0%, #000000a6 36%, #00000042 76%, #00000029 100%), linear-gradient(0deg, #000 0%, #000000c9 24%, transparent 69%); }
   .sc-home .hero-description { max-width: 330px; }
   .sc-home .hero-actions { max-width: 100%; gap: 23px; flex-direction: column; align-items: flex-start; margin-top: 28px; }
   .sc-home .hero-actions > .cta { min-height: 53px; padding: 14px 20px; gap: 35px; }

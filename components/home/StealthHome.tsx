@@ -45,6 +45,7 @@ import {
   Zap,
   type LucideIcon,
 } from 'lucide-react'
+import HeroSignal from './HeroSignal'
 import './stealth-home.css'
 
 type Icon = LucideIcon
@@ -476,22 +477,16 @@ export default function StealthHome({ faqs }: { faqs: { question: string; answer
 
   return (
     <div className={'sc-home surface-void' + (motion ? '' : ' motion-paused')}>
-      <section className="hero">
-        {/* Decorative, so empty alt; the headline stays real text. */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          className="hero-portrait"
-          src="/hero-hacker-illustrated.webp"
-          width={1536}
-          height={1024}
-          alt=""
-          decoding="async"
-          {...{ fetchpriority: 'high' }}
-        />
+      <section className="hero sc-hero-effect-host">
+        {/*
+          The animated hacker: image, glitch, TV shutdown, code stream and its
+          own contrast shade and grain. Decorative and aria-hidden; the
+          headline stays real text. The Pause motion button restores the still
+          image, and reduced-motion always shows it.
+        */}
+        <HeroSignal paused={!motion} />
         <div className="hero-bloom" aria-hidden="true" />
-        <div className="hero-shade" aria-hidden="true" />
-        <div className="hero-grain" aria-hidden="true" />
-        <div className="wrap hero-inner">
+        <div className="wrap hero-inner sc-hero-effect-content">
           <p className="hero-eyebrow eyebrow">
             <span>+</span>GLOBAL REACH. RELENTLESS PROTECTION.
           </p>
