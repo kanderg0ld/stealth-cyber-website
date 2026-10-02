@@ -270,8 +270,12 @@
 .sc-home .company-text > p + p { margin-top: 18px; }
 .sc-home .company-text > p.muted { color: var(--dim); }
 .sc-home .company-text > .text-link { margin-top: 24px; }
-.sc-home .trust-row { display: flex; justify-content: space-between; border-top: 1px solid transparent; border-bottom: 1px solid transparent; border-image: var(--nerv-hairline) 1; padding: 24px 0; margin-top: 60px; color: var(--dim); font-size: 0.75rem; letter-spacing: 0.09em; }
-.sc-home .trust-row > span::first-letter { color: var(--mag); }
+/* Values: labelled, and set in semibold white at body-plus size so the row
+   reads as a statement rather than a caption. Magenta initials kept. */
+.sc-home .values { margin-top: 60px; }
+.sc-home .values-label { margin-bottom: 16px; color: var(--dim); }
+.sc-home .trust-row { display: flex; justify-content: space-between; list-style: none; margin: 0; border-top: 1px solid transparent; border-bottom: 1px solid transparent; border-image: var(--nerv-hairline) 1; padding: 28px 0; color: var(--ink); font-size: clamp(1rem, 1.35vw, 1.25rem); font-weight: 600; letter-spacing: 0.08em; line-height: 1.2; }
+.sc-home .trust-row > li::first-letter { color: var(--mag); }
 .sc-home .testimonial { margin-top: 65px; display: grid; grid-template-columns: 1fr 4fr; gap: 15px; max-width: 1110px; }
 .sc-home .quote-mark { color: var(--mag); font-size: 10rem; line-height: 1; font-family: Georgia, serif; }
 .sc-home .testimonial blockquote { font-size: clamp(1.6rem, 2.5vw, 2.4rem); line-height: 1.35; letter-spacing: -0.035em; }
@@ -464,7 +468,8 @@
   .sc-home .console-result strong { font-size: 1.7rem; }
   .sc-home .console-result small { font-size: 0.625rem; }
   .sc-home .company-top { gap: 27px; }
-  .sc-home .trust-row { flex-wrap: wrap; justify-content: flex-start; gap: 17px 24px; margin-top: 36px; }
+  .sc-home .values { margin-top: 36px; }
+  .sc-home .trust-row { flex-wrap: wrap; justify-content: flex-start; gap: 14px 26px; padding: 22px 0; font-size: 1rem; }
   .sc-home .testimonial { grid-template-columns: 1fr; gap: 0; margin-top: 44px; }
   .sc-home .quote-mark { height: 53px; font-size: 6rem; }
   .sc-home .testimonial blockquote { font-size: 1.65rem; margin-top: 16px; }

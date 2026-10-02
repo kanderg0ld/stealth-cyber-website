@@ -704,12 +704,17 @@ export default function StealthHome({ faqs }: { faqs: { question: string; answer
               </Link>
             </div>
           </div>
-          <div className="trust-row">
-            <span>TRANSPARENCY</span>
-            <span>RESILIENCE</span>
-            <span>UNITY</span>
-            <span>SECURITY</span>
-            <span>TALENT</span>
+          <div className="values">
+            <h3 className="eyebrow values-label" id="our-values">
+              OUR VALUES
+            </h3>
+            <ul className="trust-row" aria-labelledby="our-values">
+              <li>TRANSPARENCY</li>
+              <li>RESILIENCE</li>
+              <li>UNITY</li>
+              <li>SECURITY</li>
+              <li>TALENT</li>
+            </ul>
           </div>
           <figure className="testimonial">
             <span className="quote-mark" aria-hidden="true">
