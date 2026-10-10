@@ -1,22 +1,41 @@
 {
   "routes": [
     {
+      "route": "/studio",
+      "allowedRoles": [
+        "studio_editor"
+      ]
+    },
+    {
       "route": "/studio/*",
-      "allowedRoles": ["authenticated"]
+      "allowedRoles": [
+        "studio_editor"
+      ]
     },
     {
       "route": "/api/*",
-      "methods": ["GET", "POST"],
-      "allowedRoles": ["anonymous"]
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "allowedRoles": [
+        "anonymous"
+      ]
     },
     {
       "route": "/downloads/*",
-      "allowedRoles": ["anonymous"]
+      "allowedRoles": [
+        "anonymous"
+      ]
     }
   ],
   "responseOverrides": {
-    "400": { "rewrite": "/404" },
-    "404": { "rewrite": "/404" }
+    "400": {
+      "rewrite": "/404"
+    },
+    "404": {
+      "rewrite": "/404"
+    }
   },
   "globalHeaders": {
     "X-Content-Type-Options": "nosniff",

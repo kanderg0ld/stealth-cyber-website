@@ -1,0 +1,9 @@
+# Stealth Cyber vulnerability disclosure (RFC 9116)
+# Please report security issues privately to the address below and include
+# enough detail to reproduce them. We acknowledge reports promptly and credit
+# researchers on request. We do not run a paid bug bounty programme and do not
+# make payment a condition of receiving details.
+Contact: mailto:contact@stealthcyber.io
+Expires: 2027-10-10T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://stealthcyber.io/.well-known/security.txt

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import sgMail from '@sendgrid/mail'
 import { z } from 'zod'
+import { escapeHtml, greetingName, isTrustedOrigin, makeSendGuard, singleLine } from '@/lib/form-guard'
 
 // ---------------------------------------------------------------------------
 // SendGrid setup
@@ -11,50 +12,8 @@ const FROM_EMAIL = 'noreply@stealthcyber.io'
 const SALES_EMAIL = 'sales@stealthcyber.io'
 const CONTACT_EMAIL = 'contact@stealthcyber.io'
 
-// ---------------------------------------------------------------------------
-// CSRF — verify the request originates from our own domain
-// ---------------------------------------------------------------------------
-const ALLOWED_ORIGINS = [
-  'https://stealthcyber.io',
-  'https://www.stealthcyber.io',
-  'https://blue-sand-0ab06dc00.6.azurestaticapps.net',
-]
-
-if (process.env.NODE_ENV === 'development') {
-  ALLOWED_ORIGINS.push('http://localhost:3000')
-}
-
-function isTrustedOrigin(request: NextRequest): boolean {
-  const origin = request.headers.get('origin')
-  const referer = request.headers.get('referer')
-  if (origin) return ALLOWED_ORIGINS.includes(origin)
-  if (referer) {
-    try {
-      return ALLOWED_ORIGINS.some((o) => referer.startsWith(o))
-    } catch { return false }
-  }
-  return false
-}
-
-// ---------------------------------------------------------------------------
-// Rate limiter — in-memory, per IP
-// ---------------------------------------------------------------------------
-const RATE_LIMIT_MAX = 5
-const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000
-
-const rateLimitStore = new Map<string, { count: number; windowStart: number }>()
-
-function isRateLimited(ip: string): boolean {
-  const now = Date.now()
-  const entry = rateLimitStore.get(ip)
-  if (!entry || now - entry.windowStart > RATE_LIMIT_WINDOW_MS) {
-    rateLimitStore.set(ip, { count: 1, windowStart: now })
-    return false
-  }
-  if (entry.count >= RATE_LIMIT_MAX) return true
-  entry.count++
-  return false
-}
+// Per IP, per recipient address and a global cap. See lib/form-guard.ts.
+const guard = makeSendGuard({ perIp: 5, perRecipient: 2, global: 60 })
 
 // ---------------------------------------------------------------------------
 // Risk level helper
@@ -107,7 +66,7 @@ function buildLeadEmail(data: {
 
   <!-- Score Section -->
   <tr><td style="padding:40px 32px;background:#07091A;text-align:center;">
-    <p style="color:#94A3B8;font-size:14px;margin:0 0 8px;">Hi ${data.name},</p>
+    <p style="color:#94A3B8;font-size:14px;margin:0 0 8px;">Hi ${escapeHtml(greetingName(data.name))},</p>
     <h1 style="color:#ffffff;font-size:24px;margin:0 0 24px;">Your Cybersecurity Assessment Results</h1>
     <div style="display:inline-block;padding:32px 48px;background:#04050F;border-radius:16px;border:1px solid rgba(77,204,255,0.1);">
       <p style="color:${risk.color};font-size:56px;font-weight:700;margin:0;line-height:1;">${data.score}</p>
@@ -188,15 +147,15 @@ function buildSalesEmail(data: {
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
       <tr>
         <td style="padding:8px 0;color:#94A3B8;font-size:14px;width:120px;">Name</td>
-        <td style="padding:8px 0;color:#ffffff;font-size:14px;font-weight:600;">${data.name}</td>
+        <td style="padding:8px 0;color:#ffffff;font-size:14px;font-weight:600;">${escapeHtml(data.name)}</td>
       </tr>
       <tr>
         <td style="padding:8px 0;color:#94A3B8;font-size:14px;">Email</td>
-        <td style="padding:8px 0;"><a href="mailto:${data.email}" style="color:#4DCCFF;text-decoration:none;font-size:14px;">${data.email}</a></td>
+        <td style="padding:8px 0;"><a href="mailto:${escapeHtml(data.email)}" style="color:#4DCCFF;text-decoration:none;font-size:14px;">${escapeHtml(data.email)}</a></td>
       </tr>
       <tr>
         <td style="padding:8px 0;color:#94A3B8;font-size:14px;">Company</td>
-        <td style="padding:8px 0;color:#ffffff;font-size:14px;font-weight:600;">${data.company}</td>
+        <td style="padding:8px 0;color:#ffffff;font-size:14px;font-weight:600;">${escapeHtml(data.company)}</td>
       </tr>
       <tr>
         <td style="padding:8px 0;color:#94A3B8;font-size:14px;">Score</td>
@@ -260,26 +219,24 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
   }
 
-  const ip =
-    request.headers.get('cf-connecting-ip') ||
-    request.headers.get('x-forwarded-for')?.split(',')[0].trim() ||
-    'unknown'
-
-  if (isRateLimited(ip)) {
+  if (guard.checkIp(request)) {
     return NextResponse.json(
       { error: 'Too many requests. Please try again later.' },
       { status: 429, headers: { 'Retry-After': '3600' } }
     )
   }
 
+  // Answers are the only input that decides the result. The client still
+  // sends score and riskLevel for compatibility, but they are ignored: both are
+  // recomputed here, so neither can carry text into the email.
   const assessmentLeadSchema = z.object({
     name: z.string().min(1).max(200),
     email: z.string().email().max(254),
     company: z.string().min(1).max(200),
-    score: z.number().min(0).max(100),
-    riskLevel: z.string().max(50),
-    answers: z.record(z.string(), z.number().min(0).max(3)),
-    completedAt: z.string(),
+    answers: z.record(z.string().regex(/^(?:[1-9]|1\d|20)$/), z.number().int().min(0).max(3)),
+    score: z.number().optional(),
+    riskLevel: z.string().max(50).optional(),
+    completedAt: z.string().max(40).optional(),
   })
 
   let raw: unknown
@@ -291,20 +248,26 @@ export async function POST(request: NextRequest) {
 
   const parsed = assessmentLeadSchema.safeParse(raw)
   if (!parsed.success) {
-    return NextResponse.json({ error: 'Validation failed', details: parsed.error.flatten() }, { status: 422 })
+    return NextResponse.json({ error: 'Validation failed' }, { status: 422 })
   }
 
   const body = parsed.data
-
-  // Sanitise inputs
-  const name = body.name.trim().replace(/<[^>]*>/g, '')
+  const name = singleLine(body.name)
   const email = body.email.trim().toLowerCase()
-  const company = body.company.trim().replace(/<[^>]*>/g, '')
-  const score = Math.max(0, Math.min(100, Math.round(body.score)))
-  const riskLevel = body.riskLevel || getRiskLevel(score).level
-
+  const company = singleLine(body.company)
   if (/[\r\n]/.test(email)) {
     return NextResponse.json({ error: 'Invalid email' }, { status: 422 })
+  }
+
+  const total = Object.values(body.answers).reduce((sum, v) => sum + v, 0)
+  const score = Math.max(0, Math.min(100, Math.round((total / 60) * 100)))
+  const riskLevel = getRiskLevel(score).level
+
+  if (guard.checkSend(email)) {
+    return NextResponse.json(
+      { error: 'Too many requests. Please try again later.' },
+      { status: 429, headers: { 'Retry-After': '3600' } }
+    )
   }
 
   const recommendations = getGroupedRecommendations(body.answers || {})
@@ -322,7 +285,7 @@ export async function POST(request: NextRequest) {
     await sgMail.send({
       to: SALES_EMAIL,
       from: { email: FROM_EMAIL, name: 'Stealth Cyber Assessment' },
-      subject: `New Assessment Lead: ${name} (${company}) — ${score}/100 ${riskLevel} Risk`,
+      subject: singleLine(`New Assessment Lead: ${name} (${company}) — ${score}/100 ${riskLevel} Risk`),
       html: buildSalesEmail({ name, email, company, score, riskLevel, answers: body.answers, recommendations }),
     })
   } catch (err) {
