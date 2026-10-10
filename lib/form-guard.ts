@@ -31,19 +31,21 @@ export function isTrustedOrigin(request: NextRequest): boolean {
 }
 
 // ---------------------------------------------------------------------------
-// Client IP. Only headers the Azure edge sets itself are trusted. The previous
-// code read `cf-connecting-ip` first, but the site is not behind Cloudflare,
-// so that header was whatever the caller sent and the rate limit could be
-// bypassed by changing it on every request. `x-forwarded-for` is not used for
-// the same reason: a caller can put any value in it.
+// Client IP. Measured against the live site (2026-10-10), not assumed:
+//  - `cf-connecting-ip` and `x-forwarded-for` are whatever the caller sends
+//    (the site is not behind Cloudflare). The old code trusted the first one,
+//    which let a script bypass the rate limit by rotating it.
+//  - `x-azure-clientip` is NOT set by Static Web Apps, so a caller-supplied
+//    value passes straight through. Not used.
+//  - `x-client-ip` IS set by the platform. If the caller also sends one, the
+//    two arrive joined ("spoofed, real"), so only the LAST entry is trusted.
 // ---------------------------------------------------------------------------
 export function clientIp(request: NextRequest): string {
-  const raw =
-    request.headers.get('x-azure-clientip') ||
-    request.headers.get('x-client-ip') ||
-    'unknown'
-  // Azure may append a port ("1.2.3.4:5678"); IPv6 arrives bracketed.
-  return raw.trim().replace(/^\[([^\]]+)\](:\d+)?$/, '$1').replace(/^(\d+\.\d+\.\d+\.\d+):\d+$/, '$1')
+  const header = request.headers.get('x-client-ip')
+  if (!header) return 'unknown'
+  const last = header.split(',').pop()!.trim()
+  // Azure may append a port ("1.2.3.4:5678"); IPv6 may arrive bracketed.
+  return last.replace(/^\[([^\]]+)\](:\d+)?$/, '$1').replace(/^(\d+\.\d+\.\d+\.\d+):\d+$/, '$1') || 'unknown'
 }
 
 // ---------------------------------------------------------------------------

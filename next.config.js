@@ -50,16 +50,17 @@ const nextConfig = {
   async headers() {
     return [{ source: '/:path*', headers: securityHeaders }]
   },
-  // One canonical host: www served a full copy of the site. Only www is
-  // matched. The default *.azurestaticapps.net host is deliberately left out:
-  // if Azure presents that hostname to the Next.js server for custom-domain
-  // traffic, a rule for it would redirect every request back to itself.
+  // One canonical host: www served a full copy of the site. Azure does not
+  // pass the visitor's hostname to the Next.js server as `Host`, so this
+  // matches the forwarded host. Only www is matched: the default
+  // *.azurestaticapps.net host is left out because a rule for the host the
+  // server itself sees could redirect every request back to itself.
   // Canonical <link> tags already point search engines at stealthcyber.io.
   async redirects() {
     return [
       {
         source: '/:path*',
-        has: [{ type: 'host', value: 'www.stealthcyber.io' }],
+        has: [{ type: 'header', key: 'x-forwarded-host', value: 'www.stealthcyber.io' }],
         destination: 'https://stealthcyber.io/:path*',
         permanent: true,
       },
