@@ -62,7 +62,7 @@ export default function TermsOfServicePage() {
                 <li>Cybersecurity consulting and advisory services.</li>
                 <li>Managed detection and response (MDR) and managed security services.</li>
                 <li>Incident response and digital forensics.</li>
-                <li>Governance, risk, and compliance (GRC) services, including Essential Eight, ISO 27001, and CMMC assessments.</li>
+                <li>Governance, risk, and compliance (GRC) services, including ASD Essentials (formerly Essential Eight), ISO 27001, and CMMC assessments.</li>
                 <li>Penetration testing and vulnerability assessments.</li>
                 <li>AI security assessments, AI red teaming, and AI management system implementation.</li>
                 <li>Online self-assessment tools and quizzes.</li>
@@ -103,7 +103,7 @@ export default function TermsOfServicePage() {
             <div>
               <h2 className="text-2xl font-bold text-white mb-4">5. Assessment Tools and Quizzes Disclaimer</h2>
               <p className="text-stealth-gray leading-relaxed mb-4">
-                Our website may include self-assessment tools, quizzes, and similar interactive features (including but not limited to the Cybersecurity Self-Assessment, AI Readiness Assessment, and Essential Eight Assessment). These tools are provided for informational and educational purposes only.
+                Our website may include self-assessment tools, quizzes, and similar interactive features (including but not limited to the Cybersecurity Self-Assessment, AI Readiness Assessment, and ASD Essentials Assessment). These tools are provided for informational and educational purposes only.
               </p>
               <div className="bg-stealth-dark rounded-lg border border-stealth-cyan/10 p-6 space-y-3">
                 <p className="text-white font-semibold">Important:</p>

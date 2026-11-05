@@ -5,7 +5,7 @@ import Logo from '@/components/Logo'
 const services = [
   { label: 'Managed Detection & Response', href: '/services#mdr' },
   { label: 'Incident Response', href: '/services#incident-response' },
-  { label: 'Essential Eight', href: '/services#essential-eight' },
+  { label: 'ASD Essentials', href: '/services#asd-essentials' },
   { label: 'CMMC Assessment', href: '/services#cmmc' },
   { label: 'ISO 27001', href: '/services#iso27001' },
   { label: 'AI Security', href: '/services#ai-security' },

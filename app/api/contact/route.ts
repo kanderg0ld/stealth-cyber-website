@@ -96,7 +96,7 @@ export async function POST(request: NextRequest) {
   const serviceLabels: Record<string, string> = {
     mdr: 'Managed Detection & Response',
     'incident-response': 'Incident Response',
-    'essential-eight': 'Essential Eight',
+    'essential-eight': 'ASD Essentials / Essential Eight',
     cmmc: 'CMMC Assessment',
     iso27001: 'ISO 27001',
     'ai-security': 'AI Security',

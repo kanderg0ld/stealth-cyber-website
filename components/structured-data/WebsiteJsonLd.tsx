@@ -8,7 +8,7 @@ export default function WebsiteJsonLd() {
         '@type': 'WebSite',
         name: 'Stealth Cyber',
         url: 'https://stealthcyber.io',
-        description: 'Global cybersecurity consultancy delivering managed detection and response, incident response, CMMC, ISO 27001, Essential Eight, AI security, and GRC services.',
+        description: 'Global cybersecurity consultancy delivering managed detection and response, incident response, CMMC, ISO 27001, ASD Essentials, AI security, and GRC services.',
         inLanguage: 'en',
         potentialAction: {
           '@type': 'SearchAction',

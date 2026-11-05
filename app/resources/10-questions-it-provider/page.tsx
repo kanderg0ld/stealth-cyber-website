@@ -102,9 +102,9 @@ export default function TenQuestionsITProvider() {
             />
             <QuestionCard
               num="3"
-              question="Have you done an ASD Essential Eight assessment of our environment?"
-              detail="A proper assessment tests whether controls are actually enforced, not just configured. If they have done one, ask for the report. If they have not, ask when it will be scheduled."
-              followUp="What is our current maturity level for each of the eight controls?"
+              question="Have you assessed our environment against ASD Essentials?"
+              detail="ASD Essentials replaced the Essential Eight in October 2026. A proper assessment tests whether controls are actually enforced and effective, not just configured. If they have done one, ask for the report. If they only have an old Essential Eight assessment, ask when they will map it to ASD Essentials. If they have neither, ask when it will be scheduled."
+              followUp="Which domains have you assessed, and which actions are rated not effective or partially effective?"
             />
             <QuestionCard
               num="4"

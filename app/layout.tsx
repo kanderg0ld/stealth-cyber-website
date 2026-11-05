@@ -25,10 +25,10 @@ export const metadata: Metadata = {
     default: 'Stealth Cyber | Global Managed Cybersecurity Services',
     template: '%s | Stealth Cyber',
   },
-  description: 'Stealth Cyber delivers 24/7 managed detection and response, incident response, CMMC, ISO 27001, Essential Eight, AI security, and GRC, with offices in Gold Coast (AU), São Paulo (BR), and Texas (US).',
+  description: 'Stealth Cyber delivers 24/7 managed detection and response, incident response, CMMC, ISO 27001, ASD Essentials, AI security, and GRC, with offices in Gold Coast (AU), São Paulo (BR), and Texas (US).',
   keywords: [
     'cybersecurity', 'managed detection and response', 'MDR', 'incident response',
-    'Essential Eight', 'CMMC', 'ISO 27001', 'AI security', 'penetration testing',
+    'ASD Essentials', 'Essential Eight', 'CMMC', 'ISO 27001', 'AI security', 'penetration testing',
     'GRC', 'cybersecurity Gold Coast', 'cybersecurity Australia', 'DFIR',
   ],
   authors: [{ name: 'Stealth Cyber', url: 'https://stealthcyber.io' }],

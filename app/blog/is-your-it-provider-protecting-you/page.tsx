@@ -134,6 +134,10 @@ export default function ITProviderPost() {
               A proper Essential Eight assessment is not a questionnaire. It involves reviewing actual configurations, testing whether controls are enforced rather than just enabled, and verifying that the maturity level claimed reflects what is actually happening in the environment. Ask for the assessment report. If there is not one, ask when it will be done.
             </p>
 
+            <p>
+              <strong>Update, November 2026:</strong> the ASD has since evolved the Essential Eight into ASD Essentials, which rates each action as not effective, partially effective or fully effective, domain by domain, instead of using maturity levels. The question still stands, but ask whether your provider has assessed you against ASD Essentials, or at least mapped your existing Essential Eight results to it.
+            </p>
+
             <h2>5. What Happens When a Threat Is Detected? Walk Me Through the Process.</h2>
 
             <p>

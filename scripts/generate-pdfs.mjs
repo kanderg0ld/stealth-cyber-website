@@ -380,9 +380,9 @@ const pdfs = [
           { type: 'heading', text: '2. What are your mean time to detect and mean time to respond benchmarks?' },
           { type: 'paragraph', text: 'Mean time to detect (MTTD) is how long it takes to identify that a threat is present. Mean time to respond (MTTR) is how long it takes to contain it. These are measurable numbers. Industry average MTTD without a dedicated security function is around 200 days.' },
           { type: 'callout', text: 'Follow-up: Can you show us these metrics for our environment specifically over the last quarter?' },
-          { type: 'heading', text: '3. Have you done an ASD Essential Eight assessment of our environment?' },
-          { type: 'paragraph', text: 'A proper assessment tests whether controls are actually enforced, not just configured. If they have done one, ask for the report. If they have not, ask when it will be scheduled.' },
-          { type: 'callout', text: 'Follow-up: What is our current maturity level for each of the eight controls?' },
+          { type: 'heading', text: '3. Have you assessed our environment against ASD Essentials?' },
+          { type: 'paragraph', text: 'ASD Essentials replaced the Essential Eight in October 2026. A proper assessment tests whether controls are actually enforced and effective, not just configured. If they have done one, ask for the report. If they only have an old Essential Eight assessment, ask when they will map it to ASD Essentials. If they have neither, ask when it will be scheduled.' },
+          { type: 'callout', text: 'Follow-up: Which domains have you assessed, and which actions are rated not effective or partially effective?' },
         ],
       },
       {
@@ -501,7 +501,7 @@ const pdfs = [
           { type: 'heading', text: 'The Honest Reality About Cyber Insurance' },
           { type: 'paragraph', text: 'Cyber insurance is valuable and you should have it. It is also frequently misunderstood as a solution to cyber risk rather than a financial instrument for managing residual risk.' },
           { type: 'paragraph', text: 'Policies with weak security controls in place are increasingly being declined at renewal, written with significant exclusions, or subjected to much higher premiums.' },
-          { type: 'callout', text: 'A current Essential Eight assessment and a managed detection and response service are the two most effective things you can do to improve your insurability and keep your premiums in check.' },
+          { type: 'callout', text: 'A current ASD Essentials assessment (the successor to the Essential Eight) and a managed detection and response service are the two most effective things you can do to improve your insurability and keep your premiums in check.' },
         ],
       },
     ],
@@ -1095,8 +1095,10 @@ const pdfs = [
   },
 ]
 
-// Generate all PDFs
+// Generate all PDFs, or only the filenames passed as arguments
+const only = process.argv.slice(2)
 for (const config of pdfs) {
+  if (only.length && !only.includes(config.filename)) continue
   await createPDF(config)
 }
 

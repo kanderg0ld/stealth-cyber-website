@@ -38,7 +38,7 @@ export default async function Image() {
             One Breach Can Change Everything. Don&apos;t Let It.
           </div>
           <div style={{ fontSize: 18, color: '#4DCCFF', marginBottom: 16, display: 'flex' }}>
-            MDR &middot; Incident Response &middot; AI Security &middot; CMMC &middot; ISO 27001 &middot; Essential Eight
+            MDR &middot; Incident Response &middot; AI Security &middot; CMMC &middot; ISO 27001 &middot; ASD Essentials
           </div>
           <div style={{ fontSize: 16, color: '#94A3B8', display: 'flex' }}>
             Gold Coast, AU &middot; S&atilde;o Paulo, BR &middot; Texas, US

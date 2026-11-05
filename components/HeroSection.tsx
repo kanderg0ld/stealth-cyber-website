@@ -4,7 +4,7 @@ import { ArrowRight } from 'lucide-react'
 const trustPoints = [
   { label: 'Offices', value: 'Gold Coast · São Paulo · Texas' },
   { label: 'Coverage', value: '24/7 SOC monitoring' },
-  { label: 'Frameworks', value: 'ACSC Essential Eight · CMMC · ISO 27001' },
+  { label: 'Frameworks', value: 'ASD Essentials · CMMC · ISO 27001' },
 ]
 
 export default function HeroSection() {

@@ -167,7 +167,7 @@ export default function CyberInsuranceChecklist() {
                 Policies with weak security controls in place are increasingly being declined at renewal, written with significant exclusions, or subjected to much higher premiums.
               </p>
               <p className="text-gray-900 text-xs leading-relaxed font-bold">
-                A current Essential Eight assessment and a managed detection and response service are the two most effective things you can do to improve your insurability and keep your premiums in check.
+                A current ASD Essentials assessment (the successor to the Essential Eight) and a managed detection and response service are the two most effective things you can do to improve your insurability and keep your premiums in check.
               </p>
             </div>
           </div>

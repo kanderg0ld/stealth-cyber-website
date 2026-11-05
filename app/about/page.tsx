@@ -30,7 +30,7 @@ const certifications = [
   'ISO 27001 Lead Implementer / Lead Auditor',
   'ISO 42001 Lead Auditor: AI Management Systems',
   'CMMC Certified Assessor (CCA)',
-  'ACSC Essential Eight Specialist',
+  'ASD Essentials & Essential Eight Specialists',
   'Red Team & Blue Team Professionals',
 ]
 

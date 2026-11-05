@@ -64,6 +64,16 @@ export default function EssentialEightPost() {
             </div>
           </div>
 
+          {/* Framework update notice */}
+          <aside className="mb-10 rounded-lg border border-stealth-cyan/20 bg-stealth-cyan/5 p-5 text-sm leading-relaxed text-stealth-gray">
+            <p className="mb-2 font-semibold text-white">Update, November 2026: the Essential Eight is now ASD Essentials</p>
+            <p>
+              On 15 October 2026 the ASD evolved the Essential Eight into ASD Essentials for enterprise IT. The eight strategies below still matter, because each one maps to at least one ASD Essentials principle. But maturity levels have been replaced by priority phases across eight domains, and each action is now rated not effective, partially effective or fully effective. Your existing Essential Eight work carries forward. Your old maturity rating does not convert automatically.{' '}
+              <a href="https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight" target="_blank" rel="noopener noreferrer" className="text-stealth-cyan hover:underline">Read the ASD transition guidance</a>{' '}
+              or <Link href="/services#asd-essentials" className="text-stealth-cyan hover:underline">see how we help with the move</Link>.
+            </p>
+          </aside>
+
           {/* Article body */}
           <div className="prose prose-lg prose-invert prose-cyan max-w-none prose-headings:text-white prose-headings:font-bold prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-6 prose-h3:text-lg prose-h3:mt-8 prose-h3:mb-3 prose-p:text-stealth-gray prose-p:leading-relaxed prose-p:mb-6 prose-li:text-stealth-gray prose-strong:text-white prose-ul:my-6 prose-li:my-2 prose-ol:my-6">
             <p>
@@ -203,7 +213,7 @@ export default function EssentialEightPost() {
                 Free Self-Assessment <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
-                href="/services#essential-eight"
+                href="/services#asd-essentials"
                 className="inline-flex items-center gap-2 px-6 py-3 border border-stealth-cyan/40 text-white font-semibold text-sm rounded-lg hover:border-stealth-cyan/60 transition-colors"
               >
                 Essential Eight Services

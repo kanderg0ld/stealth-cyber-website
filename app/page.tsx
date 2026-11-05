@@ -5,16 +5,16 @@ import HowToJsonLd from '@/components/structured-data/HowToJsonLd'
 
 export const metadata: Metadata = {
   title: 'Stealth Cyber | Global Managed Cybersecurity Services',
-  description: 'Enterprise-level cyber defence for businesses that demand the highest protection. 24/7 threat monitoring, incident response, CMMC, ISO 27001, Essential Eight, AI security, and GRC from offices in Gold Coast, São Paulo, and Texas.',
+  description: 'Enterprise-level cyber defence for businesses that demand the highest protection. 24/7 threat monitoring, incident response, CMMC, ISO 27001, ASD Essentials, AI security, and GRC from offices in Gold Coast, São Paulo, and Texas.',
   keywords: [
     'managed cybersecurity services', 'managed detection and response Australia',
-    'incident response Gold Coast', 'Essential Eight compliance', 'CMMC assessment',
+    'incident response Gold Coast', 'ASD Essentials', 'Essential Eight transition', 'CMMC assessment',
     'ISO 27001 consultant', 'AI security services', 'penetration testing Australia',
     'cybersecurity consultancy',
   ],
   openGraph: {
     title: 'Stealth Cyber | Global Managed Cybersecurity Services',
-    description: 'Enterprise-level cyber defence for businesses that demand the highest protection. 24/7 threat monitoring, incident response, CMMC, ISO 27001, Essential Eight, AI security. Offices in AU, BR, US.',
+    description: 'Enterprise-level cyber defence for businesses that demand the highest protection. 24/7 threat monitoring, incident response, CMMC, ISO 27001, ASD Essentials, AI security. Offices in AU, BR, US.',
     url: 'https://stealthcyber.io',
   },
   alternates: { canonical: 'https://stealthcyber.io' },
@@ -40,8 +40,8 @@ const faqs = [
     answer: 'Managed cybersecurity for a small business in Australia typically ranges from $1,500 to $10,000 per month depending on the number of users, devices, and services included. Basic managed security (endpoint protection, monitoring, and patching) sits at the lower end, while comprehensive MDR with 24/7 SOC monitoring, vulnerability management, and compliance support is at the higher end. For context, the average cost of a data breach for an Australian SMB exceeds $200,000. Stealth Cyber offers tailored packages based on your business size and risk profile.',
   },
   {
-    question: 'What is the Essential Eight and does my business need to comply?',
-    answer: 'The Essential Eight is a set of eight cybersecurity mitigation strategies developed by the Australian Cyber Security Centre (ACSC) to protect organisations against the most common cyber threats. It covers application control, patching applications, patching operating systems, multi-factor authentication, restricting admin privileges, restricting Office macros, user application hardening, and regular backups. Compliance is mandatory for Australian government entities and increasingly required by enterprise clients, insurers, and government contractors. Organisations are assessed at maturity levels 0 to 3. Even if not legally required, the Essential Eight is the most practical cybersecurity baseline for any Australian business.',
+    question: 'What is ASD Essentials, and what happened to the Essential Eight?',
+    answer: 'In October 2026 the Australian Signals Directorate (ASD) evolved the Essential Eight into ASD Essentials. Its enterprise IT chapter replaces the eight mitigation strategies with principles and actions across eight domains, including Identity services, Boundary services, Governance and culture, and Visibility and response. Maturity levels 0 to 3 are gone: domains are worked through in three priority phases, and each action is rated not effective, partially effective or fully effective. Every Essential Eight strategy maps to at least one ASD Essentials principle, so existing work carries forward, but old maturity ratings do not convert automatically and a gap analysis is needed. ASD Essentials also covers areas the Essential Eight never assessed, such as governance, supply chain security, content filtering and security awareness training. If a regulator, contract or insurer still names the Essential Eight, keep meeting that obligation until they say otherwise. For most Australian businesses, ASD Essentials is now the practical cybersecurity baseline.',
   },
   {
     question: 'How long does it take to set up managed cyber protection?',
@@ -57,7 +57,7 @@ const faqs = [
   },
   {
     question: 'What cybersecurity does a 50-person accounting firm actually need?',
-    answer: 'A 50-person accounting firm handling sensitive financial data needs, at minimum: multi-factor authentication on all accounts, endpoint protection on every device, email security to block phishing, regular patching of operating systems and applications, encrypted and tested backups, security awareness training for all staff, and a documented incident response plan. Recommended additions include 24/7 managed detection and response (MDR), vulnerability scanning, dark web monitoring for leaked credentials, and Essential Eight compliance if operating in Australia. Stealth Cyber provides tailored packages for professional services firms that cover all of these requirements.',
+    answer: 'A 50-person accounting firm handling sensitive financial data needs, at minimum: multi-factor authentication on all accounts, endpoint protection on every device, email security to block phishing, regular patching of operating systems and applications, encrypted and tested backups, security awareness training for all staff, and a documented incident response plan. Recommended additions include 24/7 managed detection and response (MDR), vulnerability scanning, dark web monitoring for leaked credentials, and ASD Essentials compliance (the successor to the Essential Eight) if operating in Australia. Stealth Cyber provides tailored packages for professional services firms that cover all of these requirements.',
   },
   {
     question: 'How do I assess my current cyber risk?',

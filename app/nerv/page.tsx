@@ -537,7 +537,7 @@ export default function NervPage() {
               </h2>
               <p className="mb-6 max-w-[54ch] leading-relaxed text-stealth-gray">
                 Nerv was built by the team that runs the incident response engagements,
-                the red team work and the Essential Eight uplifts. Every detection exists
+                the red team work and the ASD Essentials uplifts. Every detection exists
                 because we needed it on a real job. We are not a reseller with a
                 dashboard.
               </p>

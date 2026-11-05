@@ -87,7 +87,7 @@ const posts = [
     slug: 'essential-eight-demystified',
     publishedAt: '2026-03-18',
     author: 'Chris McDonald',
-    tags: ['Essential Eight', 'Compliance', 'ASD'],
+    tags: ['Essential Eight', 'ASD Essentials', 'Compliance', 'ASD'],
   },
   {
     title: 'Prompt Injection: How Attackers Manipulate AI Systems',

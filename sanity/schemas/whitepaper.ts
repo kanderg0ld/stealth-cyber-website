@@ -18,7 +18,7 @@ export default defineType({
           { title: 'Threat Intelligence', value: 'threat-intelligence' },
           { title: 'Compliance', value: 'compliance' },
           { title: 'Incident Response', value: 'incident-response' },
-          { title: 'Essential Eight', value: 'essential-eight' },
+          { title: 'ASD Essentials (Essential Eight)', value: 'essential-eight' },
           { title: 'GRC', value: 'grc' },
         ],
       },

@@ -26,7 +26,7 @@ export default async function ResourcePage({ params }: Props) {
     'threat-intelligence': 'Threat Intelligence',
     'compliance': 'Compliance',
     'incident-response': 'Incident Response',
-    'essential-eight': 'Essential Eight',
+    'essential-eight': 'ASD Essentials',
     'grc': 'GRC',
   }
 

@@ -14,7 +14,7 @@ export default function LocalBusinessJsonLd() {
         url: 'https://stealthcyber.io',
         telephone: '+61752308381',
         priceRange: '$$',
-        description: 'Global cybersecurity consultancy providing managed detection and response, incident response, penetration testing, CMMC assessments, ISO 27001, Essential Eight compliance, AI security, and GRC services — with offices in Gold Coast (Australia), São Paulo (Brazil), and Texas (USA).',
+        description: 'Global cybersecurity consultancy providing managed detection and response, incident response, penetration testing, CMMC assessments, ISO 27001, ASD Essentials, AI security, and GRC services — with offices in Gold Coast (Australia), São Paulo (Brazil), and Texas (USA).',
         openingHoursSpecification: {
           '@type': 'OpeningHoursSpecification',
           dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
@@ -74,7 +74,7 @@ export default function LocalBusinessJsonLd() {
           'Managed Detection and Response',
           'Incident Response',
           'Digital Forensics',
-          'Essential Eight Compliance',
+          'ASD Essentials',
           'CMMC Certification',
           'ISO 27001',
           'ISO 42001',
@@ -89,7 +89,7 @@ export default function LocalBusinessJsonLd() {
           itemListElement: [
             { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Managed Detection & Response' } },
             { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Incident Response' } },
-            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Essential Eight Compliance' } },
+            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'ASD Essentials' } },
             { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'CMMC Assessment' } },
             { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'ISO 27001 Certification' } },
             { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'AI Security' } },

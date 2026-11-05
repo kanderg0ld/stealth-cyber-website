@@ -6,7 +6,7 @@ const SERVICES = [
   { value: '', label: 'Select a service...' },
   { value: 'mdr', label: 'Managed Detection & Response' },
   { value: 'incident-response', label: 'Incident Response' },
-  { value: 'essential-eight', label: 'Essential Eight Compliance' },
+  { value: 'essential-eight', label: 'ASD Essentials / Essential Eight' },
   { value: 'cmmc', label: 'CMMC Assessment' },
   { value: 'iso27001', label: 'ISO 27001 Certification' },
   { value: 'ai-security', label: 'AI Security' },
